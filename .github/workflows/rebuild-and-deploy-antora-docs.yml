@@ -1,0 +1,32 @@
+name: rebuild and deploy Antora documentation website
+
+on:
+  push:
+    branches: [ antora ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 14.x
+
+      - name: Install Antora and NPM deps
+        run: npm ci  
+
+      - name: Generate Antora website
+        run: rm -rf docs && npx antora generate --fetch --stacktrace antora-playbook.yml
+
+      - name: Commit Antora build to repository
+        uses: EndBug/add-and-commit@v7.2.1
+        with:
+          author_name: apiman-ci
+          message: 'chore: regenerate documentation with Antora'
+          add: ./docs --force
