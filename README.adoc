@@ -1,0 +1,19 @@
+= Apiman docs website & Antora playbook
+
+This is where we generate our https://www.apiman.io/apiman-docs/[documentation^] using the https://antora.org/[wonderful Antora documentation website generator^].
+
+The actual documentation is stored in other repositories. 
+This is where we maintain our link:antora-playbook.yml[Antora Playbook] which pulls in the documentation sources from our various docs repos and generates the HTML for GitHub Pages. 
+
+To build the docs, you can run:
+
+```bash
+npm ci
+# If you had a docs directory generated previously you want to clobber
+rm -fr docs
+# Use the locally installed version of Antora
+npx antora generate --fetch --stacktrace antora-playbook.yml 
+```
+
+Now you should see the website pop out in the `docs` directory, and you can open it in your browser of choice.
+
