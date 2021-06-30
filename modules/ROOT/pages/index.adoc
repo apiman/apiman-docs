@@ -4,15 +4,15 @@
 
 |===
 
-| xref:apiman-user-guide::index.adoc[User Guide]
+| xref:user-guide::index.adoc[User Guide]
 
 a| Day-to-day usage of Apiman, covering most topics including policies, plugins, and basic administration.
 
-|  xref:apiman-installation-guide::index.adoc[Installation & Administration Guide]
+|  xref:installation-guide::index.adoc[Installation & Administration Guide]
 
 a| Installing Apiman, and configuring it in a more production-ready way.
 
-|  xref:apiman-docs::index.adoc[Development Guide]
+|  xref:core::index.adoc[Development Guide]
 
 a| For those wanting to extend Apiman's functionality or even embed Apiman in their own platform.
 
