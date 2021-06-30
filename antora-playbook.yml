@@ -1,7 +1,7 @@
 site:
   title: Apiman Documentation
   url: https://www.apiman.io/apiman-docs
-  start_page: apiman-navigation::index.adoc
+  start_page: welcome::index.adoc
   keys:
     google_analytics: "UA-56678850-3"
 
