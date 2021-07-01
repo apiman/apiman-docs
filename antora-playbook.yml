@@ -23,7 +23,7 @@ content:
 
 ui:
   bundle:
-    url: https://cdn.jsdelivr.net/gh/apiman/apiman-antora-ui@master/build/ui-bundle.zip
+    url: https://github.com/apiman/apiman-antora-ui/raw/master/build/ui-bundle.zip
     snapshot: true
   supplemental_files:
     - path: ui.yml
