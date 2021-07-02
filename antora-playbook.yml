@@ -33,10 +33,3 @@ ui:
 
 output:
   dir: ./docs
-
-asciidoc:
-  attributes:
-    apiman-version-release: "TODO"
-    apiman-version-snapshot: "TODO"
-    apiman-version-wildfly10: "TODO"
-    apiman-version-wildfly9: "TODO"
