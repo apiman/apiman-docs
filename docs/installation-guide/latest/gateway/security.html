@@ -310,7 +310,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The quickstart configurations should work out of the box, but they assume the locality of all components, including Keycloak. Real deployments will likely need to perform some reconfiguration.
+The quickstart configurations should work out of the box, but they assume the locality of all components, including Keycloak.Real deployments will likely need to perform some reconfiguration.
 </td>
 </tr>
 </table>
@@ -325,14 +325,10 @@ In other words, the Gateway REST API can only be invoked by a valid user, and th
 <div class="paragraph">
 <p>The Keycloak client for this API is <code>apiman-gateway-api</code>, and the default user and password are: <strong>apimanager</strong>/<strong>apiman123!</strong></p>
 </div>
-<div class="paragraph">
-<p>{{ start }}
-{% method %}
-=== Setup</p>
-</div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}</p>
-</div>
+<div class="sect2">
+<h3 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h3>
+<div class="sect3">
+<h4 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h4>
 <div class="paragraph">
 <p>For the Vert.x gateway, the simplest way to retrieve the necessary configuration is to generate it from your Keycloak server <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>:</p>
 </div>
@@ -368,7 +364,7 @@ In other words, the Gateway REST API can only be invoked by a valid user, and th
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues. You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.
+Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues.You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.
 </td>
 </tr>
 </table>
@@ -396,9 +392,9 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}</p>
 </div>
+<div class="sect3">
+<h4 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h4>
 <div class="paragraph">
 <p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it. This API is protected by Keycloak authentication. The configuration included in the apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you’ll need to modify the standalone-apiman.xml file to point to the remote Keycloak instance.</p>
 </div>
@@ -416,11 +412,8 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 &lt;/realm&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
-<hr>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -650,11 +643,10 @@ for each node.</p>
 <p>Despite the initial administrative work setting up the CA and signing the certificates, this process is drastically less effort to maintain in large deployments.
 Only the trusted CA needs to be in the truststore, and any certificates signed by it are trusted by virtue of this.</p>
 </div>
-<div class="paragraph">
-<p>{{ start }}
-{% method %}
-=== Make changes to configuration</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_make_changes_to_configuration"><a class="anchor" href="#_make_changes_to_configuration"></a>Make changes to configuration</h3>
 <div class="paragraph">
 <p>Once you have your Trust Store and Key Store properly configured, you must alter your configuration file.
 Here is a summary of the properties:</p>
@@ -675,11 +667,10 @@ Best practice guides are <a href="https://www.owasp.org/">available at OWASP</a>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}
-.Conf JSON</p>
-</div>
+<div class="sect3">
+<h4 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h4>
 <div class="listingblock">
+<div class="title">conf-es.json</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
   "connector-factory": {
@@ -720,11 +711,11 @@ Best practice guides are <a href="https://www.owasp.org/">available at OWASP</a>
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}
-.apiman.properties</p>
 </div>
+<div class="sect3">
+<h4 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h4>
 <div class="listingblock">
+<div class="title">apiman.properties</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># ---------------------------------------------------------------------
 # SSL/TLS settings for the gateway connector(s).
@@ -753,10 +744,6 @@ apiman-gateway.connector-factory.tls.allowAnyHost=false
 # Whether self-signed certificates should be automatically trusted. *Use with great care.*
 apiman-gateway.connector-factory.tls.allowSelfSigned=false</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
 </div>
 </div>

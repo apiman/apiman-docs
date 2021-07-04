@@ -305,19 +305,27 @@
 <li><a href="#_global_optional_parameters">Global Optional Parameters</a></li>
 <li><a href="#_registry">Registry</a>
 <ul class="sectlevel2">
+<li><a href="#_vert_x">Vert.x</a></li>
+<li><a href="#_servlet">Servlet</a></li>
 <li><a href="#_required_parameters">Required Parameters</a></li>
 <li><a href="#_optional_parameters">Optional Parameters</a></li>
 </ul>
 </li>
 <li><a href="#_metrics">Metrics</a>
 <ul class="sectlevel2">
+<li><a href="#_vert_x_2">Vert.x</a></li>
+<li><a href="#_servlet_2">Servlet</a></li>
 <li><a href="#_required_parameters_2">Required Parameters</a></li>
 </ul>
 </li>
 <li><a href="#_components">Components</a>
 <ul class="sectlevel2">
 <li><a href="#_shared_state">Shared State</a></li>
+<li><a href="#_vert_x_3">Vert.x</a></li>
+<li><a href="#_servlet_3">Servlet</a></li>
 <li><a href="#_rate_limiter">Rate Limiter</a></li>
+<li><a href="#_vert_x_4">Vert.x</a></li>
+<li><a href="#_servlet_4">Servlet</a></li>
 <li><a href="#_cache_store">Cache Store</a></li>
 </ul>
 </li>
@@ -485,15 +493,10 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <h2 id="_registry"><a class="anchor" href="#_registry"></a>Registry</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{{ start }}
-{% method %}</p>
-</div>
-<div class="paragraph">
 <p>Assign your chosen implementation as shown in the example, providing configuration.</p>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}</p>
-</div>
+<div class="sect2">
+<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"registry": {
@@ -504,17 +507,13 @@ Many of the shipped configurations make use of variable substitution to reduce r
 },</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}</p>
 </div>
+<div class="sect2">
+<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=&lt;IMPLEMENTATION&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Available implementations:</caption>
@@ -543,6 +542,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
 <h3 id="_required_parameters"><a class="anchor" href="#_required_parameters"></a>Required Parameters</h3>
 <div class="paragraph">
@@ -615,15 +615,10 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <h2 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>{{ start }}
-{% method %}</p>
-</div>
-<div class="paragraph">
 <p>Set the metrics implementation as shown.</p>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}</p>
-</div>
+<div class="sect2">
+<h3 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"metrics": {
@@ -640,17 +635,13 @@ Many of the shipped configurations make use of variable substitution to reduce r
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}</p>
 </div>
+<div class="sect2">
+<h3 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.metrics=io.apiman.gateway.engine.es.ESMetrics</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Available implementations:</caption>
@@ -671,6 +662,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
 <h3 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h3>
 <div class="paragraph">
@@ -721,15 +713,11 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <div class="sect2">
 <h3 id="_shared_state"><a class="anchor" href="#_shared_state"></a>Shared State</h3>
 <div class="paragraph">
-<p>{{ start }}
-{% method %}</p>
-</div>
-<div class="paragraph">
 <p>Set shared state implementation as shown.</p>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}</p>
 </div>
+<div class="sect2">
+<h3 id="_vert_x_3"><a class="anchor" href="#_vert_x_3"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
@@ -749,19 +737,15 @@ Many of the shipped configurations make use of variable substitution to reduce r
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}</p>
 </div>
+<div class="sect2">
+<h3 id="_servlet_3"><a class="anchor" href="#_servlet_3"></a>Servlet</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=io.apiman.gateway.engine.es.ESSharedStateComponent
 apiman-gateway.components.ISharedStateComponent.client.type=jest
 # &lt;configuration options&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
 <div class="sect3">
 <h4 id="_required_parameters_3"><a class="anchor" href="#_required_parameters_3"></a>Required Parameters</h4>
@@ -773,15 +757,11 @@ apiman-gateway.components.ISharedStateComponent.client.type=jest
 <div class="sect2">
 <h3 id="_rate_limiter"><a class="anchor" href="#_rate_limiter"></a>Rate Limiter</h3>
 <div class="paragraph">
-<p>{{ start }}
-{% method %}</p>
-</div>
-<div class="paragraph">
 <p>Set rate limiter implementation as shown.</p>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}</p>
 </div>
+<div class="sect2">
+<h3 id="_vert_x_4"><a class="anchor" href="#_vert_x_4"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
@@ -801,19 +781,15 @@ apiman-gateway.components.ISharedStateComponent.client.type=jest
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}</p>
 </div>
+<div class="sect2">
+<h3 id="_servlet_4"><a class="anchor" href="#_servlet_4"></a>Servlet</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
 apiman-gateway.components.IRateLimiterComponent.client.type=jest
 # &lt;configuration options&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
 <div class="sect3">
 <h4 id="_required_parameters_4"><a class="anchor" href="#_required_parameters_4"></a>Required Parameters</h4>
@@ -825,15 +801,10 @@ apiman-gateway.components.IRateLimiterComponent.client.type=jest
 <div class="sect2">
 <h3 id="_cache_store"><a class="anchor" href="#_cache_store"></a>Cache Store</h3>
 <div class="paragraph">
-<p>{{ start }}
-{% method %}</p>
-</div>
-<div class="paragraph">
 <p>Set cache store implementation as shown.</p>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Vert.x" %}</p>
-</div>
+<div class="sect3">
+<h4 id="_vert_x_5"><a class="anchor" href="#_vert_x_5"></a>Vert.x</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
@@ -853,9 +824,9 @@ apiman-gateway.components.IRateLimiterComponent.client.type=jest
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% sample lang="Servlet" %}</p>
 </div>
+<div class="sect3">
+<h4 id="_servlet_5"><a class="anchor" href="#_servlet_5"></a>Servlet</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
@@ -863,9 +834,6 @@ apiman-gateway.components.IRateLimiterComponent.client.type=jest
 # &lt;configuration options&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% endmethod %}
-{{ end }}</p>
 </div>
 <div class="sect3">
 <h4 id="_required_parameters_5"><a class="anchor" href="#_required_parameters_5"></a>Required Parameters</h4>
