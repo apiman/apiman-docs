@@ -142,9 +142,6 @@
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
   </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/3scale_immutable.html">3scale Immutable</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
@@ -309,7 +306,6 @@
 <ul class="sectlevel2">
 <li><a href="#_elasticsearch">Elasticsearch</a></li>
 <li><a href="#_headless_elasticsearch">Headless Elasticsearch</a></li>
-<li><a href="#_3scale_immutable">3scale Immutable</a></li>
 </ul>
 </li>
 </ul>
@@ -519,80 +515,8 @@ Refer to the <a href="../registries-and-components/elasticsearch.adoc">Elasticse
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Refer to the <a href="../registries-and-components/headless.adoc">Elasticsearch headless registry documentation</a> for a complete list of configuration options..
+Refer to the <a href="../registries-and-components/headless.adoc">Elasticsearch headless registry documentation</a> for a complete list of configuration options.
 </td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3scale_immutable"><a class="anchor" href="#_3scale_immutable"></a>3scale Immutable</h3>
-<div class="paragraph">
-<p>The 3scale immutable registry config <code>conf-3scale-immutable-es.json</code> uses a <a href="https://www.3scale.net/">3scale</a> backend to derive its configuration, rather than the Apiman manager. It works with both 3scale SaaS and 3scale on-prem.</p>
-</div>
-<div class="paragraph">
-<p>This config is <em>immutable</em>; configuration is loaded only once at startup, and a restart is required to reflect new changes.</p>
-</div>
-<div class="paragraph">
-<p>This initial 3scale integration is on the apiman side only; applying policies requires a separate JSON overlay file to be provided and is not yet stored in the 3scale backend.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Alter your configuration as detailed in the <a href="#_elasticsearch">Elasticsearch</a> section. This is used for for apiman metrics, distributed state, caching, etc.</p>
-</li>
-<li>
-<p>Refer to the <a href="../registries-and-components/3scale_immutable.adoc">3scale registry documentation</a> to understand the mandatory and other configuration options available for the 3scale registry.</p>
-</li>
-<li>
-<p>Optionally, you can provide a JSON overlay to apply apiman policies to your 3scale APIs. In future we hope to provide a cohesive integration of this feature.</p>
-</li>
-<li>
-<p>After loading your APIs will be available at: <code>/services/&lt;API SYSTEM NAME&gt;</code>. For example, <code><a href="http://localhost:8081/services/mycoolapi" class="bare">http://localhost:8081/services/mycoolapi</a></code>.</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="title">Example</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"registry": {
-  "class": "io.apiman.gateway.engine.threescale.ThreeScaleImmutableRegistry",
-  "config": {
-    "accessToken": "&lt;YOUR ACCESS TOKEN&gt;", <i class="conum" data-value="1"></i><b>(1)</b>
-    "apiEndpoint": "https://&lt;YOUR-USERNAME&gt;-admin.3scale.net/", <i class="conum" data-value="2"></i><b>(2)</b>
-    "backendEndpoint": "https://su1.3scale.net:443", <i class="conum" data-value="3"></i><b>(3)</b>
-    "policyConfig": {
-      "overlayUri": "file:///my/overlay.json", <i class="conum" data-value="4"></i><b>(4)</b>
-      // For HTTP(S), BASIC and OAuth2 are supported. Refer to docs for more info.
-      "auth": "NONE" <i class="conum" data-value="5"></i><b>(5)</b>
-    },
-    "defaultOrgName": "${3scale.defaultOrgName}",
-    "defaultVersion": "${3scale.defaultVersion}"
-  }
-}</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><a href="https://support.3scale.net/docs/accounts/tokens">3scale access token</a>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>API endpoint, if SaaS is usually the <code><a href="https://&lt;username&gt;-admin.3scale.net" class="bare">https://&lt;username&gt;-admin.3scale.net</a></code> provided.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>3scale backend to do auth and reports. By default this is the SaaS endpoint, but if you are deploying on-prem you should alter this.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Apiman policy overlay file, can be HTTP, HTTPS or File.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>If using HTTP/S auth can be provided.</td>
 </tr>
 </table>
 </div>
