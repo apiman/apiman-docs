@@ -9,15 +9,19 @@ content:
   sources:
     - url: ./
       branches:
+        - 1.x
         - HEAD
     - url: https://github.com/apiman/apiman-docs-user-guide.git
       branches:
+        - 1.x
         - antora
     - url: https://github.com/apiman/apiman-docs-installation-guide.git
       branches:
+        - 1.x
         - antora
     - url: https://github.com/apiman/apiman.git
       branches:
+        - 1.x
         - antora
       start_path: docs
 
