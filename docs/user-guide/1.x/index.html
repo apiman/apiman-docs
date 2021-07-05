@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Introduction :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/latest/index.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
+    <script>var uiRootPath = '../../_'</script>
+<link rel="icon" href="../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="1.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Apiman User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="crash-course/Guide.html">Crash Course</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gateway/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gateway/policies.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gateway/policies.html">Policies</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_authorization_policy">Authorization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_basic_authentication_policy">BASIC Auth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_caching_policy_depracted">Caching Policy (Deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_caching_resources_policy">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_cors_policy">CORS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_header-allow-deny-policy">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_http_security_policy">HTTP Security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_ignored_resources_policy">Ignored Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_ip_blacklist_policy">IP Blacklist</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_ip_whitelist_policy">IP Whitelist</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_jsonp_policy">JSONP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_jwt_policy">JWT</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_keycloak_oauth_policy">Keycloak OAuth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_log_policy">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_quota_policy">Quota</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_rate_limiting_policy">Rate Limiting</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_simple_header_policy">Simple Header</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_soap_authorization_policy">SOAP Authorization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_time_restricted_access_policy">Time Restricted Access</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_transfer_quota_policy">Transfer Quota</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_transformation_policy">Transformation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_url_rewriting_policy">URL Rewriting</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/policies.html#_url_whitelist_policy">URL Whitelist</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="manager/concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_data_model">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_user_management">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_managing_organizations">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_managing_plans">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_providing_apis">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_consuming_apis">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="manager/concepts.html#_versioning">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manager/administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Apiman User Guide</span>
+    <span class="version">1.x</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../core/latest/development/Guide.html">Apiman Development Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../core/latest/development/Guide.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="../../core/1.x/development/Guide.html">1.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../installation-guide/latest/index.html">Apiman Installation Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../installation-guide/latest/index.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="../../installation-guide/1.x/index.html">1.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../latest/index.html">Apiman User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../latest/index.html">latest</a>
+        </li>
+        <li class="version is-current">
+          <a href="index.html">1.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../welcome/latest/index.html">Apiman Welcome</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../welcome/latest/index.html">latest</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../welcome/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Apiman User Guide</a></li>
+    <li><a href="index.html">Introduction</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">1.x</button>
+  <div class="version-menu">
+    <a class="version" href="../latest/index.html">latest</a>
+    <a class="version is-current" href="index.html">1.x</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/1.x/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Introduction</h1>
+<div class="sect1">
+<h2 id="_what_is_api_management"><a class="anchor" href="#_what_is_api_management"></a>What is API Management?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A popular trend in enterprise software development these days is to design client apps to be very decoupled and use APIs to connect them.
+This approach provides an excellent way to reuse functionality across various applications and business units.
+Another great benefit of API usage in enterprises is the ability to create  those APIs using a variety of disparate technologies.</p>
+</div>
+<div class="paragraph">
+<p>However, this approach also introduces its own pitfalls and disadvantages.
+Some of those disadvantages include things like:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Difficulty discovering or sharing existing APIs</p>
+</li>
+<li>
+<p>Difficulty sharing common functionality across API implementations</p>
+</li>
+<li>
+<p>Tracking of API usage/consumption</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>API Management is a technology that addresses these and other issues by providing an API Manager to track
+APIs and configure governance policies, as well as an API Gateway that sits between the API and the client.
+This API Gateway is responsible for applying the policies configured during management.</p>
+</div>
+<div class="paragraph">
+<p>Therefore an API management system tends to provide the following features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Centralized governance policy configuration</p>
+</li>
+<li>
+<p>Tracking of APIs and consumers of those APIs</p>
+</li>
+<li>
+<p>Easy sharing and discovery of APIs</p>
+</li>
+<li>
+<p>Leveraging common policy configuration across different APIs</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_project_goals"><a class="anchor" href="#_project_goals"></a>Project Goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The goals of the JBoss API management project are to provide an easy to use and powerful API Manager as well as a small, fast, low-overhead API Gateway to implement standard API management functionality.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_typical_use_cases"><a class="anchor" href="#_typical_use_cases"></a>Typical Use Cases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some common API management use cases include:</p>
+</div>
+<div class="sect2">
+<h3 id="_security"><a class="anchor" href="#_security"></a>Security</h3>
+<div class="paragraph">
+<p>APIs will very often have a security requirement such that clients connecting to the API must authenticate in some fashion.
+Authentication can vary greatly both in the protocols used to authenticate and the identity source used for validation.</p>
+</div>
+<div class="paragraph">
+<p>It can often be convenient to provide authentication at the API management layer to free up the back end API from having to do this work.
+This approach also has the side benefit of centralizing configuration of authentication for a wide array of disparate APIs.</p>
+</div>
+<div class="paragraph">
+<p>Therefore the API management layer must provide authentication capabilities using a wide range of protocols including BASIC, digest, OAuth, etc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_throttlingrate_limiting"><a class="anchor" href="#_throttlingrate_limiting"></a>Throttling/Rate Limiting</h3>
+<div class="paragraph">
+<p>The API management layer is a convenient place to ensure throttling (also known as rate limiting) to your APIs.
+Throttling is a way to prevent individual clients from issuing too many requests to an API.
+Because all requests to an API go through the API Gateway it is an excellent place to do this throttling work.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_meteringbilling"><a class="anchor" href="#_meteringbilling"></a>Metering/Billing</h3>
+<div class="paragraph">
+<p>There are a number of reasons why an API provider would be interested in the number of requests made to her API.
+The most common reason for public facing APIs is to implement billing based on usage per consumer.
+Metering is the feature that provides this API management capability.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
