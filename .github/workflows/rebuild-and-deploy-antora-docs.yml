@@ -28,7 +28,11 @@ jobs:
 
       - name: Generate Antora website
         run: rm -rf docs && npx antora generate --fetch --stacktrace antora-playbook.yml
-
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}       
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          
       - name: Commit Antora build to repository
         uses: EndBug/add-and-commit@v7.2.1
         with:
