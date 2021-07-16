@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Elasticsearch Registry &amp; Components :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/registries-and-components/elasticsearch.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.0.Final">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Apiman Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart.html">Quickstart</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vertx</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../vertx/download.html#_3scale_immutable">3scale Immutable</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Servlet</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Registries and Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="jdbc.html">JDBC</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How to</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../production.html">Production Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/production-manager.html">Manager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Apiman Installation Guide</span>
+    <span class="version">2.1.0.Final</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../core/latest/development/Guide.html">Apiman Development Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/latest/development/Guide.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="../../../core/1.5.7.Final/development/Guide.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Apiman Installation Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">2.1.0.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../user-guide/2.1.0.Final/index.html">Apiman User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../user-guide/2.1.0.Final/index.html">2.1.0.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../user-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../welcome/latest/index.html">Apiman Welcome</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../welcome/latest/index.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="../../../welcome/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../welcome/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Apiman Installation Guide</a></li>
+    <li>Gateway</li>
+    <li>Registries and Components</li>
+    <li><a href="overview.html">Registries &amp; Components</a></li>
+    <li><a href="elasticsearch.html">Elasticsearch</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.0.Final</button>
+  <div class="version-menu">
+    <a class="version is-current" href="elasticsearch.html">2.1.0.Final</a>
+    <a class="version" href="../../1.5.7.Final/registries-and-components/elasticsearch.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/registries-and-components/elasticsearch.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Elasticsearch Registry &amp; Components</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_global_required_parameters">Global Required Parameters</a></li>
+<li><a href="#_global_optional_parameters">Global Optional Parameters</a></li>
+<li><a href="#_registry">Registry</a>
+<ul class="sectlevel2">
+<li><a href="#_vert_x">Vert.x</a></li>
+<li><a href="#_servlet">Servlet</a></li>
+<li><a href="#_required_parameters">Required Parameters</a></li>
+<li><a href="#_optional_parameters">Optional Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_metrics">Metrics</a>
+<ul class="sectlevel2">
+<li><a href="#_vert_x_2">Vert.x</a></li>
+<li><a href="#_servlet_2">Servlet</a></li>
+<li><a href="#_required_parameters_2">Required Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_components">Components</a>
+<ul class="sectlevel2">
+<li><a href="#_shared_state">Shared State</a></li>
+<li><a href="#_vert_x_3">Vert.x</a></li>
+<li><a href="#_servlet_3">Servlet</a></li>
+<li><a href="#_rate_limiter">Rate Limiter</a></li>
+<li><a href="#_vert_x_4">Vert.x</a></li>
+<li><a href="#_servlet_4">Servlet</a></li>
+<li><a href="#_cache_store">Cache Store</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Many of the shipped configurations make use of variable substitution to reduce repetition.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_global_required_parameters"><a class="anchor" href="#_global_required_parameters"></a>Global Required Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The Elasticsearch client type:</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: jest</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.protocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The Elasticsearch protocol to use</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: http</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The ES host</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The ES port</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Client timeout</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: 10000</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_global_optional_parameters"><a class="anchor" href="#_global_optional_parameters"></a>Global Optional Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An alternative Elasticsearch index name.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.initialize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Initilize the storage</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Username if using an auth mechanism like SearchGuard, Shield, etc</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Password if using an auth mechanism like SearchGuard, Shield, etc</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.keystore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Path to the client KeyStore</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.keystore.password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Password for the client KeyStore</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.truststore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Path to the TrustStore</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.truststore.password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Password for the TrustStore</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registry"><a class="anchor" href="#_registry"></a>Registry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Assign your chosen implementation as shown in the example, providing configuration.</p>
+</div>
+<div class="sect2">
+<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"registry": {
+  "class": "io.apiman.gateway.engine.es.PollCachingESRegistry",
+  "config": {
+    // &lt;registry configuration&gt;
+  }
+},</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=&lt;IMPLEMENTATION&gt;</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Available implementations:</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Implementation</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.es.PollCachingESRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Recommended</strong>. Works well in multi-node setups.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.es.CachingESRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works well in single-node setups.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.es.ESRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only recommended for very low volume or test setups; causes remote calls to be issued on every request.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_required_parameters"><a class="anchor" href="#_required_parameters"></a>Required Parameters</h3>
+<div class="paragraph">
+<p>Refer also to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cache polling interval in seconds.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: 10
+<strong>Implementations</strong>: PollCachingESRegistry</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_optional_parameters"><a class="anchor" href="#_optional_parameters"></a>Optional Parameters</h3>
+<div class="paragraph">
+<p>Refer also to <a href="#_global_optional_parameters">Global Optional Parameters</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-startup-delay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Polling startup delay in seconds.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: 30
+<strong>Implementations</strong>: PollCachingESRegistry</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set the metrics implementation as shown.</p>
+</div>
+<div class="sect2">
+<h3 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"metrics": {
+  "class": "io.apiman.gateway.engine.es.ESMetrics",
+  "config": {
+    "client": {
+       "type": "jest",
+       "protocol": "${apiman.es.protocol}",
+       "host": "${apiman.es.host}",
+       "port": "${apiman.es.port}"
+       // &lt;metrics configuration&gt;
+     }
+   }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.metrics=io.apiman.gateway.engine.es.ESMetrics</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Available implementations:</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Implementation</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.es.ESMetrics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Batching ES metrics</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h3>
+<div class="paragraph">
+<p>Refer also to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queue.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Maximum metrics queue size</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: 10000</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">batch.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Maximum metrics batching size</p>
+</div>
+<div class="paragraph">
+<p><strong>Default Value</strong>: 1000</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_components"><a class="anchor" href="#_components"></a>Components</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_shared_state"><a class="anchor" href="#_shared_state"></a>Shared State</h3>
+<div class="paragraph">
+<p>Set shared state implementation as shown.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vert_x_3"><a class="anchor" href="#_vert_x_3"></a>Vert.x</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
+  // Shared State Component Settings
+  "ISharedStateComponent": {
+    "class": "io.apiman.gateway.engine.es.ESSharedStateComponent",
+    "config": {
+      "client": {
+        "type": "jest",
+        "protocol": "${apiman.es.protocol}",
+        "host": "${apiman.es.host}",
+        "port": "${apiman.es.port}"
+        //&lt;configuration options&gt;
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet_3"><a class="anchor" href="#_servlet_3"></a>Servlet</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=io.apiman.gateway.engine.es.ESSharedStateComponent
+apiman-gateway.components.ISharedStateComponent.client.type=jest
+# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_required_parameters_3"><a class="anchor" href="#_required_parameters_3"></a>Required Parameters</h4>
+<div class="paragraph">
+<p>Refer to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rate_limiter"><a class="anchor" href="#_rate_limiter"></a>Rate Limiter</h3>
+<div class="paragraph">
+<p>Set rate limiter implementation as shown.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vert_x_4"><a class="anchor" href="#_vert_x_4"></a>Vert.x</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
+  // Rate Limiter Component Settings
+  "IRateLimiterComponent": {
+    "class": "io.apiman.gateway.engine.es.ESRateLimiterComponent",
+    "config": {
+      "client": {
+        "type": "jest",
+        "protocol": "${apiman.es.protocol}",
+        "host": "${apiman.es.host}",
+        "port": "${apiman.es.port}"
+        // &lt;configuration options&gt;
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet_4"><a class="anchor" href="#_servlet_4"></a>Servlet</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
+apiman-gateway.components.IRateLimiterComponent.client.type=jest
+# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_required_parameters_4"><a class="anchor" href="#_required_parameters_4"></a>Required Parameters</h4>
+<div class="paragraph">
+<p>Refer to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cache_store"><a class="anchor" href="#_cache_store"></a>Cache Store</h3>
+<div class="paragraph">
+<p>Set cache store implementation as shown.</p>
+</div>
+<div class="sect3">
+<h4 id="_vert_x_5"><a class="anchor" href="#_vert_x_5"></a>Vert.x</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
+  // Cache Store Component Settings
+  "ICacheStoreComponent": {
+    "class": "io.apiman.gateway.engine.es.ESCacheStoreComponent",
+    "config": {
+      "client": {
+        "type": "jest",
+        "protocol": "${apiman.es.protocol}",
+        "host": "${apiman.es.host}",
+        "port": "${apiman.es.port}"
+        // &lt;configuration options&gt;
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_servlet_5"><a class="anchor" href="#_servlet_5"></a>Servlet</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
+apiman-gateway.components.IRateLimiterComponent.client.type=jest
+# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_required_parameters_5"><a class="anchor" href="#_required_parameters_5"></a>Required Parameters</h4>
+<div class="paragraph">
+<p>Refer to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
