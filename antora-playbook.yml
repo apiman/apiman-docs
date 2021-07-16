@@ -22,7 +22,7 @@ content:
     - url: https://github.com/apiman/apiman.git
       branches:
         - 1.x
-        - antora
+        - master
       start_path: docs
 
 ui:
