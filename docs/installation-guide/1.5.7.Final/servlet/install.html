@@ -7,6 +7,10 @@
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/servlet/install.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
     <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
     <script>var uiRootPath = '../../../_'</script>
@@ -24,6 +28,9 @@
         <span></span>
       </button>
     </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
@@ -627,9 +634,22 @@ You can find apiman on <a href="https://registry.hub.docker.com/repos/apiman/">D
 </main>
 </div>
 <footer class="footer">
-  <p>This page was built using the Antora default UI.</p>
-  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
 </footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
 <script src="../../../_/js/site.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
