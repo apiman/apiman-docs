@@ -33,6 +33,18 @@ jobs:
           ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}       
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
           
+      - name: Reindex Apiman docs with Algolia
+        run: >- 
+          docker run 
+          -e APPLICATION_ID=${{ secrets.ALGOLIA_APPLICATION_ID }}
+          -e API_KEY=${{ secrets.ALGOLIA_API_KEY }}
+          -e CONFIG=/docsearch/algolia-config.json 
+          -v $PWD:/docsearch:Z
+          --rm -t
+          algolia/docsearch-scraper:v1.15.0
+        env:
+          UPDATE_NB_HITS: true
+          
       - name: Commit Antora build to repository
         uses: EndBug/add-and-commit@v7.2.1
         with:
