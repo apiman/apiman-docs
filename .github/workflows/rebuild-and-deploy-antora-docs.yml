@@ -41,9 +41,9 @@ jobs:
           -e CONFIG=/docsearch/algolia-config.json 
           -v $PWD:/docsearch:Z
           --rm -t
-          algolia/docsearch-scraper:v1.15.0
+          algolia/docsearch-scraper:v1.16.0
         env:
-          UPDATE_NB_HITS: true
+          UPDATE_NB_HITS: "true"
           
       - name: Commit Antora build to repository
         uses: EndBug/add-and-commit@v7.2.1
