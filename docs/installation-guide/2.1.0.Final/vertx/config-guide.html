@@ -425,14 +425,22 @@ The following list defines the lookup sources and order of precedence for variab
     "class": "io.apiman.gateway.engine.es.PollCachingESRegistry", <i class="conum" data-value="1"></i><b>(1)</b>
     "config": {
       "client": {
-        "client": "jest",
-        "protocol": "${apiman.es.protocol}", <i class="conum" data-value="2"></i><b>(2)</b>
-        "host": "${apiman.es.host}",
-        "port": "${apiman.es.port}",
-        "initialize": true,
-        "username": "${apiman.es.username}",
-        "password": "${apiman.es.password}",
-        "timeout": "${apiman.es.timeout}"
+          "type": "es",
+          "protocol": "${apiman.es.protocol}", <i class="conum" data-value="2"></i><b>(2)</b>
+          "host": "${apiman.es.host}",
+          "port": "${apiman.es.port}",
+          "initialize": true,
+          "pollingTime": "${apiman.es.pollingTime}",
+          "username": "${apiman.es.username}",
+          "password": "${apiman.es.password}",
+          "timeout": "${apiman.es.timeout}"//,
+          // only for https
+          //"allowSelfSigned": "${apiman.es.allowSelfSigned}",
+          //"allowAnyHost": "${apiman.es.allowAnyHost}",
+          //"truststore.path": "${apiman.es.truststore.path}",
+          //"truststore.password": "${apiman.es.truststore.password}",
+          //"keystore.path": "${apiman.es.keystore.path}",
+          //"keystore.password": "${apiman.es.keystore.password}"
       }
     }
   }

@@ -397,7 +397,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <p>The Elasticsearch client type:</p>
 </div>
 <div class="paragraph">
-<p><strong>Default Value</strong>: jest</p>
+<p><strong>Default Value</strong>: es</p>
 </div></div></td>
 </tr>
 <tr>
@@ -484,7 +484,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.keystore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.keystore.path</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Path to the client KeyStore</p>
@@ -498,7 +498,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.truststore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.truststore.path</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Path to the TrustStore</p>
@@ -509,6 +509,27 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Password for the TrustStore</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.allowSelfSigned</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Trust self-signed certificates</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.allowAnyHost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Disbale hostname verification checks</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">client.pollingTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The timespan to try polling for elasticsearch</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -651,7 +672,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
   "class": "io.apiman.gateway.engine.es.ESMetrics",
   "config": {
     "client": {
-       "type": "jest",
+       "type": "es",
        "protocol": "${apiman.es.protocol}",
        "host": "${apiman.es.host}",
        "port": "${apiman.es.port}"
@@ -752,7 +773,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
     "class": "io.apiman.gateway.engine.es.ESSharedStateComponent",
     "config": {
       "client": {
-        "type": "jest",
+        "type": "es",
         "protocol": "${apiman.es.protocol}",
         "host": "${apiman.es.host}",
         "port": "${apiman.es.port}"
@@ -769,7 +790,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=io.apiman.gateway.engine.es.ESSharedStateComponent
-apiman-gateway.components.ISharedStateComponent.client.type=jest
+apiman-gateway.components.ISharedStateComponent.client.type=es
 # &lt;configuration options&gt;</code></pre>
 </div>
 </div>
@@ -796,7 +817,7 @@ apiman-gateway.components.ISharedStateComponent.client.type=jest
     "class": "io.apiman.gateway.engine.es.ESRateLimiterComponent",
     "config": {
       "client": {
-        "type": "jest",
+        "type": "es",
         "protocol": "${apiman.es.protocol}",
         "host": "${apiman.es.host}",
         "port": "${apiman.es.port}"
@@ -813,7 +834,7 @@ apiman-gateway.components.ISharedStateComponent.client.type=jest
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
-apiman-gateway.components.IRateLimiterComponent.client.type=jest
+apiman-gateway.components.IRateLimiterComponent.client.type=es
 # &lt;configuration options&gt;</code></pre>
 </div>
 </div>
@@ -839,7 +860,7 @@ apiman-gateway.components.IRateLimiterComponent.client.type=jest
     "class": "io.apiman.gateway.engine.es.ESCacheStoreComponent",
     "config": {
       "client": {
-        "type": "jest",
+        "type": "es",
         "protocol": "${apiman.es.protocol}",
         "host": "${apiman.es.host}",
         "port": "${apiman.es.port}"
@@ -856,7 +877,7 @@ apiman-gateway.components.IRateLimiterComponent.client.type=jest
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
-apiman-gateway.components.IRateLimiterComponent.client.type=jest
+apiman-gateway.components.IRateLimiterComponent.client.type=es
 # &lt;configuration options&gt;</code></pre>
 </div>
 </div>
