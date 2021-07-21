@@ -12,7 +12,11 @@ a| Day-to-day usage of Apiman, covering most topics including policies, plugins,
 
 a| Installing Apiman, and configuring it in a more production-ready way.
 
-|  xref:core::index.adoc[Development Guide]
+| xref:core:migration:migrations.adoc[Migration Guide]
+
+a| How to upgrade your installation of Apiman to a newer version.
+
+|  xref:core:development:Guide.adoc[Development Guide]
 
 a| For those wanting to extend Apiman's functionality or even embed Apiman in their own platform.
 
