@@ -171,6 +171,8 @@
 </div>
 <div class="sect2">
 <h3 id="_manual_action_required"><a class="anchor" href="#_manual_action_required"></a>Manual action required</h3>
+<div class="sect3">
+<h4 id="_fixing_pre_2_1_0_final_apiman_export_files"><a class="anchor" href="#_fixing_pre_2_1_0_final_apiman_export_files"></a>Fixing pre-2.1.0.Final Apiman export files</h4>
 <div class="paragraph">
 <p>In older versions of Apiman Manager export files were missing their Api Definition schemas (Swagger, OpenAPI, etc).</p>
 </div>
@@ -186,7 +188,7 @@
 <p>In the <code>apiman</code> folder you will find a file called <code>migration-assistant-cli.jar</code>.</p>
 </li>
 <li>
-<p>You can run the tool as follows:</p>
+<p>You can run the tool as follows. Note that it should be run against the <strong>older/existing installation</strong> (i.e. pre-2.1.0.Final):</p>
 </li>
 </ul>
 </div>
@@ -212,7 +214,7 @@
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Apiman Manager API endpoint, often this is your bound hostname followed by <code>/apiman</code>.</td>
+<td>Apiman Manager API endpoint of your <strong>old version of Apiman</strong>, often this is your bound hostname followed by <code>/apiman</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -226,6 +228,10 @@
 </div>
 <div class="paragraph">
 <p>This initial version of the migration assistant tool does nothing other than this enrichment operation.</p>
+</div>
+<div class="paragraph">
+<p>Once the operation is completed, you can import the file into Apiman 2.1.0.Final and the API definitions will be present.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
