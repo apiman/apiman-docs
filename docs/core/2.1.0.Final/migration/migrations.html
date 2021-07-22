@@ -169,8 +169,64 @@
 <div class="paragraph">
 <p>If upgrading to Apiman 2.1.0.Final from a prior version.</p>
 </div>
+<div class="sect2">
+<h3 id="_manual_action_required"><a class="anchor" href="#_manual_action_required"></a>Manual action required</h3>
 <div class="paragraph">
-<p>If you are not using Elasticsearch, then no special action is required.</p>
+<p>In older versions of Apiman Manager export files were missing their Api Definition schemas (Swagger, OpenAPI, etc).</p>
+</div>
+<div class="paragraph">
+<p>We have provided a migration assistant CLI tool in order to fix this.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Download an Apiman distro (e.g. Tomcat, Wildfly).</p>
+</li>
+<li>
+<p>In the <code>apiman</code> folder you will find a file called <code>migration-assistant-cli.jar</code>.</p>
+</li>
+<li>
+<p>You can run the tool as follows:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ java -jar migration-assistant-cli.jar export upgrade \
+  --username=admin <i class="conum" data-value="1"></i><b>(1)</b>
+  --password=admin123! <i class="conum" data-value="2"></i><b>(2)</b>
+  --endpoint=http://localhost:8080/apiman <i class="conum" data-value="3"></i><b>(3)</b>
+  --output=/home/myuser/fixed-export.json <i class="conum" data-value="4"></i><b>(4)</b>
+  --trust-all <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>An Apiman user with administrator privileges.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Password.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Apiman Manager API endpoint, often this is your bound hostname followed by <code>/apiman</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Where to write the enriched export JSON.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Whether to trust all certificates and hostnames (when using TLS).</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This initial version of the migration assistant tool does nothing other than this enrichment operation.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h3>
