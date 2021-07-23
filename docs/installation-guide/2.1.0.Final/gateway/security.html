@@ -67,59 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/install.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -324,7 +318,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The quickstart configurations should work out of the box, but they assume the locality of all components, including Keycloak.Real deployments will likely need to perform some reconfiguration.
+The quickstart configurations should work out of the box, but they assume the locality of all components, including Keycloak. Real deployments will likely need to perform some reconfiguration.
 </td>
 </tr>
 </table>
@@ -355,7 +349,7 @@ In other words, the Gateway REST API can only be invoked by a valid user, and th
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log into Keycloak (e.g. <a href="http://localhost:8080/auth" class="bare">http://localhost:8080/auth</a>).</p>
+<p>Log into Keycloak (e.g <a href="http://localhost:8080/auth" class="bare">http://localhost:8080/auth</a>).</p>
 </li>
 <li>
 <p><code>Clients</code> &#8594; <code>apiman-gateway-api</code> &#8594; <code>Installation</code>.</p>
@@ -378,14 +372,14 @@ In other words, the Gateway REST API can only be invoked by a valid user, and th
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues.You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.
+Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues. You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"auth": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"auth": {
   "type": "keycloak",
   "config": {
     "flowType": "PASSWORD",
@@ -447,7 +441,7 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 <p>Make changes to your config file</p>
 </li>
 <li>
-<p>(Re)start apiman!</p>
+<p>(Re)start Apiman!</p>
 </li>
 <li>
 <p>Configure one or more API to use MTLS</p>
@@ -470,7 +464,7 @@ In a production system, these keys should be issued by a trusted certificate aut
 <div class="paragraph">
 <p>A <strong>truststore</strong> typically contains a set of certificate authorities which are trusted issuers.
 Therefore, any certificate signed by the trusted CA would be trusted by the gateway.
-If no truststore is explicitly provided to apiman the
+If no truststore is explicitly provided to Apiman the
 <a href="https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/keytool.html#cacerts">default trusted certificates</a> provided by the JVM will be used.
 A typical use-case would be that an organization&#8217;s internal signing authority is marked as trusted within in the truststore, and as the authority has been used to sign the certificate material in the keystores, they will mutually trust each other by virtue of the issuer.</p>
 </div>
@@ -533,67 +527,87 @@ This means you must have server SSL certificates generated (and appropriate cert
 <ul>
 <li>
 <p>Gateway:</p>
-<div class="literalblock">
-<div class="content">
-<pre>keytool -genkey -keyalg RSA -keystore gateway_ks.jks -alias gateway
-keytool -export -alias gateway -file gateway.cer -keystore gateway_ks.jks</pre>
-</div>
-</div>
-</li>
-<li>
-<p>API A:</p>
-<div class="literalblock">
-<div class="content">
-<pre>keytool -genkey -keyalg RSA -keystore api_a_ks.jks -alias api_a
-keytool -export -alias api_a -file api_a.cer -keystore api_a_ks.jks</pre>
-</div>
-</div>
-</li>
-<li>
-<p>API B:</p>
-<div class="literalblock">
-<div class="content">
-<pre>keytool -genkey -keyalg RSA -keystore api_b_ks.jks -alias api_b
-keytool -export -alias api_b -file api_b.cer -keystore api_b_ks.jks</pre>
-</div>
-</div>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -genkey -keyalg RSA -keystore gateway_ks.jks -alias gateway
+keytool -export -alias gateway -file gateway.cer -keystore gateway_ks.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API A:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -genkey -keyalg RSA -keystore api_a_ks.jks -alias api_a
+keytool -export -alias api_a -file api_a.cer -keystore api_a_ks.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API B:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -genkey -keyalg RSA -keystore api_b_ks.jks -alias api_b
+keytool -export -alias api_b -file api_b.cer -keystore api_b_ks.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Import certificates into appropriate trust stores:</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Gateway:</p>
-<div class="literalblock">
-<div class="content">
-<pre>keytool -import -file api_a.cer -alias api_a -keystore gateway_ts.jks
-keytool -import -file api_b.cer -alias api_b -keystore gateway_ts.jks</pre>
-</div>
+</li>
+</ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -import -file api_a.cer -alias api_a -keystore gateway_ts.jks
+keytool -import -file api_b.cer -alias api_b -keystore gateway_ts.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>API A:</p>
-<div class="literalblock">
-<div class="content">
-<pre>keytool -import -file gateway.cer -alias gateway -keystore api_a_ts.jks</pre>
-</div>
-</div>
 </li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -import -file gateway.cer -alias gateway -keystore api_a_ts.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>API B:</p>
-<div class="literalblock">
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>keytool -import -file gateway.cer -alias gateway -keystore api_b_ts.jks</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -import -file gateway.cer -alias gateway -keystore api_b_ts.jks</code></pre>
 </div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>Now simply set the appropriate paths to the keystore and truststore in <code>apiman.properties</code> for the gateway, and set up your APIs with their respective truststores and keystores (the specifics of how to do this will depend on your API&#8217;s implementation).</p>
@@ -601,13 +615,13 @@ keytool -import -file api_b.cer -alias api_b -keystore gateway_ts.jks</pre>
 <div class="paragraph">
 <p>We will also set the following in <code>apiman.properties</code> to make our development easier:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>apiman-gateway.connector-factory.tls.allowAnyHost=true</pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.connector-factory.tls.allowAnyHost=true</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>When you add your MTLS protected APIs into apiman, you should set the <code>API Security</code> field to <code>MTLS/Two-Way-SSL</code>.</p>
+<p>When you add your MTLS protected APIs into Apiman via the web application, you should set the <code>API Security</code> field to <code>MTLS/Two-Way-SSL</code>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -666,7 +680,7 @@ Only the trusted CA needs to be in the truststore, and any certificates signed b
 Here is a summary of the properties:</p>
 </div>
 <div class="paragraph">
-<p>Omit any properties which are not relevant to you, with the exception of <code>trustStore</code>, which is mandatory for MTLS.</p>
+<p>Omit any properties which are not relevant to you, except <code>trustStore</code>, which is mandatory for MTLS.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -686,7 +700,7 @@ Best practice guides are <a href="https://www.owasp.org/">available at OWASP</a>
 <div class="listingblock">
 <div class="title">conf-es.json</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
   "connector-factory": {
     "class": "io.apiman.gateway.platforms.vertx3.connector.ConnectorFactory",
     "config": {

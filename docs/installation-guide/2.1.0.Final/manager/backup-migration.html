@@ -67,59 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/install.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -314,8 +308,8 @@
 <h2 id="_data_exportimport"><a class="anchor" href="#_data_exportimport"></a>Data Export/Import</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman has a feature that allows admin users to export all of the configuration data from the Manager into a single export file (JSON formatted).
-This exported file can then be edited (if necessary) and then imported into another instance of apiman.
+<p>Apiman has a feature that allows admin users to export all the configuration data from the Manager into a single export file (JSON formatted).
+This exported file can then be edited (if necessary) and then imported into another instance of Apiman.
 This feature attempts to address the following use-cases:</p>
 </div>
 <div class="ulist">
@@ -327,12 +321,12 @@ This feature attempts to address the following use-cases:</p>
 <p>Migrating between environments</p>
 </li>
 <li>
-<p>Upgrading apiman to a new version</p>
+<p>Upgrading Apiman to a new version</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Using the feature is simple - you must log into the apiman UI as an admin user, then navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.
+<p>Using the feature is simple - you must log into the Apiman UI as an admin user, then navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.
 From there you can export or import data.</p>
 </div>
 </div>
@@ -341,15 +335,15 @@ From there you can export or import data.</p>
 <h2 id="_backing_up_your_data"><a class="anchor" href="#_backing_up_your_data"></a>Backing Up Your Data</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are multiple strategies for backing up your apiman data, depending on the configuration you have chosen (e.g. whether you are using a Database or Elasticsearch to store your data).
-However, once approach to data backups that is consistent across all configurations is to use the Data Export feature of apiman to create a JSON file containing all of the apiman configuration data.</p>
+<p>There are multiple strategies for backing up your Apiman data, depending on the configuration you have chosen (e.g. whether you are using a Database or Elasticsearch to store your data).
+However, once approach to data backups that is consistent across all configurations is to use the Data Export feature of Apiman to create a JSON file containing all the Apiman configuration data.</p>
 </div>
 <div class="paragraph">
 <p>This can be done via the UI or via the following API Manager REST endpoint:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>https://HOST:PORT/apiman/system/export</code></pre>
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">https://HOST:PORT/apiman/system/export</code></pre>
 </div>
 </div>
 </div>
@@ -358,18 +352,18 @@ However, once approach to data backups that is consistent across all configurati
 <h2 id="_migrating_data_between_environments"><a class="anchor" href="#_migrating_data_between_environments"></a>Migrating Data Between Environments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Often times you may have a Test version of apiman deployed, as well as a Production version.
+<p>Often times you may have a Test version of Apiman deployed, as well as a Production version.
 Depending on your workflow, you may wish to configure your APIs in the Test environment and then migrate that configuration into Production (rather than having to re-create the same configuration in Production manually).
 This can be accomplished by Exporting data from Test and then importing it into Production.</p>
 </div>
 <div class="paragraph">
-<p>When doing this, note that the Export feature will export the entire set of configuration from apiman.
+<p>When doing this, note that the Export feature will export the entire set of configuration from Apiman.
 This may be precisely what you want, but many times only a subset of the data is desired.
 If this is the case, then you will need to edit the resulting JSON file to only include the data you wish to migrate.
 In the future, we hope to build tools that will make this editing of the exported file easier.</p>
 </div>
 <div class="paragraph">
-<p>Once you have edited the exported file, you can simply log into your production apiman instance and use the Export/Import UI page to import the data.</p>
+<p>Once you have edited the exported file, you can simply log into your production Apiman instance and use the Export/Import UI page to import the data.</p>
 </div>
 </div>
 </div>
@@ -377,7 +371,7 @@ In the future, we hope to build tools that will make this editing of the exporte
 <h2 id="_upgrading_to_a_new_apiman_version"><a class="anchor" href="#_upgrading_to_a_new_apiman_version"></a>Upgrading to a New Apiman Version</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Whenever you wish to upgrade from an old to a newer version of apiman, you will likely want to preserve all of the Plan, API, and Client App configurations you have created.</p>
+<p>Whenever you wish to upgrade from an old to a newer version of Apiman, you will likely want to preserve all the Plan, API, and Client App configurations you have created.</p>
 </div>
 <div class="paragraph">
 <p>To do this, you can follow these steps:</p>
@@ -385,24 +379,24 @@ In the future, we hope to build tools that will make this editing of the exporte
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Export all data from OLD VERSION of apiman</p>
+<p>Export all data from OLD VERSION of Apiman</p>
 </li>
 <li>
-<p>Shut down OLD VERSION of apiman</p>
+<p>Shut down OLD VERSION of Apiman</p>
 </li>
 <li>
-<p>Install NEW VERSION of apiman</p>
+<p>Install NEW VERSION of Apiman</p>
 </li>
 <li>
-<p>Start up NEW VERSION of apiman</p>
+<p>Start up NEW VERSION of Apiman</p>
 </li>
 <li>
-<p>Import data into NEW VERSION of apiman (data exported in step #1)</p>
+<p>Import data into NEW VERSION of Apiman (data exported in step #1)</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Once these steps are complete, you should have a new version of apiman running
+<p>Once these steps are complete, you should have a new version of Apiman running
 with all of your existing data.</p>
 </div>
 </div>
