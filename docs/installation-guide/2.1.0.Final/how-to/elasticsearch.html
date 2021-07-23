@@ -316,23 +316,23 @@
 <div class="paragraph">
 <p>The API Manager is configured (by default) to use JPA as the persistence technology for storing all of its data.  But this isn&#8217;t the only persistence technology supported.
 Another option is to use Elasticsearch.
-This section details how to set up apiman to use Elasticsearch instead of an RDBMS to store your API Manager data.</p>
+This section details how to set up Apiman to use Elasticsearch instead of an RDBMS to store your API Manager data.</p>
 </div>
 <div class="sect2">
 <h3 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download and install <a href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch</a></p>
+<p>Download and install <a href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch 7.x</a></p>
 </li>
 <li>
 <p>Make changes to <code>apiman.properties</code> to switch from JPA to Elasticsearch</p>
 </li>
 <li>
-<p>(Re)start apiman!</p>
+<p>(Re)start Apiman!</p>
 </li>
 <li>
-<p>Perform standard admin configuration of apiman (the database will of course be empty!)</p>
+<p>Perform standard admin configuration of Apiman (the database will of course be empty!)</p>
 </li>
 </ol>
 </div>
@@ -341,30 +341,29 @@ This section details how to set up apiman to use Elasticsearch instead of an RDB
 <h3 id="_download_and_install_elasticsearch"><a class="anchor" href="#_download_and_install_elasticsearch"></a>Download and install Elasticsearch</h3>
 <div class="paragraph">
 <p>This part is pretty easy - download the Elasticsearch software and get it running.
-A very good resource for this can be found here:</p>
+The Elasticsearch documentation provides <a href="http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html" target="_blank" rel="noopener">extensive guidance for this</a>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>An embedded instance of Elasticsearch is no longer included with Apiman.</p>
 </div>
 <div class="paragraph">
-<p><a href="http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html" class="bare">http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html</a></p>
+<p>Running <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html" target="_blank" rel="noopener">Elasticsearch using Docker</a> is a very convenient way to get started.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-As of apiman 1.1.4.Final, an instance of Elasticsearch is included in the default apiman distribution.
-You may use it as your API Manager persistence store.
-It is running on port 19200.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><code>docker run -p 19200:9200 -p 19300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:&lt;ES 7 version&gt;</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You may use it as your API Manager persistence store.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_make_changes_to_apiman_properties"><a class="anchor" href="#_make_changes_to_apiman_properties"></a>Make changes to <code>apiman.properties</code></h3>
 <div class="paragraph">
-<p>Once Elasticsearch is running smoothly, you must make some changes to the <strong><code>apiman.properties</code></strong> file in order to tell apiman to use ES instead of a database.
+<p>Once Elasticsearch is running smoothly, you must make some changes to the <strong><code>apiman.properties</code></strong> file in order to tell Apiman to use ES instead of a database.
 You should modify the <code>apiman.properties</code> file to have the following properties set:</p>
 </div>
 <div class="admonitionblock tip">
@@ -414,15 +413,15 @@ If you are using a standalone gateway instance you will need to configure it sep
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start apiman</h3>
+<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start Apiman</h3>
 <div class="paragraph">
-<p>If apiman was running, you should stop it now.
-Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start apiman up again.
+<p>If Apiman was running, you should stop it now.
+Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.
 It will pick up the new settings in <code>apiman.properties</code> and attempt to use Elasticsearch instead of the database!</p>
 </div>
 <div class="paragraph">
 <div class="title">Perform standard admin configuration</div>
-<p>Note that the apiman quickstart overlay ZIP comes pre-configured with a number of settings, including:</p>
+<p>Note that the Apiman quickstart overlay ZIP comes pre-configured with a number of settings, including:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -439,7 +438,7 @@ It will pick up the new settings in <code>apiman.properties</code> and attempt t
 </div>
 <div class="paragraph">
 <p>This built-in configuration will be lost when you switch from JPA to Elasticsearch.
-You will need to use the apiman admin UI to reconfigure these settings.
+You will need to use the Apiman admin UI to reconfigure these settings.
 Refer to the "System Administration" section of the User Guide for more information on this.</p>
 </div>
 </div>
@@ -449,9 +448,9 @@ Refer to the "System Administration" section of the User Guide for more informat
 <h2 id="_use_standalone_elasticsearch_instancecluster"><a class="anchor" href="#_use_standalone_elasticsearch_instancecluster"></a>Use standalone Elasticsearch instance/cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The apiman quickstart overlay ZIP ships by default with an embedded instance of Elasticsearch.
+<p>The Apiman quickstart overlay ZIP ships by default with an embedded instance of Elasticsearch.
 This is suitable for getting up and running quickly, but is not a good long term solution.
-Instead, users are encouraged to install a standalone instance of Elasticsearch and point apiman to it.</p>
+Instead, users are encouraged to install a standalone instance of Elasticsearch and point Apiman to it.</p>
 </div>
 <div class="sect2">
 <h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
@@ -464,7 +463,7 @@ Instead, users are encouraged to install a standalone instance of Elasticsearch 
 <p>Make changes to "apiman.properties" to point to your standalone Elasticsearch instance</p>
 </li>
 <li>
-<p>(Re)start apiman!</p>
+<p>(Re)start Apiman!</p>
 </li>
 </ol>
 </div>
@@ -482,10 +481,10 @@ A very good resource for this can be found here:</p>
 <div class="sect2">
 <h3 id="_make_changes_to_apiman_properties_2"><a class="anchor" href="#_make_changes_to_apiman_properties_2"></a>Make changes to "apiman.properties"</h3>
 <div class="paragraph">
-<p>Once Elasticsearch is running smoothly, you must make some minor changes to the <strong>apiman.properties</strong> file in order to tell apiman where your Elasticsearch instance is located.</p>
+<p>Once Elasticsearch is running smoothly, you must make some minor changes to the <strong>apiman.properties</strong> file in order to tell Apiman where your Elasticsearch instance is located.</p>
 </div>
 <div class="paragraph">
-<p>There are a set of global properties used for all apiman components that use Elasticsearch to load data.
+<p>There are a set of global properties used for all Apiman components that use Elasticsearch to load data.
 These properties are:</p>
 </div>
 <div class="listingblock">
@@ -502,10 +501,10 @@ apiman.es.password=</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restart_apiman_2"><a class="anchor" href="#_restart_apiman_2"></a>(Re)start apiman</h3>
+<h3 id="_restart_apiman_2"><a class="anchor" href="#_restart_apiman_2"></a>(Re)start Apiman</h3>
 <div class="paragraph">
-<p>If apiman was running, you should stop it now.
-Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start apiman up again.
+<p>If Apiman was running, you should stop it now.
+Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.
 It will pick up the new settings in <code>apiman.properties</code> and attempt to use Elasticsearch instead of Infinispan.</p>
 </div>
 </div>

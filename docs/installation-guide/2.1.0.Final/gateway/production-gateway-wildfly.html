@@ -314,7 +314,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The easiest way to install just the API Gateway is to download and install the apiman quickstart overlay ZIP and then remove the extraneous components.
+<p>The easiest way to install just the API Gateway is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.
 Follow that up with some modification of the <code>apiman.properties</code> configuration file, and you&#8217;ll be Gatewaying in no time!</p>
 </div>
 <div class="paragraph">
@@ -323,21 +323,21 @@ Follow that up with some modification of the <code>apiman.properties</code> conf
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download and unpack WildFly 10</p>
+<p>Download and unpack WildFly</p>
 </li>
 <li>
-<p>Download apiman</p>
+<p>Download Apiman</p>
 </li>
 <li>
-<p>Unpack apiman into WildFly 10</p>
+<p>Unpack Apiman into WildFly</p>
 </li>
 <li>
-<p>Remove unused apiman deployments from standalone/deployments</p>
+<p>Remove unused Apiman deployments from standalone/deployments</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Which apiman deployments should you delete?  These:</p>
+<p>Which Apiman deployments should you delete?  These:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -353,7 +353,7 @@ standalone/deployments/apimanui.war</code></pre>
 <h2 id="_disabling_the_keycloak_server"><a class="anchor" href="#_disabling_the_keycloak_server"></a>Disabling the Keycloak Server</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the apiman quickstart overlay ZIP.</p>
+<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the Apiman quickstart overlay ZIP.</p>
 </div>
 <div class="paragraph">
 <p>To do that, <strong>remove</strong> the following subsystem from the <code>standalone-apiman.xml</code> file:</p>
@@ -375,7 +375,7 @@ standalone/deployments/apimanui.war</code></pre>
 This API is protected by Keycloak authentication.</p>
 </div>
 <div class="paragraph">
-<p>The configuration included in the apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you&#8217;ll need to modify the <code>standalone-apiman.xml</code> file to point to the remote Keycloak instance.</p>
+<p>The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you&#8217;ll need to modify the <code>standalone-apiman.xml</code> file to point to the remote Keycloak instance.</p>
 </div>
 <div class="paragraph">
 <p>Here is the relevant portion of the <code>standalone-apiman.xml</code> file that you must change:</p>

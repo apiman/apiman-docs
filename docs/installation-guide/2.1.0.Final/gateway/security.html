@@ -410,7 +410,7 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 <div class="sect3">
 <h4 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h4>
 <div class="paragraph">
-<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it. This API is protected by Keycloak authentication. The configuration included in the apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you’ll need to modify the standalone-apiman.xml file to point to the remote Keycloak instance.</p>
+<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it. This API is protected by Keycloak authentication. The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you’ll need to modify the standalone-apiman.xml file to point to the remote Keycloak instance.</p>
 </div>
 <div class="paragraph">
 <p>Here is the relevant portion of the <strong>standalone-apiman.xml</strong> file that you must change:</p>
@@ -434,7 +434,7 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 <h2 id="_mtls_mutual_ssl_endpoint_security"><a class="anchor" href="#_mtls_mutual_ssl_endpoint_security"></a>MTLS (Mutual SSL) Endpoint Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you wish to use mutual SSL to ensure endpoint security between the apiman API Gateway and your back-end API(s), you must update some settings.</p>
+<p>If you wish to use mutual SSL to ensure endpoint security between the Apiman API Gateway and your back-end API(s), you must update some settings.</p>
 </div>
 <div class="sect2">
 <h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
@@ -782,16 +782,16 @@ apiman-gateway.connector-factory.tls.allowSelfSigned=false</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start apiman</h3>
+<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start Apiman</h3>
 <div class="paragraph">
-<p>If apiman was running, you should stop it now.
-Once everything is shutdown, and the changes to apiman.properties have been made, go ahead and start apiman up again.</p>
+<p>If Apiman was running, you should stop it now.
+Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_configure_one_or_more_api_to_use_mtls"><a class="anchor" href="#_configure_one_or_more_api_to_use_mtls"></a>Configure one or more API to use MTLS</h3>
 <div class="paragraph">
-<p>Now that the apiman MTLS feature has been configured, use the Manager UI to enable MTLS in one or more API.
+<p>Now that the Apiman MTLS feature has been configured, use the Manager UI to enable MTLS in one or more API.
 This can be done on the "Implementation" tab when you are configuring the details of your back-end endpoint (URL, type, and endpoint security).</p>
 </div>
 </div>
