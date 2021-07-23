@@ -327,38 +327,38 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This chapter explores downloading and installing the apiman quickstarts which consists of both the <em>apiman manager and UI</em> and <em>apiman gateway</em>.</p>
+<p>This chapter explores downloading and installing the Apiman quickstarts which consists of both the <em>Apiman Manager and UI</em> and <em>Apiman Gateway</em>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installing_in_wildfly_10"><a class="anchor" href="#_installing_in_wildfly_10"></a>Installing in WildFly 10</h2>
+<h2 id="_installing_in_wildfly"><a class="anchor" href="#_installing_in_wildfly"></a>Installing in WildFly</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The apiman primarily targets WildFly 10 as a runtime environment.
-In order to install apiman you will need to download both WildFly 10 and the apiman overlay distribution.
+<p>Apiman can target WildFly as a runtime environment.
+In order to install Apiman you will need to download both WildFly and the Apiman overlay distribution.
 Once both are downloaded, it&#8217;s a simple matter of unpacking both into the same location.</p>
 </div>
 <div class="sect2">
 <h3 id="_download"><a class="anchor" href="#_download"></a>Download</h3>
 <div class="paragraph">
-<p>First you will need to download both WildFly 10 and apiman:</p>
+<p>First you will need to download both WildFly and Apiman:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://download.jboss.org/wildfly/10.1.0.Final/{{" class="bare">http://download.jboss.org/wildfly/10.1.0.Final/{{</a> book.wildfly10.version }}.zip[Download WildFly 10]</p>
+<p><a href="http://download.jboss.org/wildfly/10.1.0.Final/20.0.1.Final.zip">Download WildFly</a></p>
 </li>
 <li>
-<p><a href="http://downloads.jboss.org/apiman/{{" class="bare">http://downloads.jboss.org/apiman/{{</a> book.apiman.version.release }}/apiman-distro-wildfly10-{{ book.apiman.version.release }}-overlay.zip[Download apiman {{ book.apiman.version.release }}]</p>
+<p><a href="http://downloads.jboss.org/apiman/2.1.0.Final/apiman-distro-wildfly-2.1.0.Final-overlay.zip">Download Apiman 2.1.0.Final</a></p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl http://download.jboss.org/wildfly/{{ book.wildfly10.version }}/wildfly-{{ book.wildfly10.version }}.zip -o wildfly-{{ book.wildfly10.version }}.zip
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl http://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip -o wildfly-20.0.1.Final.zip
 
-curl http://downloads.jboss.org/apiman/{{ book.apiman.version.release }}/apiman-distro-wildfly10-{{ book.apiman.version.release }}-overlay.zip -o apiman-distro-wildfly10-{{ book.apiman.version.release }}-overlay.zip</code></pre>
+curl https://github.com/apiman/apiman/releases/download/2.1.0.Final/apiman-distro-wildfly-2.1.0.Final-overlay.zip</code></pre>
 </div>
 </div>
 </div>
@@ -369,200 +369,43 @@ curl http://downloads.jboss.org/apiman/{{ book.apiman.version.release }}/apiman-
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>unzip {{ book.wildfly10.version }}.zip
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">unzip wildfly-20.0.1.Final.zip
 
-unzip -o apiman-distro-wildfly10-{{ book.apiman.version.release }}-overlay.zip -d {{ book.wildfly10.version }}</code></pre>
+unzip -o apiman-distro-wildfly-2.1.0.Final-overlay.zip -d 20.0.1.Final</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_run_wildfly_10"><a class="anchor" href="#_run_wildfly_10"></a>Run WildFly 10</h3>
+<h3 id="_run_wildfly"><a class="anchor" href="#_run_wildfly"></a>Run WildFly</h3>
 <div class="paragraph">
-<p>The apiman overlay contains everything needed to run apiman, including:</p>
+<p>The Apiman overlay contains everything needed to run Apiman, including:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>apiman binaries (several WAR files)</p>
+<p>Apiman binaries (several WAR files)</p>
 </li>
 <li>
-<p>apiman-specific WildFly 10 configuration (<strong>standalone-apiman.xml</strong>)</p>
+<p>Apiman-specific WildFly configuration (<strong>standalone-apiman.xml</strong>)</p>
 </li>
 <li>
-<p>apiman RDBMS datasource (h2)</p>
+<p>Apiman RDBMS datasource (h2)</p>
 </li>
 <li>
 <p>pre-configured <strong>admin</strong> user with password <strong>admin123!</strong></p>
 </li>
 <li>
-<p>pre-configured h2 database for the API Manager (populated with default values)</p>
-</li>
-<li>
-<p>embedded Elasticsearch instance for metrics and gateway storage</p>
+<p>pre-configured h2 database (populated with default values)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>For this reason, there is no additional configuration required to run apiman.
-Simply start up WildFly using the apiman configuration file:</p>
+<p>For this reason, there is no additional configuration required to run Apiman.
+Simply start up WildFly using the Apiman configuration file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>cd {{ book.wildfly10.version }}
-./bin/standalone.sh -c standalone-apiman.xml</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installing_in_wildfly_9"><a class="anchor" href="#_installing_in_wildfly_9"></a>Installing in WildFly 9</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The apiman project can target WildFly 9 as a runtime environment.
-In order to install apiman you will need to download both WildFly 9 and the apiman overlay distribution.
-Once both are downloaded, it&#8217;s a simple matter of unpacking both into the same location.</p>
-</div>
-<div class="sect2">
-<h3 id="_download_2"><a class="anchor" href="#_download_2"></a>Download</h3>
-<div class="paragraph">
-<p>First you will need to download both WildFly 9 and apiman:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://download.jboss.org/wildfly/{{" class="bare">http://download.jboss.org/wildfly/{{</a> book.wildfly9.version }}/wildfly-{{ book.wildfly9.version }}.zip[Download WildFly 9]</p>
-</li>
-<li>
-<p><a href="http://downloads.jboss.org/apiman/{{" class="bare">http://downloads.jboss.org/apiman/{{</a> book.apiman.version.release }}/apiman-distro-wildfly9-{{ book.apiman.version.release }}-overlay.zip[Download apiman {{ book.apiman.version.release }}]</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>curl http://download.jboss.org/wildfly/{{ book.wildfly9.version }}/wildfly-{{ book.wildfly9.version }}.zip -o wildfly-{{ book.wildfly9.version }}.zip
-
-curl http://downloads.jboss.org/apiman/{{ book.apiman.version.release }}/apiman-distro-wildfly9-{{ book.apiman.version.release }}-overlay.zip -o apiman-distro-wildfly9-{{ book.apiman.version.release }}-overlay.zip</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_unpack_2"><a class="anchor" href="#_unpack_2"></a>Unpack</h3>
-<div class="paragraph">
-<p>Once both files have been downloaded, simply unpack both in the same location.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>unzip wildfly-{{ book.wildfly9.version }}.zip
-
-unzip -o apiman-distro-wildfly9-{{ book.apiman.version.release }}-overlay.zip -d wildfly-{{ book.wildfly9.version }}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_run_wildfly_9"><a class="anchor" href="#_run_wildfly_9"></a>Run WildFly 9</h3>
-<div class="paragraph">
-<p>The apiman overlay contains everything needed to run apiman, including:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>apiman binaries (several WAR files)</p>
-</li>
-<li>
-<p>apiman-specific WildFly 9 configuration (<strong>standalone-apiman.xml</strong>)</p>
-</li>
-<li>
-<p>apiman RDBMS datasource (h2)</p>
-</li>
-<li>
-<p>pre-configured <strong>admin</strong> user with password <strong>admin123!</strong></p>
-</li>
-<li>
-<p>pre-configured h2 database for the API Manager (populated with default values)</p>
-</li>
-<li>
-<p>embedded Elasticsearch instance for metrics and gateway storage</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For this reason, there is no additional configuration required to run apiman.  Simply start up
-WildFly using the apiman configuration file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>cd wildfly-{{ book.wildfly9.version }}
-./bin/standalone.sh -c standalone-apiman.xml</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installing_in_jboss_eap_7"><a class="anchor" href="#_installing_in_jboss_eap_7"></a>Installing in JBoss EAP 7</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you prefer to run apiman on a Red Hat supported application server, you can install it into JBoss EAP 7.
-In order to install apiman you will need to download both EAP and the apiman overlay distribution.
-Once both are downloaded, it&#8217;s a simple matter of unpacking both into the same location.</p>
-</div>
-<div class="sect2">
-<h3 id="_download_3"><a class="anchor" href="#_download_3"></a>Download</h3>
-<div class="paragraph">
-<p>First you will need to download both EAP 7 and apiman:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://www.jboss.org/products/eap/download/">Download EAP 7</a></p>
-</li>
-<li>
-<p><a href="http://downloads.jboss.org/apiman/{{" class="bare">http://downloads.jboss.org/apiman/{{</a> book.apiman.version.release }}/apiman-distro-eap7-{{ book.apiman.version.release }}-overlay.zip[Download apiman {{ book.apiman.version.release }}]</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_unpack_3"><a class="anchor" href="#_unpack_3"></a>Unpack</h3>
-<div class="paragraph">
-<p>Once both files have been downloaded, simply unpack both in the same location (see the instructions for WildFly above).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_run_eap_7"><a class="anchor" href="#_run_eap_7"></a>Run EAP 7</h3>
-<div class="paragraph">
-<p>The apiman overlay contains everything needed to run apiman, including:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>apiman binaries (several WAR files)</p>
-</li>
-<li>
-<p>apiman-specific EAP configuration (<strong>standalone-apiman.xml</strong>)</p>
-</li>
-<li>
-<p>apiman RDBMS datasource (h2)</p>
-</li>
-<li>
-<p>pre-configured <strong>admin</strong> user with password <strong>admin123!</strong></p>
-</li>
-<li>
-<p>pre-configured h2 database for the API Manager (populated with default values)</p>
-</li>
-<li>
-<p>embedded Elasticsearch instance for metrics and gateway storage</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For this reason, there is no additional configuration required to run apiman.
-Simply start up EAP using the apiman configuration file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>cd jboss-eap*
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-20.0.1.Final
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
 </div>
@@ -573,13 +416,13 @@ Simply start up EAP using the apiman configuration file:</p>
 <h2 id="_installing_using_docker"><a class="anchor" href="#_installing_using_docker"></a>Installing using Docker</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Another option when installing apiman is to use our docker image.
-You&#8217;re probably pretty familiar with docker if you&#8217;re going that route, but here is an example of how to start up the apiman docker image:</p>
+<p>Another option when installing Apiman is to use our docker image.
+You&#8217;re probably pretty familiar with docker if you&#8217;re going that route, but here is an example of how to start up the Apiman docker image:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>docker pull jboss/apiman-wildfly
-docker run -it -p 8080:8080 -p 8443:8443 jboss/apiman-wildfly</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull apiman/on-wildfly:2.1.0.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.0.Final</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -589,7 +432,7 @@ docker run -it -p 8080:8080 -p 8443:8443 jboss/apiman-wildfly</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You can find apiman on <a href="https://registry.hub.docker.com/repos/apiman/">Docker Hub</a>.
+You can find Apiman on <a href="https://registry.hub.docker.com/repos/apiman/">Docker Hub</a>.
 </td>
 </tr>
 </table>
@@ -600,11 +443,11 @@ You can find apiman on <a href="https://registry.hub.docker.com/repos/apiman/">D
 <h2 id="_logging_in"><a class="anchor" href="#_logging_in"></a>Logging In</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once apiman is running, you should be able to log in to the API Manager by pointing your browser at the following URL:</p>
+<p>Once Apiman is running, you should be able to log in to the API Manager by pointing your browser at the following URL:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>http://localhost:8080/apimanui/</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/apimanui/</code></pre>
 </div>
 </div>
 <div class="paragraph">
