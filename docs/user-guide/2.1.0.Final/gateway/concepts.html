@@ -77,7 +77,7 @@
     <a class="nav-link" href="policies.html#_basic_authentication_policy">BASIC Auth</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="policies.html#_caching_policy_depracted">Caching Policy (Deprecated)</a>
+    <a class="nav-link" href="policies.html#_caching_policy_deprecated">Caching Policy (Deprecated)</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="policies.html#_caching_resources_policy">Caching Resources Policy</a>
@@ -86,7 +86,7 @@
     <a class="nav-link" href="policies.html#_cors_policy">CORS</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="policies.html#_header-allow-deny-policy">Header Allow/Deny</a>
+    <a class="nav-link" href="policies.html#_header_allowdeny">Header Allow/Deny</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="policies.html#_http_security_policy">HTTP Security</a>
@@ -272,10 +272,10 @@
 <h2 id="_api_gateway"><a class="anchor" href="#_api_gateway"></a>API Gateway</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The runtime layer of apiman consists of a small, lightweight and embeddable API Gateway, which is responsible for applying the policies configured in the API Manager to all requests to managed APIs.</p>
+<p>The runtime layer of Apiman consists of a small, lightweight and embeddable API Gateway, which is responsible for applying the policies configured in the API Manager to all requests to managed APIs.</p>
 </div>
 <div class="paragraph">
-<p>The apiman gateway is distributed in two main versions:</p>
+<p>The Apiman gateway is distributed in two main versions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -312,7 +312,7 @@ The API provides the following basic capabilities:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Typically the API Manager is used to manage the configuration of various APIs and client apps within the scope of one or more Organizations.
+<p>Typically, the API Manager is used to manage the configuration of various APIs and client apps within the scope of one or more Organizations.
 At various times during the management of these entities, the user of the API Manager will 'Publish' an API or 'Register' a Client App.
 When this action occurs, the API Manager invokes one of the relevant API Gateway configuration endpoints listed above.</p>
 </div>
@@ -327,15 +327,13 @@ A managed API can be invoked as though the back-end API were being invoked direc
 <p>The specific endpoint to use in order to invoke a particular API can be different based on the Gateway implementation.
 However, typically the endpoint format is:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/" class="bare">http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/</a></p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Note that all path segments beyond the {version} segment will be proxied on to the back-end API endpoint.
+<p>Note that all path segments beyond the <code>{version}</code> segment will be proxied on to the back-end API endpoint.
 Additionally, all HTTP headers and all query parameters (except for the API Key) will also be proxied to the back-end API.</p>
 </div>
 <div class="paragraph">
@@ -368,7 +366,7 @@ Additionally, all HTTP headers and all query parameters (except for the API Key)
 <h3 id="_recording_metrics"><a class="anchor" href="#_recording_metrics"></a>Recording Metrics</h3>
 <div class="paragraph">
 <p>The API Gateway is typically configured to record each request made to it into a metrics storage system of some kind.
-By default apiman will use an included Elasticsearch instance to store this information.
+By default, Apiman will use an included Elasticsearch instance to store this information.
 Various pieces of information about each request is included in the record, including but not necessarily limited to the following:</p>
 </div>
 <div class="ulist">
