@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../vertx/download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -322,55 +304,11 @@
 </aside>
 <article class="doc">
 <h1 class="page">Apiman Manager Production Guide</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_deployment_tooling_for_apiman">Deployment Tooling for apiman</a></li>
-<li><a href="#_database">Database</a></li>
-<li><a href="#_installation">Installation</a></li>
-<li><a href="#_configuration">Configuration</a>
-<ul class="sectlevel2">
-<li><a href="#_disabling_the_keycloak_server">Disabling the Keycloak Server</a></li>
-<li><a href="#_connecting_to_the_database">Connecting to the Database</a></li>
-<li><a href="#_point_the_api_manager_to_the_api_gateway">Point the API Manager to the API Gateway</a></li>
-<li><a href="#_configuring_keycloak_authentication_for_the_manager_api_and_ui">Configuring Keycloak Authentication for the Manager API and UI</a></li>
-<li><a href="#_pointing_the_api_manager_to_a_remote_elasticsearch">Pointing the API Manager to a Remote Elasticsearch</a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="sect1">
-<h2 id="_deployment_tooling_for_apiman"><a class="anchor" href="#_deployment_tooling_for_apiman"></a>Deployment Tooling for apiman</h2>
+<h2 id="_deployment_tooling_for_apiman"><a class="anchor" href="#_deployment_tooling_for_apiman"></a>Deployment Tooling for Apiman</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide should serve as a guide to manually deploy apiman into production.  However, we also offer a simple shell script that can do much of the work for you.
-It will likely always be a work in progress, so many production deployers may not feel comfortable using it.
-However, it can currently install the following components:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Elasticsearch (1.x)</p>
-</li>
-<li>
-<p>Keycloak (1.7.0)</p>
-</li>
-<li>
-<p>API Manager</p>
-</li>
-<li>
-<p>API Gateway</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You can find the apiman production deployer here:</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/apiman/apiman-deployer/tree/1.2.9.Final" class="bare">https://github.com/apiman/apiman-deployer/tree/1.2.9.Final</a></p>
-</div>
-<div class="paragraph">
-<p>Simply download that script and run it on each of the machines you wish to install the various apiman components!</p>
+<p>This guide should serve as a guide to manually deploy Apiman into production.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -379,7 +317,7 @@ However, it can currently install the following components:</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The production guide assumes you are installing into WildFly 10.
+The production guide assumes you are installing into WildFly.
 The instructions are slightly different if you are using some other platform (Tomcat, older WildFly versions, EAP 7).
 </td>
 </tr>
@@ -391,7 +329,7 @@ The instructions are slightly different if you are using some other platform (To
 <h2 id="_database"><a class="anchor" href="#_database"></a>Database</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You have a number of persistence options in both Keycloak and apiman, but this guide will focus on using an RDBMS instead of other options (e.g. Elasticsearch for apiman or MongoDB for KC).</p>
+<p>You have a number of persistence options in both Keycloak and Apiman, but this guide will focus on using an RDBMS instead of other options (e.g. Elasticsearch for Apiman or MongoDB for KC).</p>
 </div>
 <div class="paragraph">
 <p>On a separate server, install a production ready database such as MySQL, Oracle, or PostgreSQL.
@@ -400,10 +338,10 @@ You will want to create two schemas/databases:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>keycloak</p>
+<p><code>keycloak</code></p>
 </li>
 <li>
-<p>apiman</p>
+<p><code>apiman</code></p>
 </li>
 </ul>
 </div>
@@ -414,7 +352,7 @@ We recommend using two different users and permissioning them appropriately (e.g
 <div class="paragraph">
 <p>After creating the ‘apiman' database, you can initialize it using the appropriate DDL for the database you selected.
 We currently support MySQL 5, Oracle 12, and PostgreSQL 9.
-The DDLs for these databases can be found in the quickstart overlay ZIP file, or you can grab them directly from github.</p>
+The DDLs for these databases can be found in the quickstart overlay ZIP file, or you can grab them directly from GitHub.</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>
@@ -423,7 +361,7 @@ The DDLs for these databases can be found in the quickstart overlay ZIP file, or
 <p><a href="https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls" class="bare">https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls</a></p>
 </div>
 <div class="paragraph">
-<p>Make sure you grab the right one for whichever version of apiman you are going to be installing (<strong>hint</strong>: use the appropriate github tag).</p>
+<p>Make sure you grab the right one for whichever version of Apiman you are going to be installing (<strong>hint</strong>: use the appropriate GitHub tag).</p>
 </div>
 </div>
 </div>
@@ -431,7 +369,7 @@ The DDLs for these databases can be found in the quickstart overlay ZIP file, or
 <h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The easiest way to install just the API Manager is to download and install the apiman quickstart overlay ZIP and then remove the extraneous components.
+<p>The easiest way to install just the API Manager is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.
 Follow that up with a few configuration modifications, and you should have the Manager running in no time!</p>
 </div>
 <div class="paragraph">
@@ -440,27 +378,27 @@ Follow that up with a few configuration modifications, and you should have the M
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download and unpack WildFly 10</p>
+<p>Download and unpack WildFly</p>
 </li>
 <li>
-<p>Download apiman</p>
+<p>Download Apiman</p>
 </li>
 <li>
-<p>Unpack apiman into WildFly 10</p>
+<p>Unpack Apiman into WildFly</p>
 </li>
 <li>
-<p>Remove unused apiman deployments from standalone/deployments</p>
+<p>Remove unused Apiman deployments from standalone/deployments</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Which apiman deployments should you delete?  These:</p>
+<p>Which Apiman deployments should you delete? These:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>standalone/deployments/apiman-es.war
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">standalone/deployments/apiman-es.war
 standalone/deployments/apiman-gateway-api.war
-standalone/deployments/apiman-gateway.war</pre>
+standalone/deployments/apiman-gateway.war</code></pre>
 </div>
 </div>
 </div>
@@ -471,7 +409,7 @@ standalone/deployments/apiman-gateway.war</pre>
 <div class="sect2">
 <h3 id="_disabling_the_keycloak_server"><a class="anchor" href="#_disabling_the_keycloak_server"></a>Disabling the Keycloak Server</h3>
 <div class="paragraph">
-<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the apiman quickstart overlay ZIP.
+<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the Apiman quickstart overlay ZIP.
 To do that, make the following modification to the <strong>standalone-apiman.xml</strong> file:</p>
 </div>
 <div class="listingblock">
@@ -502,7 +440,7 @@ The following must be done in order to connect to your database:</p>
 <p>Update the <strong>apiman-ds.xml</strong> datasource file (to point it at your database)</p>
 </li>
 <li>
-<p>Update the hibernate dialect in <strong>apiman.properties</strong></p>
+<p>Update the Hibernate dialect in <strong>apiman.properties</strong></p>
 </li>
 </ul>
 </div>
@@ -536,7 +474,7 @@ Examples of appropriate datasource files for mysql and postgresql can be found h
 <p>These examples are also included in the apiman quickstart overlay ZIP download.</p>
 </div>
 <div class="paragraph">
-<p>Finally you must update the <strong>apiman.properties</strong> file to configure the hibernate dialect for your database.
+<p>Finally, you must update the <strong>apiman.properties</strong> file to configure the Hibernate dialect for your database.
 Apiman includes specific dialects that should be used when installing your database via the included DDL files:</p>
 </div>
 <div class="ulist">
@@ -558,9 +496,9 @@ Apiman includes specific dialects that should be used when installing your datab
 <div class="paragraph">
 <p>For example, here is the line you should change in the <strong>apiman.properties</strong> file:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>apiman.hibernate.dialect=io.apiman.manager.api.jpa.ApimanH2Dialect</pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.hibernate.dialect=io.apiman.manager.api.jpa.ApimanH2Dialect</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -641,17 +579,17 @@ Therefore, the API Manager and API Gateway must talk to the same Elasticsearch i
 <div class="paragraph">
 <p>To configure Elasticsearch for the API Manager, modify these properties in the <strong>apiman.properties</strong> file:</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>apiman.es.protocol=http
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
 apiman.es.host=es.myorg.com
 apiman.es.port=9200
 apiman.es.username=es_admin
-apiman.es.password=es_admin_password</pre>
+apiman.es.password=es_admin_password</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Obviously you will need to replace the values in the properties above with those appropriate for your installation of Elasticsearch.</p>
+<p>You will need to replace the values in the properties above with those appropriate for your installation of Elasticsearch.</p>
 </div>
 </div>
 </div>

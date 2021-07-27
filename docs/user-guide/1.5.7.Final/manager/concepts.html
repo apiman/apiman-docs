@@ -77,7 +77,7 @@
     <a class="nav-link" href="../gateway/policies.html#_basic_authentication_policy">BASIC Auth</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/policies.html#_caching_policy_depracted">Caching Policy (Deprecated)</a>
+    <a class="nav-link" href="../gateway/policies.html#_caching_policy_deprecated">Caching Policy (Deprecated)</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../gateway/policies.html#_caching_resources_policy">Caching Resources Policy</a>
@@ -86,7 +86,7 @@
     <a class="nav-link" href="../gateway/policies.html#_cors_policy">CORS</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/policies.html#_header-allow-deny-policy">Header Allow/Deny</a>
+    <a class="nav-link" href="../gateway/policies.html#_header_allowdeny">Header Allow/Deny</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../gateway/policies.html#_http_security_policy">HTTP Security</a>
@@ -273,7 +273,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are two layers to the API management project. There is an API Manager which allows end users to
-centrally manage their APIs. Additionally there is an API Gateway which is responsible for applying those
+centrally manage their APIs. Additionally, there is an API Gateway which is responsible for applying those
 policies to API requests.</p>
 </div>
 <div class="paragraph">
@@ -598,12 +598,12 @@ API that the API Gateway will proxy to if all the policies are successfully appl
 </div>
 <div class="paragraph">
 <p>The 'Implementation' tab is primarily used to configure the details of the back-end API that
-apiman will proxy to at runtime.  You must configure the following:</p>
+Apiman will proxy to at runtime.  You must configure the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Endpoint URL</strong> - The URL that apiman will use to proxy a request made for this API.</p>
+<p><strong>Endpoint URL</strong> - The URL that Apiman will use to proxy a request made for this API.</p>
 </li>
 <li>
 <p><strong>Endpoint Type</strong> - Currently either REST or SOAP (not presently used, future information)</p>
@@ -622,11 +622,11 @@ API.  Please note that BASIC authentication is not ideal, and especially insecur
 using SSL/HTTPS to connect to the back end API.</p>
 </div>
 <div class="paragraph">
-<p>If the apiman administrator has configured multiple Gateways (see the "System Administration / Gateways"
+<p>If the Apiman administrator has configured multiple Gateways (see the "System Administration / Gateways"
 section below), then the 'Implementation' tab will also include an option that will let
 you choose which Gateway(s) to use when publishing.  You may select one or more Gateway
 in this case.  If you choose multiple Gateways, then when you click the 'Publish' button,
-apiman will publish the API to <strong>all</strong> of the selected Gateways.</p>
+Apiman will publish the API to <strong>all</strong> the selected Gateways.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -743,7 +743,7 @@ ways.</p>
 <div class="sect3">
 <h4 id="_importing_apis"><a class="anchor" href="#_importing_apis"></a>Importing API(s)</h4>
 <div class="paragraph">
-<p>As an alternative to manually creating and configuring an API, apiman also supports importing
+<p>As an alternative to manually creating and configuring an API, Apiman also supports importing
 an API from a globally configured API Catalog.</p>
 </div>
 <div class="admonitionblock tip">
@@ -753,14 +753,14 @@ an API from a globally configured API Catalog.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The API Catalog is configured by the apiman system administrator/installer.  See the
+The API Catalog is configured by the Apiman system administrator/installer.  See the
 installation guide for more information about how to configure a custom API Catalog.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>An API can be imported into apiman in one of two ways.  First, from the Organization&#8217;s "APIs"
+<p>An API can be imported into Apiman in one of two ways.  First, from the Organization&#8217;s "APIs"
 tab you can click the down-arrow next to the "New API" button and choose the "Import API(s)"
 option.  This results in a wizard that will guide you through importing one or more API
 from the catalog into the Organization.  This wizard will allow you to search for, find, and

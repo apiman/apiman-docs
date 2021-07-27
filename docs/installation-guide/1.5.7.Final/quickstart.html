@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="vertx/download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -351,7 +333,7 @@ This quickstart separates those elements, with the Gateway implemented in Vert.x
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Select and download a <a href="servlet/install.html" class="page">Servlet all-in-one distro</a> of apiman (e.g. WildFly, EAP, Tomcat).</p>
+<p>Select and download a <a href="servlet/wildfly.html" class="page">Servlet all-in-one distro</a> of Apiman (e.g. WildFly, Tomcat).</p>
 <div class="ulist">
 <ul>
 <li>
@@ -364,7 +346,7 @@ This quickstart separates those elements, with the Gateway implemented in Vert.x
 <p>Download the <a href="vertx/download.html" class="page">Vert.x distro</a> and launch using the <code>conf-es.json</code> configuration.</p>
 </li>
 <li>
-<p>Log into the apiman UI <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> as an admin user (default: admin/admin123!).</p>
+<p>Log into the Apiman UI <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> as an admin user (default: admin/admin123!).</p>
 </li>
 <li>
 <p>Follow the steps outlined in the <a href="vertx/install.html" class="page">gateway installation walkthrough</a> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
@@ -380,15 +362,15 @@ This quickstart separates those elements, with the Gateway implemented in Vert.x
 <h2 id="_servlet_based_gateway_and_servlet_based_manager"><a class="anchor" href="#_servlet_based_gateway_and_servlet_based_manager"></a>Servlet-based Gateway and Servlet-based Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Servlet-based quickstart is an all-in-one with little-or-no additional configuration needed to get going. You can start with this platform and migrate to the Vert.x gateway at a later date. It&#8217;s ideal for trying out apiman in the shortest possible time.</p>
+<p>The Servlet-based quickstart is an all-in-one with little-or-no additional configuration needed to get going. You can start with this platform and migrate to the Vert.x gateway at a later date. It&#8217;s ideal for trying out Apiman in the shortest possible time.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Select and download a <a href="servlet/install.html" class="page">Servlet all-in-one distro</a> of apiman (e.g. WildFly, EAP, Tomcat).</p>
+<p>Select and download a <a href="servlet/wildfly.html" class="page">Servlet all-in-one distro</a> of Apiman (e.g. WildFly, EAP, Tomcat).</p>
 </li>
 <li>
-<p>Launch and log into the apiman UI.</p>
+<p>Launch and log into the Apiman UI.</p>
 </li>
 </ol>
 </div>

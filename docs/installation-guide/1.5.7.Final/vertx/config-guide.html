@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -303,8 +285,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Gateway</li>
-    <li>Vertx</li>
+    <li>Platforms</li>
+    <li><a href="download.html">Vert.x Gateway</a></li>
     <li><a href="config-guide.html">Config Guide</a></li>
   </ul>
 </nav>
@@ -330,29 +312,6 @@
 This guide provides a brief outline to some of the most important information that may be unique to this platform.
 Annotations in the configuration file should be considered canonical.</p>
 </div>
-<div id="toc" class="toc">
-<div id="toctitle" class="title">Elements</div>
-<ul class="sectlevel1">
-<li><a href="#_comments">Comments</a></li>
-<li><a href="#_variables">Variables</a></li>
-<li><a href="#_registries_factories_and_components">Registries, factories and components</a></li>
-<li><a href="#_verticles_and_scaling">Verticles and scaling</a>
-<ul class="sectlevel2">
-<li><a href="#_http">HTTP</a></li>
-<li><a href="#_https">HTTPS</a></li>
-<li><a href="#_api">API</a></li>
-</ul>
-</li>
-<li><a href="#_hostname">Hostname</a></li>
-<li><a href="#_endpoint">Endpoint</a></li>
-<li><a href="#_ssl">SSL</a>
-<ul class="sectlevel2">
-<li><a href="#_allowed_tls_protocols">Allowed TLS Protocols</a></li>
-</ul>
-</li>
-<li><a href="#_prefer_secure">Prefer Secure</a></li>
-</ul>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -363,7 +322,7 @@ Annotations in the configuration file should be considered canonical.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
   "foo": "bar" // This is a comment.
 }</code></pre>
 </div>
@@ -383,7 +342,7 @@ The following list defines the lookup sources and order of precedence for variab
 <p>JSON config&#8217;s <code>variables</code> section:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
   "variables": {
     "FOO": {
       "SOME_VARIABLE": "foo"
@@ -420,7 +379,7 @@ The following list defines the lookup sources and order of precedence for variab
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
   "registry": {
     "class": "io.apiman.gateway.engine.es.PollCachingESRegistry", <i class="conum" data-value="1"></i><b>(1)</b>
     "config": {
@@ -462,7 +421,7 @@ If you prefer, a count value of <code>"auto"</code> will provide a sensible defa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
   "verticles": {
     "http": { "port": 8082, "count": "auto" },
     "https": { "port": 8443, "count": 1 },
@@ -505,7 +464,7 @@ How many deployments, and hence total number of verticles exist within your over
 <div class="sect2">
 <h3 id="_api"><a class="anchor" href="#_api"></a>API</h3>
 <div class="paragraph">
-<p>Hosts the apiman gateway API, which is typically used by the apiman manager to drive the gateway.
+<p>Hosts the Apiman gateway API, which is typically used by the Apiman manager to drive the gateway.
 For instance, publishing and retiring APIs, Contracts.
 You probably only need 1 of these.</p>
 </div>
@@ -517,7 +476,7 @@ You probably only need 1 of these.</p>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{ "hostname": "localhost" }</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{ "hostname": "localhost" }</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -530,7 +489,7 @@ You probably only need 1 of these.</p>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{ "endpoint": "mynode.local" }</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{ "endpoint": "mynode.local" }</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -543,11 +502,11 @@ By default the gateway will inspect the request used to hit the Gateway API, and
 <h2 id="_ssl"><a class="anchor" href="#_ssl"></a>SSL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The SSL section configures transport security to the gateway&#8217;s <strong>front end</strong>; that is, connections established between client app ⇋ apiman gateway.</p>
+<p>The SSL section configures transport security to the gateway&#8217;s <strong>front end</strong>; that is, connections established between client app ⇋ Apiman Gateway.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code> "ssl": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5"> "ssl": {
    "keystore": {
      "path": "/the/keystore/path/here.jks",
      "password": "password-here"
@@ -579,7 +538,7 @@ Refer to the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix
 <div class="sect2">
 <h3 id="_allowed_tls_protocols"><a class="anchor" href="#_allowed_tls_protocols"></a>Allowed TLS Protocols</h3>
 <div class="paragraph">
-<p>If you want to use a specific TLS version for the connection between client app ⇋ apiman gateway you can add the TLS version in a comma separated list with the setting <code>allowedProtocols</code>.</p>
+<p>If you want to use a specific TLS version for the connection between client app ⇋ Apiman Gateway you can add the TLS version in a comma separated list with the setting <code>allowedProtocols</code>.</p>
 </div>
 </div>
 </div>
@@ -589,7 +548,7 @@ Refer to the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{ "preferSecure": true }</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{ "preferSecure": true }</code></pre>
 </div>
 </div>
 <div class="paragraph">

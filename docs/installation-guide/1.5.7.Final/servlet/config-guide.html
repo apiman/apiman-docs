@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../vertx/download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -303,9 +285,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Gateway</li>
-    <li>Servlet</li>
-    <li><a href="install.html">EAP &amp; WildFly</a></li>
+    <li>Platforms</li>
+    <li><a href="wildfly.html">WildFly</a></li>
     <li><a href="config-guide.html">Config Guide</a></li>
   </ul>
 </nav>
@@ -327,7 +308,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Servlet version of the apiman gateway uses Java properties as its primary source of configuration.</p>
+<p>The Servlet version of the Apiman gateway uses Java properties as its primary source of configuration.</p>
 </div>
 <div class="paragraph">
 <p>This includes such platforms as WildFly, EAP, Jetty and Tomcat.</p>
@@ -338,7 +319,7 @@
 <h2 id="_configuration_properties"><a class="anchor" href="#_configuration_properties"></a>Configuration Properties</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All of the apiman WARs share a common configuration file called <strong>apiman.properties</strong>, which for the WildFly and EAP editions can be found in <strong>standalone/configuration</strong>.</p>
+<p>All of the Apiman WARs share a common configuration file called <strong>apiman.properties</strong>, which for the WildFly and EAP editions can be found in <strong>standalone/configuration</strong>.</p>
 </div>
 <div class="paragraph">
 <p>This file therefore contains configuration settings for all three applications (API Manager, API Manager UI, API Gateway).</p>

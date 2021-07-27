@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../vertx/download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -324,39 +306,6 @@
 </aside>
 <article class="doc">
 <h1 class="page">Elasticsearch Registry &amp; Components</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_global_required_parameters">Global Required Parameters</a></li>
-<li><a href="#_global_optional_parameters">Global Optional Parameters</a></li>
-<li><a href="#_registry">Registry</a>
-<ul class="sectlevel2">
-<li><a href="#_vert_x">Vert.x</a></li>
-<li><a href="#_servlet">Servlet</a></li>
-<li><a href="#_required_parameters">Required Parameters</a></li>
-<li><a href="#_optional_parameters">Optional Parameters</a></li>
-</ul>
-</li>
-<li><a href="#_metrics">Metrics</a>
-<ul class="sectlevel2">
-<li><a href="#_vert_x_2">Vert.x</a></li>
-<li><a href="#_servlet_2">Servlet</a></li>
-<li><a href="#_required_parameters_2">Required Parameters</a></li>
-</ul>
-</li>
-<li><a href="#_components">Components</a>
-<ul class="sectlevel2">
-<li><a href="#_shared_state">Shared State</a></li>
-<li><a href="#_vert_x_3">Vert.x</a></li>
-<li><a href="#_servlet_3">Servlet</a></li>
-<li><a href="#_rate_limiter">Rate Limiter</a></li>
-<li><a href="#_vert_x_4">Vert.x</a></li>
-<li><a href="#_servlet_4">Servlet</a></li>
-<li><a href="#_cache_store">Cache Store</a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div id="preamble">
 <div class="sectionbody">
 <div class="admonitionblock note">
@@ -525,7 +474,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"registry": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"registry": {
   "class": "io.apiman.gateway.engine.es.PollCachingESRegistry",
   "config": {
     // &lt;registry configuration&gt;
@@ -647,7 +596,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <h3 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"metrics": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"metrics": {
   "class": "io.apiman.gateway.engine.es.ESMetrics",
   "config": {
     "client": {
@@ -746,7 +695,7 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <h3 id="_vert_x_3"><a class="anchor" href="#_vert_x_3"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"components": {
   // Shared State Component Settings
   "ISharedStateComponent": {
     "class": "io.apiman.gateway.engine.es.ESSharedStateComponent",
@@ -790,7 +739,7 @@ apiman-gateway.components.ISharedStateComponent.client.type=jest
 <h3 id="_vert_x_4"><a class="anchor" href="#_vert_x_4"></a>Vert.x</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"components": {
   // Rate Limiter Component Settings
   "IRateLimiterComponent": {
     "class": "io.apiman.gateway.engine.es.ESRateLimiterComponent",
@@ -833,7 +782,7 @@ apiman-gateway.components.IRateLimiterComponent.client.type=jest
 <h4 id="_vert_x_5"><a class="anchor" href="#_vert_x_5"></a>Vert.x</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"components": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"components": {
   // Cache Store Component Settings
   "ICacheStoreComponent": {
     "class": "io.apiman.gateway.engine.es.ESCacheStoreComponent",

@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../vertx/download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -324,33 +306,10 @@
 </aside>
 <article class="doc">
 <h1 class="page">Headless Registry</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_example">Example</a></li>
-<li><a href="#_required_parameters">Required Parameters</a></li>
-<li><a href="#_authentication">Authentication</a>
-<ul class="sectlevel2">
-<li><a href="#_basic">BASIC</a></li>
-<li><a href="#_keycloak_oauth2">Keycloak OAuth2</a></li>
-<li><a href="#_oauth2">OAuth2</a></li>
-</ul>
-</li>
-<li><a href="#_configuration_file_format">Configuration File Format</a>
-<ul class="sectlevel2">
-<li><a href="#_endpoint_type">Endpoint Type</a></li>
-<li><a href="#_endpoint_content_type">Endpoint Content Type</a></li>
-<li><a href="#_endpoint_properties">Endpoint Properties</a></li>
-<li><a href="#_policy_config">Policy Config</a></li>
-<li><a href="#_policy_implementation_uri">Policy Implementation URI</a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The apiman headless registry uses an immutable registry to load its configuration from a local or remote JSON file.</p>
+<p>The Apiman headless registry uses an immutable registry to load its configuration from a local or remote JSON file.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Available implementations:</caption>
@@ -390,7 +349,7 @@ This registry is optimised for the Vert.x gateway implementation. Although it sh
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"registry": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"registry": {
   "class": "io.apiman.gateway.engine.vertx.polling.URILoadingRegistry",
   "config": {
     "configUri": "file:///path/to/my/json/reg-config.json", <i class="conum" data-value="1"></i><b>(1)</b>
@@ -513,7 +472,7 @@ This registry is optimised for the Vert.x gateway implementation. Although it sh
 <div class="listingblock">
 <div class="title">Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"config": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"config": {
   "configUri": "https://example.org/reg-config.json",
   "auth": "BASIC",
   "username": "MyUsername",
@@ -572,7 +531,7 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 <div class="listingblock">
 <div class="title">Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"config": {
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"config": {
   "auth": "KeycloakOAuth2",
   "flowType": "password",
   "username": "foo",
@@ -893,7 +852,7 @@ The combination of required parameters and optional parameters will vary conside
 <div class="listingblock">
 <div class="title">Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
     "apis": [{
         "publicAPI": true,
         "organizationId": "foo",
@@ -908,7 +867,7 @@ The combination of required parameters and optional parameters will vary conside
             // Plugin's JSON config.
            "policyJsonConfig": "{ \"responseCode\" : \"403\", \"ipList\" : [ \"1.2.3.4\" ] }", <i class="conum" data-value="4"></i><b>(4)</b>
            // Plugin coordinates.
-           "policyImpl": "plugin:io.apiman.plugins:apiman-plugins-url-whitelist-policy:{{ book.apiman.version.release }}:war/io.apiman.gateway.engine.policies.IPWhitelistPolicy" <i class="conum" data-value="5"></i><b>(5)</b>
+           "policyImpl": "plugin:io.apiman.plugins:apiman-plugins-url-whitelist-policy:1.5.7.Final:war/io.apiman.gateway.engine.policies.IPWhitelistPolicy" <i class="conum" data-value="5"></i><b>(5)</b>
        }]
     }],
     "clients": [{
@@ -1026,7 +985,7 @@ The combination of required parameters and optional parameters will vary conside
 <div class="listingblock">
 <div class="title">Example Simple Header Policy config</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
   "addHeaders": [{
     "headerName": "X-Clacks-Overhead",
     "headerValue": "GNU Terry Pratchett",
@@ -1045,7 +1004,7 @@ The combination of required parameters and optional parameters will vary conside
 <div class="listingblock">
 <div class="title">Example Simple Header Policy in policyJsonConfig</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"policyJsonConfig": "{\"addHeaders\":[{\"headerName\":\"X-Clacks-Overhead\",\"headerValue\":\"GNU Terry Pratchett\",\"valueType\":\"String\",\"applyTo\":\"Request\",\"overwrite\":true,\"resolvedHeaderValue\":\"GNU Terry Pratchett\"}],\"stripHeaders\":[]}"</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">"policyJsonConfig": "{\"addHeaders\":[{\"headerName\":\"X-Clacks-Overhead\",\"headerValue\":\"GNU Terry Pratchett\",\"valueType\":\"String\",\"applyTo\":\"Request\",\"overwrite\":true,\"resolvedHeaderValue\":\"GNU Terry Pratchett\"}],\"stripHeaders\":[]}"</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1055,7 +1014,7 @@ The combination of required parameters and optional parameters will vary conside
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-For more information, refer to the <a href="http://www.apiman.io/latest/developer-guide.html#_policy_definition">plugin developer&#8217;s guide</a>.
+For more information, refer to the <a href="../../../core/2.1.0.Final/development/Plugins.html" class="page">plugin developer&#8217;s guide</a>.
 </td>
 </tr>
 </table>
@@ -1072,7 +1031,7 @@ You can find this in the plugin&#8217;s <code>policyDef.json</code> file, usuall
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>plugin:{pluginGroupId}:{pluginArtifactId}:{pluginVersion}:{pluginType}/{fullyQualifiedClassname}</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">plugin:{pluginGroupId}:{pluginArtifactId}:{pluginVersion}:{pluginType}/{fullyQualifiedClassname}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1080,7 +1039,7 @@ You can find this in the plugin&#8217;s <code>policyDef.json</code> file, usuall
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.simpleheaderpolicy.SimpleHeaderPolicy</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.simpleheaderpolicy.SimpleHeaderPolicy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1088,7 +1047,7 @@ You can find this in the plugin&#8217;s <code>policyDef.json</code> file, usuall
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>plugin:io.apiman.plugins:apiman-plugins-simple-header-policy:{{ book.apiman.version.release }}:war/io.apiman.plugins.simpleheaderpolicy.SimpleHeaderPolicy</code></pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">plugin:io.apiman.plugins:apiman-plugins-simple-header-policy:1.5.7.Final:war/io.apiman.plugins.simpleheaderpolicy.SimpleHeaderPolicy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1101,7 +1060,7 @@ You can find this in the plugin&#8217;s <code>policyDef.json</code> file, usuall
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-For more information, refer to the <a href="http://www.apiman.io/latest/developer-guide.html#_policy_definition">plugin developer&#8217;s guide</a>.
+For more information, refer to the <a href="../../../core/2.1.0.Final/development/Plugins.html" class="page">plugin developer&#8217;s guide</a>.
 </td>
 </tr>
 </table>

@@ -67,71 +67,53 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vertx</span>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
-  <li class="nav-item" data-depth="5">
-    <a class="nav-link" href="../vertx/download.html#_3scale_immutable">3scale Immutable</a>
-  </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
-  </li>
-</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Servlet</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/install.html">EAP &amp; WildFly</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_10">WildFly 10</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_wildfly_9">WildFly 9</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_in_jboss_eap_7">EAP 7</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/install.html#_installing_using_docker">Docker</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
 </ul>
   </li>
-</ul>
-  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
@@ -205,7 +187,7 @@
     <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instance_cluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#_external_keycloak_authentication">External Keycloak Authentication</a>
@@ -326,31 +308,31 @@
 <h2 id="_external_keycloak_authentication"><a class="anchor" href="#_external_keycloak_authentication"></a>External Keycloak Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The apiman quickstart overlay ZIP comes with an embedded version of Keycloak that we use for authentication.
+<p>The Apiman quickstart overlay ZIP comes with an embedded version of Keycloak that we use for authentication.
 You may already have a Keycloak instance that you use.
-This section explains how to modify apiman to use yours instead of ours.</p>
+This section explains how to modify Apiman to use yours instead of ours.</p>
 </div>
 <div class="sect2">
 <h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create the apiman Realm in Keycloak</p>
+<p>Create the Apiman Realm in Keycloak</p>
 </li>
 <li>
 <p>Configure the API Manager UI client in Keycloak</p>
 </li>
 <li>
-<p>Point apiman at the remote Keycloak</p>
+<p>Point Apiman at the remote Keycloak</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_the_apiman_realm_in_keycloak"><a class="anchor" href="#_create_the_apiman_realm_in_keycloak"></a>Create the apiman Realm in Keycloak</h3>
+<h3 id="_create_the_apiman_realm_in_keycloak"><a class="anchor" href="#_create_the_apiman_realm_in_keycloak"></a>Create the Apiman Realm in Keycloak</h3>
 <div class="paragraph">
 <p>You&#8217;ll need to make sure you create the <strong>apiman</strong> realm in your Keycloak server.
-A quick way to do that is to use the Keycloak admin console to import the apiman realm file located here:</p>
+A quick way to do that is to use the Keycloak admin console to import the Apiman realm file located here:</p>
 </div>
 <div class="paragraph">
 <p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json</a></p>
@@ -395,9 +377,9 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_point_apiman_at_the_remote_keycloak"><a class="anchor" href="#_point_apiman_at_the_remote_keycloak"></a>Point apiman at the remote Keycloak</h3>
+<h3 id="_point_apiman_at_the_remote_keycloak"><a class="anchor" href="#_point_apiman_at_the_remote_keycloak"></a>Point Apiman at the remote Keycloak</h3>
 <div class="paragraph">
-<p>You must modify the <strong>standalone-apiman.xml</strong> configuration file to point apiman at the remote Keycloak server.</p>
+<p>You must modify the <strong>standalone-apiman.xml</strong> configuration file to point Apiman at the remote Keycloak server.</p>
 </div>
 <div class="paragraph">
 <p>Make sure you know the full public URL of your Keycloak server and add it to the following section of <strong>standalone-apiman.xml</strong>:</p>
@@ -415,7 +397,7 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 </div>
 </div>
 <div class="paragraph">
-<p>Finally, if you are using a standalone gateway, you should also configure the <a href="../gateway/security.adoc#setup">Gateway API</a> to point to the same Keycloak instance.</p>
+<p>Finally, if you are using a standalone gateway, you should also configure the <a href="../gateway/security.html#_setup" class="page">Gateway API</a> to point to the same Keycloak instance.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
