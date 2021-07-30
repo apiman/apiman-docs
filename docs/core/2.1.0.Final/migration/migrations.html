@@ -194,12 +194,15 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>$ java -jar migration-assistant-cli.jar export upgrade \
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ java -jar migration-assistant-cli.jar export upgrade \
   --username=admin <i class="conum" data-value="1"></i><b>(1)</b>
   --password=admin123! <i class="conum" data-value="2"></i><b>(2)</b>
   --endpoint=http://localhost:8080/apiman <i class="conum" data-value="3"></i><b>(3)</b>
   --output=/home/myuser/fixed-export.json <i class="conum" data-value="4"></i><b>(4)</b>
-  --trust-all <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+  --trust-all <i class="conum" data-value="5"></i><b>(5)</b>
+
+# or use it directly as a docker container
+$ docker run --rm -it ghcr.io/ghcr.io/apiman/migration-assistant export upgrade &lt;...&gt;</code></pre>
 </div>
 </div>
 <div class="colist arabic">
