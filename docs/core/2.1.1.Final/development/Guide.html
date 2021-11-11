@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Creating a Plugin :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/core/2.1.0.Final/development/Plugins.html">
+    <title>apiman - Developer Guide :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/core/2.1.1.Final/development/Guide.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="core" data-version="2.1.0.Final">
+<div class="nav-container" data-component="core" data-version="2.1.1.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -56,18 +56,18 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../migration/migrations.html">Migration Guide</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="Guide.html">Development Guide</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Guide.html#_developer_resources">Developer Resources</a>
+    <a class="nav-link" href="#_developer_resources">Developer Resources</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Guide.html#_plugins">Apiman Plugins</a>
+    <a class="nav-link" href="#_plugins">Apiman Plugins</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="Guide.html#_gateway_implementations">Gateway Implementations</a>
+    <a class="nav-link" href="#_gateway_implementations">Gateway Implementations</a>
   </li>
 </ul>
   </li>
@@ -79,14 +79,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Apiman Guides</span>
-    <span class="version">2.1.0.Final</span>
+    <span class="version">2.1.1.Final</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <a class="title" href="../index.html">Apiman Guides</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.0.Final</a>
+          <a href="../index.html">2.1.1.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -94,10 +94,10 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../../welcome/2.1.0.Final/index.html">Apiman Welcome</a>
+      <a class="title" href="../../../welcome/2.1.1.Final/index.html">Apiman Welcome</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../welcome/2.1.0.Final/index.html">2.1.0.Final</a>
+          <a href="../../../welcome/2.1.1.Final/index.html">2.1.1.Final</a>
         </li>
         <li class="version">
           <a href="../../../welcome/1.5.7.Final/index.html">1.5.7.Final</a>
@@ -134,38 +134,192 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../../welcome/2.1.0.Final/index.html" class="home-link"></a>
+  <a href="../../../welcome/2.1.1.Final/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Apiman Guides</a></li>
-    <li><a href="Plugins.html">Creating a Plugin</a></li>
+    <li><a href="Guide.html">Development Guide</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.0.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.1.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="Plugins.html">2.1.0.Final</a>
-    <a class="version" href="../../1.5.7.Final/development/Plugins.html">1.5.7.Final</a>
+    <a class="version is-current" href="Guide.html">2.1.1.Final</a>
+    <a class="version" href="../../1.5.7.Final/development/Guide.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/master/docs/modules/development/pages/Plugins.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/master/docs/modules/development/pages/Guide.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Creating a Plugin</h1>
-<div id="preamble">
+<h1 class="page">apiman - Developer Guide</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An apiman plugin is basically a java web archive (WAR) with a little bit of extra
+<p>Are you interested in contributing to the development of apiman?Maybe you want to embed the
+project in your own solution?In either case this is the guide for you.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_developer_resources"><a class="anchor" href="#_developer_resources"></a>Developer Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes a number of resources that are useful if you wish to contribute
+code to apiman.It is likely also a good starting point for those wishing to provide
+functionality by implementing a plugin, although more information about plugins can
+be found in the 'Plugins' section.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_code"><a class="anchor" href="#_source_code"></a>Source Code</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Apiman source code is located in GitHub here: <a href="https://github.com/apiman/apiman" class="bare">https://github.com/apiman/apiman</a></p>
+</li>
+<li>
+<p>Source code for the Apiman policies can be found here: <a href="https://github.com/apiman/apiman-plugins" class="bare">https://github.com/apiman/apiman-plugins</a></p>
+</li>
+<li>
+<p>Source code for the Apiman project web site is here: <a href="https://github.com/apiman/apiman.github.io" class="bare">https://github.com/apiman/apiman.github.io</a></p>
+</li>
+<li>
+<p>The official Apiman docker files are currently here: <a href="https://github.com/apiman/apiman-docker" class="bare">https://github.com/apiman/apiman-docker</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_issue_tracking"><a class="anchor" href="#_issue_tracking"></a>Issue Tracking</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Apiman uses <a href="https://www.github.com/apiman/apiman/issues">GitHub issues for tracking</a>.</p>
+</li>
+<li>
+<p>You can ask questions <a href="https://www.github.com/apiman/apiman/discussions">on GitHub discussions</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_development_tools"><a class="anchor" href="#_development_tools"></a>Development Tools</h3>
+<div class="paragraph">
+<p>We&#8217;re rather IDE agnostic, so contributors should feel free to use whatever tools they feel most
+comfortable with.  At the time of this writing, the core Apiman developers mostly use IntelliJ IDEA.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_the_project"><a class="anchor" href="#_building_the_project"></a>Building the Project</h3>
+<div class="paragraph">
+<p>Building Apiman should be a simple matter of doing a standard Maven build:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will do a full build of Apiman and execute all unit tests.
+However, the result will not include a ready-to-run version of Apiman.
+For that, you may want to try the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean install -Pinstall-all-wildfly</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command will do a full apiman build, but will also download WildFly and install Apiman into it.
+The result will be a fully configured install of Apiman running in WildFly.
+The location of this WildFly install will be here:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">apiman/tools/server-all/target/wildfly-{wildfly-version}/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point you can test Apiman by simply running WildFly from the above location using a command something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/standalone.sh -b 0.0.0.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The basic architecture of apiman is fairly straightforward.There are several WARs that
+make up the default apiman installation.These include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API Manager REST back-end (JAX-RS WAR)</p>
+</li>
+<li>
+<p>API Manager UI (AngularJS/Hawtio WAR)</p>
+</li>
+<li>
+<p>API Gateway Config (JAX-RS WAR)</p>
+</li>
+<li>
+<p>API Gateway (Servlet WAR)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The API Manager REST back-end WAR is responsible for exposing a set of REST endpoints that
+make up the API Manager REST interface.The API Manager UI uses this REST API
+directly when the user manages the various entities in the data model.</p>
+</div>
+<div class="paragraph">
+<p>The API Manager UI is a client-only AngularJS application.Aside from authentication
+related activities, this WAR only contains HTML, JavaScript, and CSS.The UI uses
+the browser to make direct, authenticated calls to the REST endpoints exposed by the
+API Manager REST back-end WAR.</p>
+</div>
+<div class="paragraph">
+<p>The API Gateway Config exposes the standard apiman Gateway REST API so that the API
+Gateway can be remotely configured.This is the REST API that the API Manager uses
+whenever a user publishes an API or registers a Client App.It is responsible
+for configuring the API Gateway&#8217;s embedded Policy Engine.</p>
+</div>
+<div class="paragraph">
+<p>The API Gateway is the primary runtime component of apiman and is implemented as a
+servlet that embeds the apiman Policy Engine.All requests to the API Gateway WAR are
+assumed to be intended for managed APIs previously published to it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugins"><a class="anchor" href="#_plugins"></a>Plugins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to extend the functionality of apiman is by implementing an apiman
+plugin.This section details how this is done and what functionality can be
+extended or provided.</p>
+</div>
+</div>
+</div>
+<h1 id="_creating_a_plugin" class="sect0"><a class="anchor" href="#_creating_a_plugin"></a>Creating a Plugin</h1>
+<div class="openblock partintro">
+<div class="content">
+An apiman plugin is basically a java web archive (WAR) with a little bit of extra
 sauce.
 This approach makes it very easy to build using maven, and should be quite
 familiar to most Java developers.  Because a plugin consists of some resources files,
 compiled java classes, front-end resource such as HTML and javascript, and dependencies
-in the form of JARs, the WAR format is a natural choice.</p>
-</div>
+in the form of JARs, the WAR format is a natural choice.
 </div>
 </div>
 <div class="sect1">
@@ -2426,6 +2580,518 @@ passed to its constructor containing the following:</p>
 <p>property2=value-2</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gateway_implementations"><a class="anchor" href="#_gateway_implementations"></a>Gateway Implementations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the heart of any apiman gateway implementation is the flexible, lightweight
+apiman-core.The core serves to execute policies upon the traffic passing through
+it, determining whether a given conversation should continue or not.</p>
+</div>
+<div class="paragraph">
+<p>A set of simple, asynchronous interfaces are provided which an implementor should
+fulfill using the platform&#8217;s native functionality to allow apiman to interact with
+its various components and services.</p>
+</div>
+<div class="sect2">
+<h3 id="_implementing_iapimanbuffer"><a class="anchor" href="#_implementing_iapimanbuffer"></a>Implementing IApimanBuffer</h3>
+<div class="paragraph">
+<p>Before you can send any data through apiman, you must implement the <code>IApimanBuffer</code> interface. It provides a set of methods which allow apiman to access your native buffer format as effectively as possible. Any data you pass into apiman must be wrapped in your implementation of <code>IApimanBuffer</code>, whilst any data returned to you by apiman will be an <code>IApimanBuffer</code> which you can extricate your native buffer from.</p>
+</div>
+<div class="paragraph">
+<p>Implementation is fairy self explanatory, but a few points are worth noting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class YourApimanBufferImpl implements IApimanBuffer {
+
+  private YourNativeBuffer nativeBuffer;
+
+  public VertxApimanBuffer(YourNativeBuffer nativeBuffer) {
+    this.nativeBuffer = nativeBuffer;
+  }
+
+  // This is your mechanism to efficiently yank your native buffer back
+  @Override
+  public Object getNativeBuffer() {
+    return nativeBuffer;
+  }
+
+  @Override
+  public int length() {
+    return nativeBuffer.length();
+  }
+
+  @Override
+  public void insert(int index, IApimanBuffer buffer) {
+    nativeBuffer.setBuffer(index, (Buffer) buffer.getNativeBuffer());
+  }
+
+  &lt;...&gt;
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Implementors of <code>IApimanBuffer</code> should ensure that the native format is preserved within the instance, this allows it to be retrieved again using <code>getNativeBuffer</code>. Any mutation should be on the native buffer.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_executing_apiman_core"><a class="anchor" href="#_executing_apiman_core"></a>Executing apiman-core</h3>
+<div class="paragraph">
+<p>Let&#8217;s consider the following snippet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">IEngine engine = new &lt;your engine&gt;.createEngine();
+
+// Request executor, through which we can send chunks and indicate end.
+final IApiRequestExecutor requestExecutor = engine.executor(request,
+  new IAsyncResultHandler&lt;IEngineResult&gt;() {
+    public void handle(IAsyncResult&lt;IEngineResult&gt; result) { ... }
+  });
+
+// streamHandler called when back-end connector is ready to receive data.
+requestExecutor.streamHandler(new IAsyncHandler&lt;IApiConnection&gt;() {
+  public void handle(final IApiConnection writeStream) { ... }
+});
+
+// Execute the request
+executor.execute();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After instantiating your engine implementation, you can call <code>execute</code>. This is the main point through which you pipe data into and out of apiman. In order to avoid any buffering you must write body data through <code>streamHandler&#8217;s `IApiConnection</code> which will be called when the connection to the backend API is ready to receive. The result is provided to <code>executor&#8217;s `IAsyncResultHandler</code>, which can be evaluated to determine the result of the call, and, if successful, retrieve a <code>ApiResponse</code> and attach handlers to receive response data.</p>
+</div>
+<div class="sect3">
+<h4 id="_streaming_data"><a class="anchor" href="#_streaming_data"></a>Streaming data</h4>
+<div class="paragraph">
+<p>Exploring <code>streamHandler</code> further:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">requestExecutor.streamHandler(new IAsyncHandler&lt;IApiConnection&gt;() {
+
+  @Override
+  public void handle(final IApiConnection writeStream) {
+    // Just for illustrative purposes
+    IApimanBuffer apimanBuffer =
+      new YourApimanBufferImpl(nativeBuffer);
+
+    // Call #write as many times as desired.
+    writeStream.write(apimanBuffer);
+
+    // Call #end only once.
+    writeStream.end();
+  }
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Any data flowing into the executor must first be wrapped in your implementation of <code>IApimanBuffer</code> before being passed to <code>write</code>. You may call <code>write</code> an unlimited number of times, and indicate that transmission has completed by signalling <code>end</code>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+No further calls to <code>write</code> should occur after <code>end</code> has been called.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_handling_results"><a class="anchor" href="#_handling_results"></a>Handling results</h4>
+<div class="paragraph">
+<p>An excerpt of the executor&#8217;s result handler and considering a successful result:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">engine.executor(request, new IAsyncResultHandler&lt;IEngineResult&gt;() {
+  public void handle(IAsyncResult&lt;IEngineResult&gt; result) {
+    // Did an exception occur?
+    if (result.isSuccess()) {
+      IEngineResult engineResult = result.getResult();
+
+      if (engineResult.isResponse()) {
+        // Our successfully returned API response.
+        ApiResponse response = engineResult.getApiResponse();
+
+        // Set a bodyHandler to receive the response's body chunks.
+        engineResult.bodyHandler(new IAsyncHandler&lt;IApimanBuffer&gt;() {
+
+          @Override
+          public void handle(IApimanBuffer chunk) {
+            // Important: for efficiency, retrieve native buffer format directly if possible.
+            if(chunk.getNativeBuffer() instanceof YourNativeBuffer) {
+              YourNativeBuffer buffer = (YourNativeBuffer) chunk.getNativeBuffer();
+            }
+          }
+        });
+
+        // Set an endHandler to receive the end signal.
+        engineResult.endHandler(new IAsyncHandler&lt;Void&gt;() {
+
+          @Override
+          public void handle(Void flag) {
+            // Transmission has now completed.
+          }
+        });
+
+      } else {
+        // Handle policy failure.
+      }
+
+    } else {
+      // Handle exception.
+    }
+  }
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After testing <code>IAsyncResult.isSuccess</code>, we can be certain that the request completed without an exception occurring. Next, we verify <code>IEngineResult.isFailure</code>, which indicates whether there was a policy failure or the response returned successfully.</p>
+</div>
+<div class="paragraph">
+<p>Upon success the <code>ApiResponse</code> can be extracted, and a <code>bodyHandler</code> and <code>endHandler</code> can be attached in order to receive the response&#8217;s associated data as it arrives. At this point the data has exited apiman, and can handled as makes sense for your implementation. For instance, you may wish to translate the <code>ApiResponse</code> into its native equivalent and return it to the requestor.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Where possible, it is advisable to use <code>getNativeBuffer</code> on any <code>IApimanBuffer</code> chunks you receive; avoiding any expensive format conversions. You must cast it back to your native format; <code>instanceof</code> is helpful to ensure the the correct type has been received.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_handling_failures"><a class="anchor" href="#_handling_failures"></a>Handling Failures</h4>
+<div class="paragraph">
+<p>In the case of errors or policy failures, a variety of information is provided which can be used to construct a sensible response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">if (result.isSuccess()) {
+  IEngineResult engineResult = result.getResult();
+
+  if (!engineResult.isFailure()) {
+    &lt;...&gt;
+  } else {
+    PolicyFailure policyFailure = engineResult.getPolicyFailure();
+    log.info("Failure type: " + policyFailure.getType());
+    log.info("Failure code: " + policyFailure.getFailureCode());
+    log.info("Failure Message: " + policyFailure.getMessage());
+    log.info("Failure Headers: " + policyFailure.getHeaders());
+  }
+} else {
+  Throwable throwable = engineResult.getError();
+  log.error("Something bad happened: " + throwable);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The appropriate response to failures will vary widely depending upon implementation. For instance, a RESTful platform may wish to transmit an appropriate HTTP error code, message and possibly body.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_an_api_connector"><a class="anchor" href="#_creating_an_api_connector"></a>Creating an API Connector</h3>
+<div class="paragraph">
+<p>Connectors enable apiman to transmit and receive data from the backend APIs under management. For instance, should your system need to connect to an HTTP API, an HTTP connector must be created. The following samples illustrate in general terms how an implementor may go about creating a connector, and although the specifics will vary extremely widely depending upon the platform some general principals should be obeyed.</p>
+</div>
+<div class="sect3">
+<h4 id="_connector_basics"><a class="anchor" href="#_connector_basics"></a>Connector basics</h4>
+<div class="paragraph">
+<p>Inside of your <code>IConnectorFactory</code> implementation you must return an <code>IApiConnector</code> corresponding to the type of request and API being interacted with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ConnectorFactory implements IConnectorFactory {
+
+  public IApiConnector createConnector(ApiRequest request, Api api) {
+    return new IApiConnector() {
+    	...
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inspecting the <code>IApiConnector</code> more closely, we can see the key interface of a connector:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public IApiConnection request(ApiRequest request,
+  IAsyncResultHandler&lt;IApiConnectionResponse&gt; resultHandler) {
+  		...
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>IApiConnection</code> you must return is used by apiman to write request chunks; hence, it will be <strong>read</strong> by your connector. Conversely, the <code>IApiConnectionResponse</code> handler must be called in order to send the <code>ApiResponse</code> and its associated data chunks back to apiman once a response has returned from the API; hence, you will <strong>write</strong> data to it.</p>
+</div>
+<div class="paragraph">
+<p>The <code>IAsyncResultHandler</code> is also used to indicate whether an exception has occurred during the conversation with the backend.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_creating_the_iapiconnection"><a class="anchor" href="#_creating_the_iapiconnection"></a>Creating the IApiConnection</h4>
+<div class="paragraph">
+<p>Generally, an implementor must attempt to return their <code>IApiConnection</code> as soon as it is valid for apiman to write data to the backend. Until you respond, apiman will not fire <code>IApiRequestExecutor.streamHandler</code>, and hence no data will arrive prematurely to your connector. Following this guideline should help to minimise or eliminate any buffering requirements in your connectors.</p>
+</div>
+<div class="paragraph">
+<p>Looking at an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Native platform's connector (e.g. HTTP)
+ImaginaryBackendConnector imaginaryConnector = ...;
+Connection c = imaginaryConnector.establishConnection(api.getEndpoint(), ...);
+
+// Prepare in advance to do something sensible with the response
+// See next section for more detail.
+c.responseHandler(&lt;Handle the response; return an IApiConnectionResponse&gt;);
+
+// From our perspective IApiConnection is
+// *inbound data* (i.e. the user writes to us).
+return new IApiConnection() {
+  boolean finished = false;
+
+  @Override
+  public void write(IApimanBuffer chunk) {
+    // Handle arriving data chunk
+    YourNativeBuffer nativeBuffer =
+      (YourNativeBuffer) chunk.getNativeBuffer();
+
+    imaginaryConnector.write(nativeBuffer);
+  }
+
+  @Override
+  public void end() {
+    // Handle the signal to indicate stream has completed
+    imaginaryConnector.finish_connection();
+    finished = true;
+  }
+
+  @Override
+  public void abort() {
+    // Handle immediate abort, for instance by closing your connection.
+    imaginaryConnector.abort();
+    finished = true;
+  }
+
+
+  @Override
+  public boolean isFinished() {
+    return finished;
+  }
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>imaginaryConnector</code> represents your platform&#8217;s backend connector. After establishing a connection that can accept data, you should return an <code>IApiConnection</code>, allowing data to be written to your connector. You can extract your native buffer format using <code>getNativeBuffer</code> plus a cast. Although we haven&#8217;t yet explored how to handle a response, we can imagine that the platform&#8217;s <code>ImaginaryBackendConnector</code> would allows us to set a <code>responseHandler</code>, which will be fired when a response has arrived; this is point at which we can build an <code>IApiConnectionResponse</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_creating_the_iapiconnectionresponse"><a class="anchor" href="#_creating_the_iapiconnectionresponse"></a>Creating the IApiConnectionResponse</h4>
+<div class="sect4">
+<h5 id="_handling_a_successful_response"><a class="anchor" href="#_handling_a_successful_response"></a>Handling a successful response</h5>
+<div class="paragraph">
+<p>Apiman&#8217;s <code>resultHandler</code> should be called with an  <code>IApiConnectionResponse</code> when your connector has received a response from the API.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s imagine that <code>responseHandler</code> is called when the platform&#8217;s response has arrived, and looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">c.responseHandler(new Handler&lt;ImaginaryResponse&gt; {
+  public void handle(ImaginaryResponse response) {
+	...
+  }
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is where we must build our apiman response, using the data returned in the platform&#8217;s response, and attaching appropriate handlers to capture any data that arrives.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, we expand the response <code>handle</code> method to build an <code>IApiConnectionResponse</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void handle(final ImaginaryResponse response) {
+
+  IApiConnectionResponse readStream = new IApiConnectionResponse() {
+    IAsyncHandler&lt;IApimanBuffer&gt; bodyHandler;
+    IAsyncHandler&lt;IApimanBuffer&gt; endHandler;
+    boolean finished = false;
+    ApiResponse response = YourResponseBuilder.build(response);
+
+    public IApiConnectionResponse() {
+      doConnection();
+    }
+
+    private void doConnection() {
+      // We stop any data arriving
+      response.pause();
+
+      // This will be called when we resume transmission
+      response.bodyHandler(new Handler&lt;NativeDataChunk&gt;() {
+
+        void handle(NativeDataChunk chunk) {
+          IApimanBuffer apimanBuffer =
+            new YourApimanBufferImpl(nativeBuffer);
+
+          bodyHandler.handle(apimanBuffer);
+        }
+      });
+
+      // Transmission has finished
+      response.endHandler(new Handler&lt;Void&gt;() {
+
+        void handle(Void flag) {
+          endHandler.handle((Void) null);
+          // You may want to close your backend connection here.
+        }
+      });
+    }
+
+    @Override
+    public void bodyHandler(IAsyncHandler&lt;IApimanBuffer&gt; bodyHandler) {
+      this.bodyHandler = bodyHandler;
+    }
+
+    @Override
+    public void endHandler(IAsyncHandler&lt;Void&gt; endHandler) {
+      this.endHandler = endHandler;
+    }
+
+    @Override
+    public ApiResponse getHead() {
+      return apiResponse;
+    }
+
+    @Override
+    public boolean isFinished() {
+      return finished;
+    }
+
+    @Override
+    public void abort() {
+      // Abort
+    }
+
+    // We explicitly resume transmission
+    @Override
+    public void transmit() {
+      response.resume();
+    }
+  };
+
+  // We're ready to transmit the response, let apiman know.
+  IAsyncResult result = AsyncResultImpl.
+    &lt;IApiConnectionResponse&gt; create(readStream);
+
+  resultHandler.handle(result);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We imagine that our <code>response</code> object contains what we need to build a <code>ApiResponse</code>, and that handlers can be attached in order to retrieve body data and an end signal. It can be paused using <code>pause</code>, which prevents any data from arriving until <code>resume</code> is called.</p>
+</div>
+<div class="paragraph">
+<p>Importantly, data transmission <strong>must not</strong> begin until <code>transmit</code> has been called, otherwise the appropriate handlers may not yet have been set, and data will be liable to disappear. Hence, in this example, <code>resume</code> is called in <code>transmit</code> where we are certain that it&#8217;s safe to send data.</p>
+</div>
+<div class="paragraph">
+<p>After <code>end</code> has been signalled, clean up on the native connection can be performed, such as closing it. In this example was assume the connection is closed for us.</p>
+</div>
+<div class="paragraph">
+<p>Once we are sure our stream is ready, we pass it to apiman using <code>resultHandler.handle</code> wrapped inside of an IAsyncResult indicating we were successful. Some helpful <code>create</code> methods are available in <code>AsyncResultImpl</code>.</p>
+</div>
+<div class="paragraph">
+<p>Whilst a given platform&#8217;s implementation may look very different, implementors must be careful to preserve the same external behaviour; some platforms may require buffering of data if pause-like functionality is not available. In many cases it may be possible to implement <code>IApiConnectionResponse</code> and <code>IApiConnection</code> in the same class.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Do not transmit any response data into apiman until <code>transmit</code> has been signalled.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_handling_an_error"><a class="anchor" href="#_handling_an_error"></a>Handling an error</h5>
+<div class="paragraph">
+<p>If an error occurs, you must return a failure <code>IAsyncResult</code>, which may be caused, for instance, by an endpoint being unresolvable. The simplest way to share this is by using <code>AsyncResultImpl</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try { ... }
+catch(Exception e) {
+  IAsyncResult errorResult =
+  	AsyncResultImpl.&lt;IApiConnectionResponse&gt; create(e);
+
+  resultHandler.handle(errorResult);
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Remember to clean up any resources you may have left open.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_implementation_strategies"><a class="anchor" href="#_implementation_strategies"></a>Implementation strategies</h4>
+<div class="paragraph">
+<p>Implementors may notice that the only overlap between the <code>IApiConnection</code> and <code>IApiConnectionResponse</code> interfaces is the <code>isFinished</code> method. Hence, it is often possible to implement both interfaces using the same class, which may be a cleaner way to orchestrate the process.</p>
+</div>
+<div class="paragraph">
+<p>Implementation exemplars:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/apiman/apiman/blob/master/gateway/platforms/servlet/src/main/java/io/apiman/gateway/platforms/servlet/connectors/HttpApiConnection.java">Servlet HTTP Connector</a> is a more traditional synchronous implementations.</p>
+</li>
+<li>
+<p><a href="https://github.com/apiman/apiman/blob/master/gateway/platforms/vertx3/vertx3/src/main/java/io/apiman/gateway/platforms/vertx3/connector/HttpConnector.java">Vert.x 3 HTTP Connector</a> is an asynchronous HTTP implementation.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
