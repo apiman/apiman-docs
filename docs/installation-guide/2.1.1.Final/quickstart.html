@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Apiman Production Guide :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/production.html">
+    <title>Apiman Quickstart :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.1.Final/quickstart.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.0.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.1.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -60,7 +60,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index.html">Introduction</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quickstart</a>
   </li>
 </ul>
@@ -203,7 +203,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="production.html">Production Guide</a>
 <ul class="nav-list">
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.0.Final</span>
+    <span class="version">2.1.1.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">2.1.0.Final</a>
+          <a href="index.html">2.1.1.Final</a>
         </li>
         <li class="version">
           <a href="../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,174 +291,107 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Installation Guide</a></li>
-    <li><a href="production.html">Production Guide</a></li>
+    <li>Installation</li>
+    <li><a href="quickstart.html">Quickstart</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.0.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.1.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="production.html">2.1.0.Final</a>
-    <a class="version" href="../1.5.7.Final/production.html">1.5.7.Final</a>
+    <a class="version is-current" href="quickstart.html">2.1.1.Final</a>
+    <a class="version" href="../1.5.7.Final/quickstart.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/production.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/quickstart.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Apiman Production Guide</h1>
-<div id="preamble">
+<h1 class="page">Apiman Quickstart</h1>
+<div class="sect1">
+<h2 id="_choose_your_setup"><a class="anchor" href="#_choose_your_setup"></a>Choose Your Setup</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This guide should serve as a guide to manually deploy Apiman into production.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#_vert_x_gateway_and_servlet_based_manager">Vert.x Gateway and Servlet-based Manager</a> <strong><em>Recommended for best performance</em></strong>.</p>
+</li>
+<li>
+<p><a href="#_servlet_based_gateway_and_servlet_based_manager">Servlet-based Gateway and Servlet-based Manager</a>. Simplest for a quick test.</p>
+</li>
+</ol>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_architecture_summary"><a class="anchor" href="#_architecture_summary"></a>Architecture Summary</h2>
+<h2 id="_vert_x_gateway_and_servlet_based_manager"><a class="anchor" href="#_vert_x_gateway_and_servlet_based_manager"></a>Vert.x Gateway and Servlet-based Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before we get started, it may be useful to know the overall architecture of Apiman.
-Let&#8217;s start with a picture!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/apiman-architecture.png" alt="Architecture of Apiman">
-</div>
-<div class="title">Figure 1. Architecture of Apiman</div>
+<p>Apiman consists of two broad parts, the Gateway and the Manager.
+This quickstart separates those elements, with the Gateway implemented in Vert.x; our most performant platform, and the Manager a Servlet-based implementation.</p>
 </div>
 <div class="paragraph">
-<p>The Apiman solution is made up of a number of pieces, including:</p>
+<p>They are linked together in a trivial few steps.</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select and download a <a href="servlet/wildfly.html" class="page">Servlet all-in-one distro</a> of Apiman (e.g. WildFly, Tomcat).</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Keycloak Authentication Server</p>
-</li>
-<li>
-<p>Relational Database</p>
-</li>
-<li>
-<p>Elasticsearch Datastore</p>
-</li>
-<li>
-<p>Apiman API Gateway</p>
-</li>
-<li>
-<p>Apiman API Manager</p>
+<p>Optional: Before launching, remove <code>apiman-gateway.war</code> from the deployment.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Download the <a href="vertx/download.html" class="page">Vert.x distro</a> and launch using the <code>conf-es.json</code> configuration.</p>
+</li>
+<li>
+<p>Log into the Apiman UI <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> as an admin user (default: admin/admin123!).</p>
+</li>
+<li>
+<p>Follow the steps outlined in the <a href="vertx/install.html" class="page">gateway installation walkthrough</a> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>The image above should give you an idea of how they all fit together.</p>
+<p>🎉  Done!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h2>
+<h2 id="_servlet_based_gateway_and_servlet_based_manager"><a class="anchor" href="#_servlet_based_gateway_and_servlet_based_manager"></a>Servlet-based Gateway and Servlet-based Manager</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you wish to enable metrics in Apiman (who doesn&#8217;t?) you&#8217;ll need to install Elasticsearch.  This is
-because the API Gateway stores all metrics information in Elasticsearch (by default), and the API Manager
-queries that data to present analytics information in the UI.</p>
+<p>The Servlet-based quickstart is an all-in-one with little-or-no additional configuration needed to get going. You can start with this platform and migrate to the Vert.x gateway at a later date. It&#8217;s ideal for trying out Apiman in the shortest possible time.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select and download a <a href="servlet/wildfly.html" class="page">Servlet all-in-one distro</a> of Apiman (e.g. WildFly, EAP, Tomcat).</p>
+</li>
+<li>
+<p>Launch and log into the Apiman UI.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Please see the Elasticsearch documentation for how to install and configure it in production.  Ultimately you
-will need Elasticsearch running in a well known and accessible location.  We also recommend you enable
-authentication (e.g. via Shield) and SSL.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The data in Elasticsearch is not backed up or stored in some other location - Elasticsearch is being
-used as the primary/canonical data store for the metrics information.  You may wish to configure backup
-procedures
-</td>
-</tr>
-</table>
+<p>🎉  Done!</p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_keycloak"><a class="anchor" href="#_keycloak"></a>Keycloak</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In production, it is typically preferred to deploy Keycloak server as a standalone solution.  For more
-specific information about how to configure a standalone Keycloak server, see the Keycloak documentation:</p>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Typically this will be <a href="http://localhost:8080/apimanui" class="bare">http://localhost:8080/apimanui</a>
 </div>
-<div class="paragraph">
-<p><a href="http://keycloak.github.io/docs/userguide/html/server-installation.html" class="bare">http://keycloak.github.io/docs/userguide/html/server-installation.html</a></p>
-</div>
-<div class="paragraph">
-<p>Once Keycloak is installed as a standalone server, you must configure the ‘apiman' realm.  This realm will
-be used for authentication into each of the Apiman components (API Manager REST services, API Manager UI,
-API Gateway REST services, etc).</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can configure additional Keycloak Realms for use with the Apiman "Keycloak OAuth2 Policy".
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Fortunately, Apiman comes with a realm file you can import.  Simply log into your Keycloak server and then
-create the <code>apiman</code> realm using this file:</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json</a></p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-The realm file contains some credentials/secrets that you will want to modify or regenerate. The defaults are obviously <strong>not</strong> secure.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Once you have created the <code>apiman</code> realm, you must use the Keycloak UI to add your API Manager UI as a valid
-redirect URL for the 'apimanui' client.  To do this, log into the Keycloak admin console and choose the
-<strong>apiman</strong> realm.  Next click "clients" in the left navigation, and choose <strong>apimanui</strong> in the resulting list.
-From there you can add public URL if your API Manager UI to the list of "<strong><em>Valid Redirect URIs</em></strong>".  It might
-be something like:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>https://apimanager.mycompany.org:8443/apimanui/*</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>That will allow users of the API Manager UI to actually log in and be properly redirected back to the
-application!</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you&#8217;re behind load-balancers, you may need to ensure <a href="https://www.keycloak.org/docs/latest/server_installation/#_setting-up-a-load-balancer-or-proxy">X-Forwarded-For</a> is set properly.
-</td>
-</tr>
-</table>
-</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. If you created a new gateway rather than editing an existing entry, you may want to delete the old one to avoid any confusion.
 </div>
 </div>
 </article>

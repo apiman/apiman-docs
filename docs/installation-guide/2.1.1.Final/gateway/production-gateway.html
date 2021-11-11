@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Servlet Configuration :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/servlet/config-guide.html">
+    <title>Apiman Gateway Production Guide :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.1.Final/gateway/production-gateway.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.0.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.1.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -71,17 +71,17 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="wildfly.html">WildFly</a>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="wildfly.html#_download">Download &amp; Launch</a>
+    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="wildfly.html#_installing_using_docker">Docker</a>
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="config-guide.html">Config Guide</a>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -141,13 +141,13 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
+    <a class="nav-link" href="security.html">Security</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+    <a class="nav-link" href="security.html#_gateway_api_authentication">Gateway API Authentication</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
+    <a class="nav-link" href="security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
   </li>
 </ul>
   </li>
@@ -211,11 +211,11 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="production-gateway.html">Vertx</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="production-gateway-wildfly.html">Wildfly</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.0.Final</span>
+    <span class="version">2.1.1.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.0.Final</a>
+          <a href="../index.html">2.1.1.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,51 +291,100 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Platforms</li>
-    <li><a href="wildfly.html">WildFly</a></li>
-    <li><a href="wildfly.html#_download">Download &amp; Launch</a></li>
-    <li><a href="config-guide.html">Config Guide</a></li>
+    <li><a href="../production.html">Production Guide</a></li>
+    <li>Gateway</li>
+    <li><a href="production-gateway.html">Vertx</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.0.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.1.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="config-guide.html">2.1.0.Final</a>
-    <a class="version" href="../../1.5.7.Final/servlet/config-guide.html">1.5.7.Final</a>
+    <a class="version is-current" href="production-gateway.html">2.1.1.Final</a>
+    <a class="version" href="../../1.5.7.Final/gateway/production-gateway.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/servlet/config-guide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/gateway/production-gateway.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Servlet Configuration</h1>
-<div id="preamble">
+<h1 class="page">Apiman Gateway Production Guide</h1>
+<div class="sect1">
+<h2 id="_setting_the_api_gateway_public_endpoint"><a class="anchor" href="#_setting_the_api_gateway_public_endpoint"></a>Setting the API Gateway Public Endpoint</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Servlet version of the Apiman gateway uses Java properties as its primary source of configuration.</p>
+<p>An important step is to let the API Gateway know what its public endpoint is.
+This is important because the API Manager will sometimes ask the Gateway to report on the Managed Endpoint for a published API.</p>
 </div>
+<div class="sect2">
+<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h3>
 <div class="paragraph">
-<p>This includes such platforms as WildFly, EAP, Jetty and Tomcat.</p>
+<p>To set the public endpoint of the API Gateway, add the following to <code>conf.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "publicEndpoint": "https://api-gateway-host.org:8443" <i class="conum" data-value="1"></i><b>(1)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You can also append a path, etc. This is useful if you are behind a proxy and need to report a specific endpoint.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
+<div class="paragraph">
+<p>To set the public URL/endpoint of the API Gateway, add the following to <code>apiman.properties</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.public-endpoint=https://api-gateway-host.org:8443/apiman-gateway/</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Please make sure to use your appropriate values for the host and port.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configuration_properties"><a class="anchor" href="#_configuration_properties"></a>Configuration Properties</h2>
+<h2 id="_pointing_the_api_gateway_to_a_remote_elasticsearch"><a class="anchor" href="#_pointing_the_api_gateway_to_a_remote_elasticsearch"></a>Pointing the API Gateway to a Remote Elasticsearch</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All of the Apiman WARs share a common configuration file called <strong>apiman.properties</strong>, which for the WildFly and EAP editions can be found in <strong>standalone/configuration</strong>.</p>
+<p>The API Gateway uses Elasticsearch in a number of ways, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Storing configuration information</p>
+</li>
+<li>
+<p>Managing shared state across a cluster</p>
+</li>
+<li>
+<p>Storing metrics to share with the API Manager (analytics)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>This file therefore contains configuration settings for all three applications (API Manager, API Manager UI, API Gateway).</p>
-</div>
-<div class="paragraph">
-<p>Please refer to the <code>apiman.properties</code> file itself, as well as this documentation, for more information on each property&#8217;s purpose and possible values.</p>
-</div>
-<div class="paragraph">
-<p>To discover available options for components, refer to the <a href="../registries-and-components/overview.adoc">Registries &amp; Components</a> documentation.</p>
+<p>In order to configure the gateway properly, you will need to configure the location of the Elasticsearch instance.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -344,45 +393,65 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you are running a non-Servlet gateway implementation (e.g. Vert.x), then you should refer to that gateway&#8217;s configuration documentation to understand how to configure that element.
+You will need to replace the values with those appropriate for your installation of Elasticsearch.
 </td>
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h3>
+<div class="paragraph">
+<p>To do this, modify these properties in the <code>conf.json</code> file <strong>for each ES component</strong>. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "registry": {
+    "class": "io.apiman.gateway.engine.es.ESRegistry",
+    "config": {
+      "client": {
+        "type": "jest",
+        "cluster-name": "elasticsearch",
+        "host": "localhost", <i class="conum" data-value="1"></i><b>(1)</b>
+        "port": "9200",
+        "initialize": true
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You could use Environment Variables or System Properties such as <code>${ES_HOST}</code> <code>${ES_PORT}</code>.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h3>
+<div class="paragraph">
+<p>To do this, modify these properties in the <code>apiman.properties</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
+apiman.es.host=es.myorg.com
+apiman.es.port=9200
+apiman.es.username=es_admin
+apiman.es.password=es_admin_password</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<h2 id="_pointing_the_api_gateway_to_a_remote_keycloak"><a class="anchor" href="#_pointing_the_api_gateway_to_a_remote_keycloak"></a>Pointing the API Gateway to a Remote Keycloak</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The configuration supports variable substitution (transclusion) in the form <code>"${FOO.SOME_VARIABLE}"</code>; where <code>FOO.SOME_VARIABLE</code> is the variable to be transcluded.
-The following list defines the lookup sources and order of precedence for variable resolution.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Properties defined in <code>apiman.properties</code>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">FOO.SOMEVARIABLE=1234
-# some.value will now become 1234
-some.value=${FOO.SOMEVARIABLE}</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>System properties: <code>-DFOO.SOME_VARIABLE="foo"</code></p>
-</li>
-<li>
-<p>Environment: <code>export FOO.SOME_VARIABLE="foo"</code></p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>A default value can be provided, which will be used if other lookup sources fail.</p>
-</div>
-<div class="paragraph">
-<p>For example <code>${MAGIC_NUMBER:-8090}</code> will result in <code>8090</code> being set if <code>MAGIC_NUMBER</code> is unresolved after the prior steps.</p>
+<p>Refer to the Installation section on <a href="../how-to/security.html#_external_keycloak_authentication" class="page">configuring a Remote Keycloak instance</a>. Be sure to select your implementation by clicking on the <strong>Vert.x</strong> or <strong>Servlet</strong> tabs at the top right.</p>
 </div>
 </div>
 </div>

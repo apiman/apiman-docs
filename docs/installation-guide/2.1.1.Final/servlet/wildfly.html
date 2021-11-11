@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Gateway Components :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.0.Final/registries-and-components/overview.html">
+    <title>Wildfly &amp; EAP :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.1.Final/servlet/wildfly.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.0.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.1.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -69,19 +69,19 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Platforms</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
+    <a class="nav-link" href="wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
+    <a class="nav-link" href="#_download">Download &amp; Launch</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+    <a class="nav-link" href="#_installing_using_docker">Docker</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+    <a class="nav-link" href="config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -124,18 +124,18 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="jdbc.html">JDBC</a>
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="headless.html">Headless</a>
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.0.Final</span>
+    <span class="version">2.1.1.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.0.Final</a>
+          <a href="../index.html">2.1.1.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,40 +291,135 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Gateway</li>
-    <li>Registries and Components</li>
-    <li><a href="overview.html">Registries &amp; Components</a></li>
+    <li>Platforms</li>
+    <li><a href="wildfly.html">WildFly</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.0.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.1.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="overview.html">2.1.0.Final</a>
-    <a class="version" href="../../1.5.7.Final/registries-and-components/overview.html">1.5.7.Final</a>
+    <a class="version is-current" href="wildfly.html">2.1.1.Final</a>
+    <a class="version" href="../../1.5.7.Final/servlet/wildfly.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/registries-and-components/overview.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/servlet/wildfly.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Gateway Components</h1>
-<div id="preamble">
+<h1 class="page">Wildfly &amp; EAP</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman is made up of a number of different components, many of which can be configured to use various implementations and/or providers.
-When downloading and installing apiman, the default distribution includes reasonable default values for all options.</p>
+<p>This chapter explores downloading and installing the Apiman quickstarts which consists of both the <em>Apiman Manager and UI</em> and <em>Apiman Gateway</em>.</p>
 </div>
-<div class="admonitionblock tip">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installing_in_wildfly"><a class="anchor" href="#_installing_in_wildfly"></a>Installing in WildFly</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apiman can target WildFly as a runtime environment.
+In order to install Apiman you will need to download both WildFly and the Apiman overlay distribution.
+Once both are downloaded, it&#8217;s a simple matter of unpacking both into the same location.</p>
+</div>
+<div class="sect2">
+<h3 id="_download"><a class="anchor" href="#_download"></a>Download</h3>
+<div class="paragraph">
+<p>First you will need to download both WildFly and Apiman:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip">Download WildFly</a></p>
+</li>
+<li>
+<p><a href="http://downloads.jboss.org/apiman/2.1.1.Final/apiman-distro-wildfly-2.1.1.Final-overlay.zip">Download Apiman 2.1.1.Final</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://download.jboss.org/wildfly/20.0.1.Final/wildfly-20.0.1.Final.zip
+
+wget https://github.com/apiman/apiman/releases/download/2.1.1.Final/apiman-distro-wildfly-2.1.1.Final-overlay.zip</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_unpack"><a class="anchor" href="#_unpack"></a>Unpack</h3>
+<div class="paragraph">
+<p>Once both files have been downloaded, simply unpack both in the same location.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">unzip wildfly-20.0.1.Final.zip
+
+unzip -o apiman-distro-wildfly-2.1.1.Final-overlay.zip -d wildfly-20.0.1.Final</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_run_wildfly"><a class="anchor" href="#_run_wildfly"></a>Run WildFly</h3>
+<div class="paragraph">
+<p>The Apiman overlay contains everything needed to run Apiman, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Apiman binaries (several WAR files)</p>
+</li>
+<li>
+<p>Apiman-specific WildFly configuration (<strong>standalone-apiman.xml</strong>)</p>
+</li>
+<li>
+<p>Apiman RDBMS datasource (h2)</p>
+</li>
+<li>
+<p>pre-configured <strong>admin</strong> user with password <strong>admin123!</strong></p>
+</li>
+<li>
+<p>pre-configured h2 database (populated with default values)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For this reason, there is no additional configuration required to run Apiman.
+Simply start up WildFly using the Apiman configuration file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-20.0.1.Final
+./bin/standalone.sh -c standalone-apiman.xml</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installing_using_docker"><a class="anchor" href="#_installing_using_docker"></a>Installing using Docker</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another option when installing Apiman is to use our docker image.
+You&#8217;re probably pretty familiar with docker if you&#8217;re going that route, but here is an example of how to start up the Apiman docker image:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull apiman/on-wildfly:2.1.1.Final
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:2.1.1.Final</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Refer to your platform&#8217;s configuration documentation, or the corresponding component configuration documentation for comprehensive information.
+You can find Apiman on <a href="https://registry.hub.docker.com/repos/apiman/">Docker Hub</a>.
 </td>
 </tr>
 </table>
@@ -332,41 +427,35 @@ Refer to your platform&#8217;s configuration documentation, or the corresponding
 </div>
 </div>
 <div class="sect1">
-<h2 id="_api_gateway_registry"><a class="anchor" href="#_api_gateway_registry"></a>API Gateway Registry</h2>
+<h2 id="_logging_in"><a class="anchor" href="#_logging_in"></a>Logging In</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The API Gateway includes a registry that stores the published API and Client App information.
-This registry is updated whenever a user publishes an API (or registers a Client App) from within the API Manager UI.
-The registry contains just the configuration information necessary for the API Gateway to properly apply the appropriate policies to all inbound requests.</p>
+<p>Once Apiman is running, you should be able to log in to the API Manager by pointing your browser at the following URL:</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">http://localhost:8080/apimanui/</code></pre>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_rate_limiter"><a class="anchor" href="#_rate_limiter"></a>Rate Limiter</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The rate limiter component is used by apiman policies to enforce rate limits and uses the specified implementation to store data.
-Different implementations are likely to have different semantic and performance characteristics which should be paid attention to.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_shared_state"><a class="anchor" href="#_shared_state"></a>Shared State</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The shared state component is used by apiman policies to share interesting state information across multiple requests.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Apiman has a metrics engine that collects a variety of valuable data before passing it to a pluggable metrics component.
-This affords all metrics implementations complete control in processing and extruding data.</p>
 </div>
 <div class="paragraph">
-<p>For example,  <a href="elasticsearch.html#_metrics" class="page">Elasticsearch</a> and InfluxDB and JDBC are available, amongst others.</p>
+<p>You may log in with credentials <strong>admin/admin123!</strong></p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We strongly advise that you immediately change the Keycloak admin user&#8217;s password, as well as the <strong><em>admin</em></strong> user found in the <strong><em>apiman</em></strong> realm!</p>
+</div>
+<div class="paragraph">
+<p>You can do that by navigating to <a href="http://localhost:8080/auth/admin/" class="bare">http://localhost:8080/auth/admin/</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
