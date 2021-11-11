@@ -37,3 +37,8 @@ ui:
 
 output:
   dir: ./docs
+
+asciidoc:
+  extensions:
+  - ./lib/openblock.js
+  - ./lib/tabs-block.js
