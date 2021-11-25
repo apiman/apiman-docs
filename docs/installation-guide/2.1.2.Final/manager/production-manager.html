@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Apiman Manager Production Guide :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.2.Final/manager/production-manager.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.2.Final">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart.html">Quickstart</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Platforms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Registries and Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="configuration.html">General Configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configuration.html#_logging_in">Logging In</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configuration.html#_custom_api_catalog">Custom API Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How to</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../production.html">Production Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="production-manager.html">Manager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">2.1.2.Final</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../core/2.1.2.Final/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/2.1.2.Final/index.html">2.1.2.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../core/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../welcome/2.1.2.Final/index.html">Apiman Welcome</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../welcome/2.1.2.Final/index.html">2.1.2.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../welcome/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">2.1.2.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../user-guide/2.1.2.Final/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../user-guide/2.1.2.Final/index.html">2.1.2.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../user-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../welcome/2.1.2.Final/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Installation Guide</a></li>
+    <li><a href="../production.html">Production Guide</a></li>
+    <li><a href="production-manager.html">Manager</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.2.Final</button>
+  <div class="version-menu">
+    <a class="version is-current" href="production-manager.html">2.1.2.Final</a>
+    <a class="version" href="../../1.5.7.Final/manager/production-manager.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/manager/production-manager.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Apiman Manager Production Guide</h1>
+<div class="sect1">
+<h2 id="_deployment_tooling_for_apiman"><a class="anchor" href="#_deployment_tooling_for_apiman"></a>Deployment Tooling for Apiman</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide should serve as a guide to manually deploy Apiman into production.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The production guide assumes you are installing into WildFly.
+The instructions are slightly different if you are using some other platform (Tomcat, older WildFly versions, EAP 7).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_database"><a class="anchor" href="#_database"></a>Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have a number of persistence options in both Keycloak and Apiman, but this guide will focus on using an RDBMS instead of other options (e.g. Elasticsearch for Apiman or MongoDB for KC).</p>
+</div>
+<div class="paragraph">
+<p>On a separate server, install a production ready database such as MySQL, Oracle, or PostgreSQL.
+You will want to create two schemas/databases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>keycloak</code></p>
+</li>
+<li>
+<p><code>apiman</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Make sure your DB is accessible remotely and enable whatever security options you need (SSL, users/passwords).
+We recommend using two different users and permissioning them appropriately (e.g. create a "sa_apiman" account and a "sa_keycloak" account).</p>
+</div>
+<div class="paragraph">
+<p>After creating the ‘apiman' database, you can initialize it using the appropriate DDL for the database you selected.
+We currently support MySQL 5, Oracle 12, and PostgreSQL 9.
+The DDLs for these databases can be found in the quickstart overlay ZIP file, or you can grab them directly from GitHub.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls" class="bare">https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls</a></p>
+</div>
+<div class="paragraph">
+<p>Make sure you grab the right one for whichever version of Apiman you are going to be installing (<strong>hint</strong>: use the appropriate GitHub tag).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to install just the API Manager is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.
+Follow that up with a few configuration modifications, and you should have the Manager running in no time!</p>
+</div>
+<div class="paragraph">
+<p>Here are the steps you should take to install a standalone API Manager:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download and unpack WildFly</p>
+</li>
+<li>
+<p>Download Apiman</p>
+</li>
+<li>
+<p>Unpack Apiman into WildFly</p>
+</li>
+<li>
+<p>Remove unused Apiman deployments from standalone/deployments</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Which Apiman deployments should you delete? These:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">standalone/deployments/apiman-es.war
+standalone/deployments/apiman-gateway-api.war
+standalone/deployments/apiman-gateway.war</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_disabling_the_keycloak_server"><a class="anchor" href="#_disabling_the_keycloak_server"></a>Disabling the Keycloak Server</h3>
+<div class="paragraph">
+<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the Apiman quickstart overlay ZIP.
+To do that, make the following modification to the <strong>standalone-apiman.xml</strong> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;subsystem xmlns="urn:jboss:domain:keycloak-server:1.1"&gt;
+  &lt;web-context&gt;auth&lt;/web-context&gt;
+&lt;/subsystem&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_connecting_to_the_database"><a class="anchor" href="#_connecting_to_the_database"></a>Connecting to the Database</h3>
+<div class="paragraph">
+<p>This guide assumes you are using a production ready RDBMS as the storage layer for the API Manager.
+Note that other options exist, but configuring them is out of scope for this guide.</p>
+</div>
+<div class="paragraph">
+<p>Hopefully you&#8217;ve already created and initialized the database in the earlier section labeled "<em>Installing a Database</em>".
+So at this point you really only need to connect the API Manager up to the already existing database.
+The following must be done in order to connect to your database:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploy a JDBC driver compatible with your database</p>
+</li>
+<li>
+<p>Update the <strong>apiman-ds.xml</strong> datasource file (to point it at your database)</p>
+</li>
+<li>
+<p>Update the Hibernate dialect in <strong>apiman.properties</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First, you will need to deploy a JDBC driver that is compatible with whichever database you have chosen.
+Here are two popular drivers:</p>
+</div>
+<div class="paragraph">
+<p><strong><em>MySQL 5</em></strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.33/mysql-connector-java-5.1.33.jar" class="bare">https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.33/mysql-connector-java-5.1.33.jar</a></p>
+</div>
+<div class="paragraph">
+<p><strong><em>PostgreSQL 9</em></strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1102-jdbc41/postgresql-9.3-1102-jdbc41.jar" class="bare">https://repo1.maven.org/maven2/org/postgresql/postgresql/9.3-1102-jdbc41/postgresql-9.3-1102-jdbc41.jar</a></p>
+</div>
+<div class="paragraph">
+<p>The easiest way to deploy the driver is to simply download it and copy it into the <strong>wildfly/standalone/deployments</strong> directory.</p>
+</div>
+<div class="paragraph">
+<p>Next, you must update or replace the <strong>apiman-ds.xml</strong> file to something that is configured for your particular database.
+Examples of appropriate datasource files for mysql and postgresql can be found here:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/sample-configs" class="bare">https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/sample-configs</a></p>
+</div>
+<div class="paragraph">
+<p>These examples are also included in the apiman quickstart overlay ZIP download.</p>
+</div>
+<div class="paragraph">
+<p>Finally, you must update the <strong>apiman.properties</strong> file to configure the Hibernate dialect for your database.
+Apiman includes specific dialects that should be used when installing your database via the included DDL files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>H2</em></strong>: <code>io.apiman.manager.api.jpa.ApimanH2Dialect</code></p>
+</li>
+<li>
+<p><strong><em>MySQL</em></strong>: <code>io.apiman.manager.api.jpa.ApimanMySQL5Dialect</code></p>
+</li>
+<li>
+<p><strong><em>Oracle</em></strong>: <code>io.apiman.manager.api.jpa.ApimanOracle12Dialect</code></p>
+</li>
+<li>
+<p><strong><em>Postgresql</em></strong>: <code>io.apiman.manager.api.jpa.ApimanPostgreSQLDialect</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, here is the line you should change in the <strong>apiman.properties</strong> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.hibernate.dialect=io.apiman.manager.api.jpa.ApimanH2Dialect</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Change the value of that property to the appropriate dialect for your database.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_point_the_api_manager_to_the_api_gateway"><a class="anchor" href="#_point_the_api_manager_to_the_api_gateway"></a>Point the API Manager to the API Gateway</h3>
+<div class="paragraph">
+<p>Now that both your API Manager and API Gateway are running, you need to hook them up.
+This just means telling API Manager where the gateway lives.
+There is an admin UI page in apiman that will let you do this.
+Simply navigate here:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://api-manager-host.org:8443/apimanui/api-manager/admin/gateways" class="bare">https://api-manager-host.org:8443/apimanui/api-manager/admin/gateways</a></p>
+</div>
+<div class="paragraph">
+<p>From there you will be able to click on the gateway and modify its settings.  Make sure to use the <strong>Test</strong> button on the Edit Gateway UI page to make sure you got the settings right!
+Don&#8217;t worry, the <strong>Test</strong> button will simply try to make a connection to the API Gateway&#8217;s configuration URL, asking it for the current Gateway status.
+If the Gateway responds as expected, then you can be confident that your settings are correct.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You will need to log into the UI.  The default credentials are:  admin/admin123!
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You may have changed the default user credentials when you installed and configured Keycloak. If so, make sure you use those credentials.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_keycloak_authentication_for_the_manager_api_and_ui"><a class="anchor" href="#_configuring_keycloak_authentication_for_the_manager_api_and_ui"></a>Configuring Keycloak Authentication for the Manager API and UI</h3>
+<div class="paragraph">
+<p>The API Manager has a REST based API which the User Interface uses for all actions taken.
+It can also be used directly for automation and/or integration purposes.
+This API is protected by Keycloak authentication.
+The configuration included in the apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you will need to modify the <strong>standalone-apiman.xml</strong> file to point to the remote Keycloak instance.</p>
+</div>
+<div class="paragraph">
+<p>Here is the relevant portion of the <strong>standalone-apiman.xml</strong> file that you must change:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm name="apiman"&gt;
+  &lt;realm-public-key&gt;MIIB..snip..QAB&lt;/realm-public-key&gt;
+  &lt;auth-server-url&gt;https://keycloak-host.org:8443/auth&lt;/auth-server-url&gt;
+  &lt;ssl-required&gt;none&lt;/ssl-required&gt;
+  &lt;enable-cors&gt;false&lt;/enable-cors&gt;
+  &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
+&lt;/realm&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pointing_the_api_manager_to_a_remote_elasticsearch"><a class="anchor" href="#_pointing_the_api_manager_to_a_remote_elasticsearch"></a>Pointing the API Manager to a Remote Elasticsearch</h3>
+<div class="paragraph">
+<p>The API Manager uses Elasticsearch for analysis of metrics.
+This metrics data is stored in Elasticsearch by the API Gateway whenever API requests are handled.
+Therefore, the API Manager and API Gateway must talk to the same Elasticsearch instance/cluster.</p>
+</div>
+<div class="paragraph">
+<p>To configure Elasticsearch for the API Manager, modify these properties in the <strong>apiman.properties</strong> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
+apiman.es.host=es.myorg.com
+apiman.es.port=9200
+apiman.es.username=es_admin
+apiman.es.password=es_admin_password</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will need to replace the values in the properties above with those appropriate for your installation of Elasticsearch.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
