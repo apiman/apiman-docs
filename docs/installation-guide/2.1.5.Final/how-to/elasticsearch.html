@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Backup &amp; Migration :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/manager/backup-migration.html">
+    <title>How To: Elasticsearch :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/how-to/elasticsearch.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -161,27 +161,27 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="configuration.html">General Configuration</a>
+    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_custom_api_catalog">Custom API Catalog</a>
+    <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
+    <a class="nav-link" href="../manager/configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
+    <a class="nav-link" href="../manager/configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+    <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
   </li>
 </ul>
   </li>
@@ -190,16 +190,16 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+    <a class="nav-link" href="#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+    <a class="nav-link" href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -220,7 +220,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="production-manager.html">Manager</a>
+    <a class="nav-link" href="../manager/production-manager.html">Manager</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,119 +291,222 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Manager</li>
-    <li><a href="#_backup_migration">Backup &amp; Migration</a></li>
+    <li>How to</li>
+    <li><a href="#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="backup-migration.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/manager/backup-migration.html">1.5.7.Final</a>
+    <a class="version is-current" href="elasticsearch.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/how-to/elasticsearch.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/manager/backup-migration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/how-to/elasticsearch.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Backup &amp; Migration</h1>
+<h1 class="page">How To: Elasticsearch</h1>
 <div class="sect1">
-<h2 id="_data_exportimport"><a class="anchor" href="#_data_exportimport"></a>Data Export/Import</h2>
+<h2 id="_use_elasticsearch_instead_of_an_rdbms"><a class="anchor" href="#_use_elasticsearch_instead_of_an_rdbms"></a>Use Elasticsearch instead of an RDBMS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman has a feature that allows admin users to export all the configuration data from the Manager into a single export file (JSON formatted).
-This exported file can then be edited (if necessary) and then imported into another instance of Apiman.
-This feature attempts to address the following use-cases:</p>
+<p>The API Manager is configured (by default) to use JPA as the persistence technology for storing all of its data.  But this isn&#8217;t the only persistence technology supported.
+Another option is to use Elasticsearch.
+This section details how to set up Apiman to use Elasticsearch instead of an RDBMS to store your API Manager data.</p>
+</div>
+<div class="sect2">
+<h3 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download and install <a href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch 7.x</a></p>
+</li>
+<li>
+<p>Make changes to <code>apiman.properties</code> to switch from JPA to Elasticsearch</p>
+</li>
+<li>
+<p>(Re)start Apiman!</p>
+</li>
+<li>
+<p>Perform standard admin configuration of Apiman (the database will of course be empty!)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_download_and_install_elasticsearch"><a class="anchor" href="#_download_and_install_elasticsearch"></a>Download and install Elasticsearch</h3>
+<div class="paragraph">
+<p>This part is pretty easy - download the Elasticsearch software and get it running.
+The Elasticsearch documentation provides <a href="http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html" target="_blank" rel="noopener">extensive guidance for this</a>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>An embedded instance of Elasticsearch is no longer included with Apiman.</p>
+</div>
+<div class="paragraph">
+<p>Running <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html" target="_blank" rel="noopener">Elasticsearch using Docker</a> is a very convenient way to get started.</p>
+</div>
+<div class="paragraph">
+<p><code>docker run -p 19200:9200 -p 19300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:&lt;ES 7 version&gt;</code></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You may use it as your API Manager persistence store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_make_changes_to_apiman_properties"><a class="anchor" href="#_make_changes_to_apiman_properties"></a>Make changes to <code>apiman.properties</code></h3>
+<div class="paragraph">
+<p>Once Elasticsearch is running smoothly, you must make some changes to the <strong><code>apiman.properties</code></strong> file in order to tell Apiman to use ES instead of a database.
+You should modify the <code>apiman.properties</code> file to have the following properties set:</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can optionally also set the username and password - this is only useful if you are using something like Elasticsearch Shield to enable basic authentication.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
+apiman.es.host=localhost
+apiman.es.port=19200
+apiman.es.username=
+apiman.es.password=
+
+apiman-manager.storage.type=es
+apiman-manager.storage.es.protocol=${apiman.es.protocol}
+apiman-manager.storage.es.host=${apiman.es.host}
+apiman-manager.storage.es.port=${apiman.es.port}
+apiman-manager.storage.es.username=${apiman.es.username}
+apiman-manager.storage.es.password=${apiman.es.password}
+apiman-manager.storage.es.initialize=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure you enter appropriate values for the <code>apiman.es.protocol</code>, <code>apiman.es.host</code>, and <code>apiman.es.port</code> properties.
+These values should reflect the settings of your Elasticsearch instance.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you are using a standalone gateway instance you will need to configure it separately to point to the same datastore. For example, <code>conf.json</code> for Vert.x and <code>standalone.xml</code> for Servlet.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start Apiman</h3>
+<div class="paragraph">
+<p>If Apiman was running, you should stop it now.
+Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.
+It will pick up the new settings in <code>apiman.properties</code> and attempt to use Elasticsearch instead of the database!</p>
+</div>
+<div class="paragraph">
+<div class="title">Perform standard admin configuration</div>
+<p>Note that the Apiman quickstart overlay ZIP comes pre-configured with a number of settings, including:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Data backups</p>
+<p>Installed policy definitions</p>
 </li>
 <li>
-<p>Migrating between environments</p>
+<p>Default configured roles (Organization Owner, API Developer, Application Developer)</p>
 </li>
 <li>
-<p>Upgrading Apiman to a new version</p>
+<p>A default configured Gateway</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Using the feature is simple - you must log into the Apiman UI as an admin user, then navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.
-From there you can export or import data.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_backing_up_your_data"><a class="anchor" href="#_backing_up_your_data"></a>Backing Up Your Data</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>There are multiple strategies for backing up your Apiman data, depending on the configuration you have chosen (e.g. whether you are using a Database or Elasticsearch to store your data).
-However, once approach to data backups that is consistent across all configurations is to use the Data Export feature of Apiman to create a JSON file containing all the Apiman configuration data.</p>
-</div>
-<div class="paragraph">
-<p>This can be done via the UI or via the following API Manager REST endpoint:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">https://HOST:PORT/apiman/system/export</code></pre>
+<p>This built-in configuration will be lost when you switch from JPA to Elasticsearch.
+You will need to use the Apiman admin UI to reconfigure these settings.
+Refer to the "System Administration" section of the User Guide for more information on this.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_migrating_data_between_environments"><a class="anchor" href="#_migrating_data_between_environments"></a>Migrating Data Between Environments</h2>
+<h2 id="_use_standalone_elasticsearch_instancecluster"><a class="anchor" href="#_use_standalone_elasticsearch_instancecluster"></a>Use standalone Elasticsearch instance/cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Often times you may have a Test version of Apiman deployed, as well as a Production version.
-Depending on your workflow, you may wish to configure your APIs in the Test environment and then migrate that configuration into Production (rather than having to re-create the same configuration in Production manually).
-This can be accomplished by Exporting data from Test and then importing it into Production.</p>
+<p>The Apiman quickstart overlay ZIP ships by default with an embedded instance of Elasticsearch.
+This is suitable for getting up and running quickly, but is not a good long term solution.
+Instead, users are encouraged to install a standalone instance of Elasticsearch and point Apiman to it.</p>
 </div>
-<div class="paragraph">
-<p>When doing this, note that the Export feature will export the entire set of configuration from Apiman.
-This may be precisely what you want, but many times only a subset of the data is desired.
-If this is the case, then you will need to edit the resulting JSON file to only include the data you wish to migrate.
-In the future, we hope to build tools that will make this editing of the exported file easier.</p>
-</div>
-<div class="paragraph">
-<p>Once you have edited the exported file, you can simply log into your production Apiman instance and use the Export/Import UI page to import the data.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_upgrading_to_a_new_apiman_version"><a class="anchor" href="#_upgrading_to_a_new_apiman_version"></a>Upgrading to a New Apiman Version</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Whenever you wish to upgrade from an old to a newer version of Apiman, you will likely want to preserve all the Plan, API, and Client App configurations you have created.</p>
-</div>
-<div class="paragraph">
-<p>To do this, you can follow these steps:</p>
-</div>
+<div class="sect2">
+<h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Export all data from OLD VERSION of Apiman</p>
+<p>Download and install <a href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch</a></p>
 </li>
 <li>
-<p>Shut down OLD VERSION of Apiman</p>
+<p>Make changes to "apiman.properties" to point to your standalone Elasticsearch instance</p>
 </li>
 <li>
-<p>Install NEW VERSION of Apiman</p>
-</li>
-<li>
-<p>Start up NEW VERSION of Apiman</p>
-</li>
-<li>
-<p>Import data into NEW VERSION of Apiman (data exported in step #1)</p>
+<p>(Re)start Apiman!</p>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_download_and_install_elasticsearch_2"><a class="anchor" href="#_download_and_install_elasticsearch_2"></a>Download and install Elasticsearch</h3>
 <div class="paragraph">
-<p>Once these steps are complete, you should have a new version of Apiman running
-with all of your existing data.</p>
+<p>This part is pretty easy - download the Elasticsearch software and get it running.
+A very good resource for this can be found here:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html" class="bare">http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_make_changes_to_apiman_properties_2"><a class="anchor" href="#_make_changes_to_apiman_properties_2"></a>Make changes to "apiman.properties"</h3>
+<div class="paragraph">
+<p>Once Elasticsearch is running smoothly, you must make some minor changes to the <strong>apiman.properties</strong> file in order to tell Apiman where your Elasticsearch instance is located.</p>
+</div>
+<div class="paragraph">
+<p>There are a set of global properties used for all Apiman components that use Elasticsearch to load data.
+These properties are:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
+apiman.es.host=localhost
+apiman.es.port=19200
+apiman.es.username=
+apiman.es.password=</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure you enter appropriate values for this properties - they should reflect the settings of your Elasticsearch installation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restart_apiman_2"><a class="anchor" href="#_restart_apiman_2"></a>(Re)start Apiman</h3>
+<div class="paragraph">
+<p>If Apiman was running, you should stop it now.
+Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.
+It will pick up the new settings in <code>apiman.properties</code> and attempt to use Elasticsearch instead of Infinispan.</p>
+</div>
 </div>
 </div>
 </div>

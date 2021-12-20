@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How To: Security :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/how-to/security.html">
+    <title>Servlet Configuration :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/servlet/config-guide.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -71,17 +71,17 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
+    <a class="nav-link" href="wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
+    <a class="nav-link" href="wildfly.html#_download">Download &amp; Launch</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+    <a class="nav-link" href="wildfly.html#_installing_using_docker">Docker</a>
   </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -190,16 +190,16 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_external_keycloak_authentication">External Keycloak Authentication</a>
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,132 +291,98 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>How to</li>
-    <li><a href="#_external_keycloak_authentication">External Keycloak Authentication</a></li>
+    <li>Platforms</li>
+    <li><a href="wildfly.html">WildFly</a></li>
+    <li><a href="wildfly.html#_download">Download &amp; Launch</a></li>
+    <li><a href="config-guide.html">Config Guide</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="security.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/how-to/security.html">1.5.7.Final</a>
+    <a class="version is-current" href="config-guide.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/servlet/config-guide.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/how-to/security.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/servlet/config-guide.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How To: Security</h1>
-<div class="sect1">
-<h2 id="_external_keycloak_authentication"><a class="anchor" href="#_external_keycloak_authentication"></a>External Keycloak Authentication</h2>
+<h1 class="page">Servlet Configuration</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Apiman quickstart overlay ZIP comes with an embedded version of Keycloak that we use for authentication.
-You may already have a Keycloak instance that you use.
-This section explains how to modify Apiman to use yours instead of ours.</p>
+<p>The Servlet version of the Apiman gateway uses Java properties as its primary source of configuration.</p>
 </div>
-<div class="sect2">
-<h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
+<div class="paragraph">
+<p>This includes such platforms as WildFly, EAP, Jetty and Tomcat.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_properties"><a class="anchor" href="#_configuration_properties"></a>Configuration Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All of the Apiman WARs share a common configuration file called <strong>apiman.properties</strong>, which for the WildFly and EAP editions can be found in <strong>standalone/configuration</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This file therefore contains configuration settings for all three applications (API Manager, API Manager UI, API Gateway).</p>
+</div>
+<div class="paragraph">
+<p>Please refer to the <code>apiman.properties</code> file itself, as well as this documentation, for more information on each property&#8217;s purpose and possible values.</p>
+</div>
+<div class="paragraph">
+<p>To discover available options for components, refer to the <a href="../registries-and-components/overview.adoc">Registries &amp; Components</a> documentation.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you are running a non-Servlet gateway implementation (e.g. Vert.x), then you should refer to that gateway&#8217;s configuration documentation to understand how to configure that element.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The configuration supports variable substitution (transclusion) in the form <code>"${FOO.SOME_VARIABLE}"</code>; where <code>FOO.SOME_VARIABLE</code> is the variable to be transcluded.
+The following list defines the lookup sources and order of precedence for variable resolution.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create the Apiman Realm in Keycloak</p>
+<p>Properties defined in <code>apiman.properties</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">FOO.SOMEVARIABLE=1234
+# some.value will now become 1234
+some.value=${FOO.SOMEVARIABLE}</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>Configure the API Manager UI client in Keycloak</p>
+<p>System properties: <code>-DFOO.SOME_VARIABLE="foo"</code></p>
 </li>
 <li>
-<p>Point Apiman at the remote Keycloak</p>
+<p>Environment: <code>export FOO.SOME_VARIABLE="foo"</code></p>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_create_the_apiman_realm_in_keycloak"><a class="anchor" href="#_create_the_apiman_realm_in_keycloak"></a>Create the Apiman Realm in Keycloak</h3>
 <div class="paragraph">
-<p>You&#8217;ll need to make sure you create the <strong>apiman</strong> realm in your Keycloak server.
-A quick way to do that is to use the Keycloak admin console to import the Apiman realm file located here:</p>
+<p>A default value can be provided, which will be used if other lookup sources fail.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_configure_the_api_manager_ui_client_in_keycloak"><a class="anchor" href="#_configure_the_api_manager_ui_client_in_keycloak"></a>Configure the API Manager UI client in Keycloak</h3>
-<div class="paragraph">
-<p>Once the apiman realm has been created or imported, make sure to configure the <strong>Valid Redirect URIs</strong> section of the <strong>apimanui</strong>, <strong>apiman</strong> and <strong>apiman-gateway-api</strong> clients.
-The default relative URL of each must be replaced by the full (absolute) public URL of your API Manager UI.</p>
-</div>
-<div class="paragraph">
-<p>For example, the values may be something like:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">apimanui</dt>
-<dd>
-<p><code><a href="https://apiman.myorg.com/apimanui/*" class="bare">https://apiman.myorg.com/apimanui/*</a></code></p>
-</dd>
-<dt class="hdlist1">apiman</dt>
-<dd>
-<p><code><a href="https://apiman.myorg.com/apiman/*" class="bare">https://apiman.myorg.com/apiman/*</a></code></p>
-</dd>
-<dt class="hdlist1">apiman-gateway-api</dt>
-<dd>
-<p><code><a href="https://apiman.myorg.com/apiman-gateway-api/*" class="bare">https://apiman.myorg.com/apiman-gateway-api/*</a></code></p>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Don&#8217;t forget the "*" wildcard at the end of the URL.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_point_apiman_at_the_remote_keycloak"><a class="anchor" href="#_point_apiman_at_the_remote_keycloak"></a>Point Apiman at the remote Keycloak</h3>
-<div class="paragraph">
-<p>You must modify the <strong>standalone-apiman.xml</strong> configuration file to point Apiman at the remote Keycloak server.</p>
-</div>
-<div class="paragraph">
-<p>Make sure you know the full public URL of your Keycloak server and add it to the following section of <strong>standalone-apiman.xml</strong>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm xmlns:kc="urn:jboss:domain:keycloak:1.0" name="apiman"&gt;
-    &lt;realm-public-key&gt;MIIBIjAN&lt;...&gt;AQAB&lt;/realm-public-key&gt;
-    &lt;auth-server-url&gt;http://apiman.myorg.com:8080/auth&lt;/auth-server-url&gt;
-    &lt;public-client&gt;true&lt;/public-client&gt;
-    &lt;ssl-required&gt;NONE&lt;/ssl-required&gt;
-    &lt;enable-cors&gt;false&lt;/enable-cors&gt;
-    &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
-&lt;/realm&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Finally, if you are using a standalone gateway, you should also configure the <a href="../gateway/security.html#_setup" class="page">Gateway API</a> to point to the same Keycloak instance.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you manually created the apiman realm in Keycloak, you will also need to copy the realm&#8217;s public key into &lt;realm-public-key&gt; above.
-</td>
-</tr>
-</table>
-</div>
+<p>For example <code>${MAGIC_NUMBER:-8090}</code> will result in <code>8090</code> being set if <code>MAGIC_NUMBER</code> is unresolved after the prior steps.</p>
 </div>
 </div>
 </div>

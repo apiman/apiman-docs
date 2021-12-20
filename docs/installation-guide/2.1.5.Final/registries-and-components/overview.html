@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Overview: How To :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/how-to/overview.html">
+    <title>Gateway Components :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/registries-and-components/overview.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -124,18 +124,18 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Registries and Components</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
+    <a class="nav-link" href="jdbc.html">JDBC</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+    <a class="nav-link" href="headless.html">Headless</a>
   </li>
 </ul>
   </li>
@@ -190,16 +190,16 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,26 +291,84 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li><a href="overview.html">Overview: How To</a></li>
+    <li>Gateway</li>
+    <li>Registries and Components</li>
+    <li><a href="overview.html">Registries &amp; Components</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="overview.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/how-to/overview.html">1.5.7.Final</a>
+    <a class="version is-current" href="overview.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/registries-and-components/overview.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/how-to/overview.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/registries-and-components/overview.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Overview: How To</h1>
+<h1 class="page">Gateway Components</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>This chapter aims to provide some in-depth guidance on successfully performing some commonly required configuration tasks.</p>
+<p>Apiman is made up of a number of different components, many of which can be configured to use various implementations and/or providers.
+When downloading and installing apiman, the default distribution includes reasonable default values for all options.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Refer to your platform&#8217;s configuration documentation, or the corresponding component configuration documentation for comprehensive information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_gateway_registry"><a class="anchor" href="#_api_gateway_registry"></a>API Gateway Registry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The API Gateway includes a registry that stores the published API and Client App information.
+This registry is updated whenever a user publishes an API (or registers a Client App) from within the API Manager UI.
+The registry contains just the configuration information necessary for the API Gateway to properly apply the appropriate policies to all inbound requests.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rate_limiter"><a class="anchor" href="#_rate_limiter"></a>Rate Limiter</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The rate limiter component is used by apiman policies to enforce rate limits and uses the specified implementation to store data.
+Different implementations are likely to have different semantic and performance characteristics which should be paid attention to.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shared_state"><a class="anchor" href="#_shared_state"></a>Shared State</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The shared state component is used by apiman policies to share interesting state information across multiple requests.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apiman has a metrics engine that collects a variety of valuable data before passing it to a pluggable metrics component.
+This affords all metrics implementations complete control in processing and extruding data.</p>
+</div>
+<div class="paragraph">
+<p>For example,  <a href="elasticsearch.html#_metrics" class="page">Elasticsearch</a> and InfluxDB and JDBC are available, amongst others.</p>
+</div>
+</div>
 </div>
 </article>
   </div>

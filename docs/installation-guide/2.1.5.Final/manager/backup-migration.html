@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Servlet Configuration :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/servlet/config-guide.html">
+    <title>Backup &amp; Migration :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/manager/backup-migration.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -71,17 +71,17 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="wildfly.html">WildFly</a>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="wildfly.html#_download">Download &amp; Launch</a>
+    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="wildfly.html#_installing_using_docker">Docker</a>
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="config-guide.html">Config Guide</a>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -161,27 +161,27 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
+    <a class="nav-link" href="configuration.html">General Configuration</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="configuration.html#_logging_in">Logging In</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
+    <a class="nav-link" href="configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
+    <a class="nav-link" href="configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
+    <a class="nav-link" href="configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="#_backup_migration">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+    <a class="nav-link" href="#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
   </li>
 </ul>
   </li>
@@ -220,7 +220,7 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/production-manager.html">Manager</a>
+    <a class="nav-link" href="production-manager.html">Manager</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,98 +291,119 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Platforms</li>
-    <li><a href="wildfly.html">WildFly</a></li>
-    <li><a href="wildfly.html#_download">Download &amp; Launch</a></li>
-    <li><a href="config-guide.html">Config Guide</a></li>
+    <li>Manager</li>
+    <li><a href="#_backup_migration">Backup &amp; Migration</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="config-guide.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/servlet/config-guide.html">1.5.7.Final</a>
+    <a class="version is-current" href="backup-migration.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/manager/backup-migration.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/servlet/config-guide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/manager/backup-migration.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Servlet Configuration</h1>
-<div id="preamble">
+<h1 class="page">Backup &amp; Migration</h1>
+<div class="sect1">
+<h2 id="_data_exportimport"><a class="anchor" href="#_data_exportimport"></a>Data Export/Import</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Servlet version of the Apiman gateway uses Java properties as its primary source of configuration.</p>
+<p>Apiman has a feature that allows admin users to export all the configuration data from the Manager into a single export file (JSON formatted).
+This exported file can then be edited (if necessary) and then imported into another instance of Apiman.
+This feature attempts to address the following use-cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data backups</p>
+</li>
+<li>
+<p>Migrating between environments</p>
+</li>
+<li>
+<p>Upgrading Apiman to a new version</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>This includes such platforms as WildFly, EAP, Jetty and Tomcat.</p>
+<p>Using the feature is simple - you must log into the Apiman UI as an admin user, then navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.
+From there you can export or import data.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configuration_properties"><a class="anchor" href="#_configuration_properties"></a>Configuration Properties</h2>
+<h2 id="_backing_up_your_data"><a class="anchor" href="#_backing_up_your_data"></a>Backing Up Your Data</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All of the Apiman WARs share a common configuration file called <strong>apiman.properties</strong>, which for the WildFly and EAP editions can be found in <strong>standalone/configuration</strong>.</p>
+<p>There are multiple strategies for backing up your Apiman data, depending on the configuration you have chosen (e.g. whether you are using a Database or Elasticsearch to store your data).
+However, once approach to data backups that is consistent across all configurations is to use the Data Export feature of Apiman to create a JSON file containing all the Apiman configuration data.</p>
 </div>
 <div class="paragraph">
-<p>This file therefore contains configuration settings for all three applications (API Manager, API Manager UI, API Gateway).</p>
+<p>This can be done via the UI or via the following API Manager REST endpoint:</p>
 </div>
-<div class="paragraph">
-<p>Please refer to the <code>apiman.properties</code> file itself, as well as this documentation, for more information on each property&#8217;s purpose and possible values.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">https://HOST:PORT/apiman/system/export</code></pre>
 </div>
-<div class="paragraph">
-<p>To discover available options for components, refer to the <a href="../registries-and-components/overview.adoc">Registries &amp; Components</a> documentation.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you are running a non-Servlet gateway implementation (e.g. Vert.x), then you should refer to that gateway&#8217;s configuration documentation to understand how to configure that element.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<h2 id="_migrating_data_between_environments"><a class="anchor" href="#_migrating_data_between_environments"></a>Migrating Data Between Environments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The configuration supports variable substitution (transclusion) in the form <code>"${FOO.SOME_VARIABLE}"</code>; where <code>FOO.SOME_VARIABLE</code> is the variable to be transcluded.
-The following list defines the lookup sources and order of precedence for variable resolution.</p>
+<p>Often times you may have a Test version of Apiman deployed, as well as a Production version.
+Depending on your workflow, you may wish to configure your APIs in the Test environment and then migrate that configuration into Production (rather than having to re-create the same configuration in Production manually).
+This can be accomplished by Exporting data from Test and then importing it into Production.</p>
+</div>
+<div class="paragraph">
+<p>When doing this, note that the Export feature will export the entire set of configuration from Apiman.
+This may be precisely what you want, but many times only a subset of the data is desired.
+If this is the case, then you will need to edit the resulting JSON file to only include the data you wish to migrate.
+In the future, we hope to build tools that will make this editing of the exported file easier.</p>
+</div>
+<div class="paragraph">
+<p>Once you have edited the exported file, you can simply log into your production Apiman instance and use the Export/Import UI page to import the data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_upgrading_to_a_new_apiman_version"><a class="anchor" href="#_upgrading_to_a_new_apiman_version"></a>Upgrading to a New Apiman Version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Whenever you wish to upgrade from an old to a newer version of Apiman, you will likely want to preserve all the Plan, API, and Client App configurations you have created.</p>
+</div>
+<div class="paragraph">
+<p>To do this, you can follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Properties defined in <code>apiman.properties</code>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">FOO.SOMEVARIABLE=1234
-# some.value will now become 1234
-some.value=${FOO.SOMEVARIABLE}</code></pre>
-</div>
-</div>
+<p>Export all data from OLD VERSION of Apiman</p>
 </li>
 <li>
-<p>System properties: <code>-DFOO.SOME_VARIABLE="foo"</code></p>
+<p>Shut down OLD VERSION of Apiman</p>
 </li>
 <li>
-<p>Environment: <code>export FOO.SOME_VARIABLE="foo"</code></p>
+<p>Install NEW VERSION of Apiman</p>
+</li>
+<li>
+<p>Start up NEW VERSION of Apiman</p>
+</li>
+<li>
+<p>Import data into NEW VERSION of Apiman (data exported in step #1)</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>A default value can be provided, which will be used if other lookup sources fail.</p>
-</div>
-<div class="paragraph">
-<p>For example <code>${MAGIC_NUMBER:-8090}</code> will result in <code>8090</code> being set if <code>MAGIC_NUMBER</code> is unresolved after the prior steps.</p>
+<p>Once these steps are complete, you should have a new version of Apiman running
+with all of your existing data.</p>
 </div>
 </div>
 </div>

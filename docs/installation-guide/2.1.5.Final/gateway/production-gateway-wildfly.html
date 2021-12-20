@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Apiman Vert.x Gateway :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/vertx/download.html">
+    <title>WildFly/EAP Production Guide :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/gateway/production-gateway-wildfly.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -87,30 +87,30 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="download.html">Vert.x Gateway</a>
+    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#_download_launch">Download &amp; Launch</a>
+    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="#_configurations">Configurations</a>
+    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#_elasticsearch">Elasticsearch</a>
+    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#_headless_elasticsearch">Headless ES</a>
+    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="install.html">Installation Walkthrough</a>
+    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="config-guide.html">Config Guide</a>
+    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -141,13 +141,13 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
+    <a class="nav-link" href="security.html">Security</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+    <a class="nav-link" href="security.html#_gateway_api_authentication">Gateway API Authentication</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
+    <a class="nav-link" href="security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
   </li>
 </ul>
   </li>
@@ -212,10 +212,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="production-gateway.html">Vertx</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="production-gateway-wildfly.html">Wildfly</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,249 +291,106 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Platforms</li>
-    <li><a href="download.html">Vert.x Gateway</a></li>
+    <li><a href="../production.html">Production Guide</a></li>
+    <li>Gateway</li>
+    <li><a href="production-gateway-wildfly.html">Wildfly</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="download.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/vertx/download.html">1.5.7.Final</a>
+    <a class="version is-current" href="production-gateway-wildfly.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/gateway/production-gateway-wildfly.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/vertx/download.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/gateway/production-gateway-wildfly.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Apiman Vert.x Gateway</h1>
+<h1 class="page">WildFly/EAP Production Guide</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Apiman Vert.x distro is our premier gateway offering and should provide the best performance characteristics of our platforms.</p>
+<p>The easiest way to install just the API Gateway is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.
+Follow that up with some modification of the <code>apiman.properties</code> configuration file, and you&#8217;ll be Gatewaying in no time!</p>
 </div>
 <div class="paragraph">
-<p>The implementation is the <em>Apiman Gateway</em> only, and hence is normally paired with the Manager and UI from the <a href="../servlet/wildfly.html" class="page">Servlet edition</a> (e.g. WildFly, EAP, Jetty, etc), but it can be run headless for specific workloads.</p>
+<p>Here are the steps you should take to install a standalone API Gateway:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download and unpack WildFly</p>
+</li>
+<li>
+<p>Download Apiman</p>
+</li>
+<li>
+<p>Unpack Apiman into WildFly</p>
+</li>
+<li>
+<p>Remove unused Apiman deployments from standalone/deployments</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>There are a few different common configuration examples shipped with the Vert.x distro; they are outlined in more detail below, but you can customise your configurations however you see fit by <a href="../registries-and-components/overview.html" class="page">mixing and matching components</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_download_launch"><a class="anchor" href="#_download_launch"></a>Download &amp; launch</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Download the latest Apiman Vert.x distro from <a href="http://www.apiman.io/latest/download.html#vertx">apiman.io downloads</a> page, or:</p>
+<p>Which Apiman deployments should you delete?  These:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://github.com/apiman/apiman/releases/download/2.1.4.Final/apiman-distro-vertx-2.1.4.Final.zip</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Extract the archive and execute it with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">unzip apiman-distro-vertx-2.1.4.Final
-cd apiman-distro-vertx-2.1.4.Final
-./apiman-gateway.sh --conf configs/conf-es.json</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Where <code>config-es.json</code> is your configuration file.
-Refer to the config and its annotations for additional detail.</p>
-</div>
-<div class="paragraph">
-<p>If the gateway has started successfully then you should see console output similar to:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">$ ./apiman-gateway.sh --conf configs/conf-es.json
-[INFO ] ... InitVerticle - Starting verticle: INITIALISER. UUID: 7c577980-716c-4bb9-93a8-e517b0ae15a5.INITIALISER.
-[INFO ] ... InitVerticle - Will deploy 1 of type API
-[INFO ] ... InitVerticle - Will deploy 8 of type HTTP
-[INFO ] ... ApiVerticle - Starting verticle: API. UUID: aad6996f-16e0-4a87-baa7-5fc4843c76bf.API.
-[INFO ] ... HttpGatewayVerticle - Starting verticle: HTTP. UUID: effa81a3-fa74-4bd6-813f-8ad09c86344b.HTTP.
-&lt;snip&gt;
-[INFO ] ... HttpGatewayVerticle - Starting verticle: HTTP. UUID: 09827a46-6d41-4ab1-aef2-0d152e31fe15.HTTP.
-[INFO ] ... InitVerticle - Will deploy 0 of type HTTPS
-[WARN ] ... ApiVerticle - API is running in plaintext mode. Enable SSL in config for production deployments.
-[INFO ] ... InitVerticle - Successfully deployed all verticles
-[INFO ] ... InitVerticle - Gateway API port: 8081
-[INFO ] ... VertxIsolatedDeployer - Succeeded in deploying verticle</code></pre>
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">standalone/deployments/apiman-ds.xml
+standalone/deployments/apiman-es.war
+standalone/deployments/apiman.war
+standalone/deployments/apimanui.war</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_test_your_gateway"><a class="anchor" href="#_test_your_gateway"></a>Test your gateway</h2>
+<h2 id="_disabling_the_keycloak_server"><a class="anchor" href="#_disabling_the_keycloak_server"></a>Disabling the Keycloak Server</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To quickly verify whether the installation is working, try <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">  $ curl -v 'http://apimanager:apiman123!@localhost:8081/system/status'</code></pre>
-</div>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-You must alter the default passwords and enable SSL for production deployments, otherwise your system will be at risk.
-</td>
-</tr>
-</table>
+<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the Apiman quickstart overlay ZIP.</p>
 </div>
 <div class="paragraph">
-<p>Version information can be displayed with the <code>version</code> flag <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>:</p>
+<p>To do that, <strong>remove</strong> the following subsystem from the <code>standalone-apiman.xml</code> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ./apiman-gateway.sh --version
-[INFO ] ApimanVersionCommand - Apiman 1.3.0.Final
-[INFO ] ApimanVersionCommand - Vert.x 3.4.0</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;subsystem xmlns="urn:jboss:domain:keycloak-server:1.1"&gt;
+  &lt;web-context&gt;auth&lt;/web-context&gt;
+&lt;/subsystem&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configurations"><a class="anchor" href="#_configurations"></a>Configurations</h2>
+<h2 id="_configuring_keycloak_authentication_for_the_gateway_api"><a class="anchor" href="#_configuring_keycloak_authentication_for_the_gateway_api"></a>Configuring Keycloak Authentication for the Gateway API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Some example configurations ship with the distro, aiming to provide sensible defaults.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Refer to the comments within the shipped configuration files, the <a href="config-guide.html" class="page">configuration guide</a> and the <a href="../registries-and-components/overview.html" class="page">registries &amp; components</a> documentation for further detail.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h3>
-<div class="paragraph">
-<p>The Elasticsearch config <code>conf-es.json</code> comes pre-configured with Elasticsearch components.</p>
+<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it.
+This API is protected by Keycloak authentication.</p>
 </div>
 <div class="paragraph">
-<p>Alter the <code>variables.apiman.es</code> configuration variables to match your Elasticsearch setup.</p>
+<p>The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you&#8217;ll need to modify the <code>standalone-apiman.xml</code> file to point to the remote Keycloak instance.</p>
 </div>
 <div class="paragraph">
-<p>You can either use the Elasticsearch instance bundled with the <em>Apiman Manager</em>, or run your own cluster (which is the preferred option for production).</p>
-</div>
-<div class="paragraph">
-<p>You can optionally set a username and password; this is only useful if you are using a security service like Elasticsearch Shield to enable authentication.</p>
+<p>Here is the relevant portion of the <code>standalone-apiman.xml</code> file that you must change:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
-  "variables": {
-    "apiman": {
-      "es": {
-        "protocol": "http",
-        "host": "localhost",
-        "port": 19200, <i class="conum" data-value="1"></i><b>(1)</b>
-        "username": null, // Optional
-        "password": null, // Optional
-        "timeout": 10000
-        // etc
-      }
-    }
-  },
-  // rest of your config...
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm name="apiman"&gt;
+  &lt;realm-public-key&gt;MIIB..snip..QAB&lt;/realm-public-key&gt;
+  &lt;auth-server-url&gt;https://keycloak-host.org:8443/auth&lt;/auth-server-url&gt;
+  &lt;ssl-required&gt;none&lt;/ssl-required&gt;
+  &lt;enable-cors&gt;false&lt;/enable-cors&gt;
+  &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
+&lt;/realm&gt;</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The default port of a standalone ES cluster is typically 9200. The ES bundled with the <em>apiman Manager</em> is set to 19200 by default to avoid port clashes.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Refer to the <a href="../registries-and-components/elasticsearch.html" class="page">Elasticsearch registries &amp; components documentation</a> for a complete list of configuration options.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_headless_elasticsearch"><a class="anchor" href="#_headless_elasticsearch"></a>Headless Elasticsearch</h3>
-<div class="paragraph">
-<p>The Apiman Headless Elasticsearch config <code>conf-headless-es.json</code> uses an immutable registry to load its configuration from a local or remote JSON file. All other components (e.g. metrics, rate-limiting, etc) use Elasticsearch.</p>
-</div>
-<div class="paragraph">
-<p>First, alter your configuration as detailed in the <a href="#_elasticsearch">Elasticsearch</a> section.</p>
-</div>
-<div class="paragraph">
-<p>Then, modify the <code>registry.config</code> section of the config:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"registry": {
-  "class": "io.apiman.gateway.engine.vertx.polling.URILoadingRegistry",
-  "config": {
-    "configUri": "file:///path/to/my/json/reg-config.json", <i class="conum" data-value="1"></i><b>(1)</b>
-    "auth": "NONE" <i class="conum" data-value="2"></i><b>(2)</b>
-  }
-},</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>A file, http or https URI to a JSON file containing the registry configuration, as detailed in <a href="../registries-and-components/headless.html#_configuration_file_format" class="page">Configuration File Format</a>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Authentication method to retrieve the file, as detailed in <a href="../registries-and-components/headless.adoc#_authentication">Authentication</a>.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Refer to the <a href="../registries-and-components/headless.html" class="page">Elasticsearch headless registry documentation</a> for a complete list of configuration options.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. If a non-default host, port and protocol, otherwise alter the command accordingly.
-</div>
-<div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. When a SNAPSHOT version is used, further information is displayed to identify the precise commit used to build the project and understand the state of the git repo. For example: <code>Apiman 1.3.1-SNAPSHOT apiman-1.3.0.Final-3-g1b9ebf5 2017-05-08 12:15:53</code>.
 </div>
 </div>
 </article>

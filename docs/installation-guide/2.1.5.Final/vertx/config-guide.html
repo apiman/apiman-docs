@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>WildFly/EAP Production Guide :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/gateway/production-gateway-wildfly.html">
+    <title>Vert.x Gateway Configuration Guide :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/vertx/config-guide.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -89,28 +89,28 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
+    <a class="nav-link" href="download.html">Vert.x Gateway</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
+    <a class="nav-link" href="download.html#_download_launch">Download &amp; Launch</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
+    <a class="nav-link" href="download.html#_configurations">Configurations</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
+    <a class="nav-link" href="download.html#_elasticsearch">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
+    <a class="nav-link" href="download.html#_headless_elasticsearch">Headless ES</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
+    <a class="nav-link" href="install.html">Installation Walkthrough</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -141,13 +141,13 @@
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="security.html">Security</a>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="security.html#_gateway_api_authentication">Gateway API Authentication</a>
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
   </li>
 </ul>
   </li>
@@ -212,10 +212,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="production-gateway-wildfly.html">Wildfly</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,105 +291,283 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li><a href="../production.html">Production Guide</a></li>
-    <li>Gateway</li>
-    <li><a href="production-gateway-wildfly.html">Wildfly</a></li>
+    <li>Platforms</li>
+    <li><a href="download.html">Vert.x Gateway</a></li>
+    <li><a href="config-guide.html">Config Guide</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="production-gateway-wildfly.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/gateway/production-gateway-wildfly.html">1.5.7.Final</a>
+    <a class="version is-current" href="config-guide.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/vertx/config-guide.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/gateway/production-gateway-wildfly.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/vertx/config-guide.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">WildFly/EAP Production Guide</h1>
+<h1 class="page">Vert.x Gateway Configuration Guide</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The easiest way to install just the API Gateway is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.
-Follow that up with some modification of the <code>apiman.properties</code> configuration file, and you&#8217;ll be Gatewaying in no time!</p>
+<p>The Vert.x gateway is configured via a simple JSON file, generically referred to here as <code>config.json</code>.
+This guide provides a brief outline to some of the most important information that may be unique to this platform.
+Annotations in the configuration file should be considered canonical.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comments"><a class="anchor" href="#_comments"></a>Comments</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Here are the steps you should take to install a standalone API Gateway:</p>
+<p>Unlike standard JSON, you can insert comments into the configuration by using C-style <code>// comment</code> syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "foo": "bar" // This is a comment.
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The configuration supports variable substitution (transclusion) in the form <code>"${FOO.SOME_VARIABLE}"</code>; where <code>FOO.SOME_VARIABLE</code> is the variable to be transcluded.
+The following list defines the lookup sources and order of precedence for variable resolution.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download and unpack WildFly</p>
+<p>JSON config&#8217;s <code>variables</code> section:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "variables": {
+    "FOO": {
+      "SOME_VARIABLE": "foo"
+    }
+  }
+}</code></pre>
+</div>
+</div>
 </li>
 <li>
-<p>Download Apiman</p>
+<p>System properties: <code>-DFOO.SOME_VARIABLE="foo"</code></p>
 </li>
 <li>
-<p>Unpack Apiman into WildFly</p>
-</li>
-<li>
-<p>Remove unused Apiman deployments from standalone/deployments</p>
+<p>Environment: <code>export FOO.SOME_VARIABLE="foo"</code></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Which Apiman deployments should you delete?  These:</p>
+<p>A default value can be provided, which will be used if other lookup sources fail.</p>
+</div>
+<div class="paragraph">
+<p>For example <code>${MAGIC_NUMBER:-8090}</code> will result in <code>8090</code> being set if <code>MAGIC_NUMBER</code> is unresolved after the prior steps.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registries_factories_and_components"><a class="anchor" href="#_registries_factories_and_components"></a>Registries, factories and components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To configure a registry, component or factory, set the <code>class</code> to the corresponding fully qualified name of a valid implementation on the classpath.</p>
+</div>
+<div class="paragraph">
+<p>You can pass arguments to the component using the <code>config</code> section.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">standalone/deployments/apiman-ds.xml
-standalone/deployments/apiman-es.war
-standalone/deployments/apiman.war
-standalone/deployments/apimanui.war</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "registry": {
+    "class": "io.apiman.gateway.engine.es.PollCachingESRegistry", <i class="conum" data-value="1"></i><b>(1)</b>
+    "config": {
+      "client": {
+          "type": "es",
+          "protocol": "${apiman.es.protocol}", <i class="conum" data-value="2"></i><b>(2)</b>
+          "host": "${apiman.es.host}",
+          "port": "${apiman.es.port}",
+          "initialize": true,
+          "pollingTime": "${apiman.es.pollingTime}",
+          "username": "${apiman.es.username}",
+          "password": "${apiman.es.password}",
+          "timeout": "${apiman.es.timeout}"//,
+          // only for https
+          //"allowSelfSigned": "${apiman.es.allowSelfSigned}",
+          //"allowAnyHost": "${apiman.es.allowAnyHost}",
+          //"truststore.path": "${apiman.es.truststore.path}",
+          //"truststore.password": "${apiman.es.truststore.password}",
+          //"keystore.path": "${apiman.es.keystore.path}",
+          //"keystore.password": "${apiman.es.keystore.password}"
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Fully qualified path to registry class.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Note the variables here, which will be resolved as defined in <a href="#_variables">Variables</a>.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verticles_and_scaling"><a class="anchor" href="#_verticles_and_scaling"></a>Verticles and scaling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To scale your gateway, you can alter the number of verticles that will be spun up per-JVM when the project is deployed by changing <code>count</code>.
+If you prefer, a count value of <code>"auto"</code> will provide a sensible default based upon the number of cores.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "verticles": {
+    "http": { "port": 8082, "count": "auto" },
+    "https": { "port": 8443, "count": 1 },
+    "api": { "port": 8081, "count": 1 }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t want any instances of a particular verticle type, set its <code>count</code> to <code>0</code>.</p>
+</div>
+<div class="paragraph">
+<p>Which port the verticle listens on can be changed with <code>port</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Verticle count only defines the number of verticles deployed in a given JVM instance.
+How many deployments, and hence total number of verticles exist within your overall cluster is entirely up to you.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_http"><a class="anchor" href="#_http"></a>HTTP</h3>
+<div class="paragraph">
+<p>Plaintext HTTP entry-point, with no transport security. Turn off by reducing count to zero.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_https"><a class="anchor" href="#_https"></a>HTTPS</h3>
+<div class="paragraph">
+<p>Encrypted HTTPS entry-point, with TLS/SSL. Turn off by reducing count to zero. Add you keystore and truststore to the <a href="#_ssl">SSL</a> section of your configuration to enable this functionality.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_api"><a class="anchor" href="#_api"></a>API</h3>
+<div class="paragraph">
+<p>Hosts the Apiman gateway API, which is typically used by the Apiman manager to drive the gateway.
+For instance, publishing and retiring APIs, Contracts.
+You probably only need 1 of these.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_disabling_the_keycloak_server"><a class="anchor" href="#_disabling_the_keycloak_server"></a>Disabling the Keycloak Server</h2>
+<h2 id="_hostname"><a class="anchor" href="#_hostname"></a>Hostname</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the Apiman quickstart overlay ZIP.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{ "hostname": "localhost" }</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>To do that, <strong>remove</strong> the following subsystem from the <code>standalone-apiman.xml</code> file:</p>
+<p>The hostname to bind to.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_endpoint"><a class="anchor" href="#_endpoint"></a>Endpoint</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{ "endpoint": "mynode.local" }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Force the gateway to report the given gateway endpoint when it is queried by the manager.
+By default the gateway will inspect the request used to hit the Gateway API, and use whichever address was used to reach it as the endpoint.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ssl"><a class="anchor" href="#_ssl"></a>SSL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SSL section configures transport security to the gateway&#8217;s <strong>front end</strong>; that is, connections established between client app ⇋ Apiman Gateway.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;subsystem xmlns="urn:jboss:domain:keycloak-server:1.1"&gt;
-  &lt;web-context&gt;auth&lt;/web-context&gt;
-&lt;/subsystem&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5"> "ssl": {
+   "keystore": {
+     "path": "/the/keystore/path/here.jks",
+     "password": "password-here"
+   },
+   "truststore": {
+     "path": "/the/truststore/path/here.jks",
+     "password": "password-here"
+   },
+   // Allowed TLS/SSL protocols for Client &lt;-&gt; Gateway (Server)
+   "allowedProtocols": "TLSv1.1, TLSv1.2"
+ }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The precise keystore and truststore setups to use will vary considerably depending upon your organisation and security requirements; hence, they are out of the scope of this guide.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Refer to the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html">Java keytool reference</a> for more information on creating keystores and truststores.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_allowed_tls_protocols"><a class="anchor" href="#_allowed_tls_protocols"></a>Allowed TLS Protocols</h3>
+<div class="paragraph">
+<p>If you want to use a specific TLS version for the connection between client app ⇋ Apiman Gateway you can add the TLS version in a comma separated list with the setting <code>allowedProtocols</code>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configuring_keycloak_authentication_for_the_gateway_api"><a class="anchor" href="#_configuring_keycloak_authentication_for_the_gateway_api"></a>Configuring Keycloak Authentication for the Gateway API</h2>
+<h2 id="_prefer_secure"><a class="anchor" href="#_prefer_secure"></a>Prefer Secure</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it.
-This API is protected by Keycloak authentication.</p>
-</div>
-<div class="paragraph">
-<p>The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you&#8217;ll need to modify the <code>standalone-apiman.xml</code> file to point to the remote Keycloak instance.</p>
-</div>
-<div class="paragraph">
-<p>Here is the relevant portion of the <code>standalone-apiman.xml</code> file that you must change:</p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm name="apiman"&gt;
-  &lt;realm-public-key&gt;MIIB..snip..QAB&lt;/realm-public-key&gt;
-  &lt;auth-server-url&gt;https://keycloak-host.org:8443/auth&lt;/auth-server-url&gt;
-  &lt;ssl-required&gt;none&lt;/ssl-required&gt;
-  &lt;enable-cors&gt;false&lt;/enable-cors&gt;
-  &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
-&lt;/realm&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{ "preferSecure": true }</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>When reporting gateway endpoints (as above), set whether to prefer reporting the secure (HTTPS) URI rather than an insecure one (HTTP).
+This is likely the preferred option for production deployments where transport security <a href="#_ssl">has been configured</a>.</p>
 </div>
 </div>
 </div>

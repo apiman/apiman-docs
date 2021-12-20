@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How To: Use a SQL Database to Store and Retrieve Metrics (Replacing Elasticsearch) :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/how-to/jdbc.html">
+    <title>Apiman Vert.x Gateway :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/vertx/download.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -87,30 +87,30 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
+    <a class="nav-link" href="download.html">Vert.x Gateway</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
+    <a class="nav-link" href="#_download_launch">Download &amp; Launch</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
+    <a class="nav-link" href="#_configurations">Configurations</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
+    <a class="nav-link" href="#_elasticsearch">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
+    <a class="nav-link" href="#_headless_elasticsearch">Headless ES</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
+    <a class="nav-link" href="install.html">Installation Walkthrough</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
+    <a class="nav-link" href="config-guide.html">Config Guide</a>
   </li>
 </ul>
   </li>
@@ -190,16 +190,16 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,65 +291,125 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>How to</li>
-    <li><a href="jdbc.html">SQL Metrics Instead of Elasticsearch</a></li>
+    <li>Platforms</li>
+    <li><a href="download.html">Vert.x Gateway</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="jdbc.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/how-to/jdbc.html">1.5.7.Final</a>
+    <a class="version is-current" href="download.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/vertx/download.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/how-to/jdbc.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/vertx/download.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How To: Use a SQL Database to Store and Retrieve Metrics (Replacing Elasticsearch)</h1>
+<h1 class="page">Apiman Vert.x Gateway</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sometimes you just don&#8217;t want to use Elasticsearch to store your metrics, even though it&#8217;s really good at it.
-We typically recommend that you stick with ES if possible, because it gives you the option of installing Kibana, opening up a whole new world of advanced analytics over the metric data.
-However, if all you want is the basic graphs/charts shown in the Apiman UI, you can easily switch to storing metric data in a database.</p>
+<p>The Apiman Vert.x distro is our premier gateway offering and should provide the best performance characteristics of our platforms.</p>
+</div>
+<div class="paragraph">
+<p>The implementation is the <em>Apiman Gateway</em> only, and hence is normally paired with the Manager and UI from the <a href="../servlet/wildfly.html" class="page">Servlet edition</a> (e.g. WildFly, EAP, Jetty, etc), but it can be run headless for specific workloads.</p>
+</div>
+<div class="paragraph">
+<p>There are a few different common configuration examples shipped with the Vert.x distro; they are outlined in more detail below, but you can customise your configurations however you see fit by <a href="../registries-and-components/overview.html" class="page">mixing and matching components</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h2>
+<h2 id="_download_launch"><a class="anchor" href="#_download_launch"></a>Download &amp; launch</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Deploy an appropriate JDBC datasource</p>
-</li>
-<li>
-<p>Enable the API Gateway JDBC initializer</p>
-</li>
-<li>
-<p>Configure the API Gateway metrics provider to be JDBC</p>
-</li>
-<li>
-<p>Configure the API Manager metrics accessor to be JDBC</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Download the latest Apiman Vert.x distro from <a href="http://www.apiman.io/latest/download.html#vertx">apiman.io downloads</a> page, or:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://github.com/apiman/apiman/releases/download/2.1.5.Final/apiman-distro-vertx-2.1.5.Final.zip</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Extract the archive and execute it with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">unzip apiman-distro-vertx-2.1.5.Final
+cd apiman-distro-vertx-2.1.5.Final
+./apiman-gateway.sh --conf configs/conf-es.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>config-es.json</code> is your configuration file.
+Refer to the config and its annotations for additional detail.</p>
+</div>
+<div class="paragraph">
+<p>If the gateway has started successfully then you should see console output similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">$ ./apiman-gateway.sh --conf configs/conf-es.json
+[INFO ] ... InitVerticle - Starting verticle: INITIALISER. UUID: 7c577980-716c-4bb9-93a8-e517b0ae15a5.INITIALISER.
+[INFO ] ... InitVerticle - Will deploy 1 of type API
+[INFO ] ... InitVerticle - Will deploy 8 of type HTTP
+[INFO ] ... ApiVerticle - Starting verticle: API. UUID: aad6996f-16e0-4a87-baa7-5fc4843c76bf.API.
+[INFO ] ... HttpGatewayVerticle - Starting verticle: HTTP. UUID: effa81a3-fa74-4bd6-813f-8ad09c86344b.HTTP.
+&lt;snip&gt;
+[INFO ] ... HttpGatewayVerticle - Starting verticle: HTTP. UUID: 09827a46-6d41-4ab1-aef2-0d152e31fe15.HTTP.
+[INFO ] ... InitVerticle - Will deploy 0 of type HTTPS
+[WARN ] ... ApiVerticle - API is running in plaintext mode. Enable SSL in config for production deployments.
+[INFO ] ... InitVerticle - Successfully deployed all verticles
+[INFO ] ... InitVerticle - Gateway API port: 8081
+[INFO ] ... VertxIsolatedDeployer - Succeeded in deploying verticle</code></pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deploy_an_appropriate_jdbc_datasource"><a class="anchor" href="#_deploy_an_appropriate_jdbc_datasource"></a>Deploy an appropriate JDBC datasource</h2>
+<h2 id="_test_your_gateway"><a class="anchor" href="#_test_your_gateway"></a>Test your gateway</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The first thing to do is deploy a datasource into WildFly that will be used by the JDBC metrics implementations.
-There are a number of ways to do this, and documenting how to create a datasource in WildFly is outside the scope of this guide.
-However, an example -ds.xml descriptor file, specifically for this purpose, can be found here:</p>
+<p>To quickly verify whether the installation is working, try <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">  $ curl -v 'http://apimanager:apiman123!@localhost:8081/system/status'</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You must alter the default passwords and enable SSL for production deployments, otherwise your system will be at risk.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/sample-configs/apiman_gw-ds_mysql.xml" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/sample-configs/apiman_gw-ds_mysql.xml</a></p>
+<p>Version information can be displayed with the <code>version</code> flag <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ./apiman-gateway.sh --version
+[INFO ] ApimanVersionCommand - Apiman 1.3.0.Final
+[INFO ] ApimanVersionCommand - Vert.x 3.4.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configurations"><a class="anchor" href="#_configurations"></a>Configurations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some example configurations ship with the distro, aiming to provide sensible defaults.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -358,118 +418,122 @@ However, an example -ds.xml descriptor file, specifically for this purpose, can 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Make sure you take note of the datasource jndi-name - you will need it when configuring the metrics implementations in apiman.properties
+Refer to the comments within the shipped configuration files, the <a href="config-guide.html" class="page">configuration guide</a> and the <a href="../registries-and-components/overview.html" class="page">registries &amp; components</a> documentation for further detail.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
+<div class="sect2">
+<h3 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h3>
+<div class="paragraph">
+<p>The Elasticsearch config <code>conf-es.json</code> comes pre-configured with Elasticsearch components.</p>
+</div>
+<div class="paragraph">
+<p>Alter the <code>variables.apiman.es</code> configuration variables to match your Elasticsearch setup.</p>
+</div>
+<div class="paragraph">
+<p>You can either use the Elasticsearch instance bundled with the <em>Apiman Manager</em>, or run your own cluster (which is the preferred option for production).</p>
+</div>
+<div class="paragraph">
+<p>You can optionally set a username and password; this is only useful if you are using a security service like Elasticsearch Shield to enable authentication.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "variables": {
+    "apiman": {
+      "es": {
+        "protocol": "http",
+        "host": "localhost",
+        "port": 19200, <i class="conum" data-value="1"></i><b>(1)</b>
+        "username": null, // Optional
+        "password": null, // Optional
+        "timeout": 10000
+        // etc
+      }
+    }
+  },
+  // rest of your config...
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The default port of a standalone ES cluster is typically 9200. The ES bundled with the <em>apiman Manager</em> is set to 19200 by default to avoid port clashes.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Don&#8217;t forget to also deploy the appropriate JDBC driver JAR for your database.
+Refer to the <a href="../registries-and-components/elasticsearch.html" class="page">Elasticsearch registries &amp; components documentation</a> for a complete list of configuration options.
 </td>
 </tr>
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_enable_the_api_gateway_jdbc_initializer"><a class="anchor" href="#_enable_the_api_gateway_jdbc_initializer"></a>Enable the API Gateway JDBC initializer</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_headless_elasticsearch"><a class="anchor" href="#_headless_elasticsearch"></a>Headless Elasticsearch</h3>
 <div class="paragraph">
-<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed.
-This schema can be automatically created by Apiman the first time it is used.  To enable this feature, you must configure the API Gateway JDBC initializer in the <strong>apiman.properties</strong> file, like so:</p>
+<p>The Apiman Headless Elasticsearch config <code>conf-headless-es.json</code> uses an immutable registry to load its configuration from a local or remote JSON file. All other components (e.g. metrics, rate-limiting, etc) use Elasticsearch.</p>
+</div>
+<div class="paragraph">
+<p>First, alter your configuration as detailed in the <a href="#_elasticsearch">Elasticsearch</a> section.</p>
+</div>
+<div class="paragraph">
+<p>Then, modify the <code>registry.config</code> section of the config:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Initializer for the Gateway JDBC
-# ################################
-apiman.jdbc.datasource.jndi-location=java:jboss/datasources/apiman-gateway
-apiman-gateway.initializers=jdbc
-apiman-gateway.initializers.jdbc=io.apiman.gateway.engine.jdbc.JdbcInitializer
-apiman-gateway.initializers.jdbc.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}
-apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"registry": {
+  "class": "io.apiman.gateway.engine.vertx.polling.URILoadingRegistry",
+  "config": {
+    "configUri": "file:///path/to/my/json/reg-config.json", <i class="conum" data-value="1"></i><b>(1)</b>
+    "auth": "NONE" <i class="conum" data-value="2"></i><b>(2)</b>
+  }
+},</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>This initializer will run whenever Apiman starts up, and it will install the API Gateway schema/DDL into the configured database so that the metrics JDBC implementations can function properly.</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A file, http or https URI to a JSON file containing the registry configuration, as detailed in <a href="../registries-and-components/headless.html#_configuration_file_format" class="page">Configuration File Format</a>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Authentication method to retrieve the file, as detailed in <a href="../registries-and-components/headless.adoc#_authentication">Authentication</a>.</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>Note that you will need to set the correct value of <strong>apiman-gateway.initializers.jdbc.datasource.type</strong> based on the specific database you will be using.
-Possible values for this property include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>h2</p>
-</li>
-<li>
-<p>mysql5</p>
-</li>
-<li>
-<p>postgresql9</p>
-</li>
-<li>
-<p>mssql11</p>
-</li>
-<li>
-<p>oracle12</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_configure_the_api_gateway_metrics_provider_to_be_jdbc"><a class="anchor" href="#_configure_the_api_gateway_metrics_provider_to_be_jdbc"></a>Configure the API Gateway metrics provider to be JDBC</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Next, you just need to tell Apiman that you want to use JDBC instead of Elasticsearch for the storage of metrics data.
-This can be done again by setting a specific property in <strong>apiman.properties</strong>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.metrics=io.apiman.gateway.engine.jdbc.JdbcMetrics
-apiman-gateway.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The metrics will be stored in JDBC (asynchronously) instead of Elasticsearch!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_configure_the_api_manager_metrics_accessor_to_be_jdbc"><a class="anchor" href="#_configure_the_api_manager_metrics_accessor_to_be_jdbc"></a>Configure the API Manager metrics accessor to be JDBC</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>It doesn&#8217;t help us to store the metrics data in SQL unless we also query the data when showing information in the UI.
-For this reason you will need to configure the API Manager to use JDBC to <strong>retrieve</strong> metric information instead of using Elasticsearch.
-Again, this is done by editing the <strong>apiman.properties</strong> file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># API Manager metrics settings
-# ############################
-apiman-manager.metrics.type=io.apiman.manager.api.jdbc.JdbcMetricsAccessor
-apiman-manager.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}</code></pre>
-</div>
-</div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you are deploying the API Manager and API Gateway separately (on different nodes), make sure you edit the correct <code>apiman.properties</code> files on the correct nodes.
-Feel free to make all the above changes to all your nodes, since any properties in <code>apiman.properties</code> will be ignored on nodes where certain components are excluded.
+Refer to the <a href="../registries-and-components/headless.html" class="page">Elasticsearch headless registry documentation</a> for a complete list of configuration options.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. If a non-default host, port and protocol, otherwise alter the command accordingly.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. When a SNAPSHOT version is used, further information is displayed to identify the precise commit used to build the project and understand the state of the git repo. For example: <code>Apiman 1.3.1-SNAPSHOT apiman-1.3.0.Final-3-g1b9ebf5 2017-05-08 12:15:53</code>.
 </div>
 </div>
 </article>

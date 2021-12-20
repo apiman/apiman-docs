@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>JDBC Registry &amp; Components :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/registries-and-components/jdbc.html">
+    <title>How To: Use a SQL Database to Store and Retrieve Metrics (Replacing Elasticsearch) :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/how-to/jdbc.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -126,16 +126,16 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="jdbc.html">JDBC</a>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="headless.html">Headless</a>
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
   </li>
 </ul>
   </li>
@@ -190,16 +190,16 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+    <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+    <a class="nav-link" href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,37 +291,74 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Gateway</li>
-    <li>Registries and Components</li>
-    <li><a href="overview.html">Registries &amp; Components</a></li>
-    <li><a href="jdbc.html">JDBC</a></li>
+    <li>How to</li>
+    <li><a href="jdbc.html">SQL Metrics Instead of Elasticsearch</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="jdbc.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/registries-and-components/jdbc.html">1.5.7.Final</a>
+    <a class="version is-current" href="jdbc.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/how-to/jdbc.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/registries-and-components/jdbc.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/how-to/jdbc.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">JDBC Registry &amp; Components</h1>
+<h1 class="page">How To: Use a SQL Database to Store and Retrieve Metrics (Replacing Elasticsearch)</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock note">
+<div class="paragraph">
+<p>Sometimes you just don&#8217;t want to use Elasticsearch to store your metrics, even though it&#8217;s really good at it.
+We typically recommend that you stick with ES if possible, because it gives you the option of installing Kibana, opening up a whole new world of advanced analytics over the metric data.
+However, if all you want is the basic graphs/charts shown in the Apiman UI, you can easily switch to storing metric data in a database.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deploy an appropriate JDBC datasource</p>
+</li>
+<li>
+<p>Enable the API Gateway JDBC initializer</p>
+</li>
+<li>
+<p>Configure the API Gateway metrics provider to be JDBC</p>
+</li>
+<li>
+<p>Configure the API Manager metrics accessor to be JDBC</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deploy_an_appropriate_jdbc_datasource"><a class="anchor" href="#_deploy_an_appropriate_jdbc_datasource"></a>Deploy an appropriate JDBC datasource</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first thing to do is deploy a datasource into WildFly that will be used by the JDBC metrics implementations.
+There are a number of ways to do this, and documenting how to create a datasource in WildFly is outside the scope of this guide.
+However, an example -ds.xml descriptor file, specifically for this purpose, can be found here:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/sample-configs/apiman_gw-ds_mysql.xml" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/sample-configs/apiman_gw-ds_mysql.xml</a></p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-These components are presently optimised for Servlet editions of the gateway, whilst they will work with Vert.x the experience will likely be less performant than normal.
+Make sure you take note of the datasource jndi-name - you will need it when configuring the metrics implementations in apiman.properties
 </td>
 </tr>
 </table>
@@ -333,194 +370,23 @@ These components are presently optimised for Servlet editions of the gateway, wh
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-We ship a range of sample DDLs to get you started for all major databases. In your distribution look in <code>apiman/ddls</code> directory, or refer to the <a href="https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls">Apiman Repo</a>.
+Don&#8217;t forget to also deploy the appropriate JDBC driver JAR for your database.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>A gateway registry and components that uses JDBC (i.e. SQL databases, such as PostgreSQL, MySQL, Oracle, etc).</p>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_registry"><a class="anchor" href="#_registry"></a>Registry</h2>
+<h2 id="_enable_the_api_gateway_jdbc_initializer"><a class="anchor" href="#_enable_the_api_gateway_jdbc_initializer"></a>Enable the API Gateway JDBC initializer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To set your registry, assign your chosen implementation to:</p>
+<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed.
+This schema can be automatically created by Apiman the first time it is used.  To enable this feature, you must configure the API Gateway JDBC initializer in the <strong>apiman.properties</strong> file, like so:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=&lt;IMPLEMENTATION&gt;</code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Available implementations:</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Implementation</th>
-<th class="tableblock halign-left valign-top">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Recommended</strong>. Works well in multi-node setups.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.jdbc.CachingJdbcRegistry</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Works only in single node setups.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.jdbc.JdbcRegistry</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only recommended for very low volume or test setups; causes database calls to be issued on every request.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="_required_parameters"><a class="anchor" href="#_required_parameters"></a>Required Parameters</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datasource.jndi-location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The JNDI location of the datasource you wish to use.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=io.apiman.gateway.engine.jdbc.JdbcRegistry
-apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_optional_parameters"><a class="anchor" href="#_optional_parameters"></a>Optional Parameters</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-interval</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Polling interval in millis</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-startup-delay</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>How long to wait before starting polling in millis</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_database_initializer"><a class="anchor" href="#_database_initializer"></a>Database Initializer</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed. This schema can be automatically created by apiman the first time it is used. To enable this feature, you must configure the API Gateway JDBC initializer in the apiman.properties file, like so:</p>
-</div>
-<div class="sect2">
-<h3 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Initializer type (always JDBC for this use-case)</p>
-</div>
-<div class="paragraph">
-<p><strong>Required Value</strong>: <code>jdbc</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc=</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Use JDBC initialiser (always for this use-case)</p>
-</div>
-<div class="paragraph">
-<p><strong>Required Value</strong>: <code>io.apiman.gateway.engine.jdbc.JdbcInitializer</code></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc.datasource.jndi-location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>JNDI location for your data source</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc.datasource.type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Datasource type:</p>
-</div>
-<div class="paragraph">
-<p><strong>Available Values</strong>: h2, mysql5, postgresql9, oracle12</p>
-</div>
-<div class="paragraph">
-<p>Note, your particular DB version may work successfully with one of these variants.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code># Initializer for the Gateway JDBC
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Initializer for the Gateway JDBC
 # ################################
 apiman.jdbc.datasource.jndi-location=java:jboss/datasources/apiman-gateway
 apiman-gateway.initializers=jdbc
@@ -529,61 +395,79 @@ apiman-gateway.initializers.jdbc.datasource.jndi-location=${apiman.jdbc.datasour
 apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>This initializer will run whenever Apiman starts up, and it will install the API Gateway schema/DDL into the configured database so that the metrics JDBC implementations can function properly.</p>
+</div>
+<div class="paragraph">
+<p>Note that you will need to set the correct value of <strong>apiman-gateway.initializers.jdbc.datasource.type</strong> based on the specific database you will be using.
+Possible values for this property include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>h2</p>
+</li>
+<li>
+<p>mysql5</p>
+</li>
+<li>
+<p>postgresql9</p>
+</li>
+<li>
+<p>mssql11</p>
+</li>
+<li>
+<p>oracle12</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h2>
+<h2 id="_configure_the_api_gateway_metrics_provider_to_be_jdbc"><a class="anchor" href="#_configure_the_api_gateway_metrics_provider_to_be_jdbc"></a>Configure the API Gateway metrics provider to be JDBC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set the metrics implementation as shown:</p>
+<p>Next, you just need to tell Apiman that you want to use JDBC instead of Elasticsearch for the storage of metrics data.
+This can be done again by setting a specific property in <strong>apiman.properties</strong>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.metrics=io.apiman.gateway.engine.jdbc.JdbcMetrics
-apiman-gateway.metrics.queue.size=10000 // Example.</code></pre>
+apiman-gateway.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_required_parameters_3"><a class="anchor" href="#_required_parameters_3"></a>Required Parameters</h3>
 <div class="paragraph">
-<p>See <a href="#_registry">Registry Required Parameters</a>.</p>
+<p>The metrics will be stored in JDBC (asynchronously) instead of Elasticsearch!</p>
 </div>
-<div class="admonitionblock important">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_the_api_manager_metrics_accessor_to_be_jdbc"><a class="anchor" href="#_configure_the_api_manager_metrics_accessor_to_be_jdbc"></a>Configure the API Manager metrics accessor to be JDBC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It doesn&#8217;t help us to store the metrics data in SQL unless we also query the data when showing information in the UI.
+For this reason you will need to configure the API Manager to use JDBC to <strong>retrieve</strong> metric information instead of using Elasticsearch.
+Again, this is done by editing the <strong>apiman.properties</strong> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># API Manager metrics settings
+# ############################
+apiman-manager.metrics.type=io.apiman.manager.api.jdbc.JdbcMetricsAccessor
+apiman-manager.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Must be configured with the JNDI location of the datasource to use.
+If you are deploying the API Manager and API Gateway separately (on different nodes), make sure you edit the correct <code>apiman.properties</code> files on the correct nodes.
+Feel free to make all the above changes to all your nodes, since any properties in <code>apiman.properties</code> will be ignored on nodes where certain components are excluded.
 </td>
 </tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_optional_parameters_2"><a class="anchor" href="#_optional_parameters_2"></a>Optional Parameters</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 14.2857%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">queue.size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics maximum queue size</p></td>
-</tr>
-</tbody>
 </table>
 </div>
 </div>

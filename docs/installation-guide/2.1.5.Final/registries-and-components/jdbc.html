@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How To: Elasticsearch :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.4.Final/how-to/elasticsearch.html">
+    <title>JDBC Registry &amp; Components :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.1.5.Final/registries-and-components/jdbc.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="2.1.4.Final">
+<div class="nav-container" data-component="installation-guide" data-version="2.1.5.Final">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -126,16 +126,16 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="jdbc.html">JDBC</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+    <a class="nav-link" href="headless.html">Headless</a>
   </li>
 </ul>
   </li>
@@ -190,16 +190,16 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -232,7 +232,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">2.1.4.Final</span>
+    <span class="version">2.1.5.Final</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -261,7 +261,7 @@
       <a class="title" href="../index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">2.1.4.Final</a>
+          <a href="../index.html">2.1.5.Final</a>
         </li>
         <li class="version">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -291,80 +291,40 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>How to</li>
-    <li><a href="#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a></li>
+    <li>Gateway</li>
+    <li>Registries and Components</li>
+    <li><a href="overview.html">Registries &amp; Components</a></li>
+    <li><a href="jdbc.html">JDBC</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.1.4.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">2.1.5.Final</button>
   <div class="version-menu">
-    <a class="version is-current" href="elasticsearch.html">2.1.4.Final</a>
-    <a class="version" href="../../1.5.7.Final/how-to/elasticsearch.html">1.5.7.Final</a>
+    <a class="version is-current" href="jdbc.html">2.1.5.Final</a>
+    <a class="version" href="../../1.5.7.Final/registries-and-components/jdbc.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/how-to/elasticsearch.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/registries-and-components/jdbc.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How To: Elasticsearch</h1>
-<div class="sect1">
-<h2 id="_use_elasticsearch_instead_of_an_rdbms"><a class="anchor" href="#_use_elasticsearch_instead_of_an_rdbms"></a>Use Elasticsearch instead of an RDBMS</h2>
+<h1 class="page">JDBC Registry &amp; Components</h1>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>The API Manager is configured (by default) to use JPA as the persistence technology for storing all of its data.  But this isn&#8217;t the only persistence technology supported.
-Another option is to use Elasticsearch.
-This section details how to set up Apiman to use Elasticsearch instead of an RDBMS to store your API Manager data.</p>
-</div>
-<div class="sect2">
-<h3 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Download and install <a href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch 7.x</a></p>
-</li>
-<li>
-<p>Make changes to <code>apiman.properties</code> to switch from JPA to Elasticsearch</p>
-</li>
-<li>
-<p>(Re)start Apiman!</p>
-</li>
-<li>
-<p>Perform standard admin configuration of Apiman (the database will of course be empty!)</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_download_and_install_elasticsearch"><a class="anchor" href="#_download_and_install_elasticsearch"></a>Download and install Elasticsearch</h3>
-<div class="paragraph">
-<p>This part is pretty easy - download the Elasticsearch software and get it running.
-The Elasticsearch documentation provides <a href="http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html" target="_blank" rel="noopener">extensive guidance for this</a>.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>An embedded instance of Elasticsearch is no longer included with Apiman.</p>
-</div>
-<div class="paragraph">
-<p>Running <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html" target="_blank" rel="noopener">Elasticsearch using Docker</a> is a very convenient way to get started.</p>
-</div>
-<div class="paragraph">
-<p><code>docker run -p 19200:9200 -p 19300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:&lt;ES 7 version&gt;</code></p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>You may use it as your API Manager persistence store.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_make_changes_to_apiman_properties"><a class="anchor" href="#_make_changes_to_apiman_properties"></a>Make changes to <code>apiman.properties</code></h3>
-<div class="paragraph">
-<p>Once Elasticsearch is running smoothly, you must make some changes to the <strong><code>apiman.properties</code></strong> file in order to tell Apiman to use ES instead of a database.
-You should modify the <code>apiman.properties</code> file to have the following properties set:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These components are presently optimised for Servlet editions of the gateway, whilst they will work with Vert.x the experience will likely be less performant than normal.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -373,140 +333,258 @@ You should modify the <code>apiman.properties</code> file to have the following 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can optionally also set the username and password - this is only useful if you are using something like Elasticsearch Shield to enable basic authentication.
+We ship a range of sample DDLs to get you started for all major databases. In your distribution look in <code>apiman/ddls</code> directory, or refer to the <a href="https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls">Apiman Repo</a>.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>A gateway registry and components that uses JDBC (i.e. SQL databases, such as PostgreSQL, MySQL, Oracle, etc).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registry"><a class="anchor" href="#_registry"></a>Registry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To set your registry, assign your chosen implementation to:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
-apiman.es.host=localhost
-apiman.es.port=19200
-apiman.es.username=
-apiman.es.password=
-
-apiman-manager.storage.type=es
-apiman-manager.storage.es.protocol=${apiman.es.protocol}
-apiman-manager.storage.es.host=${apiman.es.host}
-apiman-manager.storage.es.port=${apiman.es.port}
-apiman-manager.storage.es.username=${apiman.es.username}
-apiman-manager.storage.es.password=${apiman.es.password}
-apiman-manager.storage.es.initialize=true</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=&lt;IMPLEMENTATION&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Make sure you enter appropriate values for the <code>apiman.es.protocol</code>, <code>apiman.es.host</code>, and <code>apiman.es.port</code> properties.
-These values should reflect the settings of your Elasticsearch instance.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Available implementations:</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you are using a standalone gateway instance you will need to configure it separately to point to the same datastore. For example, <code>conf.json</code> for Vert.x and <code>standalone.xml</code> for Servlet.
-</td>
+<th class="tableblock halign-left valign-top">Implementation</th>
+<th class="tableblock halign-left valign-top">Notes</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.jdbc.PollCachingJdbcRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Recommended</strong>. Works well in multi-node setups.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.jdbc.CachingJdbcRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Works only in single node setups.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.jdbc.JdbcRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only recommended for very low volume or test setups; causes database calls to be issued on every request.</p></td>
+</tr>
+</tbody>
 </table>
+<div class="sect2">
+<h3 id="_required_parameters"><a class="anchor" href="#_required_parameters"></a>Required Parameters</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datasource.jndi-location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The JNDI location of the datasource you wish to use.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=io.apiman.gateway.engine.jdbc.JdbcRegistry
+apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start Apiman</h3>
+<h3 id="_optional_parameters"><a class="anchor" href="#_optional_parameters"></a>Optional Parameters</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Polling interval in millis</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-startup-delay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>How long to wait before starting polling in millis</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_database_initializer"><a class="anchor" href="#_database_initializer"></a>Database Initializer</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>If Apiman was running, you should stop it now.
-Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.
-It will pick up the new settings in <code>apiman.properties</code> and attempt to use Elasticsearch instead of the database!</p>
+<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed. This schema can be automatically created by apiman the first time it is used. To enable this feature, you must configure the API Gateway JDBC initializer in the apiman.properties file, like so:</p>
+</div>
+<div class="sect2">
+<h3 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Initializer type (always JDBC for this use-case)</p>
 </div>
 <div class="paragraph">
-<div class="title">Perform standard admin configuration</div>
-<p>Note that the Apiman quickstart overlay ZIP comes pre-configured with a number of settings, including:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Installed policy definitions</p>
-</li>
-<li>
-<p>Default configured roles (Organization Owner, API Developer, Application Developer)</p>
-</li>
-<li>
-<p>A default configured Gateway</p>
-</li>
-</ul>
+<p><strong>Required Value</strong>: <code>jdbc</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Use JDBC initialiser (always for this use-case)</p>
 </div>
 <div class="paragraph">
-<p>This built-in configuration will be lost when you switch from JPA to Elasticsearch.
-You will need to use the Apiman admin UI to reconfigure these settings.
-Refer to the "System Administration" section of the User Guide for more information on this.</p>
+<p><strong>Required Value</strong>: <code>io.apiman.gateway.engine.jdbc.JdbcInitializer</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc.datasource.jndi-location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>JNDI location for your data source</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc.datasource.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Datasource type:</p>
+</div>
+<div class="paragraph">
+<p><strong>Available Values</strong>: h2, mysql5, postgresql9, oracle12</p>
+</div>
+<div class="paragraph">
+<p>Note, your particular DB version may work successfully with one of these variants.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code># Initializer for the Gateway JDBC
+# ################################
+apiman.jdbc.datasource.jndi-location=java:jboss/datasources/apiman-gateway
+apiman-gateway.initializers=jdbc
+apiman-gateway.initializers.jdbc=io.apiman.gateway.engine.jdbc.JdbcInitializer
+apiman-gateway.initializers.jdbc.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}
+apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_use_standalone_elasticsearch_instancecluster"><a class="anchor" href="#_use_standalone_elasticsearch_instancecluster"></a>Use standalone Elasticsearch instance/cluster</h2>
+<h2 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Apiman quickstart overlay ZIP ships by default with an embedded instance of Elasticsearch.
-This is suitable for getting up and running quickly, but is not a good long term solution.
-Instead, users are encouraged to install a standalone instance of Elasticsearch and point Apiman to it.</p>
-</div>
-<div class="sect2">
-<h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Download and install <a href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch</a></p>
-</li>
-<li>
-<p>Make changes to "apiman.properties" to point to your standalone Elasticsearch instance</p>
-</li>
-<li>
-<p>(Re)start Apiman!</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_download_and_install_elasticsearch_2"><a class="anchor" href="#_download_and_install_elasticsearch_2"></a>Download and install Elasticsearch</h3>
-<div class="paragraph">
-<p>This part is pretty easy - download the Elasticsearch software and get it running.
-A very good resource for this can be found here:</p>
-</div>
-<div class="paragraph">
-<p><a href="http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html" class="bare">http://www.elastic.co/guide/en/elasticsearch/guide/master/getting-started.html</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_make_changes_to_apiman_properties_2"><a class="anchor" href="#_make_changes_to_apiman_properties_2"></a>Make changes to "apiman.properties"</h3>
-<div class="paragraph">
-<p>Once Elasticsearch is running smoothly, you must make some minor changes to the <strong>apiman.properties</strong> file in order to tell Apiman where your Elasticsearch instance is located.</p>
-</div>
-<div class="paragraph">
-<p>There are a set of global properties used for all Apiman components that use Elasticsearch to load data.
-These properties are:</p>
+<p>Set the metrics implementation as shown:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.es.protocol=http
-apiman.es.host=localhost
-apiman.es.port=19200
-apiman.es.username=
-apiman.es.password=</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Make sure you enter appropriate values for this properties - they should reflect the settings of your Elasticsearch installation.</p>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.metrics=io.apiman.gateway.engine.jdbc.JdbcMetrics
+apiman-gateway.metrics.queue.size=10000 // Example.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_restart_apiman_2"><a class="anchor" href="#_restart_apiman_2"></a>(Re)start Apiman</h3>
+<h3 id="_required_parameters_3"><a class="anchor" href="#_required_parameters_3"></a>Required Parameters</h3>
 <div class="paragraph">
-<p>If Apiman was running, you should stop it now.
-Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.
-It will pick up the new settings in <code>apiman.properties</code> and attempt to use Elasticsearch instead of Infinispan.</p>
+<p>See <a href="#_registry">Registry Required Parameters</a>.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Must be configured with the JNDI location of the datasource to use.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_optional_parameters_2"><a class="anchor" href="#_optional_parameters_2"></a>Optional Parameters</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queue.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metrics maximum queue size</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
