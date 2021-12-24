@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Security :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.0.Final/gateway/security.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="installation-guide" data-version="2.2.0.Final">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quickstart.html">Quickstart</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Platforms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Registries and Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How to</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../production.html">Production Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="production-gateway.html">Vertx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="production-gateway-wildfly.html">Wildfly</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/production-manager.html">Manager</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">2.2.0.Final</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../core/2.2.0.Final/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../core/2.2.0.Final/index.html">2.2.0.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../core/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../welcome/2.2.0.Final/index.html">Apiman Welcome</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../welcome/2.2.0.Final/index.html">2.2.0.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../welcome/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">2.2.0.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../user-guide/2.2.0.Final/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../user-guide/2.2.0.Final/index.html">2.2.0.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../user-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../welcome/2.2.0.Final/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Installation Guide</a></li>
+    <li>Gateway</li>
+    <li>Registries and Components</li>
+    <li><a href="security.html">Security</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2.2.0.Final</button>
+  <div class="version-menu">
+    <a class="version is-current" href="security.html">2.2.0.Final</a>
+    <a class="version" href="../../1.5.7.Final/gateway/security.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/gateway/security.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Security</h1>
+<div class="sect1">
+<h2 id="_gateway_api_authentication"><a class="anchor" href="#_gateway_api_authentication"></a>Gateway API Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Gateway&#8217;s REST API is what the API Manager invokes when publishing APIs and Client Apps to the Gateway <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The quickstart configurations should work out of the box, but they assume the locality of all components, including Keycloak. Real deployments will likely need to perform some reconfiguration.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This REST API should be protected, often using BASIC authentication.</p>
+</div>
+<div class="paragraph">
+<p>By default, the Gateway REST API requires BASIC authentication credentials, as well as a role of <code>apipublisher</code>.
+In other words, the Gateway REST API can only be invoked by a valid user, and that user must have the <code>apipublisher</code> role.</p>
+</div>
+<div class="paragraph">
+<p>The Keycloak client for this API is <code>apiman-gateway-api</code>, and the default user and password are: <strong>apimanager</strong>/<strong>apiman123!</strong></p>
+</div>
+<div class="sect2">
+<h3 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h3>
+<div class="sect3">
+<h4 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h4>
+<div class="paragraph">
+<p>For the Vert.x gateway, the simplest way to retrieve the necessary configuration is to generate it from your Keycloak server <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>:</p>
+</div>
+<div class="paragraph">
+<p>The gateway accepts Keycloak&#8217;s generated JSON, allowing you to paste your chosen client configuration from the Keycloak console into the <code>auth.config</code> section.</p>
+</div>
+<div class="paragraph">
+<p>To retrieve it:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into Keycloak (e.g <a href="http://localhost:8080/auth" class="bare">http://localhost:8080/auth</a>).</p>
+</li>
+<li>
+<p><code>Clients</code> &#8594; <code>apiman-gateway-api</code> &#8594; <code>Installation</code>.</p>
+</li>
+<li>
+<p>Select <code>Keycloak OIDC JSON</code> for <code>Format Option</code>.</p>
+</li>
+<li>
+<p>Copy the contents and merge into the <code>config</code> selection where indicated below.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The precise configuration you need to provide will vary depending upon your Keycloak setup.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues. You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"auth": {
+  "type": "keycloak",
+  "config": {
+    "flowType": "PASSWORD",
+    "requiredRole": "realm:apipublisher",
+    // Paste and overwrite your Keycloak config here.
+    "realm": "apiman",
+    "realm-public-key": "&lt;snip&gt;",
+    "auth-server-url": "http://localhost:8080/auth",
+    "ssl-required": "none",
+    "resource": "apiman-gateway-api",
+    // A limitation in the current OAuth2 implementation means a credentials section is required
+    // even if your client is not set to "confidential". Leave this dummy section if you're using non-confidential.
+    "credentials": {
+      "secret": "217b725d-7790-47a7-a3fc-5cf31f92a8db"
+    }
+    // End paste here
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h4>
+<div class="paragraph">
+<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it. This API is protected by Keycloak authentication. The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you’ll need to modify the standalone-apiman.xml file to point to the remote Keycloak instance.</p>
+</div>
+<div class="paragraph">
+<p>Here is the relevant portion of the <strong>standalone-apiman.xml</strong> file that you must change:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm name="apiman"&gt;
+  &lt;realm-public-key&gt;MIIB..snip..QAB&lt;/realm-public-key&gt;
+  &lt;auth-server-url&gt;https://keycloak-host.org:8443/auth&lt;/auth-server-url&gt;
+  &lt;ssl-required&gt;none&lt;/ssl-required&gt;
+  &lt;enable-cors&gt;false&lt;/enable-cors&gt;
+  &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
+&lt;/realm&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mtls_mutual_ssl_endpoint_security"><a class="anchor" href="#_mtls_mutual_ssl_endpoint_security"></a>MTLS (Mutual SSL) Endpoint Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you wish to use mutual SSL to ensure endpoint security between the Apiman API Gateway and your back-end API(s), you must update some settings.</p>
+</div>
+<div class="sect2">
+<h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create Trust and Key Stores</p>
+</li>
+<li>
+<p>Make changes to your config file</p>
+</li>
+<li>
+<p>(Re)start Apiman!</p>
+</li>
+<li>
+<p>Configure one or more API to use MTLS</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_trust_and_key_stores"><a class="anchor" href="#_create_trust_and_key_stores"></a>Create Trust and Key Stores</h3>
+<div class="paragraph">
+<p>Please refer to <a href="https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/keytool.html">official JDK documentation</a> to learn how to create and managed your SSL Trust and Key stores.
+Minimally a Keystore is required in order to successfully utilise MTLS, and in many cases also a Truststore.</p>
+</div>
+<div class="paragraph">
+<p>A <strong>keystore</strong> contains a given node&#8217;s private key material, and must be kept safe.
+Each node should have a unique key entry.
+For instance, a gateway should have its own keystore, and each API likewise.
+In a production system, these keys should be issued by a trusted certificate authority.</p>
+</div>
+<div class="paragraph">
+<p>A <strong>truststore</strong> typically contains a set of certificate authorities which are trusted issuers.
+Therefore, any certificate signed by the trusted CA would be trusted by the gateway.
+If no truststore is explicitly provided to Apiman the
+<a href="https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/keytool.html#cacerts">default trusted certificates</a> provided by the JVM will be used.
+A typical use-case would be that an organization&#8217;s internal signing authority is marked as trusted within in the truststore, and as the authority has been used to sign the certificate material in the keystores, they will mutually trust each other by virtue of the issuer.</p>
+</div>
+<div class="paragraph">
+<p>It is also possible to directly insert the <strong>public/self-signed certificate</strong> corresponding to a given private key pair into a truststore, which works well at small scales and for development, but will quickly cause the accumulation of a huge number of certificates in larger systems as it requires a 1:1 mapping of certificates and private keys (rather than 1:N by using a trusted authority).</p>
+</div>
+<div class="paragraph">
+<p>Your back-end APIs must be SSL enabled and <strong>require authenticated client SSL connections</strong>.
+This means you must have server SSL certificates generated (and appropriate certificates and/or CAs stored in your Trust Store).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_scenarios"><a class="anchor" href="#_example_scenarios"></a>Example Scenarios</h3>
+<div class="paragraph">
+<p>There are many potential configuration permutations, but we&#8217;ll outline a few simple ones here to get you started. You should research the best options to meet your security and deployment requirements.</p>
+</div>
+<div class="sect3">
+<h4 id="_development_setup"><a class="anchor" href="#_development_setup"></a>Development Setup</h4>
+<div class="paragraph">
+<p>In our hypothetical development setup, let&#8217;s imagine we have two APIs and a single gateway.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Simple Development MTLS Setup</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Key Alias</th>
+<th class="tableblock halign-left valign-top">Truststore&#8217;s Trusted Certificates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apiman Gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_a.cer, api_b.cer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gateway.cer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gateway.cer</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<div class="title">Walkthrough</div>
+<ul>
+<li>
+<p>Generate a keystore and export a certificate for each component:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gateway:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -genkey -keyalg RSA -keystore gateway_ks.jks -alias gateway
+keytool -export -alias gateway -file gateway.cer -keystore gateway_ks.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API A:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -genkey -keyalg RSA -keystore api_a_ks.jks -alias api_a
+keytool -export -alias api_a -file api_a.cer -keystore api_a_ks.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API B:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -genkey -keyalg RSA -keystore api_b_ks.jks -alias api_b
+keytool -export -alias api_b -file api_b.cer -keystore api_b_ks.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Import certificates into appropriate trust stores:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gateway:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -import -file api_a.cer -alias api_a -keystore gateway_ts.jks
+keytool -import -file api_b.cer -alias api_b -keystore gateway_ts.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API A:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -import -file gateway.cer -alias gateway -keystore api_a_ts.jks</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API B:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">keytool -import -file gateway.cer -alias gateway -keystore api_b_ts.jks</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now simply set the appropriate paths to the keystore and truststore in <code>apiman.properties</code> for the gateway, and set up your APIs with their respective truststores and keystores (the specifics of how to do this will depend on your API&#8217;s implementation).</p>
+</div>
+<div class="paragraph">
+<p>We will also set the following in <code>apiman.properties</code> to make our development easier:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.connector-factory.tls.allowAnyHost=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you add your MTLS protected APIs into Apiman via the web application, you should set the <code>API Security</code> field to <code>MTLS/Two-Way-SSL</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mtls_via_custom_certificate_authority"><a class="anchor" href="#_mtls_via_custom_certificate_authority"></a>MTLS via Custom Certificate Authority</h4>
+<div class="paragraph">
+<p>The previous approach works for development, but doesn&#8217;t scale well, is harder to manage and doesn&#8217;t gracefully handle revocations, expiry, expansion, etc.
+Instead, let&#8217;s summarise a scenario where an organisation has an internal CA which they use to sign APIs' certificates.
+The process for generating a CA and signing certificates is out of scope for this guide, but is trivial to accomplish using OpenSSL, LibreSSL, or similar.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s imagine we have a CA called <code>apimanCA</code>, and have <strong>signed</strong> the certificates
+for each node.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. CA-based MTLS Setup</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Signed Key Alias</th>
+<th class="tableblock halign-left valign-top">Truststore Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apiman Gateway</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gateway (signed by apimanCA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apimanCA.cer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_a (signed by apimanCA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apimanCA.cer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_n (signed by apimanCA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apimanCA.cer</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Despite the initial administrative work setting up the CA and signing the certificates, this process is drastically less effort to maintain in large deployments.
+Only the trusted CA needs to be in the truststore, and any certificates signed by it are trusted by virtue of this.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_make_changes_to_configuration"><a class="anchor" href="#_make_changes_to_configuration"></a>Make changes to configuration</h3>
+<div class="paragraph">
+<p>Once you have your Trust Store and Key Store properly configured, you must alter your configuration file.
+Here is a summary of the properties:</p>
+</div>
+<div class="paragraph">
+<p>Omit any properties which are not relevant to you, except <code>trustStore</code>, which is mandatory for MTLS.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The settings chosen here have significant security implications.
+Best practice guides are <a href="https://www.owasp.org/">available at OWASP</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h4>
+<div class="listingblock">
+<div class="title">conf-es.json</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "connector-factory": {
+    "class": "io.apiman.gateway.platforms.vertx3.connector.ConnectorFactory",
+    "config": {
+      "tls": {
+        // Whether self-signed certificates should be automatically trusted. *Use with care.*
+        //"allowSelfSigned": true,
+
+        // Developer mode (bypass almost all security checks). *Use with care.*
+        //"devMode": false,
+
+        // Whether certificate host checks should be bypassed. *Use with care.*
+        //"allowAnyHost": true,
+
+        // Trust store contains certificate(s) trusted by gateway.
+        "trustStore": "/path/to/your/truststore.jks",
+        "trustStorePassword": "abc123",
+
+        // Key store contains gateway's keys.
+        "keyStore": "/path/to/your/keystore.jks",
+        "keyStorePassword": "abc123"
+
+        // By default all keys can be used (will try all).
+        // If alias list provided, will only attempt to use listed keys.
+        //"keyAliases": "mykey,myotherkey",
+
+        // Allowed TLS/SSL protocols and ciphers suites as CSV.
+        // Availability will vary depending on your JVM impl.
+        // Uses JVM defaults depending if not explicitly provided.
+        // See: https://docs.oracle.com/javase/8/docs/technotes/guides/security/SunProviders.html
+        //"allowedProtocols": "TLSv1.2,TLSv1.1",
+        //"allowedCiphers": "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,...",
+        //"disallowedCiphers": "..."
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h4>
+<div class="listingblock">
+<div class="title">apiman.properties</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># ---------------------------------------------------------------------
+# SSL/TLS settings for the gateway connector(s).
+# ---------------------------------------------------------------------
+
+# Trust store contains certificate(s) trusted by gateway.
+apiman-gateway.connector-factory.tls.trustStore=&lt;PATH_TO_TRUST_STORE&gt;
+apiman-gateway.connector-factory.tls.trustStorePassword=&lt;PASSWORD_IF_ANY&gt;
+
+# Key store contains gateway's keys (including private components: keep it safe).
+apiman-gateway.connector-factory.tls.keyStore=&lt;PATH_TO_KEY_STORE&gt;
+apiman-gateway.connector-factory.tls.keyStorePassword=&lt;PASSWORD_IF_ANY&gt; # Password on key store as a whole
+apiman-gateway.connector-factory.tls.keyPassword=&lt;PASSWORD_IF_ANY&gt; # Password on specific key(s)
+# By default all keys can be used (will try all). If alias list provided, will only attempt to use listed keys.
+apiman-gateway.connector-factory.tls.keyAliases=&lt;COMMA_SEPARATED_LIST&gt;
+
+# Allowed TLS/SSL protocols and ciphers suites as CSV. Availability will vary depending on your JVM impl.
+# Uses JVM defaults depending if not explicitly provided.
+# See: https://docs.oracle.com/javase/7/docs/technotes/guides/security/SunProviders.html
+apiman-gateway.connector-factory.tls.allowedProtocols=TLSv1.2,TLSv1.1
+apiman-gateway.connector-factory.tls.allowedCiphers=TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,...
+
+# Whether certificate host checks should be bypassed. *Use with great care.*
+apiman-gateway.connector-factory.tls.allowAnyHost=false
+
+# Whether self-signed certificates should be automatically trusted. *Use with great care.*
+apiman-gateway.connector-factory.tls.allowSelfSigned=false</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restart_apiman"><a class="anchor" href="#_restart_apiman"></a>(Re)start Apiman</h3>
+<div class="paragraph">
+<p>If Apiman was running, you should stop it now.
+Once everything is shutdown, and the changes to <code>apiman.properties</code> have been made, go ahead and start Apiman up again.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configure_one_or_more_api_to_use_mtls"><a class="anchor" href="#_configure_one_or_more_api_to_use_mtls"></a>Configure one or more API to use MTLS</h3>
+<div class="paragraph">
+<p>Now that the Apiman MTLS feature has been configured, use the Manager UI to enable MTLS in one or more API.
+This can be done on the "Implementation" tab when you are configuring the details of your back-end endpoint (URL, type, and endpoint security).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Some advanced configurations may interact directly with the Gateway API, whilst others may bypass it entirely by using polling, etc.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Normally located at <code><a href="http://localhost:8080/auth" class="bare">http://localhost:8080/auth</a></code> if you&#8217;re using the quickstart
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
