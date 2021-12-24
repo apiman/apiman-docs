@@ -173,7 +173,7 @@ Unless stated otherwise, the instructions assume that you are upgrading sequenti
 <p>We have bumped WildFly to 23.0.2.Final and Keycloak to 15.1.1.Final for security reasons.</p>
 </div>
 <div class="paragraph">
-<p>If you are using the Apiman WildFly distribution and customised <code>apiman-standalone.xml</code> you <em>may</em> need to update your definition file.
+<p>If you are using the Apiman WildFly distribution and customised <code>apiman-standalone.xml</code> you <em>may</em> need to update your configuration file.
 This is because of changes in the WildFly platform rather than Apiman itself.</p>
 </div>
 <div class="paragraph">
@@ -182,7 +182,7 @@ This is now Keycloak version 15.1.1.Final.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://github.com/apiman/apiman/commit/e645b9990ae26f5de15fdaabb1e55b1cbb2b05f3#diff-01645d81b443f3ac51ce6ad78abc3b73f51852ecb9f229a6a968699fcac4c7b2">See the diff of the <code>standalone-apiman.xml</code> to understand what has changed</a>.
-This mostly relates to changes in the way SSL/TLS is handled in the underlying WildFly platform.</p>
+This mostly relates to changes in the way SSL/TLS is configured in the underlying WildFly platform.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -199,7 +199,7 @@ This mostly relates to changes in the way SSL/TLS is handled in the underlying W
 </div>
 <div class="paragraph">
 <p>This will also mean Apiman is not forced to stay in sync with Keycloak Server releases.
-We hope this will be more convenient for users and the Apiman team.</p>
+We hope this will be more convenient for Apiman users and the Apiman team.</p>
 </div>
 </td>
 </tr>
@@ -327,6 +327,18 @@ $ docker run --rm -it ghcr.io/ghcr.io/apiman/migration-assistant export upgrade 
 </div>
 <div class="sect2">
 <h3 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Apiman 2.1.0.Final requires now Elasticsearch 7.x
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>If you are using Elasticsearch for the Apiman Manager API backend and/or metrics, the following sections are important to pay close attention to.</p>
 </div>
