@@ -1,4 +1,4 @@
 name: welcome
 title: Apiman Welcome
-version: 2.2.1.Final
+version: 2.2.3.Final
 start_page: ROOT:index.adoc
