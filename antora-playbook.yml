@@ -10,7 +10,7 @@ content:
     - url: ./
       branches:
         - 1.x
-        - HEAD
+        - 2.x
     - url: https://github.com/apiman/apiman-docs-user-guide.git
       branches:
         - 1.x
