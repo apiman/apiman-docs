@@ -43,6 +43,8 @@ output:
   dir: ./docs
 
 asciidoc:
+  attributes:
+    page-pagination: true
   extensions:
   - ./lib/openblock.js
   - ./lib/tabs-block.js
