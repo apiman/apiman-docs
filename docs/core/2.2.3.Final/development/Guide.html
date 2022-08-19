@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>apiman - Developer Guide :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/core/2.2.3.Final/development/Guide.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <link rel="prev" href="../migration/migrations.html">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
 <link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
@@ -341,7 +342,7 @@ the following plugin specification file (which contains information about the pl
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>META-INF/apiman/plugin.json</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">META-INF/apiman/plugin.json</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -425,7 +426,7 @@ in your maven project:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>src/main/apiman</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">src/main/apiman</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -762,7 +763,7 @@ plugin&#8217;s WAR archive in the standard location of:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>WEB-INF/lib</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">WEB-INF/lib</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1034,7 +1035,7 @@ here:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>META-INF/apiman/policyDefs</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">META-INF/apiman/policyDefs</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1086,7 +1087,7 @@ of the <code>policyImpl</code> is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>plugin:{pluginGroupId}:{pluginArtifactId}:{pluginVersion}:{pluginType}/{fullyQualifiedClassname}</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">plugin:{pluginGroupId}:{pluginArtifactId}:{pluginVersion}:{pluginType}/{fullyQualifiedClassname}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1095,7 +1096,7 @@ and had a peek at one of its policy definition files is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>plugin:io.apiman.plugins:apiman-plugins-example:6.3.3.Final:war/io.apiman.plugins.example.ExamplePolicy</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">plugin:io.apiman.plugins:apiman-plugins-example:6.3.3.Final:war/io.apiman.plugins.example.ExamplePolicy</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1105,7 +1106,7 @@ Maven set the values for you:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/com.example.plugins.ExamplePolicy</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/com.example.plugins.ExamplePolicy</code></pre>
 </div>
 </div>
 </div>
@@ -1170,7 +1171,7 @@ following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>META-INF/apiman/policyDefs/schemas/policy_name.schema</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">META-INF/apiman/policyDefs/schemas/policy_name.schema</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1354,7 +1355,7 @@ in the apiman github repository at the following location:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>manager/ui/war/src/main/sdk/json-schema.html</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">manager/ui/war/src/main/sdk/json-schema.html</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1816,7 +1817,7 @@ the following property in <strong>apiman.properties</strong>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman.plugins.repositories=http://repository.jboss.org/nexus/content/groups/public/</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman.plugins.repositories=http://repository.jboss.org/nexus/content/groups/public/</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1833,7 +1834,7 @@ like this (for example):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.plugins.MongoDbRegistry
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.plugins.MongoDbRegistry
 apiman-gateway.registry.mongo.host=localhost
 apiman-gateway.registry.mongo.port=27017
 apiman-gateway.registry.mongo.username=sa
@@ -1847,7 +1848,7 @@ this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.registry=plugin:org.example.apiman-plugins:plugin-mongodb:1.0.0.Final/org.example.apiman.plugins.MongoDbRegistry</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.registry=plugin:org.example.apiman-plugins:plugin-mongodb:1.0.0.Final/org.example.apiman.plugins.MongoDbRegistry</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1857,7 +1858,7 @@ the constructor will contain the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>mongo.host=localhost
+<pre class="highlightjs highlight"><code class="language-none hljs">mongo.host=localhost
 mongo.port=27017
 mongo.username=sa
 mongo.password=sa123!
@@ -1919,7 +1920,7 @@ all of the core apiman components that can be replaced by custom implementations
 <h5 id="_io_apiman_manager_api_core_inewuserbootstrapper_example_configuration"><a class="anchor" href="#_io_apiman_manager_api_core_inewuserbootstrapper_example_configuration"></a>io.apiman.manager.api.core.INewUserBootstrapper Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.user-bootstrapper.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooUserBootstrapperImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.user-bootstrapper.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooUserBootstrapperImpl
 apiman-manager.user-bootstrapper.foo1=value-1
 apiman-manager.user-bootstrapper.foo2=value-2</code></pre>
 </div>
@@ -1929,7 +1930,7 @@ apiman-manager.user-bootstrapper.foo2=value-2</code></pre>
 <h5 id="_io_apiman_manager_api_core_istorage_example_configuration"><a class="anchor" href="#_io_apiman_manager_api_core_istorage_example_configuration"></a>io.apiman.manager.api.core.IStorage Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.storage.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooStorageImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.storage.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooStorageImpl
 apiman-manager.storage.foo1=value-1
 apiman-manager.storage.foo2=value-2</code></pre>
 </div>
@@ -1939,7 +1940,7 @@ apiman-manager.storage.foo2=value-2</code></pre>
 <h5 id="_io_apiman_manager_api_core_istoragequery_example_configuration"><a class="anchor" href="#_io_apiman_manager_api_core_istoragequery_example_configuration"></a>io.apiman.manager.api.core.IStorageQuery Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.storage-query.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooStorageQueryImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.storage-query.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooStorageQueryImpl
 apiman-manager.storage-query.foo1=value-1
 apiman-manager.storage-query.foo2=value-2</code></pre>
 </div>
@@ -1962,7 +1963,7 @@ trying to create a separate instance of IStorageQuery.
 <h5 id="_io_apiman_manager_api_core_imetricsaccessor_example_configuration"><a class="anchor" href="#_io_apiman_manager_api_core_imetricsaccessor_example_configuration"></a>io.apiman.manager.api.core.IMetricsAccessor Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.metrics.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooMetricsAccessorImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.metrics.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooMetricsAccessorImpl
 apiman-manager.metrics.foo1=value-1
 apiman-manager.metrics.foo2=value-2</code></pre>
 </div>
@@ -1972,7 +1973,7 @@ apiman-manager.metrics.foo2=value-2</code></pre>
 <h5 id="_io_apiman_manager_api_core_iapikeygenerator_example_configuration"><a class="anchor" href="#_io_apiman_manager_api_core_iapikeygenerator_example_configuration"></a>io.apiman.manager.api.core.IApiKeyGenerator Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.api-keys.generator.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooApiKeyGeneratorImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.api-keys.generator.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooApiKeyGeneratorImpl
 apiman-manager.api-keys.generator.foo1=value-1
 apiman-manager.api-keys.generator.foo2=value-2</code></pre>
 </div>
@@ -1982,7 +1983,7 @@ apiman-manager.api-keys.generator.foo2=value-2</code></pre>
 <h5 id="_io_apiman_common_util_crypt_idataencrypter_example_configuration"><a class="anchor" href="#_io_apiman_common_util_crypt_idataencrypter_example_configuration"></a>io.apiman.common.util.crypt.IDataEncrypter Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooDataEncrypter
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooDataEncrypter
 apiman.encrypter.foo1=value-1
 apiman.encrypter.foo2=value-2</code></pre>
 </div>
@@ -1992,7 +1993,7 @@ apiman.encrypter.foo2=value-2</code></pre>
 <h5 id="_io_apiman_manager_api_core_iapicatalog_example_configuration"><a class="anchor" href="#_io_apiman_manager_api_core_iapicatalog_example_configuration"></a>io.apiman.manager.api.core.IApiCatalog Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.api-catalog.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooApiCatalogImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.api-catalog.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooApiCatalogImpl
 apiman-manager.api-catalog.foo1=value-1
 apiman-manager.api-catalog.foo2=value-2</code></pre>
 </div>
@@ -2079,7 +2080,7 @@ apiman-manager.api-catalog.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_iregistry_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_iregistry_example_configuration"></a>io.apiman.gateway.engine.IRegistry Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.registry=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooRegistryImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.registry=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooRegistryImpl
 apiman-gateway.registry.foo1=value-1</code></pre>
 </div>
 </div>
@@ -2088,7 +2089,7 @@ apiman-gateway.registry.foo1=value-1</code></pre>
 <h5 id="_io_apiman_common_util_crypt_idataencrypter_example_configuration_2"><a class="anchor" href="#_io_apiman_common_util_crypt_idataencrypter_example_configuration_2"></a>io.apiman.common.util.crypt.IDataEncrypter Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooDataEncrypter
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooDataEncrypter
 apiman.encrypter.foo1=value-1
 apiman.encrypter.foo2=value-2</code></pre>
 </div>
@@ -2098,7 +2099,7 @@ apiman.encrypter.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_iconnectorfactory_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_iconnectorfactory_example_configuration"></a>io.apiman.gateway.engine.IConnectorFactory Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.connector-factory=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooConnectorFactoryImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.connector-factory=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooConnectorFactoryImpl
 apiman-gateway.connector-factory.foo1=value-1
 apiman-gateway.connector-factory.foo2=value-2</code></pre>
 </div>
@@ -2108,7 +2109,7 @@ apiman-gateway.connector-factory.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_policy_ipolicyfactory_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_policy_ipolicyfactory_example_configuration"></a>io.apiman.gateway.engine.policy.IPolicyFactory Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.policy-factory=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFactoryImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.policy-factory=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFactoryImpl
 apiman-gateway.policy-factory.foo1=value-1
 apiman-gateway.policy-factory.foo2=value-2</code></pre>
 </div>
@@ -2121,7 +2122,7 @@ apiman-gateway.policy-factory.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_ipolicyfailurewriter_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_ipolicyfailurewriter_example_configuration"></a>io.apiman.gateway.engine.IPolicyFailureWriter Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.writers.policy-failure=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFailureWriterImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.writers.policy-failure=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFailureWriterImpl
 apiman-gateway.writers.policy-failure.foo1=value-1
 apiman-gateway.writers.policy-failure.foo2=value-2</code></pre>
 </div>
@@ -2131,7 +2132,7 @@ apiman-gateway.writers.policy-failure.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_ipolicyerrorwriter_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_ipolicyerrorwriter_example_configuration"></a>io.apiman.gateway.engine.IPolicyErrorWriter Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.writers.error=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyErrorWriterImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.writers.error=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyErrorWriterImpl
 apiman-gateway.writers.error.foo1=value-1
 apiman-gateway.writers.error.foo2=value-2</code></pre>
 </div>
@@ -2141,7 +2142,7 @@ apiman-gateway.writers.error.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_ibufferfactorycomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_ibufferfactorycomponent_example_configuration"></a>io.apiman.gateway.engine.components.IBufferFactoryComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.IBufferFactoryComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooBufferFactoryComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IBufferFactoryComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooBufferFactoryComponentImpl
 apiman-gateway.components.IBufferFactoryComponent.foo1=value-1
 apiman-gateway.components.IBufferFactoryComponent.foo2=value-2</code></pre>
 </div>
@@ -2156,7 +2157,7 @@ API Gateway is running in vert.x.  There is typically not another reason to over
 <h5 id="_io_apiman_gateway_engine_components_icachestorecomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_icachestorecomponent_example_configuration"></a>io.apiman.gateway.engine.components.ICacheStoreComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.ICacheStoreComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooCacheStoreComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.ICacheStoreComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooCacheStoreComponentImpl
 apiman-gateway.components.ICacheStoreComponent.foo1=value-1
 apiman-gateway.components.ICacheStoreComponent.foo2=value-2</code></pre>
 </div>
@@ -2166,7 +2167,7 @@ apiman-gateway.components.ICacheStoreComponent.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_ihttpclientcomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_ihttpclientcomponent_example_configuration"></a>io.apiman.gateway.engine.components.IHttpClientComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.IHttpClientComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooHttpClientComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IHttpClientComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooHttpClientComponentImpl
 apiman-gateway.components.IHttpClientComponent.foo1=value-1
 apiman-gateway.components.IHttpClientComponent.foo2=value-2</code></pre>
 </div>
@@ -2176,7 +2177,7 @@ apiman-gateway.components.IHttpClientComponent.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_ijdbccomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_ijdbccomponent_example_configuration"></a>io.apiman.gateway.engine.components.IJdbcComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.IJdbcComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooJdbcComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IJdbcComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooJdbcComponentImpl
 apiman-gateway.components.IJdbcComponent.foo1=value-1
 apiman-gateway.components.IJdbcComponent.foo2=value-2</code></pre>
 </div>
@@ -2186,7 +2187,7 @@ apiman-gateway.components.IJdbcComponent.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_ildapcomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_ildapcomponent_example_configuration"></a>io.apiman.gateway.engine.components.ILdapComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.ILdapComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooLdapComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.ILdapComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooLdapComponentImpl
 apiman-gateway.components.ILdapComponent.foo1=value-1
 apiman-gateway.components.ILdapComponent.foo2=value-2</code></pre>
 </div>
@@ -2196,7 +2197,7 @@ apiman-gateway.components.ILdapComponent.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_iperiodiccomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_iperiodiccomponent_example_configuration"></a>io.apiman.gateway.engine.components.IPeriodicComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.IPeriodicComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPeriodicComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IPeriodicComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPeriodicComponentImpl
 apiman-gateway.components.IPeriodicComponent.foo1=value-1
 apiman-gateway.components.IPeriodicComponent.foo2=value-2</code></pre>
 </div>
@@ -2206,7 +2207,7 @@ apiman-gateway.components.IPeriodicComponent.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_ipolicyfailurefactorycomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_ipolicyfailurefactorycomponent_example_configuration"></a>io.apiman.gateway.engine.components.IPolicyFailureFactoryComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.IPolicyFailureFactoryComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFailureFactoryComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IPolicyFailureFactoryComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFailureFactoryComponentImpl
 apiman-gateway.components.IPolicyFailureFactoryComponent.foo1=value-1
 apiman-gateway.components.IPolicyFailureFactoryComponent.foo2=value-2</code></pre>
 </div>
@@ -2216,7 +2217,7 @@ apiman-gateway.components.IPolicyFailureFactoryComponent.foo2=value-2</code></pr
 <h5 id="_io_apiman_gateway_engine_components_iratelimitercomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_iratelimitercomponent_example_configuration"></a>io.apiman.gateway.engine.components.IRateLimiterComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.IRateLimiterComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooRateLimiterComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IRateLimiterComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooRateLimiterComponentImpl
 apiman-gateway.components.IRateLimiterComponent.foo1=value-1
 apiman-gateway.components.IRateLimiterComponent.foo2=value-2</code></pre>
 </div>
@@ -2226,7 +2227,7 @@ apiman-gateway.components.IRateLimiterComponent.foo2=value-2</code></pre>
 <h5 id="_io_apiman_gateway_engine_components_isharedstatecomponent_example_configuration"><a class="anchor" href="#_io_apiman_gateway_engine_components_isharedstatecomponent_example_configuration"></a>io.apiman.gateway.engine.components.ISharedStateComponent Example Configuration</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.components.ISharedStateComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooSharedStateComponentImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.ISharedStateComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooSharedStateComponentImpl
 apiman-gateway.components.ISharedStateComponent.foo1=value-1
 apiman-gateway.components.ISharedStateComponent.foo2=value-2</code></pre>
 </div>
@@ -2331,7 +2332,7 @@ See the "Creating a Plugin" section of this guide for more information.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.api-catalog.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.ApiCatalogImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.api-catalog.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.ApiCatalogImpl
 apiman-manager.api-catalog.property1=value-1
 apiman-manager.api-catalog.property2=value-2</code></pre>
 </div>
@@ -2406,7 +2407,7 @@ this (<strong>note</strong>: it only needs to be configured in a single place fo
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.DataEncrypterImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.DataEncrypterImpl
 apiman.encrypter.property1=value-1
 apiman.encrypter.property2=value-2</code></pre>
 </div>
@@ -2478,14 +2479,14 @@ writer, or both in <em>apiman.properties</em> like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.writers.policy-failure=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.PolicyFailureWriterImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.writers.policy-failure=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.PolicyFailureWriterImpl
 apiman-gateway.writers.policy-failure.property1=value-1
 apiman-gateway.writers.policy-failure.property2=value-2</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-gateway.writers.error=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.PolicyErrorWriterImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.writers.error=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.PolicyErrorWriterImpl
 apiman-gateway.writers.error.property1=value-1
 apiman-gateway.writers.error.property2=value-2</code></pre>
 </div>
@@ -2570,7 +2571,7 @@ like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>apiman-manager.user-bootstrapper.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.UserBootstrapperImpl
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-manager.user-bootstrapper.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.UserBootstrapperImpl
 apiman-manager.user-bootstrapper.property1=value-1
 apiman-manager.user-bootstrapper.property2=value-2</code></pre>
 </div>
@@ -3106,6 +3107,9 @@ Remember to clean up any resources you may have left open.
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="../migration/migrations.html">Migration Guide</a></span>
+</nav>
 </article>
   </div>
 </main>
