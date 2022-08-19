@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Creating a Plugin :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/core/2.2.3.Final/development/Plugins.html">
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/core/1.5.7.Final/development/Plugins.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -44,7 +44,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="core" data-version="2.2.3.Final">
+<div class="nav-container" data-component="core" data-version="main">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -79,16 +79,16 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Apiman Guides</span>
-    <span class="version">2.2.3.Final</span>
+    <span class="version">nightly</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Apiman Guides</a>
+      <a class="title" href="../../1.5.7.Final/index.html">Apiman Guides</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../index.html">2.2.3.Final</a>
+        <li class="version is-current">
+          <a href="../index.html">nightly</a>
         </li>
-        <li class="version">
+        <li class="version is-latest">
           <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
         </li>
       </ul>
@@ -139,9 +139,9 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">2.2.3.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">nightly</button>
   <div class="version-menu">
-    <a class="version is-current" href="Plugins.html">2.2.3.Final</a>
+    <a class="version is-current" href="Plugins.html">nightly</a>
     <a class="version" href="../../1.5.7.Final/development/Plugins.html">1.5.7.Final</a>
   </div>
 </div>
@@ -617,170 +617,10 @@ archive.
 <div class="sect3">
 <h4 id="_logging"><a class="anchor" href="#_logging"></a>Logging</h4>
 <div class="paragraph">
-<p>A policy&#8217;s logger can be accessed through the context objects provided to <code>apply</code>.
-Use <code>getLogger</code> with a class. The <code>IApimanLogger</code> interface provides the methods
-available for logging, with a variety of pluggable backends available to implement
-the functionality.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Override
-  public void apply(final ApiRequest request, final IPolicyContext context, final Object config,
-          final IPolicyChain&lt;ApiRequest&gt; chain) {
-      IApimanLogger logger = context.getLogger(getClass());
-      logger.info("Hello, I am an info message in the request"); <i class="conum" data-value="1"></i><b>(1)</b>
-      logger.debug("Hello, I am a debug message in the request");
-      logger.trace("I am powered by: %s", request.getHeaders().get("X-Powered-By"));
-      chain.doApply(request);
-  }
-
-  @Override
-  public void apply(ApiResponse response, IPolicyContext context, Object config,
-          IPolicyChain&lt;ApiResponse&gt; chain) {
-      IApimanLogger logger = context.getLogger(getClass());
-      logger.info("Response info message: %d", 42); <i class="conum" data-value="2"></i><b>(2)</b>
-      chain.doApply(response);
-  }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Consult the interface&#8217;s javadoc for the full list of available methods.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Format string with arguments.</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h4>
-<div class="paragraph">
-<p>A few logging backends <a href="https://github.com/apiman/apiman/tree/master/common/logging">are provided</a>,
-which should satisfy most user&#8217;s requirements.</p>
+<p>You can create a logger via <code>private static final IApimanLogger LOGGER = ApimanLoggerFactory.getLogger(YourPlugin.class)</code></p>
 </div>
 <div class="paragraph">
-<p>In <code>apiman.properties</code>, provide a reference to the logger factory.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.logger-factory=io.apiman.common.logging.slf4j.Slf4jLoggerFactory</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Those shipped in the project, are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>SLF4J: <code>io.apiman.common.logging.slf4j.Slf4jLoggerFactory</code></p>
-</li>
-<li>
-<p>Log4j2: <code>io.apiman.common.logging.log4j2.Log4j2LoggerFactory</code></p>
-</li>
-<li>
-<p>NoOp/Null: <code>io.apiman.common.logging.impl.NoOpLoggerFactory</code></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Ensure that the implementation is available on the classpath.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_custom_implementation"><a class="anchor" href="#_custom_implementation"></a>Custom Implementation</h4>
-<div class="paragraph">
-<p>To provide your own implementation, you must implement <code>IDelegateFactory</code> and which
-should create instances your implementations of <code>IApimanLogger</code>. Ensure that your
-implementations are available on the classpath, and refer to <a href="#_configuration">Configuration</a> to
-set the <code>logger-factory</code> to your <code>IDelegateFactory</code>,which will cause the registry to
-load your factory.</p>
-</div>
-<div class="paragraph">
-<p>Example IDelegateFactory implementation</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ExampleLoggerFactory implements IDelegateFactory {
-
-    public ExampleLoggerFactory() {}
-    public ExampleLoggerFactory(Map&lt;String, String&gt; opts) {} <i class="conum" data-value="1"></i><b>(1)</b>
-
-    @Override
-    public IApimanLogger createLogger(String name) {
-        return new ExampleLogger(MyLoggerFactory.getLogger(name)); <i class="conum" data-value="2"></i><b>(2)</b>
-    }
-
-    @Override
-    public IApimanLogger createLogger(Class&lt;?&gt; klazz) {
-      return new ExampleLogger(MyLoggerFactory.getLogger(klazz)); <i class="conum" data-value="3"></i><b>(3)</b>
-    }
-}</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>If you pass config options from <code>apiman.properties</code> to your factory, they will appear here.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>MyLogger</code> is an example of the logger you&#8217;re wrapping.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>By class rather than string.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Example IApimanLogger implementation</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ExampleLogger implements IDelegateFactory {
-  MyLogger logger;
-
-  public TestLogger() {}
-  public TestLogger(MyLogger logger) {
-    this.config = config;
-  }
-
-  public void info(String message) {
-    logger.message(message); <i class="conum" data-value="1"></i><b>(1)</b>
-  }
-
-  // And many more... <i class="conum" data-value="2"></i><b>(2)</b>
-}</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Passing the message through to your logger.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Debug, trace, etc. Consult the interface.</td>
-</tr>
-</table>
+<p>This may require you to add <code>apiman-common-logging-core</code> into your Maven dependencies (<code>&lt;scope&gt;provided&lt;/scope&gt;</code> should be sufficient).</p>
 </div>
 </div>
 <div class="sect3">
@@ -2122,7 +1962,7 @@ looks something like this:</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/**
  * A bean modeling an API available in one of the configured API catalogs.
  */
-@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
+@JsonInclude(Include.NON_NULL)
 public class AvailableApiBean implements Serializable {
 
     private String id;
