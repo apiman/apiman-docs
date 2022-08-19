@@ -685,7 +685,10 @@ In this Docker Compose example, Keycloak  is running in dev mode. For production
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>You can find the default realm definition in your distribution zip: <code>apiman/data/apiman-realm-for-keycloak.json</code></p>
+<p>You can find the default realm definition in your distribution zip:</p>
+<div class="paragraph">
+<p><code>apiman/data/apiman-realm-for-keycloak.json</code></p>
+</div>
 </li>
 <li>
 <p>There are several ways to import a realm, <a href="https://www.keycloak.org/server/importExport" target="_blank" rel="noopener">please refer to the Keycloak docs</a>. However, for this example, we&#8217;ll do:</p>
@@ -705,7 +708,7 @@ In this Docker Compose example, Keycloak  is running in dev mode. For production
 <p><code>export APIMAN_AUTH_URL="http://&lt;somehost&gt;:&lt;someport&gt;"</code>.</p>
 </div>
 <div class="paragraph">
-<p>For example, if your hostname is <code>localhost</code> and your port is <code>8081</code>, then your <code>APIAN_AUTH_URL</code> would be <code><a href="http://localhost:8081/" class="bare">http://localhost:8081/</a></code></p>
+<p>For example, if your hostname is <code>localhost</code> and your port is <code>8081</code>, then your <code>APIMAN_AUTH_URL</code> would be <code><a href="http://localhost:8081/" class="bare">http://localhost:8081/</a></code></p>
 </div>
 </li>
 </ol>
