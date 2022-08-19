@@ -421,10 +421,10 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>System property: apiman.db.driver</p>
+<p>System property: <code>apiman.db.driver</code></p>
 </li>
 <li>
-<p>Env var: APIMAN_DB_DRIVER</p>
+<p>Env var: <code>APIMAN_DB_DRIVER</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -447,10 +447,10 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>System property: apiman.db.url</p>
+<p>System property: <code>apiman.db.url</code></p>
 </li>
 <li>
-<p>Env var: APIMAN_DB_URL</p>
+<p>Env var: <code>APIMAN_DB_URL</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -470,10 +470,10 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>System property: apiman.db.username</p>
+<p>System property: <code>apiman.db.username</code></p>
 </li>
 <li>
-<p>Env var: APIMAN_DB_USERNAME</p>
+<p>Env var: <code>APIMAN_DB_USERNAME</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -493,10 +493,10 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>System property: apiman.db.password</p>
+<p>System property: <code>apiman.db.password</code></p>
 </li>
 <li>
-<p>Env var: APIMAN_DB_PASSWORD</p>
+<p>Env var: <code>APIMAN_DB_PASSWORD</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -516,7 +516,7 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>System property: liquibase.should.run</p>
+<p>System property: <code>liquibase.should.run</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -537,18 +537,19 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Examples</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 100%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Setup</th>
-<th class="tableblock halign-left valign-top">Command</th>
-</tr>
-</thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setup</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Postgres&#8201;&#8212;&#8201;system properties</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">./bin/standalone.sh \
@@ -561,6 +562,8 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Postgres&#8201;&#8212;&#8201;env vars</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">export APIMAN_DB_URL="jdbc:postgresql://localhost:5432/apiman"
@@ -574,6 +577,8 @@ export APIMAN_DB_DRIVER="postgresql9"
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MySQL/MariaDB&#8201;&#8212;&#8201;system properties</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">./bin/standalone.sh \
@@ -586,6 +591,8 @@ export APIMAN_DB_DRIVER="postgresql9"
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MySQL/MariaDB&#8201;&#8212;&#8201;env vars</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">export APIMAN_DB_URL="jdbc:mysql://localhost:3306/apiman"

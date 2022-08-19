@@ -487,7 +487,7 @@ How many deployments, and hence total number of verticles exist within your over
 <div class="sect2">
 <h3 id="_https"><a class="anchor" href="#_https"></a>HTTPS</h3>
 <div class="paragraph">
-<p>Encrypted HTTPS entry-point, with TLS/SSL. Turn off by reducing count to zero. Add you keystore and truststore to the <a href="#_ssl">SSL</a> section of your configuration to enable this functionality.</p>
+<p>Encrypted HTTPS entry-point, with TLS/SSL. Turn off by reducing count to zero. Add you keystore and truststore to the <a href="#SSL">SSL (TLS)</a> section of your configuration to enable this functionality.</p>
 </div>
 </div>
 <div class="sect2">
@@ -523,12 +523,12 @@ You probably only need 1 of these.</p>
 </div>
 <div class="paragraph">
 <p>Force the gateway to report the given gateway endpoint when it is queried by the manager.
-By default the gateway will inspect the request used to hit the Gateway API, and use whichever address was used to reach it as the endpoint.</p>
+By default, the gateway will inspect the request used to hit the Gateway API, and use whichever address was used to reach it as the endpoint.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ssl"><a class="anchor" href="#_ssl"></a>SSL</h2>
+<h2 id="SSL"><a class="anchor" href="#SSL"></a>SSL (TLS)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The SSL section configures transport security to the gateway&#8217;s <strong>front end</strong>; that is, connections established between client app ⇋ Apiman Gateway.</p>
@@ -559,7 +559,7 @@ By default the gateway will inspect the request used to hit the Gateway API, and
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Refer to the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html">Java keytool reference</a> for more information on creating keystores and truststores.
+Refer to the <a href="https://docs.oracle.com/en/java/javase/11/tools/keytool.html" target="_blank" rel="noopener">Java keytool reference</a> for more information on creating keystores and truststores.
 </td>
 </tr>
 </table>
@@ -582,7 +582,7 @@ Refer to the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix
 </div>
 <div class="paragraph">
 <p>When reporting gateway endpoints (as above), set whether to prefer reporting the secure (HTTPS) URI rather than an insecure one (HTTP).
-This is likely the preferred option for production deployments where transport security <a href="#_ssl">has been configured</a>.</p>
+This is likely the preferred option for production deployments where transport security <a href="#SSL">has been configured</a>.</p>
 </div>
 </div>
 </div>
