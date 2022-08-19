@@ -11,17 +11,21 @@ content:
       branches:
         - 1.x
         - 2.x
+        - antora
     - url: https://github.com/apiman/apiman-docs-user-guide.git
       branches:
         - 1.x
+        - 2.x
         - antora
     - url: https://github.com/apiman/apiman-docs-installation-guide.git
       branches:
         - 1.x
+        - 2.x
         - antora
     - url: https://github.com/apiman/apiman.git
       branches:
         - 1.x
+        - 2.x
         - master
       start_path: docs
 
