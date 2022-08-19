@@ -6,7 +6,7 @@
     <title>Apiman Quickstart :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/quickstart.html">
     <link rel="prev" href="index.html">
-    <link rel="next" href="servlet/wildfly.html">
+    <link rel="next" href="keycloak.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -65,11 +65,14 @@
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -323,92 +326,64 @@
 <article class="doc">
 <h1 class="page">Apiman Quickstart</h1>
 <div class="sect1">
-<h2 id="_choose_your_setup"><a class="anchor" href="#_choose_your_setup"></a>Choose Your Setup</h2>
+<h2 id="_docker_compose"><a class="anchor" href="#_docker_compose"></a>Docker Compose</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to try Apiman is with our Docker Compose distribution.
+It is also arranged in a way that is more representative of a real-world deployment; broken down into its constituent parts, with all features enabled, and using a production-grade database.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#_vert_x_gateway_and_servlet_based_manager">Vert.x Gateway and Servlet-based Manager</a> <strong><em>Recommended for best performance</em></strong>.</p>
+<p>Download the <a href="https://github.com/apiman/apiman-docker/releases/download/3.0.0-SNAPSHOT/apiman-docker-compose-3.0.0-SNAPSHOT.zip" target="_blank" rel="noopener">Apiman Docker Compose distribution</a>.</p>
 </li>
 <li>
-<p><a href="#_servlet_based_gateway_and_servlet_based_manager">Servlet-based Gateway and Servlet-based Manager</a>. Simplest for a quick test.</p>
+<p><code>unzip apiman-docker-compose-3.0.0-SNAPSHOT.zip &amp;&amp; cd apiman-docker-compose-3.0.0-SNAPSHOT</code></p>
+</li>
+<li>
+<p><code>docker-compose -f docker-compose.setup.yml up</code></p>
+</li>
+<li>
+<p><code>docker-compose up</code></p>
+</li>
+<li>
+<p>Open <a href="http://apiman.local.gd:8080/apimanui" class="bare">http://apiman.local.gd:8080/apimanui</a></p>
+</li>
+<li>
+<p>🎉 Success!</p>
 </li>
 </ol>
 </div>
-<hr>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_vert_x_gateway_and_servlet_based_manager"><a class="anchor" href="#_vert_x_gateway_and_servlet_based_manager"></a>Vert.x Gateway and Servlet-based Manager</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Apiman consists of two broad parts, the Gateway and the Manager.
-This quickstart separates those elements, with the Gateway implemented in Vert.x; our most performant platform, and the Manager a Servlet-based implementation.</p>
-</div>
-<div class="paragraph">
-<p>They are linked together in a trivial few steps.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Select and download a <a href="servlet/wildfly.html" class="xref page">Servlet all-in-one distro</a> of Apiman (e.g. WildFly, Tomcat).</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Optional: Before launching, remove <code>apiman-gateway.war</code> from the deployment.</p>
+<p>Refer to the distro&#8217;s <strong><code>README.adoc</code></strong> for more information, it&#8217;s in the root of the zip.
+You will find a list of endpoints, including devportal and a mock mail server.</p>
+</li>
+<li>
+<p>It may take a short while to boot all services and for the Apiman endpoints to become available, especially if you are using a system with virtualised container support (e.g. Windows).</p>
+</li>
+<li>
+<p>Don&#8217;t forget to look at <code>.env</code> for a variety of useful settings.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Download the <a href="vertx/download.html" class="xref page">Vert.x distro</a> and launch using the <code>conf-es.json</code> configuration.</p>
-</li>
-<li>
-<p>Log into the Apiman UI <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> as an admin user (default: admin/admin123!).</p>
-</li>
-<li>
-<p>Follow the steps outlined in the <a href="vertx/install.html" class="xref page">gateway installation walkthrough</a> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
-</li>
-</ol>
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>🎉  Done!</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_servlet_based_gateway_and_servlet_based_manager"><a class="anchor" href="#_servlet_based_gateway_and_servlet_based_manager"></a>Servlet-based Gateway and Servlet-based Manager</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Servlet-based quickstart is an all-in-one with little-or-no additional configuration needed to get going. You can start with this platform and migrate to the Vert.x gateway at a later date. It&#8217;s ideal for trying out Apiman in the shortest possible time.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Select and download a <a href="servlet/wildfly.html" class="xref page">Servlet all-in-one distro</a> of Apiman (e.g. WildFly, EAP, Tomcat).</p>
-</li>
-<li>
-<p>Launch and log into the Apiman UI.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>🎉  Done!</p>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. Typically this will be <a href="http://localhost:8080/apimanui" class="bare">http://localhost:8080/apimanui</a>
-</div>
-<div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. If you created a new gateway rather than editing an existing entry, you may want to delete the old one to avoid any confusion.
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">Introduction</a></span>
-  <span class="next"><a href="servlet/wildfly.html">WildFly</a></span>
+  <span class="next"><a href="keycloak.html">Set up Keycloak SSO</a></span>
 </nav>
 </article>
   </div>

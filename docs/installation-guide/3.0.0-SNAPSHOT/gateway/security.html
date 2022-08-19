@@ -6,7 +6,7 @@
     <title>Security :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/gateway/security.html">
     <link rel="prev" href="../registries-and-components/headless.html">
-    <link rel="next" href="../manager/configuration.html">
+    <link rel="next" href="../how-to/jdbc.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="production-gateway.html">Vertx</a>
+    <a class="nav-link" href="production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -303,7 +306,6 @@
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
     <li>Gateway</li>
-    <li>Registries and Components</li>
     <li><a href="security.html">Security</a></li>
   </ul>
 </nav>
@@ -324,10 +326,83 @@
 <article class="doc">
 <h1 class="page">Security</h1>
 <div class="sect1">
-<h2 id="_gateway_api_authentication"><a class="anchor" href="#_gateway_api_authentication"></a>Gateway API Authentication</h2>
+<h2 id="_keycloak_idm"><a class="anchor" href="#_keycloak_idm"></a>Keycloak IDM</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of Apiman 3, we no longer bundle the Keycloak server into Apiman quickstart distributions.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>The Gateway&#8217;s REST API is what the API Manager invokes when publishing APIs and Client Apps to the Gateway <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+<p>In order to use the Apiman quickstarts, you need to run Keycloak.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.keycloak.org" target="_blank" rel="noopener">Keycloak</a> is used to manage a range of security tasks for Apiman, including user account management, login security, OIDC provider, etc.</p>
+</div>
+<div class="paragraph">
+<p>To provide flexibility, there are a few ways you can configure Apiman to point to your Keycloak server.</p>
+</div>
+<div class="sect2">
+<h3 id="kc-configuration-options"><a class="anchor" href="#kc-configuration-options"></a>Configuration</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Required Params</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: apiman.auth.realm</p>
+</li>
+<li>
+<p>Env var: APIMAN_AUTH_REALM</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Keycloak realm name.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: apiman</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: apiman.auth.url</p>
+</li>
+<li>
+<p>Env var: APIMAN_AUTH_URL</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Keycloak auth server URL</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -336,27 +411,260 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The quickstart configurations should work out of the box, but they assume the locality of all components, including Keycloak. Real deployments will likely need to perform some reconfiguration.
+In older versions of Keycloak the auth server might have <code>/auth</code> at the end of the URL, rather than being at root (i.e. <code><a href="http://old-keycloak:8080/auth" class="bare">http://old-keycloak:8080/auth</a></code> vs <code><a href="http://new-keycloak:8080/auth" class="bare">http://new-keycloak:8080/auth</a></code>).
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: apiman.auth.api.secret</p>
+</li>
+<li>
+<p>Env var: APIMAN_AUTH_API_SECRET</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Keycloak secret credential for the Apiman Manager API (<code>apiman</code> client)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: password</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: apiman.auth.ui.secret</p>
+</li>
+<li>
+<p>Env var: APIMAN_AUTH_UI_SECRET</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Keycloak secret credential for the Apiman Manager UI (<code>apimanui</code> client)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: password</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: apiman.auth.gateway.secret</p>
+</li>
+<li>
+<p>Env var: APIMAN_AUTH_GATEWAY_SECRET</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Keycloak secret credential for the Apiman Gateway API (<code>apiman-gateway-api</code> client)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: password</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: apiman.auth.realm-public-key</p>
+</li>
+<li>
+<p>Env var: APIMAN_AUTH_REALM_PUBLIC_KEY</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Public key for Apiman realm (only needed on Vert.x Gateway).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: example Apiman realm key</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Please change default secrets and keys before deploying Apiman to production.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_keycloak"><a class="anchor" href="#_setting_up_keycloak"></a>Setting up Keycloak</h3>
+<div class="paragraph">
+<p>As a quick way to run Keycloak and initialise it with the Apiman&#8217;s default realm, here&#8217;s an example Docker Compose file:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example Docker Compose file</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">services:
+  keycloak:
+    container_name: keycloak_server_all
+    image: quay.io/keycloak/keycloak:18.0.2
+    entrypoint: ['/bin/bash', '-c']
+    command:
+      - |
+        cd /opt/keycloak
+        ./bin/kc.sh build
+        ./bin/kc.sh start-dev --import-realm
+    ports:
+      - "8081:8080"
+    environment:
+      - "KEYCLOAK_ADMIN=admin"
+      - "KEYCLOAK_ADMIN_PASSWORD=admin123!"
+      - "KEYCLOAK_FRONTEND_URL=http://localhost:8081"
+    volumes:
+      - ${PWD}/apiman-realm-for-keycloak.json:/opt/keycloak/data/import/apiman-realm-for-keycloak.json <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Copy <code>apiman-realm-for-keycloak.json</code> from <code>apiman/data/apiman-realm-for-keycloak.json</code>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a file called <code>docker-compose.yml</code> with the contents shown above.</p>
+</li>
+<li>
+<p>Copy <code>apiman/data/apiman-realm-for-keycloak.json</code> from your distro zip to the same directory as your <code>docker-compose.yml</code>.</p>
+</li>
+<li>
+<p>Start with <code>docker-compose up</code>.</p>
+</li>
+<li>
+<p>You should now have Keycloak running on localhost port 8081</p>
+</li>
+<li>
+<p>Try it with: <code><a href="http://localhost:8081/admin" class="bare">http://localhost:8081/admin</a></code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Admin username: <code>admin</code></p>
+</li>
+<li>
+<p>Admin password: <code>admin123!</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Your Apiman Auth URL is: <code><a href="http://localhost:8081" class="bare">http://localhost:8081</a></code> (see <a href="#kc-configuration-options">Configuration</a>)</p>
+</li>
+</ol>
+</div></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is running in dev mode. For production, refer to the Keycloak Production Guides.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gateway_api_authentication"><a class="anchor" href="#_gateway_api_authentication"></a>Gateway API Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Apiman Gateway&#8217;s REST API is what the API Manager invokes when publishing APIs and Client Apps to the Gateway <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The quickstart configurations should work out of the box, but they assume the locality of all components.</p>
+</div>
+<div class="paragraph">
+<p>Real deployments will likely need to perform some reconfiguration.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>This REST API should be protected, often using BASIC authentication.</p>
+<p>This REST API should be protected, usually by BASIC authentication.</p>
 </div>
 <div class="paragraph">
-<p>By default, the Gateway REST API requires BASIC authentication credentials, as well as a role of <code>apipublisher</code>.
-In other words, the Gateway REST API can only be invoked by a valid user, and that user must have the <code>apipublisher</code> role.</p>
+<p>By default, the Apiman Gateway REST API requires BASIC authentication credentials, as well as a role of <code>apipublisher</code>.</p>
 </div>
-<div class="paragraph">
-<p>The Keycloak client for this API is <code>apiman-gateway-api</code>, and the default user and password are: <strong>apimanager</strong>/<strong>apiman123!</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The Apiman Gateway REST API can only be invoked by a valid user, and that user must have the <code>apipublisher</code> role.</p>
+</li>
+<li>
+<p>The Keycloak client for this API is <code>apiman-gateway-api</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The default user is: <strong>apimanager</strong></p>
+</li>
+<li>
+<p>The default password is: <strong>apiman123!</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h3>
-<div class="sect3">
-<h4 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h4>
+<h3 id="_advanced_setup"><a class="anchor" href="#_advanced_setup"></a>Advanced Setup</h3>
 <div class="paragraph">
-<p>For the Vert.x gateway, the simplest way to retrieve the necessary configuration is to generate it from your Keycloak server <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>:</p>
+<p>For more advanced setups, the environment variables/system properties may not be sufficient; manual editing of configuration files might be necessary.</p>
+</div>
+<div class="sect3">
+<h4 id="_vert_x_gateway"><a class="anchor" href="#_vert_x_gateway"></a>Vert.x Gateway</h4>
+<div class="paragraph">
+<p>For the Vert.x gateway, the simplest way to retrieve the necessary configuration is to generate it from your Keycloak server.</p>
 </div>
 <div class="paragraph">
 <p>The gateway accepts Keycloak&#8217;s generated JSON, allowing you to paste your chosen client configuration from the Keycloak console into the <code>auth.config</code> section.</p>
@@ -367,7 +675,7 @@ In other words, the Gateway REST API can only be invoked by a valid user, and th
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log into Keycloak (e.g <a href="http://localhost:8080/auth" class="bare">http://localhost:8080/auth</a>).</p>
+<p>Log into your Keycloak Administrator console (e.g <a href="http://localhost:8081/admin" class="bare">http://localhost:8081/admin</a>).</p>
 </li>
 <li>
 <p><code>Clients</code> &#8594; <code>apiman-gateway-api</code> &#8594; <code>Installation</code>.</p>
@@ -390,7 +698,12 @@ In other words, the Gateway REST API can only be invoked by a valid user, and th
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues. You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.
+<div class="paragraph">
+<p>Due to a current limitation in the underlying OAuth2 library you may be required to provide a <code>credentials</code> section to avoid issues.</p>
+</div>
+<div class="paragraph">
+<p>You can change your client type to <code>confidential</code>, or simply provide a dummy <code>credentials</code> section.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -420,18 +733,22 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 </div>
 </div>
 <div class="sect3">
-<h4 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h4>
+<h4 id="_servlet_gateway"><a class="anchor" href="#_servlet_gateway"></a>Servlet Gateway</h4>
 <div class="paragraph">
-<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it. This API is protected by Keycloak authentication. The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you’ll need to modify the standalone-apiman.xml file to point to the remote Keycloak instance.</p>
+<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it.
+This API is protected by Keycloak authentication.</p>
 </div>
 <div class="paragraph">
-<p>Here is the relevant portion of the <strong>standalone-apiman.xml</strong> file that you must change:</p>
+<p>Most options can be configured using environment variables or system properties, rather than editing configuration directly. Please see the <a href="#kc-configuration-options">Keycloak Configuration Options</a> section for details.</p>
+</div>
+<div class="paragraph">
+<p>If not, the relevant portion of the <strong>standalone-apiman.xml</strong> file that you must change is <code>keycloak</code> subsystem.
+It looks something like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm name="apiman"&gt;
-  &lt;realm-public-key&gt;MIIB..snip..QAB&lt;/realm-public-key&gt;
-  &lt;auth-server-url&gt;https://keycloak-host.org:8443/auth&lt;/auth-server-url&gt;
+  &lt;auth-server-url&gt;https://keycloak-host.org:8443&lt;/auth-server-url&gt;
   &lt;ssl-required&gt;none&lt;/ssl-required&gt;
   &lt;enable-cors&gt;false&lt;/enable-cors&gt;
   &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
@@ -505,7 +822,7 @@ This means you must have server SSL certificates generated (and appropriate cert
 <p>In our hypothetical development setup, let&#8217;s imagine we have two APIs and a single gateway.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Simple Development MTLS Setup</caption>
+<caption class="title">Table 2. Simple Development MTLS Setup</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -654,7 +971,7 @@ The process for generating a CA and signing certificates is out of scope for thi
 for each node.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. CA-based MTLS Setup</caption>
+<caption class="title">Table 3. CA-based MTLS Setup</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -714,7 +1031,7 @@ Best practice guides are <a href="https://www.owasp.org/">available at OWASP</a>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h4>
+<h4 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h4>
 <div class="listingblock">
 <div class="title">conf-es.json</div>
 <div class="content">
@@ -759,7 +1076,7 @@ Best practice guides are <a href="https://www.owasp.org/">available at OWASP</a>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h4>
+<h4 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h4>
 <div class="listingblock">
 <div class="title">apiman.properties</div>
 <div class="content">
@@ -814,13 +1131,10 @@ This can be done on the "Implementation" tab when you are configuring the detail
 <div class="footnote" id="_footnotedef_1">
 <a href="#_footnoteref_1">1</a>. Some advanced configurations may interact directly with the Gateway API, whilst others may bypass it entirely by using polling, etc.
 </div>
-<div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. Normally located at <code><a href="http://localhost:8080/auth" class="bare">http://localhost:8080/auth</a></code> if you&#8217;re using the quickstart
-</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../registries-and-components/headless.html">Headless</a></span>
-  <span class="next"><a href="../manager/configuration.html">General Configuration</a></span>
+  <span class="next"><a href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a></span>
 </nav>
 </article>
   </div>

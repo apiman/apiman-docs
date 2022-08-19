@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="production-gateway.html">Vertx</a>
+    <a class="nav-link" href="production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -304,7 +307,7 @@
     <li><a href="../index.html">Installation Guide</a></li>
     <li><a href="../production.html">Production Guide</a></li>
     <li>Gateway</li>
-    <li><a href="production-gateway-wildfly.html">Wildfly</a></li>
+    <li><a href="production-gateway-wildfly.html">WildFly</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -323,11 +326,11 @@
 </aside>
 <article class="doc">
 <h1 class="page">WildFly/EAP Production Guide</h1>
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>The easiest way to install just the API Gateway is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.
-Follow that up with some modification of the <code>apiman.properties</code> configuration file, and you&#8217;ll be Gatewaying in no time!</p>
+<p>The easiest way to install just the API Gateway is to download and install the Apiman quickstart overlay ZIP and then remove the extraneous components.</p>
+</div>
+<div class="paragraph">
+<p>Follow that up with some modification of the <code>apiman.properties</code> configuration file, and you&#8217;ll be Gatewaying in no time!</p>
 </div>
 <div class="paragraph">
 <p>Here are the steps you should take to install a standalone API Gateway:</p>
@@ -348,65 +351,15 @@ Follow that up with some modification of the <code>apiman.properties</code> conf
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Which Apiman deployments should you delete?  These:</p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">standalone/deployments/apiman-ds.xml
-standalone/deployments/apiman-es.war
-standalone/deployments/apiman.war
-standalone/deployments/apimanui.war</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_disabling_the_keycloak_server"><a class="anchor" href="#_disabling_the_keycloak_server"></a>Disabling the Keycloak Server</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Because you will be using an external/standalone Keycloak server, it is useful to disable the Keycloak components that are bundled with the Apiman quickstart overlay ZIP.</p>
-</div>
-<div class="paragraph">
-<p>To do that, <strong>remove</strong> the following subsystem from the <code>standalone-apiman.xml</code> file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;subsystem xmlns="urn:jboss:domain:keycloak-server:1.1"&gt;
-  &lt;web-context&gt;auth&lt;/web-context&gt;
-&lt;/subsystem&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_configuring_keycloak_authentication_for_the_gateway_api"><a class="anchor" href="#_configuring_keycloak_authentication_for_the_gateway_api"></a>Configuring Keycloak Authentication for the Gateway API</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The API Gateway has a REST based configuration API which the API Manager uses when publishing APIs to it.
-This API is protected by Keycloak authentication.</p>
-</div>
-<div class="paragraph">
-<p>The configuration included in the Apiman quickstart overlay ZIP assumes that the Keycloak server is local, so you&#8217;ll need to modify the <code>standalone-apiman.xml</code> file to point to the remote Keycloak instance.</p>
-</div>
-<div class="paragraph">
-<p>Here is the relevant portion of the <code>standalone-apiman.xml</code> file that you must change:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm name="apiman"&gt;
-  &lt;realm-public-key&gt;MIIB..snip..QAB&lt;/realm-public-key&gt;
-  &lt;auth-server-url&gt;https://keycloak-host.org:8443/auth&lt;/auth-server-url&gt;
-  &lt;ssl-required&gt;none&lt;/ssl-required&gt;
-  &lt;enable-cors&gt;false&lt;/enable-cors&gt;
-  &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
-&lt;/realm&gt;</code></pre>
-</div>
-</div>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rm standalone/deployments/apiman.war
+rm standalone/deployments/apimanui.war
+rm standalone/deployments/apiman-developer-portal*.war</code></pre>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="production-gateway.html">Vertx</a></span>
+  <span class="prev"><a href="production-gateway.html">Vert.x</a></span>
   <span class="next"><a href="../manager/production-manager.html">Manager</a></span>
 </nav>
 </article>

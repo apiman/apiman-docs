@@ -6,7 +6,7 @@
     <title>Elasticsearch Registry &amp; Components :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/registries-and-components/elasticsearch.html">
     <link rel="prev" href="jdbc.html">
-    <link rel="next" href="headless.html">
+    <link rel="next" href="influxdb.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -303,7 +306,6 @@
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
     <li>Gateway</li>
-    <li>Registries and Components</li>
     <li><a href="overview.html">Registries &amp; Components</a></li>
     <li><a href="elasticsearch.html">Elasticsearch</a></li>
   </ul>
@@ -326,17 +328,20 @@
 <h1 class="page">Elasticsearch Registry &amp; Components</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 Many of the shipped configurations make use of variable substitution to reduce repetition.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Apiman components for <a href="https://www.elastic.co" target="_blank" rel="noopener">Elasticsearch</a>.</p>
 </div>
 </div>
 </div>
@@ -358,47 +363,79 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The Elasticsearch client type:</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Default Value</strong>: es</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.protocol</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enum</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The Elasticsearch protocol to use</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Default Value</strong>: http</p>
+</li>
+<li>
+<p><strong>Allowed Values</strong>: http, https</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.indexPrefix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Elasticsearch index prefix</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: name of component</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.host</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The ES host</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.port</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The ES port</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.timeout</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Client timeout</p>
+<p>Client timeout (milliseconds)</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Default Value</strong>: 10000</p>
+</li>
+<li>
+<p><strong>Allowed Values</strong>: 0 infinite timeout or any positive int</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -423,80 +460,149 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.index</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>An alternative Elasticsearch index name.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.initialize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.initialize</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Initilize the storage</p>
+<p>Initialise the storage</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Username if using an auth mechanism like SearchGuard, Shield, etc</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Password if using an auth mechanism like SearchGuard, Shield, etc</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.keystore.path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.keystore.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Path to the client KeyStore</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.keystore.password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.keystore.format</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enum</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Format of keystore</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: jks</p>
+</li>
+<li>
+<p><strong>Allowed Values</strong>: pkcs12, jks</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.keystore.password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Password for the client KeyStore</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.truststore.path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.truststore.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Path to the TrustStore</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.truststore.password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.truststore.format</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enum</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Format of truststore</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: jks</p>
+</li>
+<li>
+<p><strong>Allowed Values</strong>: pkcs12, jks</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.truststore.password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Password for the TrustStore</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.allowSelfSigned</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.allowSelfSigned</code> / <code>client.trust.certificate</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Trust self-signed certificates</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: false</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.allowAnyHost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.allowAnyHost</code> / <code>client.trust.host</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Disbale hostname verification checks</p>
+<p>Disable hostname verification checks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: false</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">client.pollingTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.trustAll</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Trust all SSL endpoints without any checks (use with great care)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: false</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.pollingTime</code> / <code>client.polling.time</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The timespan to try polling for elasticsearch</p>
+<p>Polling frequency for client attempting connection to Elasticsearch (milliseconds). This is only relevant if the client is unable to connect on first attempt.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: 600</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -509,24 +615,47 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <div class="paragraph">
 <p>Assign your chosen implementation as shown in the example, providing configuration.</p>
 </div>
-<div class="sect2">
-<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h3>
+<div id="tabset1" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset1_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset1_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
+</div>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset1_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"registry": {
-  "class": "io.apiman.gateway.engine.es.PollCachingESRegistry",
-  "config": {
-    // &lt;registry configuration&gt;
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=io.apiman.gateway.engine.es.PollCachingESRegistry</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset1_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "registry": {
+    "class": "io.apiman.gateway.engine.es.PollCachingESRegistry",
+    "config": {
+      // &lt;registry configuration&gt;
+    }
   }
-},</code></pre>
+}</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=&lt;IMPLEMENTATION&gt;</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -556,7 +685,6 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </tr>
 </tbody>
 </table>
-</div>
 <div class="sect2">
 <h3 id="_required_parameters"><a class="anchor" href="#_required_parameters"></a>Required Parameters</h3>
 <div class="paragraph">
@@ -577,14 +705,20 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache-polling-interval</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Cache polling interval in seconds.</p>
 </div>
-<div class="paragraph">
-<p><strong>Default Value</strong>: 10
-<strong>Implementations</strong>: PollCachingESRegistry</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: 10</p>
+</li>
+<li>
+<p><strong>Implementations</strong>: PollCachingESRegistry</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -610,14 +744,20 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-startup-delay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache-polling-startup-delay</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Polling startup delay in seconds.</p>
 </div>
-<div class="paragraph">
-<p><strong>Default Value</strong>: 30
-<strong>Implementations</strong>: PollCachingESRegistry</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: 30</p>
+</li>
+<li>
+<p><strong>Implementations</strong>: PollCachingESRegistry</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -631,32 +771,93 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <div class="paragraph">
 <p>Set the metrics implementation as shown.</p>
 </div>
-<div class="sect2">
-<h3 id="_vert_x_2"><a class="anchor" href="#_vert_x_2"></a>Vert.x</h3>
-<div class="listingblock">
+<div id="tabset2" class="openblock tabset is-loading">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"metrics": {
-  "class": "io.apiman.gateway.engine.es.ESMetrics",
-  "config": {
-    "client": {
-       "type": "es",
-       "protocol": "${apiman.es.protocol}",
-       "host": "${apiman.es.host}",
-       "port": "${apiman.es.port}"
-       // &lt;metrics configuration&gt;
-     }
-   }
-}</code></pre>
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset2_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset2_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_servlet_2"><a class="anchor" href="#_servlet_2"></a>Servlet</h3>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset2_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.metrics=io.apiman.gateway.engine.es.ESMetrics</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div id="tabset2_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "metrics": {
+    "class": "io.apiman.gateway.engine.es.ESMetrics",
+    "config": {
+      "client": {
+         "type": "es",
+         "protocol": "${apiman.es.protocol}",
+         "host": "${apiman.es.host}",
+         "port": "${apiman.es.port}"
+         // &lt;metrics configuration&gt;
+       }
+     }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Set the Apiman Manager metrics accessor implementation to enable Apiman Manager UI to provide some basic visualisations from your Elasticsearch data.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A commented-out segment should be in your <code>apiman.properties</code> already.</p>
+</li>
+<li>
+<p>All the same global <a href="#_global_required_parameters">required</a> and <a href="#_global_optional_parameters">optional</a> options are available.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># API Manager metrics settings.
+apiman-manager.metrics.type=io.apiman.manager.api.es.EsMetricsAccessor
+
+apiman-manager.metrics.es.client.type=es
+# All options available as in global mandatory and optional
+apiman-manager.metrics.es.client.protocol=${apiman.es.protocol}
+apiman-manager.metrics.es.client.host=${apiman.es.host}
+apiman-manager.metrics.es.client.port=${apiman.es.port}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Available implementations:</caption>
 <colgroup>
@@ -697,27 +898,68 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">queue.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>queue.size</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Maximum metrics queue size</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Default Value</strong>: 10000</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">batch.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>batch.size</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Maximum metrics batching size</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Default Value</strong>: 1000</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom.headers.request</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String[]</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Case-insensitive list of <em>request</em> headers to capture, for example <code>X-Correlation-Id</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom.headers.response</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String[]</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Case-insensitive list of <em>response</em> headers to capture</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom.query-params</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String[]</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Case-insensitive list of HTTP <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank" rel="noopener">query parameters</a> to capture</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For custom header and query param capture, we add entries into the Elasticsearch index dynamically using <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-templates.html" target="_blank" rel="noopener">dynamic templates</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -729,22 +971,48 @@ Many of the shipped configurations make use of variable substitution to reduce r
 <div class="paragraph">
 <p>Set shared state implementation as shown.</p>
 </div>
+<div id="tabset3" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset3_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset3_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="_vert_x_3"><a class="anchor" href="#_vert_x_3"></a>Vert.x</h3>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset3_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"components": {
-  // Shared State Component Settings
-  "ISharedStateComponent": {
-    "class": "io.apiman.gateway.engine.es.ESSharedStateComponent",
-    "config": {
-      "client": {
-        "type": "es",
-        "protocol": "${apiman.es.protocol}",
-        "host": "${apiman.es.host}",
-        "port": "${apiman.es.port}"
-        //&lt;configuration options&gt;
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=io.apiman.gateway.engine.es.ESSharedStateComponent
+apiman-gateway.components.ISharedStateComponent.client.type=es
+# &lt;other configuration options&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset3_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "components": {
+    // Shared State Component Settings
+    "ISharedStateComponent": {
+      "class": "io.apiman.gateway.engine.es.ESSharedStateComponent",
+      "config": {
+        "client": {
+          "type": "es",
+          "protocol": "${apiman.es.protocol}",
+          "host": "${apiman.es.host}",
+          "port": "${apiman.es.port}"
+          //&lt;configuration options&gt;
+        }
       }
     }
   }
@@ -752,13 +1020,9 @@ Many of the shipped configurations make use of variable substitution to reduce r
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_servlet_3"><a class="anchor" href="#_servlet_3"></a>Servlet</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=io.apiman.gateway.engine.es.ESSharedStateComponent
-apiman-gateway.components.ISharedStateComponent.client.type=es
-# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -773,22 +1037,48 @@ apiman-gateway.components.ISharedStateComponent.client.type=es
 <div class="paragraph">
 <p>Set rate limiter implementation as shown.</p>
 </div>
+<div id="tabset4" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset4_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset4_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="_vert_x_4"><a class="anchor" href="#_vert_x_4"></a>Vert.x</h3>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset4_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"components": {
-  // Rate Limiter Component Settings
-  "IRateLimiterComponent": {
-    "class": "io.apiman.gateway.engine.es.ESRateLimiterComponent",
-    "config": {
-      "client": {
-        "type": "es",
-        "protocol": "${apiman.es.protocol}",
-        "host": "${apiman.es.host}",
-        "port": "${apiman.es.port}"
-        // &lt;configuration options&gt;
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
+apiman-gateway.components.IRateLimiterComponent.client.type=es
+# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset4_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "components": {
+    // Rate Limiter Component Settings
+    "IRateLimiterComponent": {
+      "class": "io.apiman.gateway.engine.es.ESRateLimiterComponent",
+      "config": {
+        "client": {
+          "type": "es",
+          "protocol": "${apiman.es.protocol}",
+          "host": "${apiman.es.host}",
+          "port": "${apiman.es.port}"
+          // &lt;configuration options&gt;
+        }
       }
     }
   }
@@ -796,13 +1086,9 @@ apiman-gateway.components.ISharedStateComponent.client.type=es
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_servlet_4"><a class="anchor" href="#_servlet_4"></a>Servlet</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
-apiman-gateway.components.IRateLimiterComponent.client.type=es
-# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -817,21 +1103,48 @@ apiman-gateway.components.IRateLimiterComponent.client.type=es
 <div class="paragraph">
 <p>Set cache store implementation as shown.</p>
 </div>
-<div class="sect3">
-<h4 id="_vert_x_5"><a class="anchor" href="#_vert_x_5"></a>Vert.x</h4>
+<div id="tabset5" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset5_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset5_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
+</div>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset5_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">"components": {
-  // Cache Store Component Settings
-  "ICacheStoreComponent": {
-    "class": "io.apiman.gateway.engine.es.ESCacheStoreComponent",
-    "config": {
-      "client": {
-        "type": "es",
-        "protocol": "${apiman.es.protocol}",
-        "host": "${apiman.es.host}",
-        "port": "${apiman.es.port}"
-        // &lt;configuration options&gt;
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ICacheStoreComponent=io.apiman.gateway.engine.es.EsCacheStoreComponent
+apiman-gateway.components.ICacheStoreComponent.client.type=es
+# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset5_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "components": {
+    // Cache Store Component Settings
+    "ICacheStoreComponent": {
+      "class": "io.apiman.gateway.engine.es.ESCacheStoreComponent",
+      "config": {
+        "client": {
+          "type": "es",
+          "protocol": "${apiman.es.protocol}",
+          "host": "${apiman.es.host}",
+          "port": "${apiman.es.port}"
+          // &lt;configuration options&gt;
+        }
       }
     }
   }
@@ -839,13 +1152,8 @@ apiman-gateway.components.IRateLimiterComponent.client.type=es
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_servlet_5"><a class="anchor" href="#_servlet_5"></a>Servlet</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.es.ESRateLimiterComponent
-apiman-gateway.components.IRateLimiterComponent.client.type=es
-# &lt;configuration options&gt;</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -859,8 +1167,8 @@ apiman-gateway.components.IRateLimiterComponent.client.type=es
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="jdbc.html">JDBC</a></span>
-  <span class="next"><a href="headless.html">Headless</a></span>
+  <span class="prev"><a href="jdbc.html">JDBC / SQL</a></span>
+  <span class="next"><a href="influxdb.html">InfluxDB Metrics</a></span>
 </nav>
 </article>
   </div>

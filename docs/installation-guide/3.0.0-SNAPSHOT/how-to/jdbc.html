@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>How To: Use a SQL Database to Store and Retrieve Metrics (Replacing Elasticsearch) :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/how-to/jdbc.html">
-    <link rel="prev" href="security.html#_external_keycloak_authentication">
+    <link rel="prev" href="../gateway/security.html">
     <link rel="next" href="../production.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -325,9 +328,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sometimes you just don&#8217;t want to use Elasticsearch to store your metrics, even though it&#8217;s really good at it.
-We typically recommend that you stick with ES if possible, because it gives you the option of installing Kibana, opening up a whole new world of advanced analytics over the metric data.
-However, if all you want is the basic graphs/charts shown in the Apiman UI, you can easily switch to storing metric data in a database.</p>
+<p>Sometimes you just don&#8217;t want to use Elasticsearch to store your metrics, even though it&#8217;s rather good at it.</p>
+</div>
+<div class="paragraph">
+<p>We typically recommend that you stick with ES if possible, because it gives you the option of installing Kibana, opening up a whole new world of advanced analytics over the metric data.</p>
+</div>
+<div class="paragraph">
+<p>However, if all you want is the basic graphs/charts shown in the Apiman UI, you can easily switch to storing metric data in a database.</p>
 </div>
 </div>
 </div>
@@ -340,10 +347,10 @@ However, if all you want is the basic graphs/charts shown in the Apiman UI, you 
 <p>Deploy an appropriate JDBC datasource</p>
 </li>
 <li>
-<p>Enable the API Gateway JDBC initializer</p>
+<p>Enable the Apiman Gateway JDBC initializer</p>
 </li>
 <li>
-<p>Configure the API Gateway metrics provider to be JDBC</p>
+<p>Configure the Apiman Gateway metrics provider to be JDBC</p>
 </li>
 <li>
 <p>Configure the API Manager metrics accessor to be JDBC</p>
@@ -353,54 +360,32 @@ However, if all you want is the basic graphs/charts shown in the Apiman UI, you 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deploy_an_appropriate_jdbc_datasource"><a class="anchor" href="#_deploy_an_appropriate_jdbc_datasource"></a>Deploy an appropriate JDBC datasource</h2>
+<h2 id="_set_up_or_deploy_an_appropriate_jdbc_datasource"><a class="anchor" href="#_set_up_or_deploy_an_appropriate_jdbc_datasource"></a>Set up or deploy an appropriate JDBC datasource</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The first thing to do is deploy a datasource into WildFly that will be used by the JDBC metrics implementations.
-There are a number of ways to do this, and documenting how to create a datasource in WildFly is outside the scope of this guide.
-However, an example -ds.xml descriptor file, specifically for this purpose, can be found here:</p>
+<p>Using a set of system properties or environment variables, Apiman can quickly bootstrap your JDBC datasource.
+If your setup isn&#8217;t supported out of the box, you may need to configure your own datasources, including JDBC drivers.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/sample-configs/apiman_gw-ds_mysql.xml" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/sample-configs/apiman_gw-ds_mysql.xml</a></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Make sure you take note of the datasource jndi-name - you will need it when configuring the metrics implementations in apiman.properties
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Don&#8217;t forget to also deploy the appropriate JDBC driver JAR for your database.
-</td>
-</tr>
-</table>
+<p>Please refer to the <a href="../manager/configuration.html#apiman_manager_database_config" class="xref page">Apiman database configuration</a> section for how to do this.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_enable_the_api_gateway_jdbc_initializer"><a class="anchor" href="#_enable_the_api_gateway_jdbc_initializer"></a>Enable the API Gateway JDBC initializer</h2>
+<h2 id="_enable_the_apiman_gateway_jdbc_initializer"><a class="anchor" href="#_enable_the_apiman_gateway_jdbc_initializer"></a>Enable the Apiman Gateway JDBC initializer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed.
-This schema can be automatically created by Apiman the first time it is used.  To enable this feature, you must configure the API Gateway JDBC initializer in the <strong>apiman.properties</strong> file, like so:</p>
+<p>A database schema must be installed in your Apiman Gateway database, which creates the tables and indexes needed.</p>
+</div>
+<div class="paragraph">
+<p>This schema can be automatically created by Apiman the first time it is used.</p>
+</div>
+<div class="paragraph">
+<p>To enable this feature, you must configure the Apiman Gateway JDBC initializer in the <strong>apiman.properties</strong> file, like so:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Initializer for the Gateway JDBC
-# ################################
-apiman.jdbc.datasource.jndi-location=java:jboss/datasources/apiman-gateway
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.jdbc.datasource.jndi-location=java:jboss/datasources/apiman-gateway
 apiman-gateway.initializers=jdbc
 apiman-gateway.initializers.jdbc=io.apiman.gateway.engine.jdbc.JdbcInitializer
 apiman-gateway.initializers.jdbc.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}
@@ -408,11 +393,13 @@ apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This initializer will run whenever Apiman starts up, and it will install the API Gateway schema/DDL into the configured database so that the metrics JDBC implementations can function properly.</p>
+<p>This initializer will run whenever Apiman starts up, and it will install the Apiman Gateway schema/DDL into the configured database so that the metrics JDBC implementations can function properly.</p>
 </div>
 <div class="paragraph">
-<p>Note that you will need to set the correct value of <strong>apiman-gateway.initializers.jdbc.datasource.type</strong> based on the specific database you will be using.
-Possible values for this property include:</p>
+<p>Note that you will need to set the correct value of <strong>apiman-gateway.initializers.jdbc.datasource.type</strong> based on the specific database you will be using.</p>
+</div>
+<div class="paragraph">
+<p>Possible values for this property include:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -436,11 +423,10 @@ Possible values for this property include:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_the_api_gateway_metrics_provider_to_be_jdbc"><a class="anchor" href="#_configure_the_api_gateway_metrics_provider_to_be_jdbc"></a>Configure the API Gateway metrics provider to be JDBC</h2>
+<h2 id="_configure_the_apiman_gateway_metrics_provider_to_be_jdbc"><a class="anchor" href="#_configure_the_apiman_gateway_metrics_provider_to_be_jdbc"></a>Configure the Apiman Gateway metrics provider to be JDBC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next, you just need to tell Apiman that you want to use JDBC instead of Elasticsearch for the storage of metrics data.
-This can be done again by setting a specific property in <strong>apiman.properties</strong>:</p>
+<p>JDBC-based metrics can be selected in <strong>apiman.properties</strong> via:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -448,24 +434,20 @@ This can be done again by setting a specific property in <strong>apiman.properti
 apiman-gateway.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>The metrics will be stored in JDBC (asynchronously) instead of Elasticsearch!</p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_configure_the_api_manager_metrics_accessor_to_be_jdbc"><a class="anchor" href="#_configure_the_api_manager_metrics_accessor_to_be_jdbc"></a>Configure the API Manager metrics accessor to be JDBC</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>It doesn&#8217;t help us to store the metrics data in SQL unless we also query the data when showing information in the UI.
-For this reason you will need to configure the API Manager to use JDBC to <strong>retrieve</strong> metric information instead of using Elasticsearch.
-Again, this is done by editing the <strong>apiman.properties</strong> file:</p>
+<p>If you have configured the Apiman Gateway to use JDBC, then it likely makes sense to configure the API Manager to <strong>retrieve</strong> those metrics via JDBC, also.</p>
+</div>
+<div class="paragraph">
+<p>Edit the <strong>apiman.properties</strong> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># API Manager metrics settings
-# ############################
-apiman-manager.metrics.type=io.apiman.manager.api.jdbc.JdbcMetricsAccessor
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.metrics.type=io.apiman.manager.api.jdbc.JdbcMetricsAccessor
 apiman-manager.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}</code></pre>
 </div>
 </div>
@@ -476,8 +458,12 @@ apiman-manager.metrics.datasource.jndi-location=${apiman.jdbc.datasource.jndi-lo
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you are deploying the API Manager and API Gateway separately (on different nodes), make sure you edit the correct <code>apiman.properties</code> files on the correct nodes.
-Feel free to make all the above changes to all your nodes, since any properties in <code>apiman.properties</code> will be ignored on nodes where certain components are excluded.
+<div class="paragraph">
+<p>If you are deploying the API Manager and Apiman Gateway separately (on different nodes), make sure you edit the correct <code>apiman.properties</code> files on the correct nodes.</p>
+</div>
+<div class="paragraph">
+<p>If you wish, you can make the same changes to all nodes, since any properties in <code>apiman.properties</code> will be ignored on nodes where certain components are excluded.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -485,7 +471,7 @@ Feel free to make all the above changes to all your nodes, since any properties 
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="security.html#_external_keycloak_authentication">External Keycloak Authentication</a></span>
+  <span class="prev"><a href="../gateway/security.html">Security</a></span>
   <span class="next"><a href="../production.html">Production Guide</a></span>
 </nav>
 </article>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Wildfly &amp; EAP :: Apiman Documentation</title>
+    <title>WildFly :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/servlet/wildfly.html">
-    <link rel="prev" href="../quickstart.html">
+    <link rel="prev" href="../keycloak.html">
     <link rel="next" href="config-guide.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -302,7 +305,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Platforms</li>
+    <li>Apiman Platforms</li>
     <li><a href="wildfly.html">WildFly</a></li>
   </ul>
 </nav>
@@ -321,37 +324,76 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Wildfly &amp; EAP</h1>
+<h1 class="page">WildFly</h1>
 <div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This chapter explores downloading and installing the Apiman quickstarts which consists of both the <em>Apiman Manager and UI</em> and <em>Apiman Gateway</em>.</p>
+<p>This guide explores downloading and installing the Apiman quickstarts.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installing_in_wildfly"><a class="anchor" href="#_installing_in_wildfly"></a>Installing in WildFly</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Apiman can target WildFly as a runtime environment.
-In order to install Apiman you will need to download both WildFly and the Apiman overlay distribution.
-Once both are downloaded, it&#8217;s a simple matter of unpacking both into the same location.</p>
-</div>
-<div class="sect2">
-<h3 id="_download"><a class="anchor" href="#_download"></a>Download</h3>
-<div class="paragraph">
-<p>First you will need to download both WildFly and Apiman:</p>
+<p>The distribution consists of:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip">Download WildFly</a></p>
+<p>Apiman Manager (<code>apiman.war</code>)</p>
+</li>
+<li>
+<p>Apiman Manager UI (<code>apimanui.war</code>)</p>
+</li>
+<li>
+<p>Apiman Developer Portal UI (<code>apiman-developer-portal.war</code>)</p>
+</li>
+<li>
+<p>Apiman Gateway (<code>apiman-gateway.war</code>)</p>
+</li>
+<li>
+<p>Apiman Gateway API (<code>apiman-gateway-api.war</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="keycloak_setup"><a class="anchor" href="#keycloak_setup"></a>Set up Keycloak IDM</h3>
+<div class="paragraph">
+<p>In order to manage our users and provide login security we will use Keycloak.</p>
+</div>
+<div class="paragraph">
+<p>For instructions, please refer to: <a href="../keycloak.html" class="xref page">Keycloak SSO Setup</a></p>
+</div>
+<div class="paragraph">
+<p>We will assume you have not changed anything from the default Keycloak realm definition for the purposes of this guide <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+Please substitute your changes, where appropriate.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installing_apiman_on_wildfly"><a class="anchor" href="#_installing_apiman_on_wildfly"></a>Installing Apiman on WildFly</h3>
+<div class="paragraph">
+<p>Apiman can target <a href="https://www.wildfly.org" target="_blank" rel="noopener">WildFly</a> as a runtime environment.
+In order to install Apiman you will need to download both WildFly and the Apiman overlay distribution.</p>
+</div>
+<div class="paragraph">
+<p>Once both are downloaded, it&#8217;s a simple matter of unpacking both into the same location.</p>
+</div>
+<div class="sect3">
+<h4 id="_download"><a class="anchor" href="#_download"></a>Download</h4>
+<div class="paragraph">
+<p>First you will need to download both WildFly and Apiman:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="http://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip">Download WildFly 23.0.2.Final</a></p>
 </li>
 <li>
 <p><a href="http://downloads.jboss.org/apiman/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip">Download Apiman 3.0.0-SNAPSHOT</a></p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -361,8 +403,8 @@ wget https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-di
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_unpack"><a class="anchor" href="#_unpack"></a>Unpack</h3>
+<div class="sect3">
+<h4 id="_unpack"><a class="anchor" href="#_unpack"></a>Unpack</h4>
 <div class="paragraph">
 <p>Once both files have been downloaded, simply unpack both in the same location.</p>
 </div>
@@ -374,8 +416,24 @@ unzip -o apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Fina
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_run_wildfly"><a class="anchor" href="#_run_wildfly"></a>Run WildFly</h3>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_apiman_on_wildfly"><a class="anchor" href="#_run_apiman_on_wildfly"></a>Run Apiman on WildFly</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Ensure you have set <code>APIMAN_AUTH_URL</code> as described in the <a href="#keycloak_setup">Keycloak Setup</a> section.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The Apiman overlay contains everything needed to run Apiman, including:</p>
 </div>
@@ -391,50 +449,19 @@ unzip -o apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Fina
 <p>Apiman RDBMS datasource (h2)</p>
 </li>
 <li>
-<p>pre-configured <strong>admin</strong> user with password <strong>admin123!</strong></p>
+<p>Pre-configured <strong>admin</strong> user with password <strong>admin123!</strong></p>
 </li>
 <li>
-<p>pre-configured h2 database (populated with default values)</p>
+<p>Pre-configured h2 database (populated with default values)</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>For this reason, there is no additional configuration required to run Apiman.
-Simply start up WildFly using the Apiman configuration file:</p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-23.0.2.Final
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export APIMAN_AUTH_URL=&lt;Your keycloak URL&gt;
+cd wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_installing_using_docker"><a class="anchor" href="#_installing_using_docker"></a>Installing using Docker</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Another option when installing Apiman is to use our docker image.
-You&#8217;re probably pretty familiar with docker if you&#8217;re going that route, but here is an example of how to start up the Apiman docker image:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull apiman/on-wildfly:3.0.0-SNAPSHOT
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:3.0.0-SNAPSHOT</code></pre>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-You can find Apiman on <a href="https://registry.hub.docker.com/repos/apiman/">Docker Hub</a>.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -450,7 +477,7 @@ You can find Apiman on <a href="https://registry.hub.docker.com/repos/apiman/">D
 </div>
 </div>
 <div class="paragraph">
-<p>You may log in with credentials <strong>admin/admin123!</strong></p>
+<p>Log in with credentials <strong>admin/admin123!</strong></p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -463,7 +490,8 @@ You can find Apiman on <a href="https://registry.hub.docker.com/repos/apiman/">D
 <p>We strongly advise that you immediately change the Keycloak admin user&#8217;s password, as well as the <strong><em>admin</em></strong> user found in the <strong><em>apiman</em></strong> realm!</p>
 </div>
 <div class="paragraph">
-<p>You can do that by navigating to <a href="http://localhost:8080/auth/admin/" class="bare">http://localhost:8080/auth/admin/</a>.</p>
+<p>You can do that by logging into your Keycloak console.
+If you followed this tutorial, it will be at <a href="http://localhost:8081/admin/" class="bare">http://localhost:8081/admin/</a></p>
 </div>
 </td>
 </tr>
@@ -471,8 +499,30 @@ You can find Apiman on <a href="https://registry.hub.docker.com/repos/apiman/">D
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_installing_using_docker"><a class="anchor" href="#_installing_using_docker"></a>Installing using Docker</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>We have a variety of Docker images available with Apiman broken into its components.
+You can find them at: <a href="https://github.com/apiman/apiman-docker/#apiman-docker-images" target="_blank" rel="noopener">apiman/apiman-docker</a>.</p>
+</li>
+<li>
+<p><a href="../quickstart.html" class="xref page">Refer to our Docker Compose quickstart guide</a> for a full Docker setup that is already configured for you.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Available in your distro zip, <code>apiman/data/default-realm-for-apiman.json</code>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../quickstart.html">Quickstart</a></span>
+  <span class="prev"><a href="../keycloak.html">Set up Keycloak SSO</a></span>
   <span class="next"><a href="config-guide.html">Config Guide</a></span>
 </nav>
 </article>

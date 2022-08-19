@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Headless Registry :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/registries-and-components/headless.html">
-    <link rel="prev" href="elasticsearch.html">
+    <link rel="prev" href="redis.html">
     <link rel="next" href="../gateway/security.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="redis.html">Redis</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -303,7 +306,6 @@
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
     <li>Gateway</li>
-    <li>Registries and Components</li>
     <li><a href="overview.html">Registries &amp; Components</a></li>
     <li><a href="headless.html">Headless</a></li>
   </ul>
@@ -408,20 +410,20 @@ This registry is optimised for the Vert.x gateway implementation. Although it sh
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">configUri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configUri</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>URI to file containing registry configuration. Supports <code>file</code>, <code>http</code>, <code>https</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">auth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>auth</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enum</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Auth mechanism to access resource indicated in <code>configUri</code>.</p>
 </div>
 <div class="ulist">
-<div class="title"><strong>Must be one of:</strong></div>
+<div class="title"><strong>Allowed Values:</strong></div>
 <ul>
 <li>
 <p>NONE: No auth needed.</p>
@@ -472,14 +474,14 @@ This registry is optimised for the Vert.x gateway implementation. Although it sh
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A username. Consider using variable substitution.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A password. Consider using variable substitution.</p>
@@ -583,25 +585,25 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">flowType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flowType</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enum</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The OAuth2 flow for your configuration.</p>
 </div>
 <div class="ulist">
-<div class="title">Must be one of:</div>
+<div class="title">Allowed Values:</div>
 <ul>
 <li>
-<p>PASSWORD</p>
+<p><code>PASSWORD</code></p>
 </li>
 <li>
-<p>CLIENT</p>
+<p><code>CLIENT</code></p>
 </li>
 <li>
-<p>AUTH_CODE</p>
+<p><code>AUTH_CODE</code></p>
 </li>
 <li>
-<p>AUTH_JWT</p>
+<p><code>AUTH_JWT</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -624,14 +626,14 @@ Due to a current limitation in the underlying OAuth2 library you may be required
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A username. Usually only useful if using the password <code>flowType</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A password. Usually only useful if using the password <code>flowType</code>.</p>
@@ -670,45 +672,45 @@ The combination of required parameters and optional parameters will vary conside
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">flowType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flowType</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enum</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The OAuth2 flow for your configuration.</p>
 </div>
 <div class="ulist">
-<div class="title">Must be one of:</div>
+<div class="title">Allowed Values:</div>
 <ul>
 <li>
-<p>PASSWORD</p>
+<p><code>PASSWORD</code></p>
 </li>
 <li>
-<p>CLIENT</p>
+<p><code>CLIENT</code></p>
 </li>
 <li>
-<p>AUTH_CODE</p>
+<p><code>AUTH_CODE</code></p>
 </li>
 <li>
-<p>AUTH_JWT</p>
+<p><code>AUTH_JWT</code></p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oauthUri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>oauthUri</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The OAuth2 URI.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clientId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clientId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The OAuth2 client ID.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clientSecret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clientSecret</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The OAuth2 client secret.</p>
@@ -732,112 +734,112 @@ The combination of required parameters and optional parameters will vary conside
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">site</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>site</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Site URI</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">publicKey</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publicKey</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Public key</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clientSecret</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clientSecret</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Client secret</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A username. Usually only useful if using the password <code>flowType</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A password. Usually only useful if using the password <code>flowType</code>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">authorizationPath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>authorizationPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The authorization path</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tokenPath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tokenPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The token path</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">recovationPath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>recovationPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The revocation path</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scopeSeparator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scopeSeparator</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The introspection path</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">logoutPath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>logoutPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The logout path (OIDC)</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">useBasicAuthorizationHeader</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>useBasicAuthorizationHeader</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Whether to use BASIC auth header (OIDC)</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clientSecretParameterName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clientSecretParameterName</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Client secret query parameter name (OIDC)</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">userInfoPath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userInfoPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>User info path (OIDC)</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">introspectionPath</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>introspectionPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>User info path (RFC7662)</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">userAgent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>userAgent</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>User agent</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">privateKey</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>privateKey</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Private key</p>
@@ -1089,11 +1091,11 @@ For more information, refer to the <a href="../../../core/2.2.3.Final/developmen
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. One might wonder why JSON is escaped inside of JSON. The field name is somewhat of a misnomer, it is intended to be generic and could be XML, YAML, etc.
+<a href="#_footnoteref_1">1</a>. You might wonder why JSON is escaped inside JSON. The field name is somewhat of a misnomer, it is intended to be generic and could be XML, YAML, etc.
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="elasticsearch.html">Elasticsearch</a></span>
+  <span class="prev"><a href="redis.html">Redis</a></span>
   <span class="next"><a href="../gateway/security.html">Security</a></span>
 </nav>
 </article>

@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How To: Security :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/how-to/security.html">
-    <link rel="prev" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">
-    <link rel="next" href="jdbc.html">
+    <title>Hazelcast Components :: Apiman Documentation</title>
+    <link rel="prev" href="influxdb.html">
+    <link rel="next" href="prometheus.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -46,7 +45,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="installation-guide" data-version="1.5.7.Final">
+<div class="nav-container" data-component="installation-guide" data-version="3.0.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -65,21 +64,30 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -114,54 +122,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -174,10 +143,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -186,16 +203,7 @@
     <span class="nav-text">How to</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
 </ul>
   </li>
@@ -208,10 +216,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -228,7 +236,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Installation Guide</span>
-    <span class="version">1.5.7.Final</span>
+    <span class="version">3.0.0-SNAPSHOT</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -259,14 +267,14 @@
     <li class="component is-current">
       <a class="title" href="../../2.2.3.Final/index.html">Installation Guide</a>
       <ul class="versions">
-        <li class="version">
-          <a href="../../3.0.0-SNAPSHOT/index.html">3.0.0-SNAPSHOT</a>
+        <li class="version is-current">
+          <a href="../index.html">3.0.0-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
         </li>
-        <li class="version is-current">
-          <a href="../index.html">1.5.7.Final</a>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
         </li>
       </ul>
     </li>
@@ -296,139 +304,212 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>How to</li>
-    <li><a href="#_external_keycloak_authentication">External Keycloak Authentication</a></li>
+    <li>Gateway</li>
+    <li><a href="overview.html">Registries &amp; Components</a></li>
+    <li><a href="hazelcast.html">Hazelcast</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">1.5.7.Final</button>
+  <button class="version-menu-toggle" title="Show other versions of page">3.0.0-SNAPSHOT</button>
   <div class="version-menu">
-    <a class="version is-missing" href="../../3.0.0-SNAPSHOT/index.html">3.0.0-SNAPSHOT</a>
-    <a class="version" href="../../2.2.3.Final/how-to/security.html">2.2.3.Final</a>
-    <a class="version is-current" href="security.html">1.5.7.Final</a>
+    <a class="version is-current" href="hazelcast.html">3.0.0-SNAPSHOT</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/1.x/modules/ROOT/pages/how-to/security.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-installation-guide/edit/antora/modules/ROOT/pages/registries-and-components/hazelcast.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">How To: Security</h1>
-<div class="sect1">
-<h2 id="_external_keycloak_authentication"><a class="anchor" href="#_external_keycloak_authentication"></a>External Keycloak Authentication</h2>
+<h1 class="page">Hazelcast Components</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Apiman quickstart overlay ZIP comes with an embedded version of Keycloak that we use for authentication.
-You may already have a Keycloak instance that you use.
-This section explains how to modify Apiman to use yours instead of ours.</p>
-</div>
-<div class="sect2">
-<h3 id="_high_level_overview"><a class="anchor" href="#_high_level_overview"></a>High Level Overview</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Create the Apiman Realm in Keycloak</p>
-</li>
-<li>
-<p>Configure the API Manager UI client in Keycloak</p>
-</li>
-<li>
-<p>Point Apiman at the remote Keycloak</p>
-</li>
-</ol>
+<p>Apiman components for <a href="https://www.hazelcast.com" target="_blank" rel="noopener">Hazelcast</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_create_the_apiman_realm_in_keycloak"><a class="anchor" href="#_create_the_apiman_realm_in_keycloak"></a>Create the Apiman Realm in Keycloak</h3>
-<div class="paragraph">
-<p>You&#8217;ll need to make sure you create the <strong>apiman</strong> realm in your Keycloak server.
-A quick way to do that is to use the Keycloak admin console to import the Apiman realm file located here:</p>
 </div>
-<div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_configure_the_api_manager_ui_client_in_keycloak"><a class="anchor" href="#_configure_the_api_manager_ui_client_in_keycloak"></a>Configure the API Manager UI client in Keycloak</h3>
-<div class="paragraph">
-<p>Once the apiman realm has been created or imported, make sure to configure the <strong>Valid Redirect URIs</strong> section of the <strong>apimanui</strong>, <strong>apiman</strong> and <strong>apiman-gateway-api</strong> clients.
-The default relative URL of each must be replaced by the full (absolute) public URL of your API Manager UI.</p>
-</div>
-<div class="paragraph">
-<p>For example, the values may be something like:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">apimanui</dt>
-<dd>
-<p><code><a href="https://apiman.myorg.com/apimanui/*" class="bare">https://apiman.myorg.com/apimanui/*</a></code></p>
-</dd>
-<dt class="hdlist1">apiman</dt>
-<dd>
-<p><code><a href="https://apiman.myorg.com/apiman/*" class="bare">https://apiman.myorg.com/apiman/*</a></code></p>
-</dd>
-<dt class="hdlist1">apiman-gateway-api</dt>
-<dd>
-<p><code><a href="https://apiman.myorg.com/apiman-gateway-api/*" class="bare">https://apiman.myorg.com/apiman-gateway-api/*</a></code></p>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock tip">
-<table>
+<div class="sect1">
+<h2 id="_global_optional_parameters"><a class="anchor" href="#_global_optional_parameters"></a>Global Optional Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Don&#8217;t forget the "*" wildcard at the end of the URL.
-</td>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eager-init</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_components"><a class="anchor" href="#_components"></a>Components</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_point_apiman_at_the_remote_keycloak"><a class="anchor" href="#_point_apiman_at_the_remote_keycloak"></a>Point Apiman at the remote Keycloak</h3>
-<div class="paragraph">
-<p>You must modify the <strong>standalone-apiman.xml</strong> configuration file to point Apiman at the remote Keycloak server.</p>
+<h3 id="_cache_store"><a class="anchor" href="#_cache_store"></a>Cache Store</h3>
+<div id="tabset1" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset1_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset1_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<p>Make sure you know the full public URL of your Keycloak server and add it to the following section of <strong>standalone-apiman.xml</strong>:</p>
-</div>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset1_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;realm xmlns:kc="urn:jboss:domain:keycloak:1.0" name="apiman"&gt;
-    &lt;realm-public-key&gt;MIIBIjAN&lt;...&gt;AQAB&lt;/realm-public-key&gt;
-    &lt;auth-server-url&gt;http://apiman.myorg.com:8080/auth&lt;/auth-server-url&gt;
-    &lt;public-client&gt;true&lt;/public-client&gt;
-    &lt;ssl-required&gt;NONE&lt;/ssl-required&gt;
-    &lt;enable-cors&gt;false&lt;/enable-cors&gt;
-    &lt;principal-attribute&gt;preferred_username&lt;/principal-attribute&gt;
-&lt;/realm&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ICacheStoreComponent=io.apiman.gateway.engine.hazelcast.HazelcastCacheStoreComponent</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Finally, if you are using a standalone gateway, you should also configure the <a href="../gateway/security.html#_setup" class="xref page">Gateway API</a> to point to the same Keycloak instance.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you manually created the apiman realm in Keycloak, you will also need to copy the realm&#8217;s public key into &lt;realm-public-key&gt; above.
-</td>
-</tr>
-</table>
+</div>
+<div id="tabset1_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "components": {
+    "ICacheStoreComponent": {
+      "class": "io.apiman.gateway.engine.hazelcast.HazelcastCacheStoreComponent",
+      "config": {
+        // &lt;config here&gt;
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rate_limiter"><a class="anchor" href="#_rate_limiter"></a>Rate Limiter</h3>
+<div id="tabset2" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset2_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset2_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
+</div>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset2_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IRateLimiterComponent=io.apiman.gateway.engine.hazelcast.HazelcastRateLimiterComponent</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset2_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "components": {
+    "IRateLimiterComponent": {
+      "class": "io.apiman.gateway.engine.hazelcast.HazelcastRateLimiterComponent",
+      "config": {
+        // &lt;config here&gt;
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_shared_state"><a class="anchor" href="#_shared_state"></a>Shared State</h3>
+<div id="tabset3" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset3_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset3_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
+</div>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset3_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=io.apiman.gateway.engine.hazelcast.HazelcastSharedStateComponent</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset3_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  "components": {
+    "ISharedStateComponent": {
+      "class": "io.apiman.gateway.engine.hazelcast.HazelcastSharedStateComponent",
+      "config": {
+        // &lt;config here&gt;
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a></span>
-  <span class="next"><a href="jdbc.html">SQL Metrics Instead of Elasticsearch</a></span>
+  <span class="prev"><a href="influxdb.html">InfluxDB Metrics</a></span>
+  <span class="next"><a href="prometheus.html">Prometheus</a></span>
 </nav>
 </article>
   </div>

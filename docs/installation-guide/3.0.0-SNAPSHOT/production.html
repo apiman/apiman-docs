@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -332,8 +335,10 @@
 <h2 id="_architecture_summary"><a class="anchor" href="#_architecture_summary"></a>Architecture Summary</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Before we get started, it may be useful to know the overall architecture of Apiman.
-Let&#8217;s start with a picture!</p>
+<p>Before we get started, it may be useful to know the overall architecture of Apiman.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start with a picture!</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -372,14 +377,12 @@ Let&#8217;s start with a picture!</p>
 <h2 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you wish to enable metrics in Apiman (who doesn&#8217;t?) you&#8217;ll need to install Elasticsearch.  This is
-because the API Gateway stores all metrics information in Elasticsearch (by default), and the API Manager
-queries that data to present analytics information in the UI.</p>
+<p>If you wish to enable metrics in Apiman (who doesn&#8217;t?) you&#8217;ll need to install Elasticsearch.
+The API Gateway can store all metrics information in Elasticsearch (by default), and the API Manager queries that data to present analytics information in the UI.</p>
 </div>
 <div class="paragraph">
-<p>Please see the Elasticsearch documentation for how to install and configure it in production.  Ultimately you
-will need Elasticsearch running in a well known and accessible location.  We also recommend you enable
-authentication (e.g. via Shield) and SSL.</p>
+<p>Please see the Elasticsearch documentation for how to install and configure it in production.
+Ultimately you  will need Elasticsearch running in a well known and accessible location.  We also recommend you enable authentication (e.g. via Shield) and SSL.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -388,12 +391,14 @@ authentication (e.g. via Shield) and SSL.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The data in Elasticsearch is not backed up or stored in some other location - Elasticsearch is being
-used as the primary/canonical data store for the metrics information.  You may wish to configure backup
-procedures
+The data in Elasticsearch is not backed up or stored in some other location - Elasticsearch is being used as the primary/canonical data store for the metrics information.
+You may wish to configure backup procedures.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>See:</p>
 </div>
 </div>
 </div>
@@ -425,11 +430,11 @@ You can configure additional Keycloak Realms for use with the Apiman "Keycloak O
 </table>
 </div>
 <div class="paragraph">
-<p>Fortunately, Apiman comes with a realm file you can import.  Simply log into your Keycloak server and then
-create the <code>apiman</code> realm using this file:</p>
+<p>Fortunately, Apiman comes with a realm file you can import.
+Simply log into your Keycloak server and then create the <code>apiman</code> realm using this file:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/master/distro/data/src/main/resources/data/apiman-realm.json</a></p>
+<p><a href="https://github.com/apiman/apiman/blob/3.0.0-SNAPSHOT/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/3.0.0-SNAPSHOT/distro/data/src/main/resources/data/apiman-realm.json</a></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -475,7 +480,7 @@ If you&#8217;re behind load-balancers, you may need to ensure <a href="https://w
 </div>
 <nav class="pagination">
   <span class="prev"><a href="how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a></span>
-  <span class="next"><a href="gateway/production-gateway.html">Vertx</a></span>
+  <span class="next"><a href="gateway/production-gateway.html">Vert.x</a></span>
 </nav>
 </article>
   </div>

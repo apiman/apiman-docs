@@ -64,11 +64,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -119,54 +122,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -179,10 +143,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -190,15 +202,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -213,10 +216,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -333,19 +336,8 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>On some pages different configuration instructions and examples are available for each platform.
-They merely encode the same information using different formats.</p>
-</div>
-<div class="sect2">
-<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>Vert.x</h3>
-<div class="paragraph">
-<p>Your configuration file for Vert.x is your chosen <code>conf.json</code> file, so refer to the JSON examples.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
-<div class="paragraph">
-<p>Your configuration file for Servlet is <strong><code>apiman.properties</code></strong>!, so refer to the properties examples.</p>
-</div>
+They encode the same information using different formats.
+You can choose which format you want via the tabbed sample boxes.</p>
 </div>
 </div>
 </div>
@@ -353,7 +345,7 @@ They merely encode the same information using different formats.</p>
 <h2 id="_understanding_syntax"><a class="anchor" href="#_understanding_syntax"></a>Understanding syntax</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In many places in the documentation you will see format agnostic syntax which can be translated trivially into your chosen format.</p>
+<p>In many places in the documentation you will see format agnostic syntax which can be translated into your chosen format.</p>
 </div>
 <div class="paragraph">
 <p>For example:</p>
@@ -423,8 +415,37 @@ They merely encode the same information using different formats.</p>
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="_as_json"><a class="anchor" href="#_as_json"></a>As JSON</h3>
+<div id="tabset1" class="openblock tabset is-loading">
+<div class="content">
+<div class="ulist tabs">
+<ul>
+<li class="tab">
+<p><a id="tabset1_properties-servlet"></a>Properties (Servlet)</p>
+</li>
+<li class="tab">
+<p><a id="tabset1_json-vert-x"></a>JSON (Vert.x)</p>
+</li>
+</ul>
+</div>
+<div class="openblock tabset-panes">
+<div class="content">
+<div id="tabset1_properties-servlet_pane" class="openblock tab-pane">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">project.name=apiman
+project.type=JAVA
+project.tags=api-management,excellent
+project.version.major=1
+project.version.minor=3
+project.version.micro=0
+project.favourite=true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset1_json-vert-x_pane" class="openblock tab-pane">
+<div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
@@ -443,17 +464,8 @@ They merely encode the same information using different formats.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_as_properties"><a class="anchor" href="#_as_properties"></a>As Properties</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">project.name=apiman
-project.type=JAVA
-project.tags=api-management,excellent
-project.version.major=1
-project.version.minor=3
-project.version.micro=0
-project.favourite=true</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

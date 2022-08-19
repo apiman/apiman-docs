@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="4">
-    <a class="nav-link" href="jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../manager/configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../manager/configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="../manager/database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../manager/configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -180,10 +144,58 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../manager/backup-migration.html#_backup_migration">Backup &amp; Migration</a>
+    <a class="nav-link" href="../manager/backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../manager/backup-migration.html#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -303,9 +306,8 @@
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
     <li>Gateway</li>
-    <li>Registries and Components</li>
     <li><a href="overview.html">Registries &amp; Components</a></li>
-    <li><a href="jdbc.html">JDBC</a></li>
+    <li><a href="jdbc.html">JDBC / SQL</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -326,6 +328,9 @@
 <h1 class="page">JDBC Registry &amp; Components</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Apiman components for JDBC (SQL).</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -345,7 +350,7 @@ These components are presently optimised for Servlet editions of the gateway, wh
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-We ship a range of sample DDLs to get you started for all major databases. In your distribution look in <code>apiman/ddls</code> directory, or refer to the <a href="https://github.com/apiman/apiman/tree/master/distro/data/src/main/resources/ddls">Apiman Repo</a>.
+We ship a range of sample DDLs to get you started for all major databases. In your distribution, look in the <code>apiman/ddls</code> directory, or refer to the <a href="https://github.com/apiman/apiman/tree/3.0.0-SNAPSHOT/distro/data/src/main/resources/ddls" target="_blank" rel="noopener">Apiman Repo</a>.
 </td>
 </tr>
 </table>
@@ -410,7 +415,7 @@ We ship a range of sample DDLs to get you started for all major databases. In yo
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datasource.jndi-location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>datasource.jndi-location</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The JNDI location of the datasource you wish to use.</p>
@@ -424,7 +429,7 @@ We ship a range of sample DDLs to get you started for all major databases. In yo
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=io.apiman.gateway.engine.jdbc.JdbcRegistry
-apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-gateway</code></pre>
+apiman-gateway.registry.datasource.jndi-location=java:/apiman/datasources/apiman-gateway</code></pre>
 </div>
 </div>
 </div>
@@ -445,14 +450,14 @@ apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-g
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache-polling-interval</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Polling interval in millis</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cache-polling-startup-delay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache-polling-startup-delay</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>How long to wait before starting polling in millis</p>
@@ -467,7 +472,9 @@ apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-g
 <h2 id="_database_initializer"><a class="anchor" href="#_database_initializer"></a>Database Initializer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed. This schema can be automatically created by apiman the first time it is used. To enable this feature, you must configure the API Gateway JDBC initializer in the apiman.properties file, like so:</p>
+<p>Of course, there is a database schema that must be installed in your database, which creates the tables and indexes needed.
+This schema can be automatically created by apiman the first time it is used.
+To enable this feature, you must configure the API Gateway JDBC initializer in <code>apiman.properties</code>, like so:</p>
 </div>
 <div class="sect2">
 <h3 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h3>
@@ -486,40 +493,52 @@ apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-g
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apiman-gateway.initializers</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Initializer type (always JDBC for this use-case)</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Required Value</strong>: <code>jdbc</code></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apiman-gateway.initializers.jdbc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Use JDBC initialiser (always for this use-case)</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Required Value</strong>: <code>io.apiman.gateway.engine.jdbc.JdbcInitializer</code></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc.datasource.jndi-location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apiman-gateway.initializers.jdbc.datasource.jndi-location</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JNDI location for your data source</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">apiman-gateway.initializers.jdbc.datasource.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apiman-gateway.initializers.jdbc.datasource.type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Datasource type:</p>
 </div>
-<div class="paragraph">
-<p><strong>Available Values</strong>: h2, mysql5, postgresql9, oracle12</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Allowed Values</strong>: h2, mysql8, postgresql9, oracle12</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Note, your particular DB version may work successfully with one of these variants.</p>
@@ -534,11 +553,11 @@ apiman-gateway.registry.datasource.jndi-location=java:jboss/datasources/apiman-g
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs"># Initializer for the Gateway JDBC
 # ################################
-apiman.jdbc.datasource.jndi-location=java:jboss/datasources/apiman-gateway
+apiman.jdbc.datasource.jndi-location=java:/apiman/datasources/apiman-gateway
 apiman-gateway.initializers=jdbc
 apiman-gateway.initializers.jdbc=io.apiman.gateway.engine.jdbc.JdbcInitializer
 apiman-gateway.initializers.jdbc.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}
-apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
+apiman-gateway.initializers.jdbc.datasource.type=postgresql9</code></pre>
 </div>
 </div>
 </div>
@@ -591,7 +610,7 @@ Must be configured with the JNDI location of the datasource to use.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">queue.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>queue.size</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Metrics maximum queue size</p></td>
 </tr>

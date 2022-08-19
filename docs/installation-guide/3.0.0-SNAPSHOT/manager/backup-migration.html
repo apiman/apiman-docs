@@ -6,7 +6,7 @@
     <title>Backup &amp; Migration :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/manager/backup-migration.html">
     <link rel="prev" href="configuration.html">
-    <link rel="next" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">
+    <link rel="next" href="notifications.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -65,11 +65,14 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../quickstart.html">Quickstart</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Platforms</span>
+    <span class="nav-text">Apiman Platforms</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -120,54 +123,15 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Registries and Components</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../gateway/security.html">Security</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (MTLS/MSSL)</a>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
     <span class="nav-text">Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="configuration.html">General Configuration</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_logging_in">Logging In</a>
+    <a class="nav-link" href="database.html">Database Configuration</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="configuration.html">Apiman Customisation</a>
+<ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
@@ -179,11 +143,59 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#_backup_migration">Backup &amp; Migration</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="backup-migration.html">Backup &amp; Migration</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="notifications.html">Notifications</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -191,15 +203,6 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">How to</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/elasticsearch.html#_use_standalone_elasticsearch_instancecluster">Standalone Elasticsearch Cluster</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../how-to/security.html#_external_keycloak_authentication">External Keycloak Authentication</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
   </li>
@@ -214,10 +217,10 @@
     <span class="nav-text">Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vertx</a>
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">Wildfly</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
   </li>
 </ul>
   </li>
@@ -303,7 +306,7 @@
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
     <li>Manager</li>
-    <li><a href="#_backup_migration">Backup &amp; Migration</a></li>
+    <li><a href="backup-migration.html">Backup &amp; Migration</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -322,13 +325,118 @@
 </aside>
 <article class="doc">
 <h1 class="page">Backup &amp; Migration</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Apiman Migration Guide</div>
+<div class="paragraph">
+<p>Apiman has a full <a href="../../../core/2.2.3.Final/migration/migrations.html" class="xref page">migration guide</a> that documents changes between Apiman versions that administrators should pay close attention to.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_data_exportimport"><a class="anchor" href="#_data_exportimport"></a>Data Export/Import</h2>
+<h2 id="_automatic_sql_migrations_liquibase"><a class="anchor" href="#_automatic_sql_migrations_liquibase"></a>Automatic SQL Migrations (Liquibase)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman has a feature that allows admin users to export all the configuration data from the Manager into a single export file (JSON formatted).
-This exported file can then be edited (if necessary) and then imported into another instance of Apiman.
-This feature attempts to address the following use-cases:</p>
+<p>After Apiman 3.0.0.Final, automatic SQL migrations are available.</p>
+</div>
+<div class="paragraph">
+<p>Simply deploy the newest version of Apiman, and it <a href="https://www.liquibase.org" target="_blank" rel="noopener">Liquibase</a> attempt to apply any migrations that it has not already applied.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+There is no guarantee that the automated migrations always work smoothly; hence, users <strong>must</strong> back up before proceeding with an upgrade.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_apply_updates_automatically"><a class="anchor" href="#_apply_updates_automatically"></a>Apply updates automatically</h3>
+<div class="paragraph">
+<p>Do nothing, just start Apiman against your database.</p>
+</div>
+<div class="paragraph">
+<p>Refer to: <a href="database.html" class="xref page">API Manager Database Configuration</a> to ensure you have given Apiman the connection details for your database correctly.</p>
+</div>
+<div class="paragraph">
+<p>If the user you connect Apiman to your database with has limited permissions, then you will likely need to disable liquibase and apply the patches manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_liquibase"><a class="anchor" href="#_disable_liquibase"></a>Disable Liquibase</h3>
+<div class="paragraph">
+<p>Set the Java system property <code>liquibase.should.run=false</code>.
+Use this if you prefer to apply the SQL migrations out-of-band.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_apply_liquibase_patches_manually"><a class="anchor" href="#_apply_liquibase_patches_manually"></a>Apply Liquibase patches manually</h3>
+<div class="paragraph">
+<p>You can use the <code>liquibase</code> command-line tool to instantiate your database, and other useful functions such as rollbacks.</p>
+</div>
+<div class="paragraph">
+<p>Liquibase CLI can be found on many package managers, or can be downloaded directly from the <a href="https://docs.liquibase.com/install/home.html" target="_blank" rel="noopener">Liquibase website</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can find Apiman&#8217;s master Liquibase log, along with all patches, <a href="https://github.com/apiman/apiman/tree/3.0.0-SNAPSHOT/distro/ddl/src/main/resources/liquibase" target="_blank" rel="noopener">in the Apiman GitHub repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>We provide an example here, but please refer to the <a href="https://www.liquibase.org" target="_blank" rel="noopener">extensive Liquibase documentation</a> for more, as it likely supports your favourite workflow.</p>
+</div>
+<div class="listingblock">
+<div class="title">Apply Apiman&#8217;s master.xml to a MySQL database</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">liquibase --classpath="/path/to/mysql-connector-java-8.0.29.jar" \ <i class="conum" data-value="1"></i><b>(1)</b>
+--url="jdbc:mysql://localhost:3306/apiman" \ <i class="conum" data-value="2"></i><b>(2)</b>
+--username=root \ <i class="conum" data-value="3"></i><b>(3)</b>
+--password="admin123\!" \
+--changeLogFile=master.xml \ <i class="conum" data-value="4"></i><b>(4)</b>
+update <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Liquibase ships with certain drivers, but if you are unlucky, you may need to download and add one.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The standard JDBC URL to your database, which you should already have created</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A user with permission to run DDL, which may include higher risk actions such as creating and deleting tables, columns, etc. This may not always be the same as the 'day-to-day' user, depending on your permissions scheme.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Apiman&#8217;s Liquibase master.xml file, which can be found <a href="https://github.com/apiman/apiman/tree/3.0.0-SNAPSHOT/distro/ddl/src/main/resources/liquibase" target="_blank" rel="noopener">Apiman&#8217;s repo</a>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It is also possible to get Liquibase to generate SQL/DDL diffs for you, which can be applied via your databases' console.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_json_data_export_import"><a class="anchor" href="#_json_data_export_import"></a>JSON Data Export-Import</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apiman has an export-import feature that allows admin users to export all the configuration data from the Manager into a single export file (JSON formatted).
+This exported file can then be edited (if necessary) and then imported into another instance of Apiman.</p>
+</div>
+<div class="paragraph">
+<p>Export-import attempts to address the following use-cases:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -339,13 +447,25 @@ This feature attempts to address the following use-cases:</p>
 <p>Migrating between environments</p>
 </li>
 <li>
-<p>Upgrading Apiman to a new version</p>
+<p>Upgrading Apiman to a new major version</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Using the feature is simple - you must log into the Apiman UI as an admin user, then navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.
-From there you can export or import data.</p>
+<p>Using the feature is simple:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You must log into the Apiman UI as an admin user.</p>
+</li>
+<li>
+<p>Navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.</p>
+</li>
+<li>
+<p>From there you can export or import data.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -364,11 +484,8 @@ However, once approach to data backups that is consistent across all configurati
 <pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">https://HOST:PORT/apiman/system/export</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_migrating_data_between_environments"><a class="anchor" href="#_migrating_data_between_environments"></a>Migrating Data Between Environments</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_migrating_data_between_environments"><a class="anchor" href="#_migrating_data_between_environments"></a>Migrating Data Between Environments</h3>
 <div class="paragraph">
 <p>Often times you may have a Test version of Apiman deployed, as well as a Production version.
 Depending on your workflow, you may wish to configure your APIs in the Test environment and then migrate that configuration into Production (rather than having to re-create the same configuration in Production manually).
@@ -377,17 +494,15 @@ This can be accomplished by Exporting data from Test and then importing it into 
 <div class="paragraph">
 <p>When doing this, note that the Export feature will export the entire set of configuration from Apiman.
 This may be precisely what you want, but many times only a subset of the data is desired.
-If this is the case, then you will need to edit the resulting JSON file to only include the data you wish to migrate.
+If this is the case, you will need to edit the resulting JSON file to only include the data you wish to migrate.
 In the future, we hope to build tools that will make this editing of the exported file easier.</p>
 </div>
 <div class="paragraph">
 <p>Once you have edited the exported file, you can simply log into your production Apiman instance and use the Export/Import UI page to import the data.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_upgrading_to_a_new_apiman_version"><a class="anchor" href="#_upgrading_to_a_new_apiman_version"></a>Upgrading to a New Apiman Version</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_upgrading_to_a_new_apiman_version"><a class="anchor" href="#_upgrading_to_a_new_apiman_version"></a>Upgrading to a New Apiman Version</h3>
 <div class="paragraph">
 <p>Whenever you wish to upgrade from an old to a newer version of Apiman, you will likely want to preserve all the Plan, API, and Client App configurations you have created.</p>
 </div>
@@ -419,9 +534,10 @@ with all of your existing data.</p>
 </div>
 </div>
 </div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="configuration.html">General Configuration</a></span>
-  <span class="next"><a href="../how-to/elasticsearch.html#_use_elasticsearch_instead_of_an_rdbms">Elasticsearch Instead of RDBMS</a></span>
+  <span class="prev"><a href="configuration.html">Apiman Customisation</a></span>
+  <span class="next"><a href="notifications.html">Notifications</a></span>
 </nav>
 </article>
   </div>
