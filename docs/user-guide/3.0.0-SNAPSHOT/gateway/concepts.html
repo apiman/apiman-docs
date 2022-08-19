@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Apiman Concepts :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/2.2.3.Final/gateway/concepts.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3.0.0-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crash-course/Guide.html">Crash Course</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policies.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="policies.html">Policies</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_authorization_policy">Authorization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_basic_authentication_policy">BASIC Auth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_caching_policy_deprecated">Caching Policy (Deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_caching_resources_policy">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_cors_policy">CORS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_header_allowdeny">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_http_security_policy">HTTP Security</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_ignored_resources_policy">Ignored Resources</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_ip_blacklist_policy">IP Blacklist</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_ip_whitelist_policy">IP Whitelist</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_jsonp_policy">JSONP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_jwt_policy">JWT</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_keycloak_oauth_policy">Keycloak OAuth</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_log_policy">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_quota_policy">Quota</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_rate_limiting_policy">Rate Limiting</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_simple_header_policy">Simple Header</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_soap_authorization_policy">SOAP Authorization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_time_restricted_access_policy">Time Restricted Access</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_transfer_quota_policy">Transfer Quota</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_transformation_policy">Transformation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_url_rewriting_policy">URL Rewriting</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="policies.html#_url_whitelist_policy">URL Whitelist</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_data_model">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_user_management">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_managing_organizations">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_managing_plans">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_providing_apis">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_consuming_apis">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_versioning">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3.0.0-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../core/2.2.3.Final/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../core/main/index.html">nightly</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../core/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../core/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../welcome/2.2.3.Final/index.html">Apiman Welcome</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../welcome/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../welcome/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../installation-guide/2.2.3.Final/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../installation-guide/3.0.0-SNAPSHOT/index.html">3.0.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../2.2.3.Final/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">3.0.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../welcome/2.2.3.Final/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">User Guide</a></li>
+    <li>Gateway</li>
+    <li><a href="concepts.html">Concepts</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3.0.0-SNAPSHOT</button>
+  <div class="version-menu">
+    <a class="version is-current" href="concepts.html">3.0.0-SNAPSHOT</a>
+    <a class="version" href="../../2.2.3.Final/gateway/concepts.html">2.2.3.Final</a>
+    <a class="version" href="../../1.5.7.Final/gateway/concepts.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/gateway/concepts.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Apiman Concepts</h1>
+<div class="sect1">
+<h2 id="_api_gateway"><a class="anchor" href="#_api_gateway"></a>API Gateway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The runtime layer of Apiman consists of a small, lightweight and embeddable API Gateway, which is responsible for applying the policies configured in the API Manager to all requests to managed APIs.</p>
+</div>
+<div class="paragraph">
+<p>The Apiman gateway is distributed in two main versions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vert.x: Our premier and recommended gateway platform.</p>
+</li>
+<li>
+<p>WAR: Runnable on various Servlet platforms.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h3>
+<div class="paragraph">
+<p>The API Gateway is a completely separate component from the API Manager, and can therefore be used completely standalone if desired.
+However, the API Manager provides a great deal of management functionality (along with a user interface) that is quite useful.
+The API Gateway has a simple REST API that is used to configure it.
+The API provides the following basic capabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Publish an API</p>
+</li>
+<li>
+<p>Register a Client App (with API Contracts)</p>
+</li>
+<li>
+<p>Retire an API</p>
+</li>
+<li>
+<p>Unregister a Client App</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Typically, the API Manager is used to manage the configuration of various APIs and client apps within the scope of one or more Organizations.
+At various times during the management of these entities, the user of the API Manager will 'Publish' an API or 'Register' a Client App.
+When this action occurs, the API Manager invokes one of the relevant API Gateway configuration endpoints listed above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_invoking_managed_apis"><a class="anchor" href="#_invoking_managed_apis"></a>Invoking Managed APIs</h3>
+<div class="paragraph">
+<p>Once appropriate configuration has been published/registered with the API Gateway (see the Configuration section above), the API Gateway can be used to make managed calls to the APIs it knows about.
+A managed API can be invoked as though the back-end API were being invoked directly, with the exception that the endpoint is obviously different.</p>
+</div>
+<div class="paragraph">
+<p>The specific endpoint to use in order to invoke a particular API can be different based on the Gateway implementation.
+However, typically the endpoint format is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that all path segments beyond the <code>{version}</code> segment will be proxied on to the back-end API endpoint.
+Additionally, all HTTP headers and all query parameters (except for the API Key) will also be proxied to the back-end API.</p>
+</div>
+<div class="paragraph">
+<p>Requests to managed endpoints may include the API Key so that the Gateway knows which Client App is being used to invoke the API.</p>
+</div>
+<div class="paragraph">
+<p>The API Key can be sent in one of the following ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As an HTTP Header named <strong>X-API-Key</strong></p>
+</li>
+<li>
+<p>As a URL query parameter named <strong>apikey</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the API being invoked is a "Public" API, then no API Key should be sent.  However, the request should still be sent to the same endpoint as described above.</p>
+</div>
+<div class="paragraph">
+<p>The endpoint itself contains enough information to let the Gateway know what API is being invoked.</p>
+</div>
+<div class="paragraph">
+<p>If an API is not "Public" and you omit the API Key, then the request will fail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_recording_metrics"><a class="anchor" href="#_recording_metrics"></a>Recording Metrics</h3>
+<div class="paragraph">
+<p>The API Gateway is typically configured to record each request made to it into a metrics storage system of some kind.
+By default, Apiman will use an included Elasticsearch instance to store this information.
+Various pieces of information about each request is included in the record, including but not necessarily limited to the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Request start and end times</p>
+</li>
+<li>
+<p>API start and end times (i.e. just the part of the request taken up by the back end API)</p>
+</li>
+<li>
+<p>Resource path</p>
+</li>
+<li>
+<p>Response type (success, failure, error)</p>
+</li>
+<li>
+<p>API info (org id, id, version)</p>
+</li>
+<li>
+<p>Client App info (org id, id, version)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This information is then available for analysis and reporting.
+The data can be accessed in a number of ways, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Through the API Manager UI</p>
+</li>
+<li>
+<p>Through the API Manager REST API</p>
+</li>
+<li>
+<p>Directly from the metrics system</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
