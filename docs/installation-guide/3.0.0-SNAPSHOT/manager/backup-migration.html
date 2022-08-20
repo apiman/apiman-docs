@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Backup &amp; Migration :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/2.2.3.Final/manager/backup-migration.html">
-    <link rel="prev" href="configuration.html">
-    <link rel="next" href="notifications.html">
+    <link rel="prev" href="notifications.html">
+    <link rel="next" href="../registries-and-components/overview.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -79,16 +79,13 @@
     <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -123,25 +120,16 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Manager</span>
+    <span class="nav-text">Apiman Manager</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="database.html">Database Configuration</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="configuration.html">Apiman Customisation</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_custom_api_catalog">Custom API Catalog</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_custom_plugin_registry">Custom Plugin Registry</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="configuration.html#_property_replacement_in_policy_config">Policy Config Property Replacement</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="notifications.html">Notifications</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="backup-migration.html">Backup &amp; Migration</a>
@@ -149,14 +137,11 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="notifications.html">Notifications</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
+    <span class="nav-text">Apiman Gateway</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -213,19 +198,13 @@
     <a class="nav-link" href="../production.html">Production Guide</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Gateway</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly</a>
-  </li>
-</ul>
+    <a class="nav-link" href="production-manager.html">WildFly Manager</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="production-manager.html">Manager</a>
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x Gateway</a>
   </li>
 </ul>
   </li>
@@ -305,7 +284,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Installation Guide</a></li>
-    <li>Manager</li>
+    <li>Apiman Manager</li>
     <li><a href="backup-migration.html">Backup &amp; Migration</a></li>
   </ul>
 </nav>
@@ -419,6 +398,10 @@ update <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Apiman&#8217;s Liquibase master.xml file, which can be found <a href="https://github.com/apiman/apiman/tree/3.0.0-SNAPSHOT/distro/ddl/src/main/resources/liquibase" target="_blank" rel="noopener">Apiman&#8217;s repo</a>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>update</code> command</td>
 </tr>
 </table>
 </div>
@@ -536,8 +519,8 @@ with all of your existing data.</p>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="configuration.html">Apiman Customisation</a></span>
-  <span class="next"><a href="notifications.html">Notifications</a></span>
+  <span class="prev"><a href="notifications.html">Notifications</a></span>
+  <span class="next"><a href="../registries-and-components/overview.html">Registries &amp; Components</a></span>
 </nav>
 </article>
   </div>
