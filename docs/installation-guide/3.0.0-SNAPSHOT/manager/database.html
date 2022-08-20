@@ -513,72 +513,67 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Examples</caption>
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Postgres&#8201;&#8212;&#8201;system properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Postgres&#8201;&#8212;&#8201;system properties</dt>
+</dl>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">./bin/standalone.sh -c standalone-apiman.xml \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/standalone.sh -c standalone-apiman.xml \
     -Dapiman.db.url="jdbc:postgresql://localhost:5432/apiman" \
     -Dapiman.db.username=postgres \
     -Dapiman.db.password="admin123\!" \
     -Dapiman.db.driver=postgres9</code></pre>
 </div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Postgres&#8201;&#8212;&#8201;env vars</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Postgres&#8201;&#8212;&#8201;env vars</dt>
+</dl>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">export APIMAN_DB_URL="jdbc:postgresql://localhost:5432/apiman"
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export APIMAN_DB_URL="jdbc:postgresql://localhost:5432/apiman"
 export APIMAN_DB_USERNAME="postgres"
 export APIMAN_DB_PASSWORD="admin123\!"
 export APIMAN_DB_DRIVER="postgresql9"
 
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL/MariaDB&#8201;&#8212;&#8201;system properties</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">MySQL/MariaDB&#8201;&#8212;&#8201;system properties</dt>
+</dl>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">./bin/standalone.sh -c standalone-apiman.xml \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/standalone.sh -c standalone-apiman.xml \
     -Dapiman.db.url="jdbc:mysql://localhost:3306/apiman" \
     -Dapiman.db.username=root \
     -Dapiman.db.password="admin123\!" \
     -Dapiman.db.driver=mysql8</code></pre>
 </div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL/MariaDB&#8201;&#8212;&#8201;env vars</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">MySQL/MariaDB&#8201;&#8212;&#8201;env vars</dt>
+</dl>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">export APIMAN_DB_URL="jdbc:mysql://localhost:3306/apiman"
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export APIMAN_DB_URL="jdbc:mysql://localhost:3306/apiman"
 export APIMAN_DB_USERNAME="root"
 export APIMAN_DB_PASSWORD="admin123\!"
 export APIMAN_DB_DRIVER="mysql8"
 
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">

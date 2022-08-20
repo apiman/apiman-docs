@@ -514,18 +514,20 @@ By default, the gateway will inspect the request used to hit the Gateway API, an
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5"> "ssl": {
-   "keystore": {
-     "path": "/the/keystore/path/here.jks",
-     "password": "password-here"
-   },
-   "truststore": {
-     "path": "/the/truststore/path/here.jks",
-     "password": "password-here"
-   },
-   // Allowed TLS/SSL protocols for Client &lt;-&gt; Gateway (Server)
-   "allowedProtocols": "TLSv1.1, TLSv1.2"
- }</code></pre>
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "ssl": {
+    "keystore": {
+      "path": "/the/keystore/path/here.jks",
+      "password": "password-here"
+    },
+    "truststore": {
+      "path": "/the/truststore/path/here.jks",
+      "password": "password-here"
+    },
+    // Allowed TLS/SSL protocols for Client &lt;-&gt; Gateway (Server)
+    "allowedProtocols": "TLSv1.1, TLSv1.2"
+  }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
