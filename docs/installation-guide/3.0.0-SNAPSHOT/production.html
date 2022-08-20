@@ -306,7 +306,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide should serve as a guide to manually deploy Apiman into production.</p>
+<p>This guide should serve as an example of manually deploying Apiman into production.</p>
 </div>
 </div>
 </div>
@@ -353,48 +353,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h2>
+<h2 id="_auth_keycloak"><a class="anchor" href="#_auth_keycloak"></a>Auth: Keycloak</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you wish to enable metrics in Apiman (who doesn&#8217;t?) you&#8217;ll need to install Elasticsearch.
-The API Gateway can store all metrics information in Elasticsearch (by default), and the API Manager queries that data to present analytics information in the UI.</p>
-</div>
-<div class="paragraph">
-<p>Please see the Elasticsearch documentation for how to install and configure it in production.
-Ultimately you  will need Elasticsearch running in a well known and accessible location.  We also recommend you enable authentication (e.g. via Shield) and SSL.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The data in Elasticsearch is not backed up or stored in some other location - Elasticsearch is being used as the primary/canonical data store for the metrics information.
-You may wish to configure backup procedures.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>See:</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_keycloak"><a class="anchor" href="#_keycloak"></a>Keycloak</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In production, it is typically preferred to deploy Keycloak server as a standalone solution.  For more
-specific information about how to configure a standalone Keycloak server, see the Keycloak documentation:</p>
-</div>
-<div class="paragraph">
-<p><a href="http://keycloak.github.io/docs/userguide/html/server-installation.html" class="bare">http://keycloak.github.io/docs/userguide/html/server-installation.html</a></p>
-</div>
-<div class="paragraph">
-<p>Once Keycloak is installed as a standalone server, you must configure the ‘apiman' realm.  This realm will
-be used for authentication into each of the Apiman components (API Manager REST services, API Manager UI,
-API Gateway REST services, etc).</p>
+<p>Once <a href="https://www.keycloak.org" target="_blank" rel="noopener">Keycloak</a> is installed, you must configure the <code>apiman</code> realm.
+This realm will be used for authentication into each of the Apiman components.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -410,10 +373,39 @@ You can configure additional Keycloak Realms for use with the Apiman "Keycloak O
 </div>
 <div class="paragraph">
 <p>Fortunately, Apiman comes with a realm file you can import.
-Simply log into your Keycloak server and then create the <code>apiman</code> realm using this file:</p>
+Please refer to: <a href="keycloak.html#keycloak-bare-metal" class="xref page">Keycloak setup guide</a> for more information about importing a realm and setting up keycloak.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/apiman/apiman/blob/3.0.0-SNAPSHOT/distro/data/src/main/resources/data/apiman-realm.json" class="bare">https://github.com/apiman/apiman/blob/3.0.0-SNAPSHOT/distro/data/src/main/resources/data/apiman-realm.json</a></p>
+<p>For a production setup, you should:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Change the client redirect URLs to be specific to your organisation&#8217;s endpoints</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Example redirect UI for <code>apimanui</code> client.</div>
+<div class="paragraph">
+<p><a href="https://apimanager.mycompany.org:8443/apimanui/*" class="bare">https://apimanager.mycompany.org:8443/apimanui/*</a></p>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use signed certificates and/or generate your own. Do not use the defaults.</p>
+</li>
+<li>
+<p>Regenerate any client secrets.</p>
+</li>
+<li>
+<p>Review account permissions, signup settings, and other security procedures.
+For example, the default realm would anyone to sign up without verifying their email address.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -422,38 +414,84 @@ Simply log into your Keycloak server and then create the <code>apiman</code> rea
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-The realm file contains some credentials/secrets that you will want to modify or regenerate. The defaults are obviously <strong>not</strong> secure.
+<div class="ulist">
+<ul>
+<li>
+<p>The realm file contains some credentials/secrets that you will want to modify or regenerate.
+The defaults are obviously <strong>not</strong> secure.</p>
+</li>
+<li>
+<p>If you&#8217;re behind load-balancers, you may need to ensure <code>X-Forwarded-For</code> is set properly.
+Please refer to the Keycloak documentation.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Once you have created the <code>apiman</code> realm, you must use the Keycloak UI to add your API Manager UI as a valid
-redirect URL for the 'apimanui' client.  To do this, log into the Keycloak admin console and choose the
-<strong>apiman</strong> realm.  Next click "clients" in the left navigation, and choose <strong>apimanui</strong> in the resulting list.
-From there you can add public URL if your API Manager UI to the list of "<strong><em>Valid Redirect URIs</em></strong>".  It might
-be something like:</p>
 </div>
-<div class="literalblock">
+</div>
+<div class="sect1">
+<h2 id="_database_postgresql"><a class="anchor" href="#_database_postgresql"></a>Database: PostgreSQL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this example, we&#8217;ll use <a href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL</a> for our production database.</p>
+</div>
+<div class="paragraph">
+<p>After installing Postgres, create a database called <code>apiman</code>, and a corresponding service account <code>sa_apiman</code>.</p>
+</div>
+<div class="paragraph">
+<p>Apiman ships with a recent Postgres driver, which means you don&#8217;t need to install drivers or configure datasources.</p>
+</div>
+<div class="paragraph">
+<p>As of Apiman 3, there is also support for automated Liquibase migrations.
+We just need to start Apiman with the right database settings, and Apiman will wire everything up.</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre>https://apimanager.mycompany.org:8443/apimanui/*</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/standalone.sh -c standalone-apiman.xml \
+    -Dapiman.db.url="jdbc:postgresql://&lt;your database hostname&gt;:5432/apiman" \
+    -Dapiman.db.username=postgres \
+    -Dapiman.db.password="admin123\!" \
+    -Dapiman.db.driver=postgres9</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>That will allow users of the API Manager UI to actually log in and be properly redirected back to the
-application!</p>
+<p>Please refer to <a href="manager/database.html" class="xref page">our database configuration guide</a> for more information.</p>
 </div>
-<div class="admonitionblock note">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metrics_elasticsearch"><a class="anchor" href="#_metrics_elasticsearch"></a>Metrics: Elasticsearch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this example, we&#8217;ll use Elasticsearch for metrics.
+Other implementations <a href="registries-and-components/overview.html#_metrics" class="xref page">are available</a>.</p>
+</div>
+<div class="paragraph">
+<p>The Apiman API Gateway can store all metrics information in Elasticsearch, and the API Manager queries that data to present analytics information in the UI.</p>
+</div>
+<div class="paragraph">
+<p>To get started, you will need to install and run <a href="https://www.elastic.co" target="_blank" rel="noopener">Elasticsearch</a>.
+We recommend you enable authentication, where possible.
+Please see the Elasticsearch documentation for how to install and configure it in production.</p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you&#8217;re behind load-balancers, you may need to ensure <a href="https://www.keycloak.org/docs/latest/server_installation/#_setting-up-a-load-balancer-or-proxy">X-Forwarded-For</a> is set properly.
+The data in Elasticsearch is not backed up or stored in some other location; Elasticsearch is being used as the primary/canonical data store for the metrics information.
+You may wish to configure backup procedures.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Please refer to our <a href="registries-and-components/elasticsearch.html" class="xref page">Elasticsearch configuration guide</a> for more information.</p>
 </div>
 </div>
 </div>
