@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Crash Course in Apiman 2.2.3.Final :: Apiman Documentation</title>
+    <title>Crash Course in Apiman 3.0.0-SNAPSHOT :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/2.2.3.Final/crash-course/Guide.html">
     <link rel="prev" href="../index.html">
     <link rel="next" href="../gateway/concepts.html">
@@ -278,7 +278,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Crash Course in Apiman 2.2.3.Final</h1>
+<h1 class="page">Crash Course in Apiman 3.0.0-SNAPSHOT</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -290,20 +290,32 @@
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Welcome to the crash course in JBoss Apiman! The goal of this crash course is to provide a short and easy to consume introduction to API Management with Apiman. This crash course will explain how Apiman works and will walk you through a hands-on session to demonstrate how to use it. This crash course also provides links to the extensive on-line Apiman user documentation, demos and quickstarts, and other resources.</p>
+<p>Welcome to the crash course in Apiman!</p>
 </div>
 <div class="paragraph">
-<p>This crash course is organized into the following sections:</p>
+<p>The goal of this crash course is to provide a short and easy-to-consume introduction to API Management with Apiman.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>How Apiman Works - This section describes the data model Apiman uses, and how it uses the elements created in that data model to perform its tasks.</p>
-</li>
-<li>
-<p>Policies: At the Core of API Management - In API Management, policies are where the action is. It&#8217;s the policies that define the rules that Apiman uses to manage your APIs. Since policies are so important, this is the longest section of the crash course.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>This crash course will explain how Apiman works and will walk you through a hands-on session to demonstrate how to use it.
+This course also provides links to the extensive online Apiman user documentation, demos and quickstarts, and other resources.</p>
+</div>
+<div class="paragraph">
+<p>This course is organized into the following sections:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">How Apiman Works</dt>
+<dd>
+<p>This section describes the data model Apiman uses, and how it uses the elements created in that data model to perform its tasks.</p>
+</dd>
+<dt class="hdlist1">Policies</dt>
+<dd>
+<p>At the Core of API Management - In API Management, policies are where the action is.</p>
+<div class="paragraph">
+<p>It&#8217;s the policies that define the rules that Apiman uses to manage your APIs. Since policies are so important, this is the longest section of the crash course.</p>
+</div>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
 <p>Each of the next four sections in the crash course describes how Apiman supports the four primary groups of Apiman users:</p>
@@ -1382,7 +1394,7 @@ Don&#8217;t panic! You don&#8217;t have to memorize the endpoint string. As we&#
 <div class="ulist">
 <ul>
 <li>
-<p>The Apiman WildFly overlay zip file is available here: <code><a href="https://github.com/apiman/apiman/releases/download/2.2.3.Final/apiman-distro-wildfly-2.2.3.Final-overlay.zip" class="bare">https://github.com/apiman/apiman/releases/download/2.2.3.Final/apiman-distro-wildfly-2.2.3.Final-overlay.zip</a></code></p>
+<p>The Apiman WildFly overlay zip file is available here: <code><a href="https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip" class="bare">https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip</a></code></p>
 </li>
 <li>
 <p>After the file is downloaded, unzip it directly over the directory into which you unzipped the WildFly download. This will install Apiman into the WildFly server.</p>
@@ -1400,12 +1412,12 @@ Don&#8217;t panic! You don&#8217;t have to memorize the endpoint string. As we&#
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-2.2.3.Final
-cd ~/apiman-2.2.3.Final
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-3.0.0-SNAPSHOT
+cd ~/apiman-3.0.0-SNAPSHOT
 wget https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip
-wget https://github.com/apiman/apiman/releases/download/2.2.3.Final/apiman-distro-wildfly-2.2.3.Final-overlay.zip
+wget https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip
 unzip wildfly-23.0.2.Final
-unzip -o apiman-distro-wildfly-2.2.3.Final-overlay.zip -d wildfly-23.0.2.Final</code></pre>
+unzip -o apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Final</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1416,7 +1428,7 @@ unzip -o apiman-distro-wildfly-2.2.3.Final-overlay.zip -d wildfly-23.0.2.Final</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-2.2.3.Final/wildfly-23.0.2.Final/bin</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.0.0-SNAPSHOT/wildfly-23.0.2.Final/bin</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1442,7 +1454,7 @@ b) Application User (application-users.properties)
 <p>After you define a username and password, for the remainder of the prompts, you can safely take the default values, or select “yes” to complete the creation of a user account.</p>
 </div>
 <div class="paragraph">
-<p>(Details on the administration of a WildFly server, including user management, are out of scope for this book as our focus is Apiman. If you are interested in learning more about WildFly server administration, refer to the <a href="https://docs.wildfly.org/20/Admin_Guide.html" target="_blank" rel="noopener">WildFly Server Administration Guide</a>.</p>
+<p>(Details on the administration of a WildFly server, including user management, are out of scope for this book as our focus is Apiman. If you are interested in learning more about WildFly server administration, refer to the <a href="https://docs.wildfly.org/23/Admin_Guide.html" target="_blank" rel="noopener">WildFly Server Administration Guide</a>.</p>
 </div>
 <div class="paragraph">
 <p>Running the WildFly Server</p>
@@ -1452,7 +1464,7 @@ b) Application User (application-users.properties)
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-2.2.3.Final/wildfly-23.0.2.Final
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.0.0-SNAPSHOT/wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
 </div>

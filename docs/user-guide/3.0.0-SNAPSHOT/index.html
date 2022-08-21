@@ -282,9 +282,13 @@
 <h2 id="_what_is_api_management"><a class="anchor" href="#_what_is_api_management"></a>What is API Management?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A popular trend in enterprise software development these days is to design client apps to be very decoupled and use APIs to connect them.
-This approach provides an excellent way to reuse functionality across various applications and business units.
-Another great benefit of API usage in enterprises is the ability to create  those APIs using a variety of disparate technologies.</p>
+<p>A popular trend in enterprise software development these days is to design client apps to be very decoupled and use APIs to connect them.</p>
+</div>
+<div class="paragraph">
+<p>This approach provides an excellent way to reuse functionality across various applications and business units.</p>
+</div>
+<div class="paragraph">
+<p>Another great benefit of API usage in enterprises is the ability to create  those APIs using a variety of disparate technologies.</p>
 </div>
 <div class="paragraph">
 <p>However, this approach also introduces its own pitfalls and disadvantages.
@@ -333,7 +337,26 @@ This API Gateway is responsible for applying the policies configured during mana
 <h2 id="_project_goals"><a class="anchor" href="#_project_goals"></a>Project Goals</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The goals of the JBoss API management project are to provide an easy-to-use and powerful API Manager as well as a small, fast, low-overhead API Gateway to implement standard API management functionality.</p>
+<p>The goals of Apiman are to provide:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An easy-to-use and powerful API Manager, handling user management and human interaction.</p>
+</li>
+<li>
+<p>A low-overhead API Gateway to implement standard API management functionality (runtime enforcement.</p>
+</li>
+<li>
+<p>Flexibility, allowing existing functionality to be adapted and configured to do what users need.</p>
+</li>
+<li>
+<p>Extensibility, allowing new functionality to be added into Apiman via plugins and components.</p>
+</li>
+<li>
+<p>Reuse, allowing existing Java codebases and Java skills to be reused for API Management purposes (without having to rewrite everything).</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -346,8 +369,10 @@ This API Gateway is responsible for applying the policies configured during mana
 <div class="sect2">
 <h3 id="_security"><a class="anchor" href="#_security"></a>Security</h3>
 <div class="paragraph">
-<p>APIs will very often have a security requirement such that clients connecting to the API must authenticate in some fashion.
-Authentication can vary greatly both in the protocols used to authenticate and the identity source used for validation.</p>
+<p>APIs will very often have a security requirement such that clients connecting to the API must authenticate in some fashion.</p>
+</div>
+<div class="paragraph">
+<p>Authentication can vary greatly both in the protocols used to authenticate and the identity source used for validation.</p>
 </div>
 <div class="paragraph">
 <p>It can often be convenient to provide authentication at the API management layer to free up the back end API from having to do this work.
