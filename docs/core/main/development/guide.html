@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Apiman Developer Guide :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/core/2.2.3.Final/development/Guide.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -56,15 +55,17 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../migration/migrations.html">Migration Guide</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#development:Guide.adoc">Development Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="plugins.html">Apiman Plugins</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="gateway.html">Apiman Gateway Implementation Guide</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -142,18 +143,18 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Apiman Guides</a></li>
-    <li><a href="Guide.html">Apiman Developer Guide</a></li>
+    <li><a href="guide.html">Apiman Developer Guide</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">nightly</button>
   <div class="version-menu">
-    <a class="version is-current" href="Guide.html">nightly</a>
-    <a class="version" href="../../2.2.3.Final/development/Guide.html">2.2.3.Final</a>
-    <a class="version" href="../../1.5.7.Final/development/Guide.html">1.5.7.Final</a>
+    <a class="version is-current" href="guide.html">nightly</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/master/docs/modules/development/pages/Guide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/master/docs/modules/development/pages/guide.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -176,11 +177,69 @@ In either case, this is the guide for you.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes a number of resources that are useful if you wish to contribute
-code to Apiman.
-It is likely also a good starting point for those wishing to provide functionality by implementing a plugin, although more information about plugins can be found in the 'Plugins' section.</p>
+code to Apiman.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_code"><a class="anchor" href="#_source_code"></a>Source Code</h3>
+<div class="paragraph">
+<p>It is likely also a good starting point for those wishing to provide functionality by implementing a plugin, although more information about plugins can be found in the 'Plugins' section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The basic architecture of apiman is fairly straightforward.
+There are several WARs that make up the default Apiman installation.</p>
+</div>
+<div class="paragraph">
+<p>These include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API Manager REST back-end (JAX-RS WAR)</p>
+</li>
+<li>
+<p>API Manager UI (AngularJS WAR)</p>
+</li>
+<li>
+<p>API Portal UI (Angular WAR)</p>
+</li>
+<li>
+<p>API Gateway Config (JAX-RS WAR)</p>
+</li>
+<li>
+<p>API Gateway (Servlet WAR)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The API Manager REST back-end WAR is responsible for exposing a set of REST endpoints that make up the API Manager REST interface.</p>
+</div>
+<div class="paragraph">
+<p>The API Manager UI uses this REST API directly when the user manages the various entities in the data model.</p>
+</div>
+<div class="paragraph">
+<p>The API Manager UI is a client-only AngularJS application.
+Aside from authentication related activities, this WAR only contains HTML, JavaScript, and CSS.
+The UI uses the browser to make direct, authenticated calls to the REST endpoints exposed by the API Manager REST back-end WAR.</p>
+</div>
+<div class="paragraph">
+<p>The API Gateway Config exposes the standard apiman Gateway REST API so that the API Gateway can be remotely configured.
+This is the REST API that the API Manager uses whenever a user publishes an API or registers a Client App.
+It is responsible for configuring the API Gateway&#8217;s embedded Policy Engine.</p>
+</div>
+<div class="paragraph">
+<p>The API Gateway is the primary runtime component of apiman and is implemented as a servlet that embeds the apiman Policy Engine.</p>
+</div>
+<div class="paragraph">
+<p>All requests to the API Gateway WAR are assumed to be intended for managed APIs previously published to it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_source_code"><a class="anchor" href="#_source_code"></a>Source Code</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -190,16 +249,21 @@ It is likely also a good starting point for those wishing to provide functionali
 <p>Source code for the Apiman policies can be found here: <a href="https://github.com/apiman/apiman-plugins" class="bare">https://github.com/apiman/apiman-plugins</a></p>
 </li>
 <li>
-<p>Source code for the Apiman project web site is here: <a href="https://github.com/apiman/apiman.github.io" class="bare">https://github.com/apiman/apiman.github.io</a></p>
+<p>Source code for the Apiman project website is here: <a href="https://github.com/apiman/apiman.github.io" class="bare">https://github.com/apiman/apiman.github.io</a></p>
 </li>
 <li>
 <p>The official Apiman docker files are currently here: <a href="https://github.com/apiman/apiman-docker" class="bare">https://github.com/apiman/apiman-docker</a></p>
 </li>
+<li>
+<p>Source code for the Apiman Developer Portal can be found here: <a href="https://github.com/apiman/apiman-developer-portal" class="bare">https://github.com/apiman/apiman-developer-portal</a></p>
+</li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_issue_tracking"><a class="anchor" href="#_issue_tracking"></a>Issue Tracking</h3>
+</div>
+<div class="sect1">
+<h2 id="_issue_tracking"><a class="anchor" href="#_issue_tracking"></a>Issue Tracking</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -211,15 +275,34 @@ It is likely also a good starting point for those wishing to provide functionali
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_development_tools"><a class="anchor" href="#_development_tools"></a>Development Tools</h3>
+</div>
+<div class="sect1">
+<h2 id="_development_tools"><a class="anchor" href="#_development_tools"></a>Development Tools</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>We&#8217;re rather IDE agnostic, so contributors should feel free to use whatever tools they feel most
-comfortable with.  At the time of this writing, the core Apiman developers mostly use IntelliJ IDEA.</p>
+<p>We&#8217;re rather IDE agnostic, so contributors should feel free to use whatever tools they feel most comfortable with.</p>
+</div>
+<div class="paragraph">
+<p>At the time of this writing, the core Apiman developers mostly use IntelliJ IDEA.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_building_the_project"><a class="anchor" href="#_building_the_project"></a>Building the Project</h3>
+</div>
+<div class="sect1">
+<h2 id="_building_the_project"><a class="anchor" href="#_building_the_project"></a>Building the Project</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A fast build script is available in the root of the project: <code>./fastbuild.sh</code>.
+It skips tests, Javadoc, etc.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Building Apiman should be a simple matter of doing a standard Maven build:</p>
 </div>
@@ -240,8 +323,10 @@ For that, you may want to try the following:</p>
 </div>
 <div class="paragraph">
 <p>This command will do a full apiman build, but will also download WildFly and install Apiman into it.
-The result will be a fully configured install of Apiman running in WildFly.
-The location of this WildFly install will be here:</p>
+The result will be a fully configured installation of Apiman running in WildFly.</p>
+</div>
+<div class="paragraph">
+<p>The location of this WildFly install will be here:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -255,54 +340,6 @@ The location of this WildFly install will be here:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/standalone.sh -b 0.0.0.0</code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>Architecture</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The basic architecture of apiman is fairly straightforward.There are several WARs that
-make up the default apiman installation.These include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>API Manager REST back-end (JAX-RS WAR)</p>
-</li>
-<li>
-<p>API Manager UI (AngularJS/Hawtio WAR)</p>
-</li>
-<li>
-<p>API Gateway Config (JAX-RS WAR)</p>
-</li>
-<li>
-<p>API Gateway (Servlet WAR)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The API Manager REST back-end WAR is responsible for exposing a set of REST endpoints that
-make up the API Manager REST interface.The API Manager UI uses this REST API
-directly when the user manages the various entities in the data model.</p>
-</div>
-<div class="paragraph">
-<p>The API Manager UI is a client-only AngularJS application.Aside from authentication
-related activities, this WAR only contains HTML, JavaScript, and CSS.The UI uses
-the browser to make direct, authenticated calls to the REST endpoints exposed by the
-API Manager REST back-end WAR.</p>
-</div>
-<div class="paragraph">
-<p>The API Gateway Config exposes the standard apiman Gateway REST API so that the API
-Gateway can be remotely configured.This is the REST API that the API Manager uses
-whenever a user publishes an API or registers a Client App.It is responsible
-for configuring the API Gateway&#8217;s embedded Policy Engine.</p>
-</div>
-<div class="paragraph">
-<p>The API Gateway is the primary runtime component of apiman and is implemented as a
-servlet that embeds the apiman Policy Engine.All requests to the API Gateway WAR are
-assumed to be intended for managed APIs previously published to it.</p>
 </div>
 </div>
 </div>
