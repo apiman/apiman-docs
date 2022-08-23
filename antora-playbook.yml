@@ -44,6 +44,10 @@ output:
 
 asciidoc:
   attributes:
+    apiman-version-release: 3.0.0-SNAPSHOT
+    wildfly-version: 23.0.2.Final
+    wildfly-major-version: 23
+    keycloak-version: 18.0.2
     page-pagination: true
   extensions:
   - ./lib/openblock.js

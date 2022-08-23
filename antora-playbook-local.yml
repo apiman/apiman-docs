@@ -10,18 +10,22 @@ content:
     - url: ./
       branches:
         - 1.x
+        - 2.x
         - HEAD
-    - url: https://github.com/apiman/apiman-docs-user-guide.git
+    - url: ../apiman-docs-user-guide
       branches:
         - 1.x
+        - 2.x
         - antora
-    - url: https://github.com/apiman/apiman-docs-installation-guide.git
+    - url: ../apiman-docs-installation-guide
       branches:
         - 1.x
+        - 2.x
         - antora
-    - url: /Users/msavy/oss/apiman/apiman
+    - url: ../apiman
       branches:
-        # - 1.x
+        - 1.x
+        - 2.x
         - HEAD
       start_path: docs
 
@@ -39,6 +43,12 @@ output:
   dir: ./docs
 
 asciidoc:
+  attributes:
+    apiman-version-release: 3.0.0-SNAPSHOT
+    wildfly-version: 23.0.2.Final
+    wildfly-major-version: 23
+    keycloak-version: 18.0.2
+    page-pagination: true
   extensions:
   - ./lib/openblock.js
   - ./lib/tabs-block.js
