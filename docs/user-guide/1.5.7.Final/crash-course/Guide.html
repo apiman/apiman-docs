@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Crash Course in Apiman 1.5.7.Final :: Apiman Documentation</title>
+    <title>Crash Course in Apiman 3.0.0-SNAPSHOT :: Apiman Documentation</title>
     <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/2.2.3.Final/crash-course/Guide.html">
     <link rel="prev" href="../index.html">
     <link rel="next" href="../gateway/concepts.html">
@@ -278,7 +278,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Crash Course in Apiman 1.5.7.Final</h1>
+<h1 class="page">Crash Course in Apiman 3.0.0-SNAPSHOT</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -1375,14 +1375,14 @@ Don&#8217;t panic! You don&#8217;t have to memorize the endpoint string. As we&#
 <div class="ulist">
 <ul>
 <li>
-<p>Download and Unzip the WildFly Server - Download <code><a href="https://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip" class="bare">https://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip</a></code> and unzip the file into the directory in which you want to run the sever.</p>
+<p>Download and Unzip the WildFly Server - Download <code><a href="https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip" class="bare">https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip</a></code> and unzip the file into the directory in which you want to run the sever.</p>
 </li>
 <li>
 <p>Download and unzip the Apiman WildFly overlay .zip file - Download the Apiman WildFly overlay zip file into the directory that was created when you unzipped the WildFly download.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The Apiman WildFly overlay zip file is available here: <code><a href="https://github.com/apiman/apiman/releases/download/1.5.7.Final/apiman-distro-wildfly-1.5.7.Final-overlay.zip" class="bare">https://github.com/apiman/apiman/releases/download/1.5.7.Final/apiman-distro-wildfly-1.5.7.Final-overlay.zip</a></code></p>
+<p>The Apiman WildFly overlay zip file is available here: <code><a href="https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip" class="bare">https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip</a></code></p>
 </li>
 <li>
 <p>After the file is downloaded, unzip it directly over the directory into which you unzipped the WildFly download. This will install Apiman into the WildFly server.</p>
@@ -1400,12 +1400,12 @@ Don&#8217;t panic! You don&#8217;t have to memorize the endpoint string. As we&#
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-1.5.7.Final
-cd ~/apiman-1.5.7.Final
-wget https://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip
-wget https://github.com/apiman/apiman/releases/download/1.5.7.Final/apiman-distro-wildfly-1.5.7.Final-overlay.zip
-unzip wildfly-10.1.0.Final
-unzip -o apiman-distro-wildfly-1.5.7.Final-overlay.zip -d wildfly-10.1.0.Final</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-3.0.0-SNAPSHOT
+cd ~/apiman-3.0.0-SNAPSHOT
+wget https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip
+wget https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip
+unzip wildfly-23.0.2.Final
+unzip -o apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Final</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1416,7 +1416,7 @@ unzip -o apiman-distro-wildfly-1.5.7.Final-overlay.zip -d wildfly-10.1.0.Final</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-1.5.7.Final/wildfly-10.1.0.Final/bin</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.0.0-SNAPSHOT/wildfly-23.0.2.Final/bin</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1452,7 +1452,7 @@ b) Application User (application-users.properties)
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-1.5.7.Final/wildfly-10.1.0.Final
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.0.0-SNAPSHOT/wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
 </div>
@@ -1464,7 +1464,7 @@ b) Application User (application-users.properties)
 <pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">"apiman-gateway.war")
 23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
 23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
-23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 10.1.0.Final started in 11891ms - Started 1131 of 1543 services (616 services are lazy, passive or on-demand)</code></pre>
+23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 23.0.2.Final started in 11891ms - Started 1131 of 1543 services (616 services are lazy, passive or on-demand)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1516,7 +1516,7 @@ b) Application User (application-users.properties)
 </div>
 </div>
 <div class="paragraph">
-<p>If you don&#8217;t see the Apiman deployments, don&#8217;t panic, but something went wrong with the installation. The most common reason for the Apiman deployments to be missing is that you unzipped the Apiman overlay .zip file into a different directory from the WildFly server. Remember, that the reason that the overlay file is named “overlay” is that it must be unzipped over an installed WildFly server. You can confirm that this is what happened by looking in the WildFly server&#8217;s deployment directory here:  wildfly-10.1.0.Final/standalone/deployments</p>
+<p>If you don&#8217;t see the Apiman deployments, don&#8217;t panic, but something went wrong with the installation. The most common reason for the Apiman deployments to be missing is that you unzipped the Apiman overlay .zip file into a different directory from the WildFly server. Remember, that the reason that the overlay file is named “overlay” is that it must be unzipped over an installed WildFly server. You can confirm that this is what happened by looking in the WildFly server&#8217;s deployment directory here:  wildfly-23.0.2.Final/standalone/deployments</p>
 </div>
 <div class="paragraph">
 <p>If you look in this directory, you should see these files (the presence of files with the “.deployed” suffix indicates that the corresponding file was deployed successfully):</p>
@@ -1547,7 +1547,7 @@ apiman.war.deployed</code></pre>
 <p>The WildFly server&#8217;s server.log file is created when the server is started. All the information that is displayed on the screen when you started the server is also written to the log file. (The level of detail written to the console and the log file is configurable. You can read about configuring WildFly logging here: <a href="https://docs.jboss.org/author/display/WFLY10/Admin+Guide" class="bare">https://docs.jboss.org/author/display/WFLY10/Admin+Guide</a>)</p>
 </div>
 <div class="paragraph">
-<p>You can find the WildFly server file here: wildfly-10.1.0.Final/standalone/log/server.log</p>
+<p>You can find the WildFly server file here: wildfly-23.0.2.Final/standalone/log/server.log</p>
 </div>
 <div class="paragraph">
 <p>The WildFly server log file can be quite large as the server will append more logging statements to it over time. While you can certainly read the entire file anytime you want, we&#8217;ll focus on some highlights related to ensuring that the server started cleanly. An obvious first step is to search the file for logging statements written at the ERROR level. If the file does not contain any errors, you can look for statements that look like this to confirm that the server started cleanly:</p>
@@ -1594,7 +1594,7 @@ Resolving deltas: 100% (40/40), done.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The source code for the example API is provided in the wildfly-10.1.0.Final/apiman/quickstarts directory. (In JBoss software, the term “quickstart” refers to an example program.)</p>
+<p>The source code for the example API is provided in the wildfly-23.0.2.Final/apiman/quickstarts directory. (In JBoss software, the term “quickstart” refers to an example program.)</p>
 </div>
 <div class="paragraph">
 <p>The echo-API quickstart includes these files:</p>

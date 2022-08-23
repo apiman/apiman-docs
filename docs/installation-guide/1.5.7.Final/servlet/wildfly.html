@@ -340,18 +340,18 @@ Once both are downloaded, it&#8217;s a simple matter of unpacking both into the 
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip">Download WildFly</a></p>
+<p><a href="http://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip">Download WildFly</a></p>
 </li>
 <li>
-<p><a href="http://downloads.jboss.org/apiman/1.5.7.Final/apiman-distro-wildfly-1.5.7.Final-overlay.zip">Download Apiman 1.5.7.Final</a></p>
+<p><a href="http://downloads.jboss.org/apiman/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip">Download Apiman 3.0.0-SNAPSHOT</a></p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip
 
-wget https://github.com/apiman/apiman/releases/download/1.5.7.Final/apiman-distro-wildfly-1.5.7.Final-overlay.zip</code></pre>
+wget https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip</code></pre>
 </div>
 </div>
 </div>
@@ -362,9 +362,9 @@ wget https://github.com/apiman/apiman/releases/download/1.5.7.Final/apiman-distr
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">unzip wildfly-10.1.0.Final.zip
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">unzip wildfly-23.0.2.Final.zip
 
-unzip -o apiman-distro-wildfly-1.5.7.Final-overlay.zip -d wildfly-10.1.0.Final</code></pre>
+unzip -o apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Final</code></pre>
 </div>
 </div>
 </div>
@@ -398,7 +398,7 @@ Simply start up WildFly using the Apiman configuration file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-10.1.0.Final
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
 </div>
@@ -414,8 +414,8 @@ You&#8217;re probably pretty familiar with docker if you&#8217;re going that rou
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull apiman/on-wildfly:1.5.7.Final
-docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:1.5.7.Final</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker pull apiman/on-wildfly:3.0.0-SNAPSHOT
+docker run -it -p 8080:8080 -p 8443:8443 apiman/on-wildfly:3.0.0-SNAPSHOT</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
