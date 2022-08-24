@@ -406,11 +406,10 @@ Please refer to the Apiman Installation Guide for details.
 <div class="sect2">
 <h3 id="_contributing_a_policy"><a class="anchor" href="#_contributing_a_policy"></a>Contributing a Policy</h3>
 <div class="paragraph">
-<p>Now that you know how to create an apiman plugin, you might be wondering what you can actually do with it!</p>
+<p>Now that you know how to create an Apiman plugin, you might be wondering what you can actually do with it!</p>
 </div>
 <div class="paragraph">
-<p>The most important purpose of a plugin is to provide additional <strong>Policies</strong> that can be used when configuring Plans, APIs, and Client Apps in
-Apiman.</p>
+<p>The most important purpose of a plugin is to provide additional <strong>Policies</strong> that can be used when configuring Plans, APIs, and Client Apps in Apiman.</p>
 </div>
 <div class="paragraph">
 <p>Although Apiman comes with a set of useful built-in policies, it is often  necessary for users to provide their own custom policies.
@@ -1089,7 +1088,7 @@ You can easily consume the JSON configuration data above in your policy implemen
   }
 
   @Override
-  protected Class&lt;MyConfigBean&gt; getConfigurationClass() {
+  public Class&lt;MyConfigBean&gt; getConfigurationClass() {
     return MyConfigBean.class;
   }
 
@@ -1110,11 +1109,259 @@ You can easily consume the JSON configuration data above in your policy implemen
 </div>
 </div>
 <div class="sect3">
+<h4 id="_policy_probes"><a class="anchor" href="#_policy_probes"></a>Policy Probes</h4>
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The <em>Police Probes</em> feature was  added in Apiman 3.</p>
+</div>
+<div class="paragraph">
+<p>We need your feedback <a href="https://github.com/apiman/apiman/discussions/2277" target="_blank" rel="noopener">so we can evolve and improve this feature</a>.</p>
+</div>
+<div class="paragraph">
+<p>Is it a good idea or a bad idea? What could we do better?</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A <em>policy probe</em> allows a policy to optionally expose its internal state to be queried by the Apiman Manager.
+Policy implementors decide exactly how their probe(s) work.</p>
+</div>
+<div class="paragraph">
+<p>The policy probes feature is an attempt to solve use-cases that require some important state within a policy.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is the current rate limit status for ClientA?</p>
+</li>
+<li>
+<p>When does ClientB&#8217;s quota reset?</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_implementation"><a class="anchor" href="#_implementation"></a>Implementation</h5>
+<div class="paragraph">
+<p>Probes are simple to implement:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement the <code>io.apiman.gateway.engine.policy.IPolicyProbe</code> interface on your policy class.</p>
+</li>
+<li>
+<p>Define probe request. This must implement <code>IPolicyProbeRequest</code>.</p>
+</li>
+<li>
+<p>Define a probe response. This must implement <code>IPolicyProbeResponse</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As an example, we&#8217;ll use Apiman&#8217;s inbuilt <code>RateLimitingPolicy</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">RateLimitingPolicy.java</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class RateLimitingPolicy extends AbstractMappedPolicy&lt;RateLimitingConfig&gt;
+     implements IPolicyProbe&lt;RateLimitingConfig, RateLimitingProbeConfig&gt; {  <i class="conum" data-value="1"></i><b>(1)</b>
+    // Omitted bits
+
+    @Override
+    public Class&lt;RateLimitingProbeConfig&gt; getProbeRequestClass() { <i class="conum" data-value="2"></i><b>(2)</b>
+        return RateLimitingProbeConfig.class;
+    }
+
+    @Override
+    public void probe( <i class="conum" data-value="3"></i><b>(3)</b>
+        RateLimitingProbeConfig probeRequest, <i class="conum" data-value="4"></i><b>(4)</b>
+        RateLimitingConfig policyConfig, <i class="conum" data-value="5"></i><b>(5)</b>
+        ProbeContext probeContext, <i class="conum" data-value="6"></i><b>(6)</b>
+        IPolicyContext context,  <i class="conum" data-value="7"></i><b>(7)</b>
+        IAsyncResultHandler&lt;IPolicyProbeResponse&gt; resultHandler) { <i class="conum" data-value="8"></i><b>(8)</b>
+        // Probe business logic
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Implement <code>IPolicyProbe</code>
+<div class="ulist">
+<ul>
+<li>
+<p>First parameter is the existing policy config class</p>
+</li>
+<li>
+<p>Second parameter is the probe&#8217;s configuration class (must implement <code>IPolicyProbeRequest</code>)</p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Implement <code>getProbeRequestClass</code> to return probe configuration class. This is needed as Java does not have reified generics (yet).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>probe</code> method to provide your probe(s). The value is returned asynchronously.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Probe request configuration instance (i.e. requested probe information).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Policy configuration</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Probe context, allowing some useful data such as <code>apiKey</code>, <code>ApiContract</code>, <code>Api</code>, etc.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Policy context, allowing access to components, etc.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Result handler to return the result of your probe. Must implement <code>IPolicyProbeResponse</code>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A common pattern to implement a policy probe is to re-use the policy&#8217;s standard business logic, but ensure it is a non-mutating action.</p>
+</div>
+<div class="paragraph">
+<p>For example, in the rate limiting policy, we trigger the rate limiter function, but increment the counter by zero.
+This lets us interrogate the current rate limiting state without actually consuming any of the user&#8217;s limit/quota:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+public void probe(RateLimitingProbeConfig probeRequest, RateLimitingConfig policyConfig, ProbeContext probeContext, IPolicyContext context, IAsyncResultHandler&lt;IPolicyProbeResponse&gt; resultHandler) {
+    String bucketId = bucketFactory.bucketId(probeRequest, probeContext, policyConfig);
+    IRateLimiterComponent rateLimiter = context.getComponent(IRateLimiterComponent.class); <i class="conum" data-value="1"></i><b>(1)</b>
+    // Ask for rate limit, but don't actually decrement the counter.
+    rateLimiter.accept(bucketId, bucketFactory.getPeriod(policyConfig), policyConfig.getLimit(), 0, rateLimResult -&gt; { <i class="conum" data-value="2"></i><b>(2)</b>
+        RateLimitResponse remaining = rateLimResult.getResult();
+        var probeResult = new RateLimitingProbeResponse() <i class="conum" data-value="3"></i><b>(3)</b>
+                .setStatus(remaining)
+                .setConfig(policyConfig);
+        resultHandler.handle(AsyncResultImpl.create(probeResult)); <i class="conum" data-value="4"></i><b>(4)</b>
+    });
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Get the rate limiting component.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Increment the rate limit by zero to get the current rate limit state without consuming quota/limit.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Build probe response (implements <code>IPolicyProbeResponse</code>).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Dispatch probe response asynchronously.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_querying_probe"><a class="anchor" href="#_querying_probe"></a>Querying probe</h5>
+<div class="paragraph">
+<p>You can issue a probe query via the Apiman Manager&#8217;s probes API.
+Currently, this only works if a contract is involved (i.e. has an API key; it does not work for 'public APIs' presently).</p>
+</div>
+<div class="paragraph">
+<p>The probes endpoint is (yes, sorry, it&#8217;s a tad long):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}/policies/{policyId}</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>organizationId</strong>: Apiman Organization ID.</p>
+</li>
+<li>
+<p><strong>clientId</strong>: Apiman Client ID.</p>
+</li>
+<li>
+<p><strong>version</strong>: Client version.</p>
+</li>
+<li>
+<p><strong>contractId</strong>: Contract the probe pertains to.</p>
+</li>
+<li>
+<p><strong>policyId</strong>: Policy you want to probe.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The Apiman Manager passes the probe through to the Apiman policy, after ensuing you have the correct permissions.</p>
+</div>
+<div class="paragraph">
+<p>It is the responsibility of the requester to ensure the probe payload is valid for the policy type they are probing, otherwise it will be rejected and/or return nonsense.</p>
+</div>
+<div class="paragraph">
+<p>You need to know the format of the probe a priori, which is passed as a <code>POST</code> body; usually this is JSON.
+If there is demand, we could to provide a schema mechanism to allow generation of documentation over probes, so the format of the probe is easier to understand (<a href="https://github.com/apiman/apiman/discussions/2277" target="_blank" rel="noopener">let us know</a>).</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>RateLimitingProbeConfig</code> (policy probe request payload).</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "user": "foo",
+  "apiKey": "1234562342343-2343243-23432423",
+  "callerIp": "1.2.3.4"
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title"><code>RateLimitingProbeResponse</code> (policy probe response payload).</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "RateLimitingProbeResponse": {
+    "config": {
+      "limit": 5,
+      "granularity": "Client",
+      "period": "Hour"
+    },
+    "status": {
+      "accepted": true,
+      "remaining": 1
+    },
+    "probeType": "RateLimitingProbeResponse"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_json_schema_policy_configuration_sdk"><a class="anchor" href="#_json_schema_policy_configuration_sdk"></a>JSON Schema Policy Configuration SDK</h4>
 <div class="paragraph">
 <p>If you are creating a non-trivial JSON Schema (more than just a couple of simple fields)
-it can be difficult to get it right without a few iterations.
-For this reason, we have created a simple "SDK" to help you create your JSON Schema quickly.</p>
+it can be difficult to get it right without a few iterations.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, we have created a simple "SDK" to help you create your JSON Schema quickly.</p>
 </div>
 <div class="paragraph">
 <p>The SDK can be found in the Apiman GitHub repository at the following location:</p>
