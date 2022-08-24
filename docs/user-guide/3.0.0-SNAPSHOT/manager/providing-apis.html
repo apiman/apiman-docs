@@ -435,6 +435,9 @@ Simply choose one or more plan from this list.</p>
 <div class="paragraph">
 <p>Although an API can be <strong>both</strong> Public and available through one or more plan, it is unusual to do so.</p>
 </div>
+<div class="paragraph">
+<p>You can set the <a href="#_discoverability">discoverability</a> of an attached API plan on this page, if you wish, which enables you to expose a specific API Plan outside your organization.</p>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -450,16 +453,261 @@ After making any changes make sure to click the Save button.
 </div>
 </div>
 <div class="sect1">
+<h2 id="_discoverability"><a class="anchor" href="#_discoverability"></a>Discoverability</h2>
+<div class="sectionbody">
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The discoverability system is new in Apiman 3.
+You can read the design principals in our <a href="https://github.com/orgs/apiman/discussions/1952" target="_blank" rel="noopener">Apiman Enhancement Proposal</a>.</p>
+</div>
+<div class="paragraph">
+<p>How can we improve this new mechanism?
+Are certain things not clear?
+Do you have suggestions?</p>
+</div>
+<div class="paragraph">
+<p>Please let us know your thoughts and feedback in this <a href="https://github.com/apiman/apiman/discussions/2280" target="_blank" rel="noopener">GitHub Discussion thread</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Apiman&#8217;s explicit permissions system provides fine-grained permissions for users who are a member of a given organisation.</p>
+</div>
+<div class="paragraph">
+<p>Discoverability is an <strong>implicit read permissions system</strong> that layers on top of the explicit permissions system that already exists in Apiman.
+It allows API Editors to <strong>expose APIs to consumers who are not members of their organisation</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Moreover, discoverability system allows the segregation of different categories of 'non-members'.
+Consequently, this is also the mechanism by which APIs can explicitly be exposed into the Apiman Developer Portal for anonymous users to browse (although, they need an account to subscribe).</p>
+</div>
+<div class="sect2">
+<h3 id="_capabilities"><a class="anchor" href="#_capabilities"></a>Capabilities</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>API Publishers can selectively expose an API outside an organisation to non-members.</p>
+</li>
+<li>
+<p>API Plans (i.e. Api Version + Plan Version) have a discoverability assigned to them.</p>
+</li>
+<li>
+<p>Public API Versions can also have a discoverability.</p>
+</li>
+<li>
+<p>API Publishers can choose different levels of discoverability (i.e. defines who can find a given API):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Organization Members only: only explicit members of the organization can see the API (existing explicit permissions system).</p>
+</li>
+<li>
+<p>Full platform members: only 'full' Apiman platform users with <code>apiuser</code> role can see the API. This means an active account is required.</p>
+</li>
+<li>
+<p>Expose in portal: expose the API in the developer portal for anonymous access, and for signed-in developer portal users (and all above).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Via configuration, Apiman can distinguish between different categories of non-member via their IDM roles; namely developer portal users (<code>devportaluser</code>) and 'full' Apiman platform users (<code>apiuser</code>).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This can be useful for certain segregation capabilities (e.g. not allowing developer portal users to access the main Apiman Manager UI).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>No endpoints, including search, return items a user, whether anonymous or logged-in, does not have permission to see.</p>
+</li>
+<li>
+<p>Fully backwards compatible, as existing APIs will simply have the default 'org members only' behaviour.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_worked_example"><a class="anchor" href="#_worked_example"></a>Worked Example</h3>
+<div class="paragraph">
+<p>In this worked example, we assume the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create an <strong>organization</strong> called <code>DemoOrg</code>, of which your user is the admin.</p>
+</li>
+<li>
+<p>Create a <strong>plan</strong> called <code>gold</code> and lock it.</p>
+</li>
+<li>
+<p>Create an <strong>API version</strong> called <code>ExampleApi</code> with version <code>1.0</code>. We&#8217;ll refer to it as <code>ExampleApi/1.0</code> from now on.</p>
+</li>
+<li>
+<p>In a private tab, we create a new Apiman user called <code>joe-bloggs</code> with standard permissions. Do not add this account to <code>DemoOrg</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First, we navigate to <code>ExampleApi&#8217;s</code> <strong><code>plans</code></strong> tab and attach the <strong><code>gold</code></strong> plan.</p>
+</div>
+<div class="paragraph">
+<p>We can see the Apiman offers the following <strong>discoverability</strong> levels:</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Organization members only</div>
+<div class="content">
+<div class="paragraph">
+<p>The default <strong>organization members only</strong>, means that only members of <code>DemoOrg</code> with the appropriate explicit permissions can see <code>ExampleApi/1.0</code>.</p>
+</div>
+<div class="paragraph">
+<p>Even using search or direct links, the <code>joe-bloggs</code> account will <strong>not</strong> be able to discover <code>ExampleApi/1.0</code>.
+This is because is not a member of <code>DemoOrg</code>.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. Full platform members</div>
+<div class="content">
+<div class="paragraph">
+<p>If we select <strong>full platform members</strong>, then even users outside of <code>DemoOrg</code> will be able to find <code>ExampleApi/1.0</code> and subscribe to it, as long as they have an Apiman account and the standard <code>apiuser</code> role.</p>
+</div>
+<div class="paragraph">
+<p>For example, our <code>joe-blogs</code> account can discover <code>ExampleApi/1.0</code> via searches or links, because he has a full Apiman account and the <code>apiuser</code> role.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. Expose in portal</div>
+<div class="content">
+<div class="paragraph">
+<p>If we select <strong>expose in portal</strong>, then:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users with active accounts outside of <code>DemoOrg</code> will be able to find <code>ExampleApi/1.0</code> and subscribe to it.</p>
+</li>
+<li>
+<p>Anonymous users will be able to find <code>ExampleApi/1.0</code>, even when not logged (but can&#8217;t subscribe).</p>
+</li>
+<li>
+<p><code>ExampleApi/1.0</code> will appear in the Apiman Developer Portal.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Users whose accounts only have the <code>portaluser</code> role in Keycloak will only see APIs in their own organization, or those with the <strong>expose in portal</strong> flag.</p>
+</div>
+<div class="paragraph">
+<p>This may be useful to segregate different types of users on the platform.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_signup_approvals"><a class="anchor" href="#_api_signup_approvals"></a>API Signup Approvals</h2>
+<div class="sectionbody">
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The API signup approvals system is new in Apiman 3.</p>
+</div>
+<div class="paragraph">
+<p>How can we improve this new mechanism?
+Are certain things not clear?
+Do you have suggestions?</p>
+</div>
+<div class="paragraph">
+<p>Please let us know your thoughts and feedback in this <a href="https://github.com/apiman/apiman/discussions/2281" target="_blank" rel="noopener">GitHub Discussion thread</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can require that any API Consumer signing up to your API Plan (API Version + Plan Version) go through an explicit approvals process before their contract can be published onto the Apiman Gateway.</p>
+</div>
+<div class="paragraph">
+<p>Simply tick "requires approval" to activate the feature on a plan-by-plan basis, and any user signing up to your API Plan will need explicit approval from a user in your organization with the <code>planAdmin</code> permission.</p>
+</div>
+<div class="sect2">
+<h3 id="_workflow"><a class="anchor" href="#_workflow"></a>Workflow</h3>
+<div class="paragraph">
+<p>In order to facilitate the approval process, Apiman does the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sends a notification to everyone in the organization with the <code>planAdmin</code> permission, alerting them that someone has signed up and required approval.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have enabled email notifications, then emails will be dispatched also, containing a broad range of useful information.</p>
+</li>
+<li>
+<p>Both the in-browser and email notification contain links that allow an approver to click through into the appropriate page to approve or deny the request.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Management of approvals is done from the API&#8217;s "contracts" tab, although you will typically be sent directly to the right place by a notification.</p>
+</li>
+<li>
+<p>You can either:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Approve the request, and the user will be able to begin using the API immediately.</p>
+</li>
+<li>
+<p>Reject the request, and insert a rejection message.
+A rejection will result in the pending contract being immediately deleted.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_managing_policies"><a class="anchor" href="#_managing_policies"></a>Managing Policies</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>API policies can be added and configured by navigating to the 'Policies' tab on the API details page.</p>
 </div>
-<div class="paragraph">
-<p>The 'Policies' tab presents a list of all the policies configured for this API.
-To add another policy to the API click the 'Add Policy' button.
-On the resulting page choose the type of policy you wish to create and then configure the details for that policy.
-Once you have configured the details click the 'Add Policy' button to add the policy to the API.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The 'Policies' tab presents a list of all the policies configured for this API.</p>
+</li>
+<li>
+<p>To add another policy to the API click the 'Add Policy' button.</p>
+</li>
+<li>
+<p>On the resulting page choose the type of policy you wish to create and then configure the details for that policy.</p>
+</li>
+<li>
+<p>Once you have configured the details click the 'Add Policy' button to add the policy to the API.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -469,8 +717,10 @@ Once you have configured the details click the 'Add Policy' button to add the po
 <div class="paragraph">
 <p>After all the configuration is complete for an API, it is time to publish the API to the runtime gateway.
 This can be done from any tab on the API details page by clicking  the <strong>Publish</strong> button in
-the top section of the UI.
-If successful, the status of the API will change to "Published" and the Publish button will disappear.</p>
+the top section of the UI.</p>
+</div>
+<div class="paragraph">
+<p>If successful, the status of the API will change to "Published" and the Publish button will disappear.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
