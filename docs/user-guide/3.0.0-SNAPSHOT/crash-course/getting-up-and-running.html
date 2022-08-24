@@ -303,73 +303,16 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this section, we&#8217;ll also take a very hands-on look at Apiman.
-In about 10 minutes, we&#8217;ll get Apiman installed and running, define an API policy, create and publish an API, register an application, and watch Apiman enforce that policy.</p>
+<p>In this section, we&#8217;ll also take a very hands-on look at Apiman.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s start by installing the prerequisite software packages that we will need.</p>
+<p>In about 10 minutes, we&#8217;ll get Apiman installed and running, define an API policy, create and publish an API, register an application, and watch Apiman enforce that policy.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prerequisite_software_required"><a class="anchor" href="#_prerequisite_software_required"></a>Prerequisite Software Required</h2>
+<h2 id="_apiman_docker_compose_distro"><a class="anchor" href="#_apiman_docker_compose_distro"></a>Apiman Docker Compose distro</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>You can run Apiman on any operating system that supports Java 11+.</p>
-</div>
-<div class="paragraph">
-<p>We don&#8217;t need very much in the way of prerequisite software to run Apiman out of the box.</p>
-</div>
-<div class="paragraph">
-<p>What you will need to install to run Apiman and follow all the steps in this chapter are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Java: Apiman can run Java version 11 or newer. You will want to install the full Java JDK. You can use either OpenJDK or Oracle&#8217;s JDK.</p>
-</li>
-<li>
-<p>Apache Maven: While you do not need the Maven build tool to run Apiman, we will use it to build an example API.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>We don&#8217;t need very much to run Apiman out of the box.</p>
-</div>
-<div class="paragraph">
-<p>You&#8217;ll also need to install git and Maven installed to be able to build the example API.</p>
-</div>
-<div class="paragraph">
-<p>After you install the prerequisite software, the next thing to do is get a copy of Apiman.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_getting_the_bits_downloading_apiman"><a class="anchor" href="#_getting_the_bits_downloading_apiman"></a>Getting the Bits - Downloading Apiman</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To download Apiman, open a browser and navigate to <a href="http://www.apiman.io" class="bare">http://www.apiman.io</a></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/example/1.png" alt="Apiman homepage">
-</div>
-</div>
-<div class="paragraph">
-<p>Apiman is distributed in multiple forms. We&#8217;ll examine and use each of these forms in this book:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Docker Compose: In this distribution, Apiman is packaged as a series of Docker images pre-configured to make it easy to get started with almost zero effort.</p>
-</li>
-<li>
-<p>Apiman WildFly: In this distribution, Apiman is packaged in a zip file that is installed over a WildFly server.</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="_apiman_docker_compose_distro"><a class="anchor" href="#_apiman_docker_compose_distro"></a>Apiman Docker Compose distro</h3>
 <div class="sidebarblock MaintainerMessage">
 <div class="content">
 <div class="paragraph">
@@ -432,6 +375,67 @@ You will find a list of endpoints, including devportal and a mock mail server.</
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p><strong>If you use this approach, you can skip straight to <a href="how-apiman-works.html" class="xref page">How Apiman Works</a>.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wildfly_bare_metal_distro_prerequisites"><a class="anchor" href="#_wildfly_bare_metal_distro_prerequisites"></a>WildFly Bare Metal distro: prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can run Apiman on any operating system that supports Java 11+.</p>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t need very much in the way of prerequisite software to run Apiman out of the box.</p>
+</div>
+<div class="paragraph">
+<p>What you will need to install to run Apiman and follow all the steps in this chapter are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java: Apiman can run Java version 11 or newer. You will want to install the full Java JDK. You can use either OpenJDK or Oracle&#8217;s JDK.</p>
+</li>
+<li>
+<p>Apache Maven: While you do not need the Maven build tool to run Apiman, we will use it to build an example API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t need very much to run Apiman out of the box.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll also need to install git and Maven installed to be able to build the example API.</p>
+</div>
+<div class="paragraph">
+<p>After you install the prerequisite software, the next thing to do is get a copy of Apiman.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_the_bits_downloading_apiman"><a class="anchor" href="#_getting_the_bits_downloading_apiman"></a>Getting the Bits - Downloading Apiman</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To download Apiman, open a browser and navigate to <a href="http://www.apiman.io" class="bare">http://www.apiman.io</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/1.png" alt="Apiman homepage">
+</div>
+</div>
+<div class="paragraph">
+<p>Apiman is distributed in multiple forms. We&#8217;ll examine and use each of these forms in this book:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Docker Compose: In this distribution, Apiman is packaged as a series of Docker images pre-configured to make it easy to get started with almost zero effort.</p>
+</li>
+<li>
+<p>Apiman WildFly: In this distribution, Apiman is packaged in a zip file that is installed over a WildFly server.</p>
+</li>
+</ul>
 </div>
 <div class="sect2">
 <h3 id="_apiman_wildfly_distribution"><a class="anchor" href="#_apiman_wildfly_distribution"></a>Apiman WildFly distribution</h3>
@@ -790,9 +794,7 @@ Also, the default database used by Apiman to store contract and API information 
 <p>For a production server, you&#8217;d want to reconfigure this to use a production database. We&#8217;ll cover Apiman server security and production configuration settings in later chapters.</p>
 </div>
 <div class="paragraph">
-<p>The Echo API “Quickstart”</p>
-</div>
-<div class="paragraph">
+<div class="title">Echo demonstration API</div>
 <p>The source code for the example service is contained in a git repo (<a href="http://git-scm.com" class="bare">http://git-scm.com</a>) hosted at GitHub (<a href="https://github.com/apiman" class="bare">https://github.com/apiman</a>). To download a copy of the example service, navigate to the directory in which you want to build the service and execute this git command:</p>
 </div>
 <div class="paragraph">
@@ -812,7 +814,7 @@ Resolving deltas: 100% (40/40), done.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The source code for the example API is provided in the wildfly-23.0.2.Final/apiman/quickstarts directory. (In JBoss software, the term “quickstart” refers to an example program.)</p>
+<p>The source code for the example API is provided in the wildfly-23.0.2.Final/apiman/quickstarts directory.</p>
 </div>
 <div class="paragraph">
 <p>The echo-API quickstart includes these files:</p>
@@ -850,10 +852,10 @@ Resolving deltas: 100% (40/40), done.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>As we mentioned earlier,  the example API is very simple. The only action that the API performs is to echo back in responses the meta data in the <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> requests that it receives.</p>
+<p>As we mentioned earlier,  the example API is very simple. The only action that the API performs is to echo back in responses the metadata in the <a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="noopener">REST</a> requests that it receives.</p>
 </div>
 <div class="paragraph">
-<p>Maven is used to build the API. To build the API into a deployable .war file, navigate to the directory into which you downloaded the API example:</p>
+<p>Maven is used to build the API. To build the API into a deployable <code>.war</code> file, navigate to the directory into which you downloaded the API example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1333,7 +1335,7 @@ Loading source files for package io.apiman.quickstarts.echo...
 </div>
 </div>
 <div class="paragraph">
-<p>And there it is. Your gold plan has been exceeded. Maybe next time you&#8217;ll spend a little more and get the platinum plan!  ;-)</p>
+<p>And there it is. Your gold plan has been exceeded. Maybe next time you&#8217;ll spend a little more and get the platinum plan 😅!</p>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s recap what we just accomplished in this demo:</p>
