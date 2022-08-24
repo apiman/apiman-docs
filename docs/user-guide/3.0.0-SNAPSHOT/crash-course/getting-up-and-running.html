@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Up and Running with Apiman :: Apiman Documentation</title>
+    <link rel="prev" href="managing-apiman.html">
+    <link rel="next" href="resources.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56678850-3"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-56678850-3')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3.0.0-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Crash Course</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how-apiman-works.html">How Apiman Works</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="apiman-policies.html">Policies, the Core of API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managing-apiman.html">Section 5 - Managing Apiman</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="getting-up-and-running.html">Getting Up and Running with Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="resources.html">crash-course/resources.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_data_model">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_user_management">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_managing_organizations">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_managing_plans">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_providing_apis">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_consuming_apis">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/concepts.html#_versioning">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/authorization-policy.html">Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/basic-auth-policy.html">Basic Authentication Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/caching-resources-policy.html">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/cors-policy.html">CORS Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/header-allow-deny.html">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/http-security-policy.html">HTTP Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ignored-resources-policy.html">Ignored Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ip-block-and-allow-list.html">IP Block and Allow policies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jsonp-policy.html">JSONP Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jwt-policy.html">JWT Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/keycloak-oauth-policy.html">Keycloak OAuth Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/log-policy.html">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/quota-policy.html">Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/rate-limiting-policy.html">Rate Limiting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/simple-header-policy.html">Simple Header Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/soap-authorization-policy.html">SOAP Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/time-restricted-access-policy.html">Time Restricted Access Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transfer-quota-policy.html">Transfer Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transformation-policy.html">Transformation Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-rewriting-policy.html">URL Rewriting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-whitelist-policy.html">URL Whitelist Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3.0.0-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../core/2.2.3.Final/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../core/main/index.html">nightly</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../core/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../core/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../welcome/2.2.3.Final/index.html">Apiman Welcome</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../welcome/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../welcome/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../installation-guide/2.2.3.Final/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../installation-guide/3.0.0-SNAPSHOT/index.html">3.0.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../2.2.3.Final/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">3.0.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../welcome/2.2.3.Final/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">User Guide</a></li>
+    <li>Apiman Crash Course</li>
+    <li><a href="getting-up-and-running.html">Getting Up and Running with Apiman</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3.0.0-SNAPSHOT</button>
+  <div class="version-menu">
+    <a class="version is-current" href="getting-up-and-running.html">3.0.0-SNAPSHOT</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/crash-course/getting-up-and-running.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Getting Up and Running with Apiman</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this section, we&#8217;ll also take a very hands-on look at Apiman.
+In about 10 minutes, we&#8217;ll get Apiman installed and running, define an API policy, create and publish an API, register an application, and watch Apiman enforce that policy.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by installing the prerequisite software packages that we will need.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisite_software_required"><a class="anchor" href="#_prerequisite_software_required"></a>Prerequisite Software Required</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can run Apiman on any operating system that supports Java 11+.</p>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t need very much in the way of prerequisite software to run Apiman out of the box.</p>
+</div>
+<div class="paragraph">
+<p>What you will need to install to run Apiman and follow all the steps in this chapter are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java: Apiman can run Java version 11 or newer. You will want to install the full Java JDK. You can use either OpenJDK or Oracle&#8217;s JDK.</p>
+</li>
+<li>
+<p>Apache Maven: While you do not need the Maven build tool to run Apiman, we will use it to build an example API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t need very much to run Apiman out of the box.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll also need to install git and Maven installed to be able to build the example API.</p>
+</div>
+<div class="paragraph">
+<p>After you install the prerequisite software, the next thing to do is get a copy of Apiman.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_the_bits_downloading_apiman"><a class="anchor" href="#_getting_the_bits_downloading_apiman"></a>Getting the Bits - Downloading Apiman</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To download Apiman, open a browser and navigate to <a href="http://www.apiman.io" class="bare">http://www.apiman.io</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/1.png" alt="Apiman homepage">
+</div>
+</div>
+<div class="paragraph">
+<p>Apiman is distributed in multiple forms. We&#8217;ll examine and use each of these forms in this book:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Docker Compose: In this distribution, Apiman is packaged as a series of Docker images pre-configured to make it easy to get started with almost zero effort.</p>
+</li>
+<li>
+<p>Apiman WildFly: In this distribution, Apiman is packaged in a zip file that is installed over a WildFly server.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_apiman_docker_compose_distro"><a class="anchor" href="#_apiman_docker_compose_distro"></a>Apiman Docker Compose distro</h3>
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The Apiman Docker Compose distro is new in Apiman 3.
+We need your feedback, support, and suggestions.</p>
+</div>
+<div class="paragraph">
+<p>Please leave your thoughts in <a href="https://github.com/apiman/apiman/discussions/2274" target="_blank" rel="noopener">this GitHub Discussions thread</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The easiest way to try Apiman is with our Docker Compose distribution.
+It is also arranged in a way that is more representative of a real-world deployment; broken down into its constituent parts, with all features enabled, and using a production-grade database.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the {docker-compose-distro}[Apiman Docker Compose distribution^].</p>
+</li>
+<li>
+<p><code>unzip apiman-docker-compose-3.0.0-SNAPSHOT.zip &amp;&amp; cd apiman-docker-compose-3.0.0-SNAPSHOT</code></p>
+</li>
+<li>
+<p><code>docker-compose -f docker-compose.setup.yml up</code></p>
+</li>
+<li>
+<p><code>docker-compose up</code></p>
+</li>
+<li>
+<p>Open <a href="http://apiman.local.gd:8080/apimanui" class="bare">http://apiman.local.gd:8080/apimanui</a></p>
+</li>
+<li>
+<p>🎉 Success!</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Refer to the distro&#8217;s <strong><code>README.adoc</code></strong> for more information, it&#8217;s in the root of the zip.
+You will find a list of endpoints, including devportal and a mock mail server.</p>
+</li>
+<li>
+<p>It may take a short while to boot all services and for the Apiman endpoints to become available, especially if you are using a system with virtualised container support (e.g. Windows).</p>
+</li>
+<li>
+<p>Don&#8217;t forget to look at <code>.env</code> for a variety of useful settings.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_apiman_wildfly_distribution"><a class="anchor" href="#_apiman_wildfly_distribution"></a>Apiman WildFly distribution</h3>
+<div class="paragraph">
+<p>If you navigate to the “downloads” page, you&#8217;ll see:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/2.png" alt="Apiman Getting Started page">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://www.apiman.io/latest/download.html" target="_blank" rel="noopener">Download the WildFly distribution.</a></p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at the contents of the WildFly Overlay.</p>
+</div>
+<div class="paragraph">
+<p>There are three main directories in the WildFly Overlay:</p>
+</div>
+<div class="paragraph">
+<p>The Apiman directory - This directory contains configuration data specific to Apiman such as the DDL (Data Description Language) files that define database schemas used by Apiman, JSON files that define policy and security settings, and a quickstart example program that we will use as an example API.
+The Apiman directory is a new directory that is created when you unzip the WildFly Overlay file.</p>
+</div>
+<div class="paragraph">
+<p>The top level directories in the Apiman directory look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">├── apiman
+│   ├── data
+│   │   ├── all-policyDefs.json
+│   │   └── apiman-realm.json
+│   ├── ddls
+│   │   ├── apiman_mysql8.ddl
+│   │   └── apiman_postgresql9.ddl
+│   ├── quickstarts
+│   │   ├── echo-service
+│   │   ├── LICENSE
+│   │   ├── pom.xml
+│   │   └── README.md</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The modules directory - This directory contains configuration files, including Keycloak (URL) configuration files that are added to the WildFly server for Apiman.
+These files are added to the WildFly “standalone” server configuration.</p>
+</div>
+<div class="paragraph">
+<p>The top levels in this directory look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">├── modules
+│   └── system
+│       └── layers
+└── standalone
+ ├── configuration
+ │   ├── apiman.jks
+ │   ├── apiman.properties
+ │   ├── keycloak-server.json
+ │   ├── providers
+ │   ├── standalone-apiman.xml
+ │   ├── standalone-keycloak.xml
+ │   └── themes
+ ├── data
+ │   ├── h2
+ │   └── keycloak.h2.db</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The deployments directory - this directory contains the Apiman API Gateway, back end APIs, and Apiman Management UI, packaged as <code>.war</code> files.</p>
+</div>
+<div class="paragraph">
+<p>By unzipping the WildFly Overlay file, these <code>.war</code> files are deployed to the WildFly server.</p>
+</div>
+<div class="paragraph">
+<p>The top levels in this directory look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">├── deployments
+     ├── apiman-gateway-api.war
+     ├── apiman-gateway.war
+     ├── apimanui.war
+     └── apiman.war</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make a mental note of these Apiman deployment files.
+We&#8217;ll see them again in a few minutes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installing_apiman_on_a_wildfly_server"><a class="anchor" href="#_installing_apiman_on_a_wildfly_server"></a>Installing Apiman on a WildFly Server</h3>
+<div class="paragraph">
+<p>The steps you follow are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download and unzip the WildFly Server:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip">Download WildFly 23.0.2.Final</a></p>
+</li>
+<li>
+<p>unzip the file into the directory in which you want to run the sever.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Download the Apiman WildFly overlay zip:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip">Download Apiman WildFly overlay</a></p>
+</li>
+<li>
+<p><code>unzip</code> the overlay directly over the WildFly directory.
+This will install Apiman into the WildFly server you created in the previous step.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The commands that you will execute to install the server will look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-3.0.0-SNAPSHOT
+cd ~/apiman-3.0.0-SNAPSHOT
+wget https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip
+wget https://github.com/apiman/apiman/releases/download/3.0.0-SNAPSHOT/apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip
+unzip wildfly-23.0.2.Final
+unzip -o apiman-distro-wildfly-3.0.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Final</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Before we move on, we have one server administration task to perform.
+We have to create a server user, so that we can log onto the server administrative console.
+This is necessary as WildFly does not come pre-installed with any users.</p>
+</div>
+<div class="paragraph">
+<p>To create a new server user, navigate to this directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.0.0-SNAPSHOT/wildfly-23.0.2.Final/bin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And execute this script:<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./add-user.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you are prompted for the type of user to create, select Management User:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">What type of user do you wish to add?
+a) Management User (mgmt-users.properties)
+b) Application User (application-users.properties)
+(a):</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After you define a username and password, for the remainder of the prompts, you can safely take the default values, or select “yes” to complete the creation of a user account.</p>
+</div>
+<div class="paragraph">
+<p>Details on the administration of a WildFly server, including user management, are out of scope for this book as our focus is Apiman.
+If you are interested in learning more about WildFly server administration, refer to the {wf-admin-guide}[WildFly Server Administration Guide^].</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_running_the_wildfly_server"><a class="anchor" href="#_running_the_wildfly_server"></a>Running the WildFly Server</h3>
+<div class="paragraph">
+<p>To start the WildFly server, navigate back to the directory into which you installed the server, execute these commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.0.0-SNAPSHOT/wildfly-23.0.2.Final
+./bin/standalone.sh -c standalone-apiman.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the server starts, it will write logging messages (a lot of messages!) to the screen.</p>
+</div>
+<div class="paragraph">
+<p>When you see some messages that look like this, you&#8217;ll know that the server is up and running with Apiman installed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">"apiman-gateway.war")
+23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+23:28:49,091 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 23.0.2.Final started in 11891ms - Started 1131 of 1543 services (616 services are lazy, passive or on-demand)</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Apiman Manager and Apiman Gateway have a status endpoint at <code>/apiman/system/status</code> which you can query to determine when the platform has fully booted.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_the_installation"><a class="anchor" href="#_testing_the_installation"></a>Testing the Installation</h3>
+<div class="paragraph">
+<p>Congratulations!
+Your WildFly server is up and running with Apiman installed!</p>
+</div>
+<div class="paragraph">
+<p>Or is it?</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a quick look at how we can be sure that the server installation was correct.
+To do this, we&#8217;ll look in two places.</p>
+</div>
+<div class="paragraph">
+<p>First, we&#8217;ll look at the WildFly Server Administrative Console.</p>
+</div>
+<div class="paragraph">
+<p>Remember the user account that we created? We&#8217;ll use it now.
+To access the WildFly Server Administrative Console, open up a browser, and navigate to: <a href="http://localhost:8080" class="bare">http://localhost:8080</a></p>
+</div>
+<div class="paragraph">
+<p>This page will be displayed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/3.png" alt="WildFly welcome page">
+</div>
+</div>
+<div class="paragraph">
+<p>When you select the Administration Console selection, you will be prompted for the username and password:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/4a.png" alt="Prompting for credentials">
+</div>
+</div>
+<div class="paragraph">
+<p>Enter the username and password for the user that you defined (for this example, we used the very unimaginative and insecure username “admin”) and you will be brought to the WildFly Server Administration Console:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/4.png" alt="WildFly administration console">
+</div>
+</div>
+<div class="paragraph">
+<p>If you then select the “Deployments” tab at the top of the page, you&#8217;ll see the applications deployed to the server. This is where you should see the Apiman deployments for the APIs, Gateway, and Management UI:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/5.png" alt="WildFly deployments tab">
+</div>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t see the Apiman deployments, don&#8217;t panic, but something went wrong with the installation.</p>
+</div>
+<div class="paragraph">
+<p>The most common reason for the Apiman deployments to be missing is that you unzipped the Apiman overlay .zip file into a different directory from the WildFly server.
+The overlay must be unzipped over an installed WildFly server.</p>
+</div>
+<div class="paragraph">
+<p>You can confirm that this is what happened by looking in the WildFly server&#8217;s deployment directory here:  <code>wildfly-23.0.2.Final/standalone/deployments</code></p>
+</div>
+<div class="paragraph">
+<p>If you look in this directory, you should see these files (the presence of files with the “.deployed” suffix indicates that the corresponding file was deployed successfully):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">apiman-gateway-api.war
+apiman-gateway-api.war.deployed
+apiman-gateway.war
+apiman-gateway.war.deployed
+apimanui.war
+apimanui.war.deployed
+apiman.war
+apiman.war.deployed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So, if you don&#8217;t see the Apiman deployments, stop the server and start the installation over.</p>
+</div>
+<div class="paragraph">
+<p>Be careful to unzip the Apiman overlay file directly over the directory created when you unzipped the WildFly server .zip file.</p>
+</div>
+<div class="paragraph">
+<p>The second place we&#8217;ll look for evidence that the installation was successful is the WildFly server&#8217;s <code>server.log</code> file.</p>
+</div>
+<div class="paragraph">
+<p>The WildFly server&#8217;s server.log file is created when the server is started.
+All the information that is displayed on the screen when you started the server is also written to the log file.</p>
+</div>
+<div class="paragraph">
+<p>The level of detail written to the console and the log file is configurable.
+<a href="https://docs.wildfly.org/23/Admin_Guide.html#Logging" target="_blank" rel="noopener">You can read more about configuring WildFly logging</a> on the WildFly Administrator&#8217;s Guide.</p>
+</div>
+<div class="paragraph">
+<p>You can find the WildFly server file in: <code>wildfly-23.0.2.Final/standalone/log/server.log</code></p>
+</div>
+<div class="paragraph">
+<p>The WildFly server log file can be quite large as the server will append more logging statements to it over time.</p>
+</div>
+<div class="paragraph">
+<p>While you can certainly read the entire file anytime you want, we&#8217;ll focus on some highlights related to ensuring that the server started cleanly.
+An obvious first step is to search the file for logging statements written at the ERROR level.
+If the file does not contain any errors, you can look for statements that look like this to confirm that the server started cleanly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">23:28:48,978 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 71) WFLYUT0021: Registered web context: /apiman-es
+23:28:49,000 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "apiman-gateway-api.war" (runtime-name : "apiman-gateway-api.war")
+23:28:48,999 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 60) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+23:28:49,000 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "apiman.war" (runtime-name : "apiman.war")
+23:28:49,000 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "apiman-es.war" (runtime-name : "apiman-es.war")
+23:28:49,001 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "apiman-ds.xml" (runtime-name : "apiman-ds.xml")
+23:28:49,001 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "apimanui.war" (runtime-name : "apimanui.war")
+23:28:49,001 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "services.war" (runtime-name : "services.war")
+23:28:49,001 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "authtest-ds.xml" (runtime-name : "authtest-ds.xml")23:28:49,001 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 36) WFLYSRV0010: Deployed "apiman-gateway.war" (runtime-name :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s right, it&#8217;s the same Apiman deployment files.
+If you see statements like these, and there are no ERROR statements, then you should be able to safely access the WildFly Administration console.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s just more point we should cover before moving on.</p>
+</div>
+<div class="paragraph">
+<p>While the server may be up and running, it&#8217;s not really configured for production use.
+As a convenience, when you install Apiman, it is preconfigured with a default administrator account.
+The username for this account is <code>admin</code> and the password is <code>admin123!</code> - not exactly a mission critical level of security!</p>
+</div>
+<div class="paragraph">
+<p>If this were a production server, the first thing that we&#8217;d do is to change the default Apiman admin username and password.
+Apiman is configured by default to use <a href="https://www.keycloak.org" target="_blank" rel="noopener">Keycloak</a> for password security and user management.
+Also, the default database used by Apiman to store contract and API information is the H2 in-memory database.</p>
+</div>
+<div class="paragraph">
+<p>For a production server, you&#8217;d want to reconfigure this to use a production database. We&#8217;ll cover Apiman server security and production configuration settings in later chapters.</p>
+</div>
+<div class="paragraph">
+<p>The Echo API “Quickstart”</p>
+</div>
+<div class="paragraph">
+<p>The source code for the example service is contained in a git repo (<a href="http://git-scm.com" class="bare">http://git-scm.com</a>) hosted at GitHub (<a href="https://github.com/apiman" class="bare">https://github.com/apiman</a>). To download a copy of the example service, navigate to the directory in which you want to build the service and execute this git command:</p>
+</div>
+<div class="paragraph">
+<p>git clone <a href="mailto:git@github.com">git@github.com</a>:apiman/apiman-quickstarts.git</p>
+</div>
+<div class="paragraph">
+<p>As the source code is downloading, you&#8217;ll see output that looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">git clone git@github.com:apiman/apiman-quickstarts.git
+Initialized empty Git repository in apiman-quickstarts/.git/
+remote: Counting objects: 104, done.
+remote: Total 104 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (104/104), 18.16 KiB, done.
+Resolving deltas: 100% (40/40), done.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The source code for the example API is provided in the wildfly-23.0.2.Final/apiman/quickstarts directory. (In JBoss software, the term “quickstart” refers to an example program.)</p>
+</div>
+<div class="paragraph">
+<p>The echo-API quickstart includes these files:</p>
+</div>
+<div class="paragraph">
+<p>And, after the download is complete, you&#8217;ll see a populated directory tree that looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">└── apiman-quickstarts
+	├── echo-service
+	│   ├── pom.xml
+	│   ├── README.md
+	│   └── src
+	│   	└── main
+	│       	├── java
+	│       	│   └── io
+	│       	│   	└── apiman
+	│       	│       	└── quickstarts
+	│       	│           	└── echo
+	│       	│               	├── EchoResponse.java
+	│       	│               	└── EchoServlet.java
+	│       	└── webapp
+	│           	└── WEB-INF
+	│               	├── jboss-web.xml
+	│               	└── web.xml
+	├── LICENSE
+	├── pom.xml
+	├── README.md
+	├── release.sh
+	└── src
+ 	└── main
+     	└── assembly
+         	└── dist.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As we mentioned earlier,  the example API is very simple. The only action that the API performs is to echo back in responses the meta data in the <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> requests that it receives.</p>
+</div>
+<div class="paragraph">
+<p>Maven is used to build the API. To build the API into a deployable .war file, navigate to the directory into which you downloaded the API example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-quickstarts/echo-service</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then execute this maven command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn package</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As the API is being built into a .war file, you&#8217;ll see output that looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building apiman-quickstarts-echo-service 1.2.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ apiman-quickstarts-echo-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory  local/redhat_git/apiman-quickstarts/echo-service/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ apiman-quickstarts-echo-service ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to  local/redhat_git/apiman-quickstarts/echo-service/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ apiman-quickstarts-echo-service ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory  local/redhat_git/apiman-quickstarts/echo-service/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ apiman-quickstarts-echo-service ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ apiman-quickstarts-echo-service ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- maven-war-plugin:2.5:war (default-war) @ apiman-quickstarts-echo-service ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [apiman-quickstarts-echo-service] in [ local/redhat_git/apiman-quickstarts/echo-service/target/apiman-quickstarts-echo-service-1.2.4-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [ local/redhat_git/apiman-quickstarts/echo-service/src/main/webapp]
+[INFO] Webapp assembled in [37 msecs]
+[INFO] Building war:  local/redhat_git/apiman-quickstarts/echo-service/target/apiman-quickstarts-echo-service-1.2.4-SNAPSHOT.war
+[INFO]
+[INFO] --- maven-source-plugin:2.4:jar-no-fork (attach-sources) @ apiman-quickstarts-echo-service ---
+[INFO] Building jar:  local/redhat_git/apiman-quickstarts/echo-service/target/apiman-quickstarts-echo-service-1.2.4-SNAPSHOT-sources.jar
+[INFO]
+[INFO] --- maven-javadoc-plugin:2.10.1:jar (attach-javadocs) @ apiman-quickstarts-echo-service ---
+[INFO]
+Loading source files for package io.apiman.quickstarts.echo...
+[INFO] Building jar:  local/redhat_git/apiman-quickstarts/echo-service/target/apiman-quickstarts-echo-service-1.2.4-SNAPSHOT-javadoc.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.061 s
+[INFO] Finished at: 2016-04-16T22:13:10-04:00
+[INFO] Final Memory: 26M/307M
+[INFO] ------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you look closely, near the end of the output, you&#8217;ll see the location of the .war file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">local/redhat_git/apiman-quickstarts/echo-service/target/apiman-quickstarts-echo-service-1.2.4-SNAPSHOT.war</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To deploy the API, we can copy the .war file to our WildFly server&#8217;s deployments directory. After you copy the API&#8217;s .war file to the deployments directory, you&#8217;ll see output like this generated by the WildFly server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">22:33:59,794 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0001: Content added at location local/redhat_git/apiman/tools/server-all/target/wildfly-{wildfly-version}/standalone/data/content/31/f9a163bd92c51daf54f70d09bff518c2aeef7e/content
+22:33:59,797 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "apiman-quickstarts-echo-service-1.2.4-SNAPSHOT.war" (runtime-name: "apiman-quickstarts-echo-service-1.2.4-SNAPSHOT.war")
+22:33:59,907 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 76) WFLYUT0021: Registered web context: /apiman-echo
+22:33:59,960 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0010: Deployed "apiman-quickstarts-echo-service-1.2.4-SNAPSHOT.war" (runtime-name : "apiman-quickstarts-echo-service-1.2.4-SNAPSHOT.war")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make special note of this line of output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">22:33:59,907 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 76) WFLYUT0021: Registered web context: /apiman-echo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This output indicates that the URL of the deployed example API is:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://localhost:8080/apiman-echo" class="bare">http://localhost:8080/apiman-echo</a></p>
+</div>
+<div class="paragraph">
+<p>Remember, however, that this is the URL of the deployed example API if we access it directly. We&#8217;ll refer to this as the "unmanaged API" as we are able to connect to the API directly, without going through the API Gateway.  The URL to access the API through the API Gateway ("the managed API") at runtime will be different.</p>
+</div>
+<div class="paragraph">
+<p>Now that our example API is installed, it&#8217;s time to install and configure our client to access the server.</p>
+</div>
+<div class="paragraph">
+<p>Accessing the Example API Through a Client</p>
+</div>
+<div class="paragraph">
+<p>There are a lot of options available when it comes to what we can use for a client to access our API. We&#8217;ll keep the client simple so that we can keep our focus on apiman and simply use a browser as the client. If you enter the API&#8217;s URL into a browser, an HTTP GET command will be executed. The response will look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "method" : "GET",
+  "resource" : "/apiman-echo",
+  "uri" : "/apiman-echo",
+  "headers" : {
+    "Cookie" : "s_fid=722D028B20E49214-13EAE1456E752098; __utma=111872281.807845787.1452188093.1460777731.1460777731.4; __utmz=111872281.1452188093.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _ga=GA1.1.807845787.1452188093; __qca=P0-404983419-1452188093717; __utmc=111872281",
+    "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Connection" : "keep-alive",
+    "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0",
+    "Host" : "localhost:8080",
+    "Accept-Language" : "en-US,en;q=0.5",
+    "Accept-Encoding" : "gzip, deflate",
+    "DNT" : "1"
+  },
+  "bodyLength" : null,
+  "bodySha1" : null
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now that our example API is built, deployed and running, it&#8217;s time to create the organizations for the API provider and the API consumer. The differences between the requirements of the two organizations will be evident in their Apiman configuration properties.</p>
+</div>
+<div class="paragraph">
+<p>OK, the preliminaries are over! Now, it&#8217;s time to go into the Apiman Management UI and create the Apiman data elements for our demonstration.</p>
+</div>
+<div class="paragraph">
+<p>Creating Users for the API Provider and Consumer Organizations</p>
+</div>
+<div class="paragraph">
+<p>Before we create the organizations, we have to create a user for each organization. We&#8217;ll start by creating the API provider user. To do this, logout from the admin account in the API Manager UI. The login dialog will then be displayed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/6.png" alt="Apiman realm login">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the "New user/Register" Option and register the API provider user:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/7.png" alt="Apiman user registration for new API provider">
+</div>
+</div>
+<div class="paragraph">
+<p>Then, logout and repeat the process to register a new application developer user too:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/8.png" alt="Apiman user registration for new app developer">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that the new users are registered we can create the organizations.</p>
+</div>
+<div class="paragraph">
+<p>Creating the API Provider Organization</p>
+</div>
+<div class="paragraph">
+<p>To create the API provider organization, log back into the API Manager UI as the apiprov user and select “Create a new Organization”:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/8a.png" alt="Create new organization">
+</div>
+</div>
+<div class="paragraph">
+<p>Select a name and description for the organization, and press “Create Organization”:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/9.png" alt="Enter new organization details">
+</div>
+</div>
+<div class="paragraph">
+<p>And, here&#8217;s our organization:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/10.png" alt="The new organization">
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in a production environment, users would request membership in an organization. The approval process for accepting new members into an organization would follow the organization&#8217;s workflow, but this would be handled outside of the API Manager API. For the purposes of our demonstration, we&#8217;ll keep things simple.</p>
+</div>
+<div class="paragraph">
+<p>Configuring the API, its Policies, and Plans</p>
+</div>
+<div class="paragraph">
+<p>To configure the API, we&#8217;ll first create a plan to contain the policies that we want applied by the API Gateway at runtime when requests to the API are made. To create a new plan, select the “Plans” tab. We&#8217;ll create a “gold” plan:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/11.png" alt="Add a new plan">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the plan is created, we will add policies to it:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/12.png" alt="Add a policy">
+</div>
+</div>
+<div class="paragraph">
+<p>Apiman provides several OOTB policies/plans. Since we want to be able to demonstrate a policy being applied, we&#8217;ll select a Rate Limiting Policy, and set its limit to a very low level. If our API receives more than 10 requests in a day/month, the policy should block all subsequent requests. So much for a “gold” level of API!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/13.png" alt="Add and configure rate limiting">
+</div>
+</div>
+<div class="paragraph">
+<p>After we create the policy and add it to the plan, we have to lock the plan:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/14.png" alt="Lock the plan">
+</div>
+</div>
+<div class="paragraph">
+<p>And, here is the finished, and locked plan:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/15.png" alt="Plan status is &quot;locked&quot;">
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, additional plans can be defined for the API. We&#8217;ll also create a “silver” plan, that will offer a lower level of API (i.e., a request rate limit lower than 10 per day/month) than the gold plan. Since the process to create this silver plan is identical to that of the gold plan, we&#8217;ll skip the screenshots.</p>
+</div>
+<div class="paragraph">
+<p>Now that the two plans are complete and locked, it&#8217;s time to define the API.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/16.png" alt="APIs tab">
+</div>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll give the API an appropriate name, so that providers and consumers alike will be able to run a query in the API Manager to find it.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/17.png" alt="Add an API">
+</div>
+</div>
+<div class="paragraph">
+<p>After the API is defined, we have to define its implementation. In the context of the API Manager, the API Endpoint is the API&#8217;s direct URL. Remember that the API Gateway will act as a proxy for the API, so it must know the API&#8217;s actual URL. In the case of our example API, the URL is:  <a href="http://localhost:8080/apiman-echo" class="bare">http://localhost:8080/apiman-echo</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/18.png" alt="Add implementation information">
+</div>
+</div>
+<div class="paragraph">
+<p>The plans tab shows which plans are available to be applied to the API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/19.png" alt="Make API available via available plans">
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s make our API more secure by adding an authentication policy that will require users to login before they can access the API. Select the Policies tab, and then define a simple authentication policy. Remember the user name and password that you define here as we&#8217;ll need them later on when send requests to the API.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/20.png" alt="Add and configure a BASIC auth policy">
+</div>
+</div>
+<div class="paragraph">
+<p>After the authentication policy is added, we can publish the API to the API Gateway:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/21.png" alt="Added the policy">
+</div>
+</div>
+<div class="paragraph">
+<p>And, here it is, the published API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/22.png" alt="Publish the API" width="API status is 'Published'">
+</div>
+</div>
+<div class="paragraph">
+<p>OK, that finishes the definition of the API provider organization and the publication of the API.</p>
+</div>
+<div class="paragraph">
+<p>Next, we&#8217;ll switch over to the API consumer side and create the API consumer organization and register an application to connect to the managed API through the proxy of the API Gateway.</p>
+</div>
+<div class="paragraph">
+<p>The API Consumer Organization</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll repeat the process that we used to create the application development organization. Log in to the API Manager UI as the “appdev” user and create the organization:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/23.png" alt="Creating a new organization" width="AJAX API Consumers">
+</div>
+</div>
+<div class="paragraph">
+<p>Unlike the process we used when we created the elements used by the API provider, the first step that we&#8217;ll take is to create a new application and then search for the API to be used by the application:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/24.png" alt="Add a new client app">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/26.png" alt="Search for APIs to consume">
+</div>
+</div>
+<div class="paragraph">
+<p>Searching for the API is easy, as we were careful to set the API name to something memorable:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/27.png" alt="Searching for 'echo'">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/28.png" alt="Found ACME APIs' echo: 'The echo API'">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the API name, and then specify the plan to be used. We&#8217;ll splurge and use the gold plan:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/29.png" alt="Viewing the available contracts">
+</div>
+</div>
+<div class="paragraph">
+<p>Next, select “create contract” for the plan (for this example, we&#8217;ll just accept all the defaults):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/30.png" alt="Creating a new contract">
+</div>
+</div>
+<div class="paragraph">
+<p>The last step is to register the application with the API Gateway so that the gateway can act as a proxy for the API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/31.png" alt="API Contracts page on the client app">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/32.png" alt="Registered the client app" width="status is 'Registered'">
+</div>
+</div>
+<div class="paragraph">
+<p>Congratulations! All the steps necessary to both provide and consume the configure the API are complete!</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s just one more step that we have to take in order for clients to be able access the API through the API Gateway.</p>
+</div>
+<div class="paragraph">
+<p>Remember the URL that we used to access the unmanaged API directly? Well, forget it. In order to access the managed API through the API Gateway acting as a proxy for other API we have to obtain the managed API&#8217;s URL. In the API Manager UI, header over to the “APIs” tab for the application, select the API and then click select on the “i” character to the right of the API name. This will expose the API Key and the API&#8217;s HTTP endpoint in the API Gateway:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/33.png" alt="APIs tab in client app">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/34.png" alt="Copy API endpoint info">
+</div>
+</div>
+<div class="paragraph">
+<p>In order to be able to access the API through the API Gateway, we have to provide the API Key with each request.  combine the API Key and HTTP endpoint. The API Key can be provided either through an HTTP Header (X-API-Key) or a URL query parameter.</p>
+</div>
+<div class="paragraph">
+<p>In our example, the API request looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">https://localhost:8443/apiman-gateway/ACMEAPIs/echo/1.0?apikey=ed4564c1-2715-45f6-881e-ca8bc1168d17</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Copy the URL into the clipboard.</p>
+</div>
+<div class="paragraph">
+<p>Accessing the Managed API Through the Apiman API Gateway, Watching the Policies at Runtime</p>
+</div>
+<div class="paragraph">
+<p>Thanks for hanging in there! The set up is done. Now, we can fire up the client and watch the policies in action as they are applied at runtime by the API Gateway.</p>
+</div>
+<div class="paragraph">
+<p>Open a new browser window or tab, and enter the URL for the managed API.</p>
+</div>
+<div class="paragraph">
+<p>What happens first is that the authentication policy is applied and a login dialog is then displayed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/example/35.png" alt="Auth popup prompt">
+</div>
+</div>
+<div class="paragraph">
+<p>Enter the username and password (user1/password) that we defined when we created the authentication policy to access the API. The fact that you are seeing this dialog confirms that you are accessing the managed API and are not accessing the API directly.</p>
+</div>
+<div class="paragraph">
+<p>When you send a GET request to the API, you should see a successful response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+ "method" : "GET",
+ "resource" : "/apiman-echo",
+ "uri" : "/apiman-echo",
+ "headers" : {
+	"Cookie" : "s_fid=722D028B20E49214-13EAE1456E752098; __utma=111872281.807845787.1452188093.1460777731.1460777731.4; __utmz=111872281.1452188093.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _ga=GA1.1.807845787.1452188093; __qca=P0-404983419-1452188093717; __utmc=111872281",
+	"Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+	"User-Agent" : "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0",
+	"Connection" : "keep-alive",
+	"X-Identity" : "user1",
+	"Host" : "localhost:8080",
+	"Accept-Language" : "en-US,en;q=0.5",
+	"Accept-Encoding" : "gzip, deflate",
+	"DNT" : "1"
+ },
+ "bodyLength" : null,
+ "bodySha1" : null
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So far so good. Now, send 10 more requests and you will see a response that looks like this as the gold plan rate limit is exceeded:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "type" : "Other",
+   "headers" : {
+      "empty" : false,
+      "entries" : [
+         {
+            "X-RateLimit-Remaining" : "-1"
+         },
+         {
+            "X-RateLimit-Reset" : "50904"
+         },
+         {
+            "X-RateLimit-Limit" : "10"
+         }
+      ]
+   },
+   "failureCode" : 10005,
+   "message" : "Rate limit exceeded.",
+   "responseCode" : 429
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And there it is. Your gold plan has been exceeded. Maybe next time you&#8217;ll spend a little more and get the platinum plan!  ;-)</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s recap what we just accomplished in this demo:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We installed Apiman onto a WildFly server instance.</p>
+</li>
+<li>
+<p>We used git to download and maven to build a sample REST client.</p>
+</li>
+<li>
+<p>As an API provider, we created an organization, defined policies based on API use limit rates and user authentication, and a plan, and assigned them to an API.</p>
+</li>
+<li>
+<p>As an API consumer, we searched for and found that API, and assigned it to an application.</p>
+</li>
+<li>
+<p>As a client, we accessed the API and observed how the API Gateway managed the API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And, if you note, in the process of doing all this, the only code that we had to write or build was for the client. We were able to fully configure the API, policies, plans, and the application in the API Manager UI.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="managing-apiman.html">Section 5 - Managing Apiman</a></span>
+  <span class="next"><a href="resources.html">crash-course/resources.adoc</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
