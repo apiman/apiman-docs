@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>System Administration :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/2.2.3.Final/manager/administration.html">
-    <link rel="prev" href="versioning.html">
-    <link rel="next" href="../gateway/concepts.html">
+    <title>Providing APIs :: Apiman Documentation</title>
+    <link rel="prev" href="managing-plans.html">
+    <link rel="next" href="consuming-apis.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -108,7 +107,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="managing-plans.html">Managing Plans</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="providing-apis.html">Providing APIs</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -119,7 +118,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="administration.html">Administration</a>
   </li>
 </ul>
@@ -282,205 +281,329 @@
   <ul>
     <li><a href="../index.html">User Guide</a></li>
     <li>Apiman Manager</li>
-    <li><a href="administration.html">Administration</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="providing-apis.html">Providing APIs</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3.0.0-SNAPSHOT</button>
   <div class="version-menu">
-    <a class="version is-current" href="administration.html">3.0.0-SNAPSHOT</a>
-    <a class="version" href="../../2.2.3.Final/manager/administration.html">2.2.3.Final</a>
-    <a class="version" href="../../1.5.7.Final/manager/administration.html">1.5.7.Final</a>
+    <a class="version is-current" href="providing-apis.html">3.0.0-SNAPSHOT</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/manager/administration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/manager/providing-apis.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">System Administration</h1>
+<h1 class="page">Providing APIs</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are several "global" settings that must be configured/managed by an Apiman administrator.
-These global settings are managed by navigating to the <strong>System Administration</strong> section of the API Manager UI.</p>
+<p>A core capability of API management is for end users to create, manage, and configure APIs they wish to provide.</p>
+</div>
+<div class="paragraph">
+<p>This section explains the steps necessary for users to provide those APIs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_roles"><a class="anchor" href="#_roles"></a>Roles</h2>
+<h2 id="_creating_an_api"><a class="anchor" href="#_creating_an_api"></a>Creating an API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Users must become a member of an organization before being allowed to manage any of the plans, APIs, or client apps contained within it.
-When a user is made a member of an organization, they are granted a specific role within that organization.
-Typical examples of roles are <strong>Organization Owner</strong>, <strong>API Provider</strong>, and <strong>Client App Developer</strong>.
-These roles each grant different specific privileges to the user.
-For example, a user with the <strong>Client App Developer</strong> role will be able to manage the organization&#8217;s client apps but not its APIs or plans.</p>
+<p>First the user must create an API within an organization.
+If an organization does not yet exist one can easily be created.
+See the 'Managing Organizations' section for details.</p>
 </div>
 <div class="paragraph">
-<p>The roles that are available when adding a member to an organization are managed in the <strong>Roles</strong> section of the <strong>System Administration</strong> UI.
-The Apiman admin can create as many roles as she wishes, giving each one a name, description, and the set of permissions it grants.
-Additionally, certain roles may be automatically granted to users who create new organizations.
-At least one such role must be present, otherwise organizations cannot be created.</p>
+<p>From the organization details page, navigate to the 'APIs' tab and click on the 'New API' button.</p>
+</div>
+<div class="paragraph">
+<p>You will be asked to provide an API name, version number, and description.</p>
+</div>
+<div class="paragraph">
+<p>If successfully created, you will be taken to the API details page.
+From here you can configure the details of the API.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_policy_definitions"><a class="anchor" href="#_policy_definitions"></a>Policy Definitions</h2>
+<h2 id="_api_implementation"><a class="anchor" href="#_api_implementation"></a>API Implementation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The policies available when configuring APIs, Plans, and Client Apps are controlled by the <strong>Policy Definitions</strong> known to Apiman.
-These definitions are stored in the API Manager and are added by the Apiman admin.
-Typically, these are added once and rarely changed.
-But as new versions of Apiman are released, additional policies will be made available.
-For each policy, a policy definition must be configured in the <strong>System Administration</strong> UI.</p>
+<p>Every API must be configured with an API implementation.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, it is possible for a plugin, when installed, to contribute one or more policy definitions to the list.
-This is a very common way for new policy definitions to be added to Apiman.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gateways"><a class="anchor" href="#_gateways"></a>Gateways</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Apiman allows multiple logical Gateways to be configured.
-The Gateway is the server that actually applies the policies configured in the API Manager to live requests to managed APIs.
-When using Apiman, at least one Gateway must be running and configured in the API Manager.
-However, there is no limit to the total number of Gateways that may be running.
-The typical reason to have multiple Gateways is when some APIs are very high volume and others are not.
-In this case, the high volume APIs could be published to a Gateway that can handle such load, while the low volume APIs could be published to
-another (perhaps cheaper) Gateway.</p>
+<p>The implementation indicates the external API that the API Gateway will proxy to if all the policies are successfully applied.</p>
 </div>
 <div class="paragraph">
-<p>Another reason you may want multiple Gateways if you need some of your APIs to be provided in a particular physical region and others in a different one.
-In this case, you may have a Gateway (perhaps clustered) running in a US data center, while another Gateway (different cluster) is running separately in a data center in Europe.</p>
+<p>Click the 'Implementation' tab to configure the API endpoint and API type details on your API.</p>
 </div>
 <div class="paragraph">
-<p>In all cases, the Apiman admin must configure these Gateways in the <strong>System Administration</strong> UI.
-Each Gateway has a name, description, and configuration endpoint.
-The configuration endpoint is what the API Manager will use when publishing APIs and client apps into the Gateway.</p>
+<p>The 'Implementation' tab is primarily used to configure the details of the back-end API that Apiman will proxy to at runtime.</p>
 </div>
 <div class="paragraph">
-<p>When configuring an API Gateway you will need to include the authentication credentials required to invoke the API Gateway configuration REST API.  Typically this user must have the <code>apipublisher</code> role in order to successfully talk to the API Gateway.
-The Gateway UI includes a <strong>Test Gateway</strong> button which will attempt to contact the Gateway API with the credentials included.
-If successful, the test button will turn green.
-If unsuccessful, details about the failure will be displayed and the test button will turn red.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_plugins"><a class="anchor" href="#_plugins"></a>Plugins</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Apiman supports contributing additional functionality via a powerful plugin mechanism.
-Plugins can be managed by an administrator within the API Manager UI.
-The plugin management administration page allows an admin to install and uninstall plugins.</p>
-</div>
-<div class="sect2">
-<h3 id="_adding_plugins"><a class="anchor" href="#_adding_plugins"></a>Adding Plugins</h3>
-<div class="paragraph">
-<p>The Plugin admin page has two tabs - one shows the list of plugins currently installed, and the other shows a list of "Available Plugins".
-The list of available plugins comes from a plugin registry that is configured when Apiman is installed (see the Installation Guide for details on how to configure a custom plugin registry).
-By default, the "official" Apiman plugins will show up in the list.</p>
-</div>
-<div class="paragraph">
-<p>A custom plugin is typically added by clicking on the 'Add Custom Plugin' button found on the "Available Plugins" tab.
-This allows you to install a plugin that is not found in the configured plugin registry.
-When installing a custom plugin, you must provide the "coordinates" of the plugin.
-All plugins are actually maven artifacts, and as such their coordinates consist of the following maven properties:</p>
+<p>You must configure the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Group ID</p>
+<p><strong>Endpoint URL</strong> - The URL that Apiman will use to proxy a request made for this API.</p>
 </li>
 <li>
-<p>Artifact ID</p>
+<p><strong>Endpoint Type</strong> - Currently either REST or SOAP (not presently used, future information)</p>
 </li>
 <li>
-<p>Version</p>
-</li>
-<li>
-<p>Classifier (optional)</p>
-</li>
-<li>
-<p>Type (optional, defaults to 'war')</p>
+<p><strong>Endpoint Content Type</strong> - Choose between JSON and XML, information primarily used to respond with a policy failure or error in the appropriate format.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>When installing a plugin from the plugin registry, simply locate it in the list shown on the "Available Plugins" tab and then click the "Install" action.
-This will again take you to the Add Plugin page, but with all the appropriate information already filled in.
-At this point you should only need to click the "Add Plugin" button.</p>
+<p>Additionally, the 'Implementation' tab allows you to configure any security options that might be required when proxying requests to the back-end API.</p>
 </div>
 <div class="paragraph">
-<p>Plugins primarily are used to contribute custom policies to Apiman.
-These policies are automatically discovered (if they exist in the plugin) when a plugin is added to the API Manager.
-Policies that have been contributed via a plugin will appear in the Policy Definitions admin page along with the built-in policies.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_uninstalling_plugins"><a class="anchor" href="#_uninstalling_plugins"></a>Uninstalling Plugins</h3>
-<div class="paragraph">
-<p>At any time you may choose to uninstall a plugin.
-Note that if the plugin was contributing one or more policies to Apiman, then the policy will no longer be available for use when configuring your Plans, APIs, and Client Apps.
-However, if the policy is already in use by one of these entities, it will continue to work.
-In other words, uninstalling a plugin only removes the policy for use by new entities, it does <strong>not</strong> break existing usages.</p>
+<p>For example, if you are using mutual TLS (mTLS) to ensure full security between the API Gateway and your back-end API, you may configure that here.</p>
 </div>
 <div class="paragraph">
-<p>To uninstall a plugin, simply click the "Uninstall" action for the appropriate plugin on the "Installed Plugins" tab (it is likely represented as a button with a little X).
-After confirming the action, the plugin should disappear from the list.</p>
+<p>We also support simple BASIC authentication between the gateway and your back end API.
+BASIC authentication is not preferred, and is especially insecure if not used with SSL/HTTPS.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_upgrading_plugins"><a class="anchor" href="#_upgrading_plugins"></a>Upgrading Plugins</h3>
 <div class="paragraph">
-<p>If Apiman determines that a plugin can be upgraded, then an "Upgrade Plugin" action button will show up for the plugin in the "Installed Plugins" tab.
-This action will be represented as an up arrow icon button.
-When clicked, you will be prompted for the version of the plugin you wish to upgrade <strong>to</strong>.
-The result will be that a new version of the plugin will be downloaded and installed, replacing the older version you had before.
-Note that any Plans, APIs, or Client Apps that were using the old version of the plugin&#8217;s policies will <strong>continue</strong> to use the older version.
-However, any new policies from the plugin added to entities will use the new version.
-In order to upgrade an existing entity to a newer policy, you will need to remove the old policy from that entity and re-add it.
-We recommend that you only do this if there is a compelling reason (e.g. a bug is fixed or a new feature added).</p>
+<p>If the Apiman administrator has configured multiple Gateways (see the "System Administration / Gateways" section below), then the 'Implementation' tab will also include an option that will let you choose which Gateway(s) to use when publishing.</p>
 </div>
+<div class="paragraph">
+<p>You may select one or more Gateway in this case.</p>
+</div>
+<div class="paragraph">
+<p>If you choose multiple Gateways, then when you click the 'Publish' button, Apiman will publish the API to <strong>all</strong> the selected Gateways.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If a single Gateway has been configured, then you don&#8217;t have a choice, and so the UI
+will hide the Gateway selector entirely and simply pick the default Gateway for you.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Do not forget to click the <strong>Save</strong> button when you are done making changes.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exportimport_data"><a class="anchor" href="#_exportimport_data"></a>Export/Import Data</h2>
+<h2 id="_api_definition"><a class="anchor" href="#_api_definition"></a>API Definition</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman has a feature that allows an admin user to Export and/or Import data.  You can access this feature by clicking the "Export/Import Data" link on the API Manager Dashboard page (admin only).
-This feature is useful for the following use-cases:</p>
+<p>As a provider of an API, it is best to include as much information about the API as possible, so that consumers can not only create contracts, but also learn how to make API calls.</p>
+</div>
+<div class="paragraph">
+<p>For this purpose, you can optionally include an API Definition document by adding it to your API on the Definition tab.</p>
+</div>
+<div class="paragraph">
+<p>Currently supported are OpenAPI and Swagger (versions 2 and 3).</p>
+</div>
+<div class="paragraph">
+<p>Include an OpenAPI or Swagger document here so that consumers of your API can browse information about your API directly in the API Manager UI.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_available_plans"><a class="anchor" href="#_available_plans"></a>Available Plans</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before an API can be consumed by a client app, it must make itself available through at least one of the organization&#8217;s plans, or it must be marked as <strong>Public</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Marking an API as public or making an API available through one or more plan can be done by navigating to the 'Plans' tab on the API details page.</p>
+</div>
+<div class="paragraph">
+<p>The 'Plans' tab will list all the available plans defined by the organization.
+Simply choose one or more plan from this list.</p>
+</div>
+<div class="paragraph">
+<p>If no plans are needed, you can instead mark the API as "Public", making it available to be consumed anonymously by any client.</p>
+</div>
+<div class="paragraph">
+<p>Although an API can be <strong>both</strong> Public and available through one or more plan, it is unusual to do so.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+After making any changes make sure to click the Save button.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_managing_policies"><a class="anchor" href="#_managing_policies"></a>Managing Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>API policies can be added and configured by navigating to the 'Policies' tab on the API details page.</p>
+</div>
+<div class="paragraph">
+<p>The 'Policies' tab presents a list of all the policies configured for this API.
+To add another policy to the API click the 'Add Policy' button.
+On the resulting page choose the type of policy you wish to create and then configure the details for that policy.
+Once you have configured the details click the 'Add Policy' button to add the policy to the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_publishing_in_the_gateway"><a class="anchor" href="#_publishing_in_the_gateway"></a>Publishing in the Gateway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After all the configuration is complete for an API, it is time to publish the API to the runtime gateway.
+This can be done from any tab on the API details page by clicking  the <strong>Publish</strong> button in
+the top section of the UI.
+If successful, the status of the API will change to "Published" and the Publish button will disappear.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the API cannot yet be published (the 'Publish' button is disabled) then a notification will appear near the button and will read "<strong>Why Can&#8217;t I publish?</strong>"</p>
+</div>
+<div class="paragraph">
+<p>Clicking this notification will provide details about what information is still required before the API can be published to the Gateway.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the API has been published, it may or may not be editable depending on whether it is a "Public" API or not.</p>
+</div>
+<div class="paragraph">
+<p>For "Public" APIs, you will be able to continue making changes.
+After at least one change is made, you will have the option to "Re-Publish" the API to the Gateway.
+Doing so will update all information about the API in the Gateway.</p>
+</div>
+<div class="paragraph">
+<p>However, if the API is <strong>not</strong> Public, then the API will be immutable - therefore in order to make any changes you will need to create a new version of the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_metrics"><a class="anchor" href="#_api_metrics"></a>API Metrics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once an API is published and is being consumed at runtime, metrics information about that usage is recorded in a metrics storage system.
+See the Metrics section of the API Gateway documentation for more about how and when metrics data is recorded.</p>
+</div>
+<div class="paragraph">
+<p>If an API has been used by at least once, then it will have metrics information available.</p>
+</div>
+<div class="paragraph">
+<p>This information can be viewed in the 'Metrics' tab on the API&#8217;s details page.</p>
+</div>
+<div class="paragraph">
+<p>On this page you can choose the type of metric you wish to see (e.g. Usage metrics and Response Type metrics) as well as a pre-defined time range (e.g. Last 30 Days, Last Week, etc&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>The API Metrics page is a great way to figure out how often your API is used, and in what
+ways.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_importing_apis"><a class="anchor" href="#_importing_apis"></a>Importing API(s)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As an alternative to manually creating and configuring an API, Apiman also supports importing an API from a globally configured API Catalog.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The API Catalog is configured by the Apiman system administrator/installer.</p>
+</div>
+<div class="paragraph">
+<p>See the installation guide for more information about how to configure a custom API Catalog.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>An API can be imported into Apiman in one of two ways.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Backing up data</p>
+<p>First, from the Organization&#8217;s "APIs" tab you can click the down-arrow next to the "New API" button and choose the "Import API(s)" option.</p>
 </li>
 <li>
-<p>Migrating data between environments (e.g. Test&#8594;Production)</p>
+<p>This results in a wizard that will guide you through importing one or more API from the catalog into the Organization.</p>
 </li>
 <li>
-<p>Upgrading between Apiman versions</p>
+<p>This wizard will allow you to search for, find, and select multiple APIs.</p>
+</li>
+<li>
+<p>It will then walk you through choosing your Plans or making the APIs "Public".</p>
+</li>
+<li>
+<p>Once all the wizard pages are completed, you can then import the API(s).</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The Import API(s) wizard above is the only way to import multiple APIs at the same time.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>From the Export/Import UI page, simply click the "Export All" button if you wish to export all the data in the API Manager.
-The result will be a downloaded JSON file containing all of your Apiman data.  This file can then be optionally post-processed (perhaps you want to migrate only a single Organization from your Test environment to your Prod environment).
-At some later time, you can import this file (typically into a different installation of Apiman) by selecting it and choosing "Upload File".</p>
+<p>Another option for importing an API from the catalog is to use the API Catalog Browser UI.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This can be found by clicking the "Browse available/importable APIs" link on the API Manager Dashboard.</p>
+</li>
+<li>
+<p>This link will open the catalog browser, allowing you to search for APIs to
+import.</p>
+</li>
+<li>
+<p>The catalog browser is a friendlier interface, but only allows you to import a
+single API at a time.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="versioning.html">Versioning</a></span>
-  <span class="next"><a href="../gateway/concepts.html">Concepts</a></span>
+  <span class="prev"><a href="managing-plans.html">Managing Plans</a></span>
+  <span class="next"><a href="consuming-apis.html">Consuming APIs</a></span>
 </nav>
 </article>
   </div>

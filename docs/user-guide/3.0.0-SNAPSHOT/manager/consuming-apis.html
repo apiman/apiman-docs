@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>System Administration :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/2.2.3.Final/manager/administration.html">
-    <link rel="prev" href="versioning.html">
-    <link rel="next" href="../gateway/concepts.html">
+    <title>Consuming APIs :: Apiman Documentation</title>
+    <link rel="prev" href="providing-apis.html">
+    <link rel="next" href="versioning.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -111,7 +110,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="providing-apis.html">Providing APIs</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="consuming-apis.html">Consuming APIs</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -119,7 +118,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="administration.html">Administration</a>
   </li>
 </ul>
@@ -282,205 +281,308 @@
   <ul>
     <li><a href="../index.html">User Guide</a></li>
     <li>Apiman Manager</li>
-    <li><a href="administration.html">Administration</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="consuming-apis.html">Consuming APIs</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3.0.0-SNAPSHOT</button>
   <div class="version-menu">
-    <a class="version is-current" href="administration.html">3.0.0-SNAPSHOT</a>
-    <a class="version" href="../../2.2.3.Final/manager/administration.html">2.2.3.Final</a>
-    <a class="version" href="../../1.5.7.Final/manager/administration.html">1.5.7.Final</a>
+    <a class="version is-current" href="consuming-apis.html">3.0.0-SNAPSHOT</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/manager/administration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/manager/consuming-apis.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">System Administration</h1>
+<h1 class="page">Consuming APIs</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are several "global" settings that must be configured/managed by an Apiman administrator.
-These global settings are managed by navigating to the <strong>System Administration</strong> section of the API Manager UI.</p>
+<p>After the API providers have added a number of APIs to the API management system, those APIs can be consumed by Client Apps.</p>
+</div>
+<div class="paragraph">
+<p>This section explains how to consume APIs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_roles"><a class="anchor" href="#_roles"></a>Roles</h2>
+<h2 id="_consuming_public_apis"><a class="anchor" href="#_consuming_public_apis"></a>Consuming Public APIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Users must become a member of an organization before being allowed to manage any of the plans, APIs, or client apps contained within it.
-When a user is made a member of an organization, they are granted a specific role within that organization.
-Typical examples of roles are <strong>Organization Owner</strong>, <strong>API Provider</strong>, and <strong>Client App Developer</strong>.
-These roles each grant different specific privileges to the user.
-For example, a user with the <strong>Client App Developer</strong> role will be able to manage the organization&#8217;s client apps but not its APIs or plans.</p>
+<p>If you have marked an API as "Public", then consuming it is a simple matter of sending a request to the appropriate API Gateway endpoint.</p>
 </div>
 <div class="paragraph">
-<p>The roles that are available when adding a member to an organization are managed in the <strong>Roles</strong> section of the <strong>System Administration</strong> UI.
-The Apiman admin can create as many roles as she wishes, giving each one a name, description, and the set of permissions it grants.
-Additionally, certain roles may be automatically granted to users who create new organizations.
-At least one such role must be present, otherwise organizations cannot be created.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_policy_definitions"><a class="anchor" href="#_policy_definitions"></a>Policy Definitions</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The policies available when configuring APIs, Plans, and Client Apps are controlled by the <strong>Policy Definitions</strong> known to Apiman.
-These definitions are stored in the API Manager and are added by the Apiman admin.
-Typically, these are added once and rarely changed.
-But as new versions of Apiman are released, additional policies will be made available.
-For each policy, a policy definition must be configured in the <strong>System Administration</strong> UI.</p>
-</div>
-<div class="paragraph">
-<p>Additionally, it is possible for a plugin, when installed, to contribute one or more policy definitions to the list.
-This is a very common way for new policy definitions to be added to Apiman.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gateways"><a class="anchor" href="#_gateways"></a>Gateways</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Apiman allows multiple logical Gateways to be configured.
-The Gateway is the server that actually applies the policies configured in the API Manager to live requests to managed APIs.
-When using Apiman, at least one Gateway must be running and configured in the API Manager.
-However, there is no limit to the total number of Gateways that may be running.
-The typical reason to have multiple Gateways is when some APIs are very high volume and others are not.
-In this case, the high volume APIs could be published to a Gateway that can handle such load, while the low volume APIs could be published to
-another (perhaps cheaper) Gateway.</p>
-</div>
-<div class="paragraph">
-<p>Another reason you may want multiple Gateways if you need some of your APIs to be provided in a particular physical region and others in a different one.
-In this case, you may have a Gateway (perhaps clustered) running in a US data center, while another Gateway (different cluster) is running separately in a data center in Europe.</p>
-</div>
-<div class="paragraph">
-<p>In all cases, the Apiman admin must configure these Gateways in the <strong>System Administration</strong> UI.
-Each Gateway has a name, description, and configuration endpoint.
-The configuration endpoint is what the API Manager will use when publishing APIs and client apps into the Gateway.</p>
-</div>
-<div class="paragraph">
-<p>When configuring an API Gateway you will need to include the authentication credentials required to invoke the API Gateway configuration REST API.  Typically this user must have the <code>apipublisher</code> role in order to successfully talk to the API Gateway.
-The Gateway UI includes a <strong>Test Gateway</strong> button which will attempt to contact the Gateway API with the credentials included.
-If successful, the test button will turn green.
-If unsuccessful, details about the failure will be displayed and the test button will turn red.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_plugins"><a class="anchor" href="#_plugins"></a>Plugins</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Apiman supports contributing additional functionality via a powerful plugin mechanism.
-Plugins can be managed by an administrator within the API Manager UI.
-The plugin management administration page allows an admin to install and uninstall plugins.</p>
-</div>
-<div class="sect2">
-<h3 id="_adding_plugins"><a class="anchor" href="#_adding_plugins"></a>Adding Plugins</h3>
-<div class="paragraph">
-<p>The Plugin admin page has two tabs - one shows the list of plugins currently installed, and the other shows a list of "Available Plugins".
-The list of available plugins comes from a plugin registry that is configured when Apiman is installed (see the Installation Guide for details on how to configure a custom plugin registry).
-By default, the "official" Apiman plugins will show up in the list.</p>
-</div>
-<div class="paragraph">
-<p>A custom plugin is typically added by clicking on the 'Add Custom Plugin' button found on the "Available Plugins" tab.
-This allows you to install a plugin that is not found in the configured plugin registry.
-When installing a custom plugin, you must provide the "coordinates" of the plugin.
-All plugins are actually maven artifacts, and as such their coordinates consist of the following maven properties:</p>
+<p>The managed API endpoint may vary depending on the Gateway being used, but it typically of the following form:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Group ID</p>
-</li>
-<li>
-<p>Artifact ID</p>
-</li>
-<li>
-<p>Version</p>
-</li>
-<li>
-<p>Classifier (optional)</p>
-</li>
-<li>
-<p>Type (optional, defaults to 'war')</p>
+<p><a href="http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/" class="bare">http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>When installing a plugin from the plugin registry, simply locate it in the list shown on the "Available Plugins" tab and then click the "Install" action.
-This will again take you to the Add Plugin page, but with all the appropriate information already filled in.
-At this point you should only need to click the "Add Plugin" button.</p>
+<p>Simply send requests to the managed API endpoint, and do not include an API Key.</p>
 </div>
-<div class="paragraph">
-<p>Plugins primarily are used to contribute custom policies to Apiman.
-These policies are automatically discovered (if they exist in the plugin) when a plugin is added to the API Manager.
-Policies that have been contributed via a plugin will appear in the Policy Definitions admin page along with the built-in policies.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_uninstalling_plugins"><a class="anchor" href="#_uninstalling_plugins"></a>Uninstalling Plugins</h3>
-<div class="paragraph">
-<p>At any time you may choose to uninstall a plugin.
-Note that if the plugin was contributing one or more policies to Apiman, then the policy will no longer be available for use when configuring your Plans, APIs, and Client Apps.
-However, if the policy is already in use by one of these entities, it will continue to work.
-In other words, uninstalling a plugin only removes the policy for use by new entities, it does <strong>not</strong> break existing usages.</p>
-</div>
-<div class="paragraph">
-<p>To uninstall a plugin, simply click the "Uninstall" action for the appropriate plugin on the "Installed Plugins" tab (it is likely represented as a button with a little X).
-After confirming the action, the plugin should disappear from the list.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_upgrading_plugins"><a class="anchor" href="#_upgrading_plugins"></a>Upgrading Plugins</h3>
-<div class="paragraph">
-<p>If Apiman determines that a plugin can be upgraded, then an "Upgrade Plugin" action button will show up for the plugin in the "Installed Plugins" tab.
-This action will be represented as an up arrow icon button.
-When clicked, you will be prompted for the version of the plugin you wish to upgrade <strong>to</strong>.
-The result will be that a new version of the plugin will be downloaded and installed, replacing the older version you had before.
-Note that any Plans, APIs, or Client Apps that were using the old version of the plugin&#8217;s policies will <strong>continue</strong> to use the older version.
-However, any new policies from the plugin added to entities will use the new version.
-In order to upgrade an existing entity to a newer policy, you will need to remove the old policy from that entity and re-add it.
-We recommend that you only do this if there is a compelling reason (e.g. a bug is fixed or a new feature added).</p>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The managed endpoint URL can be easily determined in the UI by navigating to the
+"Endpoint" tab on the API details UI page.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exportimport_data"><a class="anchor" href="#_exportimport_data"></a>Export/Import Data</h2>
+<h2 id="_creating_a_client_app"><a class="anchor" href="#_creating_a_client_app"></a>Creating a Client App</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman has a feature that allows an admin user to Export and/or Import data.  You can access this feature by clicking the "Export/Import Data" link on the API Manager Dashboard page (admin only).
-This feature is useful for the following use-cases:</p>
+<p>In order to consume an API that is not "Public" you must first create a client app.
+Client Apps must exist within the context of an organization.</p>
+</div>
+<div class="paragraph">
+<p>If an organization does not yet exist for this purpose, simply create a new organization. See the section above on 'Managing Organizations' for more information.</p>
+</div>
+<div class="paragraph">
+<p>To create a new Client App:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Backing up data</p>
+<p>Click the 'Create a New Client App' link on the dashboard page.</p>
 </li>
 <li>
-<p>Migrating data between environments (e.g. Test&#8594;Production)</p>
+<p>On the resulting page provide a client app name, version, and description and then click the 'Create Client App' button.</p>
 </li>
 <li>
-<p>Upgrading between Apiman versions</p>
+<p>If the client app is successfully created, you will be taken to the client app details page.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also create a Client App within an Organization by going to the Organization&#8217;s "Client Apps" tab and clicking the "New Client App" button.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_api_contracts"><a class="anchor" href="#_creating_api_contracts"></a>Creating API Contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The primary action taken when configuring a client app is the creation of Contracts to APIs.
+This is how you 'consume an API'.</p>
+</div>
+<div class="paragraph">
+<p>There are a number of ways to create API contracts.
+This section will describe the most useful of these options.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the Client App details page, you can find an API to consume by clicking on the 'Search for APIs to consume' link in the top section of the page.</p>
+</li>
+<li>
+<p>You will be taken to a page that will help you search for and find the API you wish to consume.</p>
+</li>
+<li>
+<p>Use the controls on this page to search for an API.</p>
+</li>
+<li>
+<p>Once you have found the API you are interested in, click on its name in the search results area.</p>
+</li>
+<li>
+<p>This will take you to the API details page for API consumers. The consumer-oriented API details page presents you with all the information necessary to make a decision about how to consume the API. It includes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A list of all API versions.</p>
+</li>
+<li>
+<p>A list of all available plans the API can be consumed through.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>From the Export/Import UI page, simply click the "Export All" button if you wish to export all the data in the API Manager.
-The result will be a downloaded JSON file containing all of your Apiman data.  This file can then be optionally post-processed (perhaps you want to migrate only a single Organization from your Test environment to your Prod environment).
-At some later time, you can import this file (typically into a different installation of Apiman) by selecting it and choosing "Upload File".</p>
+<p>If you wish, you can click on an individual plan to see the details of the policies that will be enforced should that plan be chosen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the 'Create Contract' button next to the plan you wish to use when consuming this API.</p>
+</li>
+<li>
+<p>You will be taken to the new contract page to confirm that you want to create an API  contract to this API through the selected plan.</p>
+</li>
+<li>
+<p>If you are sure this is the API contract you wish to create, click the 'Create Contract' button and then agree to the terms and conditions.</p>
+</li>
+<li>
+<p>If successful, you will be taken to the 'Contracts' tab on the client app details page.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>From the 'Contracts' tab on the client app details page you can see the list of API contracts already created for this client app.</p>
+</div>
+<div class="paragraph">
+<p>It is also possible to break API contracts from this same list by clicking an appropriate 'Break Contract' button.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_definition_information"><a class="anchor" href="#_api_definition_information"></a>API Definition Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If An API provider has included An API Definition for the API they are providing, you will be  presented with an additional link on the consumer-oriented API details page labeled "API Definition".</p>
+</div>
+<div class="paragraph">
+<p>This link will take you to a page where you can browse the detailed documentation for the API.</p>
+</div>
+<div class="paragraph">
+<p>The detailed documentation should be very helpful in learning what resources and operations are supported by the API, which will aid in figuring out how precisely to consume the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_managing_policies"><a class="anchor" href="#_managing_policies"></a>Managing Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Just like plans and APIs, client apps can have configured policies.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The 'Policies' tab will present a list of all the policies configured for this client app.</p>
+</li>
+<li>
+<p>To add another policy to the client app click the <strong>'Add Policy'</strong> button.</p>
+</li>
+<li>
+<p>On the resulting page choose the type of policy you wish to create and then configure the details for that policy.</p>
+</li>
+<li>
+<p>Once you have configured the details click the <strong>'Add Policy'</strong> button to add the policy to the client app.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of course, just like for Plans and APIs, you can manage the Client App policies from the 'Policies' tab.
+This allows you to not only add new policies but also edit, remove, and reorder them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registering_in_the_gateway"><a class="anchor" href="#_registering_in_the_gateway"></a>Registering in the Gateway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After at least one API contract has been created for the client app, it is possible to register the client app with the runtime gateway.</p>
+</div>
+<div class="paragraph">
+<p>Until the client app is registered with the runtime gateway, it is not possible to make requests to back-end APIs on behalf of that client app.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To register the client app with the gateway, simply click the <strong>'Register'</strong> button at the top of the Client App details UI page (any tab).</p>
+</li>
+<li>
+<p>If the status of the client app is "Ready", then the 'Register' button should be enabled.</p>
+</li>
+<li>
+<p>If successful, the client app status will change to "Registered", and the 'Register' button will disappear.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once the client app is registered, you can continue to make changes to it (such as modify its policies or create/break API Contracts).</p>
+</div>
+<div class="paragraph">
+<p>If you do make any changes, then the <strong>'Re-Register'</strong> button will become enabled.</p>
+</div>
+<div class="paragraph">
+<p>Whenever you make changes to your Client App, you <strong>must</strong> Re-Register it before those changes will show up in the Gateway.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_live_api_endpoints"><a class="anchor" href="#_live_api_endpoints"></a>Live API Endpoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After a client app has been registered with the runtime gateway, it is possible to send requests to the back-end APIs on behalf of that client app (through the client app&#8217;s API contracts).
+To do this you must know the URL of the managed API.
+This URL can include the API Key generated for the Client App.</p>
+</div>
+<div class="paragraph">
+<p>To view a list of all of these managed endpoints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the 'APIs' tab on the API detail page.</p>
+</li>
+<li>
+<p>Each API contract is represented in the list of managed endpoints.</p>
+</li>
+<li>
+<p>You can expand an entry in the managed API endpoints table by clicking the '&gt;' icon in the first column.</p>
+</li>
+<li>
+<p>The resulting details will help you figure out the appropriate endpoint to use for a particular managed API.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>There are two ways to pass the API Key to the Gateway when you make a request for a Managed Endpoint. You can either include the API key:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the URL as a query parameter.</p>
+</li>
+<li>
+<p>In the <strong>X-API-Key</strong> HTTP Header.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="versioning.html">Versioning</a></span>
-  <span class="next"><a href="../gateway/concepts.html">Concepts</a></span>
+  <span class="prev"><a href="providing-apis.html">Providing APIs</a></span>
+  <span class="next"><a href="versioning.html">Versioning</a></span>
 </nav>
 </article>
   </div>

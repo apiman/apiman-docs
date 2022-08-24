@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>System Administration :: Apiman Documentation</title>
-    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/2.2.3.Final/manager/administration.html">
-    <link rel="prev" href="versioning.html">
-    <link rel="next" href="../gateway/concepts.html">
+    <title>Data Model :: Apiman Documentation</title>
+    <link rel="prev" href="concepts.html">
+    <link rel="next" href="user-management.html">
     <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
 <link rel="stylesheet" href="../../../_/css/site-extra.css">
@@ -93,11 +92,11 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="concepts.html">Concepts</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="data-model.html">Data Model</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="data-model.html#_policy_chain">Policy Chain</a>
+    <a class="nav-link" href="#_policy_chain">Policy Chain</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="user-management.html">User Management</a>
@@ -119,7 +118,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="administration.html">Administration</a>
   </li>
 </ul>
@@ -282,205 +281,243 @@
   <ul>
     <li><a href="../index.html">User Guide</a></li>
     <li>Apiman Manager</li>
-    <li><a href="administration.html">Administration</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="data-model.html">Data Model</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3.0.0-SNAPSHOT</button>
   <div class="version-menu">
-    <a class="version is-current" href="administration.html">3.0.0-SNAPSHOT</a>
-    <a class="version" href="../../2.2.3.Final/manager/administration.html">2.2.3.Final</a>
-    <a class="version" href="../../1.5.7.Final/manager/administration.html">1.5.7.Final</a>
+    <a class="version is-current" href="data-model.html">3.0.0-SNAPSHOT</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/manager/administration.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman-docs-user-guide/edit/antora/modules/ROOT/pages/manager/data-model.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">System Administration</h1>
+<h1 class="page">Data Model</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are several "global" settings that must be configured/managed by an Apiman administrator.
-These global settings are managed by navigating to the <strong>System Administration</strong> section of the API Manager UI.</p>
+<p>It is perhaps most important to understand the various entities used by the API Manager, as well as their relationships with each other.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_roles"><a class="anchor" href="#_roles"></a>Roles</h2>
+<h2 id="_organizations"><a class="anchor" href="#_organizations"></a>Organizations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Users must become a member of an organization before being allowed to manage any of the plans, APIs, or client apps contained within it.
-When a user is made a member of an organization, they are granted a specific role within that organization.
-Typical examples of roles are <strong>Organization Owner</strong>, <strong>API Provider</strong>, and <strong>Client App Developer</strong>.
-These roles each grant different specific privileges to the user.
-For example, a user with the <strong>Client App Developer</strong> role will be able to manage the organization&#8217;s client apps but not its APIs or plans.</p>
+<p>The top level container concept within the API management project is called the organization.
+All other entities are managed within the scope of an organization.</p>
 </div>
 <div class="paragraph">
-<p>The roles that are available when adding a member to an organization are managed in the <strong>Roles</strong> section of the <strong>System Administration</strong> UI.
-The Apiman admin can create as many roles as she wishes, giving each one a name, description, and the set of permissions it grants.
-Additionally, certain roles may be automatically granted to users who create new organizations.
-At least one such role must be present, otherwise organizations cannot be created.</p>
+<p>When users log into the API management system they must be affiliated with one or more organization.
+Users can have different roles within that organization allowing them to perform different actions and manage different entities.</p>
+</div>
+<div class="paragraph">
+<p>Please see the 'User Management' section below for more details on this topic.</p>
+</div>
+<div class="paragraph">
+<p>What an organization actually represents will depend upon who is using API management.
+When installed within a large enterprise, an organization may represent an internal group within IT (for example the HR group).</p>
+</div>
+<div class="paragraph">
+<p>If installed in the cloud, an organization might represent an external company or organization.</p>
+</div>
+<div class="paragraph">
+<p>In any case, an organization is required before the end user can create or consume APIs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_policy_definitions"><a class="anchor" href="#_policy_definitions"></a>Policy Definitions</h2>
+<h2 id="_policies"><a class="anchor" href="#_policies"></a>Policies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The policies available when configuring APIs, Plans, and Client Apps are controlled by the <strong>Policy Definitions</strong> known to Apiman.
-These definitions are stored in the API Manager and are added by the Apiman admin.
-Typically, these are added once and rarely changed.
-But as new versions of Apiman are released, additional policies will be made available.
-For each policy, a policy definition must be configured in the <strong>System Administration</strong> UI.</p>
+<p>The most important concept in API management is the policy.
+The policy is the unit of work executed at runtime in order to implement API governance.
+All other entities within the API Manager exist in support of configuring policies and sensibly applying them at runtime.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, it is possible for a plugin, when installed, to contribute one or more policy definitions to the list.
-This is a very common way for new policy definitions to be added to Apiman.</p>
+<p>When a request for an API is made at runtime, a policy chain is created and applied to the inbound request, prior to proxying that request to the back-end API implementation.
+This policy chain consists of policies configured in the API Manager.</p>
+</div>
+<div class="paragraph">
+<p>An individual policy consists of a type (e.g. authentication or rate limiting) as well as configuration details specific to the type and instance of that policy.
+Multiple policies can be configured per API resulting in a policy chain that is applied at runtime.</p>
+</div>
+<div class="paragraph">
+<p>It is very important to understand that policies can be configured at three different levels within API management.
+Policies can be configured on an API, on a plan, or on a client app.</p>
+</div>
+<div class="paragraph">
+<p>For more details please see the sections below.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gateways"><a class="anchor" href="#_gateways"></a>Gateways</h2>
+<h2 id="_plans"><a class="anchor" href="#_plans"></a>Plans</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman allows multiple logical Gateways to be configured.
-The Gateway is the server that actually applies the policies configured in the API Manager to live requests to managed APIs.
-When using Apiman, at least one Gateway must be running and configured in the API Manager.
-However, there is no limit to the total number of Gateways that may be running.
-The typical reason to have multiple Gateways is when some APIs are very high volume and others are not.
-In this case, the high volume APIs could be published to a Gateway that can handle such load, while the low volume APIs could be published to
-another (perhaps cheaper) Gateway.</p>
+<p>A plan is a set of policies that define a level of service for an API.
+When an API is consumed it may be consumed through a plan.
+Please see the section on 'API Contracts' for more information.</p>
 </div>
 <div class="paragraph">
-<p>Another reason you may want multiple Gateways if you need some of your APIs to be provided in a particular physical region and others in a different one.
-In this case, you may have a Gateway (perhaps clustered) running in a US data center, while another Gateway (different cluster) is running separately in a data center in Europe.</p>
+<p>An organization can have multiple plans associated with it.
+Typically, each plan within an organization consists of the same set of policies, but with different configuration details.</p>
 </div>
 <div class="paragraph">
-<p>In all cases, the Apiman admin must configure these Gateways in the <strong>System Administration</strong> UI.
-Each Gateway has a name, description, and configuration endpoint.
-The configuration endpoint is what the API Manager will use when publishing APIs and client apps into the Gateway.</p>
+<p>For example, an organization might have a Gold plan with a rate limiting policy that restricts consumers to 1000 requests per day.
+The same organization may then have a Silver plan which is also configured with a rate limiting policy, but which restricts consumers to 500 requests per day.</p>
 </div>
 <div class="paragraph">
-<p>When configuring an API Gateway you will need to include the authentication credentials required to invoke the API Gateway configuration REST API.  Typically this user must have the <code>apipublisher</code> role in order to successfully talk to the API Gateway.
-The Gateway UI includes a <strong>Test Gateway</strong> button which will attempt to contact the Gateway API with the credentials included.
-If successful, the test button will turn green.
-If unsuccessful, details about the failure will be displayed and the test button will turn red.</p>
+<p>Once a plan has been fully configured (all desired policies added and configured), it must be locked so that it can be used by APIs.
+This is done so that API providers can&#8217;t change the details of the plan out from underneath the client app developers who are using it.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_plugins"><a class="anchor" href="#_plugins"></a>Plugins</h2>
+<h2 id="_apis"><a class="anchor" href="#_apis"></a>APIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman supports contributing additional functionality via a powerful plugin mechanism.
-Plugins can be managed by an administrator within the API Manager UI.
-The plugin management administration page allows an admin to install and uninstall plugins.</p>
-</div>
-<div class="sect2">
-<h3 id="_adding_plugins"><a class="anchor" href="#_adding_plugins"></a>Adding Plugins</h3>
-<div class="paragraph">
-<p>The Plugin admin page has two tabs - one shows the list of plugins currently installed, and the other shows a list of "Available Plugins".
-The list of available plugins comes from a plugin registry that is configured when Apiman is installed (see the Installation Guide for details on how to configure a custom plugin registry).
-By default, the "official" Apiman plugins will show up in the list.</p>
+<p>An API represents an external API that is being governed by the API management system.
+An API consists of a set of metadata including name and description as well as an external endpoint defining the API implementation.</p>
 </div>
 <div class="paragraph">
-<p>A custom plugin is typically added by clicking on the 'Add Custom Plugin' button found on the "Available Plugins" tab.
-This allows you to install a plugin that is not found in the configured plugin registry.
-When installing a custom plugin, you must provide the "coordinates" of the plugin.
-All plugins are actually maven artifacts, and as such their coordinates consist of the following maven properties:</p>
+<p>The external API implementation endpoint includes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Group ID</p>
+<p>The type/protocol of the endpoint (e.g. REST or SOAP)</p>
 </li>
 <li>
-<p>Artifact ID</p>
+<p>The endpoint content type (e.g. XML or JSON)</p>
 </li>
 <li>
-<p>Version</p>
-</li>
-<li>
-<p>Classifier (optional)</p>
-</li>
-<li>
-<p>Type (optional, defaults to 'war')</p>
+<p>The endpoint location (URL) so that the API can be properly proxied to at runtime.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>When installing a plugin from the plugin registry, simply locate it in the list shown on the "Available Plugins" tab and then click the "Install" action.
-This will again take you to the Add Plugin page, but with all the appropriate information already filled in.
-At this point you should only need to click the "Add Plugin" button.</p>
+<p>In addition, policies can be configured on an API.
+Typically, the policies applied to APIs are things like authentication, or caching.</p>
 </div>
 <div class="paragraph">
-<p>Plugins primarily are used to contribute custom policies to Apiman.
-These policies are automatically discovered (if they exist in the plugin) when a plugin is added to the API Manager.
-Policies that have been contributed via a plugin will appear in the Policy Definitions admin page along with the built-in policies.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_uninstalling_plugins"><a class="anchor" href="#_uninstalling_plugins"></a>Uninstalling Plugins</h3>
-<div class="paragraph">
-<p>At any time you may choose to uninstall a plugin.
-Note that if the plugin was contributing one or more policies to Apiman, then the policy will no longer be available for use when configuring your Plans, APIs, and Client Apps.
-However, if the policy is already in use by one of these entities, it will continue to work.
-In other words, uninstalling a plugin only removes the policy for use by new entities, it does <strong>not</strong> break existing usages.</p>
+<p>Any policies configured on API will be applied at runtime regardless of the client app and API contract.
+This is why authentication is a common policy to configure at the API level.</p>
 </div>
 <div class="paragraph">
-<p>To uninstall a plugin, simply click the "Uninstall" action for the appropriate plugin on the "Installed Plugins" tab (it is likely represented as a button with a little X).
-After confirming the action, the plugin should disappear from the list.</p>
+<p>APIs may be offered through one or more plans configured in the same organization.
+When plans are used, API consumers (client apps) must consume the API through one of those plans.
+Please see the section on 'API Contracts' for more information.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_upgrading_plugins"><a class="anchor" href="#_upgrading_plugins"></a>Upgrading Plugins</h3>
 <div class="paragraph">
-<p>If Apiman determines that a plugin can be upgraded, then an "Upgrade Plugin" action button will show up for the plugin in the "Installed Plugins" tab.
-This action will be represented as an up arrow icon button.
-When clicked, you will be prompted for the version of the plugin you wish to upgrade <strong>to</strong>.
-The result will be that a new version of the plugin will be downloaded and installed, replacing the older version you had before.
-Note that any Plans, APIs, or Client Apps that were using the old version of the plugin&#8217;s policies will <strong>continue</strong> to use the older version.
-However, any new policies from the plugin added to entities will use the new version.
-In order to upgrade an existing entity to a newer policy, you will need to remove the old policy from that entity and re-add it.
-We recommend that you only do this if there is a compelling reason (e.g. a bug is fixed or a new feature added).</p>
+<p>Alternatively, an API can simply be marked as "Public", in which case any client may access the API&#8217;s managed endpoint without providing an API Key.</p>
 </div>
+<div class="paragraph">
+<p>Only once an API is fully configured, including its policies, implementation, and plans can it be published to the Gateway for consumption by client apps.</p>
+</div>
+<div class="paragraph">
+<p>Once an API has been published, it can only be changed if it is a "Public" API.
+APIs that are offered via Plans are immutable - to change them you must create a new version.
+The reason for this is that API consumers may have created Contracts with your API, through your Plan.
+When they do this, they must agree to some terms and conditions.
+It is therefore understood that the terms to which they are agreeing will not change.
+However, for Public APIs, there is no such agreement.
+For this reason, you can make changes to Public APIs and re-publish them at any time.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exportimport_data"><a class="anchor" href="#_exportimport_data"></a>Export/Import Data</h2>
+<h2 id="_client_apps"><a class="anchor" href="#_client_apps"></a>Client Apps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apiman has a feature that allows an admin user to Export and/or Import data.  You can access this feature by clicking the "Export/Import Data" link on the API Manager Dashboard page (admin only).
-This feature is useful for the following use-cases:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Backing up data</p>
-</li>
-<li>
-<p>Migrating data between environments (e.g. Test&#8594;Production)</p>
-</li>
-<li>
-<p>Upgrading between Apiman versions</p>
-</li>
-</ul>
+<p>A client app represents a consumer of an API.
+Typical API consumers are things like mobile applications and B2B applications.</p>
 </div>
 <div class="paragraph">
-<p>From the Export/Import UI page, simply click the "Export All" button if you wish to export all the data in the API Manager.
-The result will be a downloaded JSON file containing all of your Apiman data.  This file can then be optionally post-processed (perhaps you want to migrate only a single Organization from your Test environment to your Prod environment).
-At some later time, you can import this file (typically into a different installation of Apiman) by selecting it and choosing "Upload File".</p>
+<p>Regardless of the actual implementation, a client app must be added to the
+API management system so that Contracts can be created between it and the APIs it wishes to consume.</p>
+</div>
+<div class="paragraph">
+<p>A client app consists of basic metadata such as name and description.
+Policies can also be configured on a client app, but are optional.</p>
+</div>
+<div class="paragraph">
+<p>Finally, API Contracts can be created between a client app and the API(s) it wishes to consume.
+Once the API Contracts are created, the client app can be registered with the runtime gateway.
+Policies and Contracts can be added/removed at any time.
+However, after any changes are made, you must re-register the client app.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_contracts"><a class="anchor" href="#_api_contracts"></a>API Contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An API contract is simply a link between a Client App and an API through a plan offered by that API.
+This is the only way that a client app can consume an API.
+If there are no client apps that have created API contracts with an API, that API cannot be accessed through the API management runtime gateway (unless of course the API is "Public").</p>
+</div>
+<div class="paragraph">
+<p>When an API Contract is created, the system generates a unique API key specific to that contract.
+All requests made to the API by a Client App through the API Gateway must include this API key.
+The API key is used to create the runtime policy chain from the policies configured on the API, plan, and client app.</p>
+</div>
+<div class="paragraph">
+<p>API Contracts can only be created between Client Apps and published APIs which are offered through at least one Plan.
+An API Contract cannot be created between a Client App and a Public API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_policy_chain"><a class="anchor" href="#_policy_chain"></a>Policy Chain</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A policy chain is an ordered sequence of policies that are applied when a request is made for an API through the API Gateway.</p>
+</div>
+<div class="paragraph">
+<p>The order that policies are applied is important and is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Client App</p>
+</li>
+<li>
+<p>Plan</p>
+</li>
+<li>
+<p>API</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Within these individual sections, the end user can specify the order of the policies.</p>
+</div>
+<div class="paragraph">
+<p>When a request for an API is received by the API Gateway the policy chain is applied to the request in the order listed above.</p>
+</div>
+<div class="paragraph">
+<p>If none of the policies fail, the API Gateway will proxy the request to the backend
+API implementation.</p>
+</div>
+<div class="paragraph">
+<p>Once a response is received from the back end API implementation, the policy chain is
+then applied in reverse order to that response.
+This allows each policy to be applied twice, once to the inbound request and then again to the outbound response.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="versioning.html">Versioning</a></span>
-  <span class="next"><a href="../gateway/concepts.html">Concepts</a></span>
+  <span class="prev"><a href="concepts.html">Concepts</a></span>
+  <span class="next"><a href="user-management.html">User Management</a></span>
 </nav>
 </article>
   </div>
