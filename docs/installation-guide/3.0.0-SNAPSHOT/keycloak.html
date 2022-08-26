@@ -582,11 +582,11 @@ However, these are beyond the scope of Apiman&#8217;s documentation; instead we 
         ./bin/kc.sh build
         ./bin/kc.sh start-dev --import-realm
     ports:
-      - "8081:8080"
+      - "8085:8080"
     environment:
       - "KEYCLOAK_ADMIN=admin"
       - "KEYCLOAK_ADMIN_PASSWORD=admin123!"
-      - "KEYCLOAK_FRONTEND_URL=http://localhost:8081"
+      - "KEYCLOAK_FRONTEND_URL=http://localhost:8085"
     volumes:
       - ${PWD}/apiman-realm-for-keycloak.json:/opt/keycloak/data/import/apiman-realm-for-keycloak.json <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
@@ -613,10 +613,10 @@ However, these are beyond the scope of Apiman&#8217;s documentation; instead we 
 <p>Start with <code>docker-compose up</code>.</p>
 </li>
 <li>
-<p>You should now have Keycloak running on localhost port 8081</p>
+<p>You should now have Keycloak running on localhost port 8085</p>
 </li>
 <li>
-<p>Try it with: <code><a href="http://localhost:8081/admin" class="bare">http://localhost:8081/admin</a></code></p>
+<p>Try it with: <code><a href="http://localhost:8085/admin" class="bare">http://localhost:8085/admin</a></code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -629,7 +629,7 @@ However, these are beyond the scope of Apiman&#8217;s documentation; instead we 
 </div>
 </li>
 <li>
-<p>Your Apiman Auth URL is: <code><a href="http://localhost:8081" class="bare">http://localhost:8081</a></code> (see <a href="#kc-configuration-options">Apiman Auth Configuration</a>)</p>
+<p>Your Apiman Auth URL is: <code><a href="http://localhost:8085" class="bare">http://localhost:8085</a></code> (see <a href="#kc-configuration-options">Apiman Auth Configuration</a>)</p>
 </li>
 </ol>
 </div>
@@ -687,7 +687,7 @@ In this Docker Compose example, Keycloak  is running in dev mode. For production
 <p><code>export APIMAN_AUTH_URL="http://&lt;somehost&gt;:&lt;someport&gt;"</code>.</p>
 </div>
 <div class="paragraph">
-<p>For example, if your hostname is <code>localhost</code> and your port is <code>8081</code>, then your <code>APIMAN_AUTH_URL</code> would be <code><a href="http://localhost:8081/" class="bare">http://localhost:8081/</a></code></p>
+<p>For example, if your hostname is <code>localhost</code> and your port is <code>8085</code>, then your <code>APIMAN_AUTH_URL</code> would be <code><a href="http://localhost:8085" class="bare">http://localhost:8085</a></code></p>
 </div>
 </li>
 </ol>
@@ -815,7 +815,7 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Log into your Keycloak Administrator console (e.g <a href="http://localhost:8081/admin" class="bare">http://localhost:8081/admin</a>).</p>
+<p>Log into your Keycloak Administrator console (e.g <a href="http://localhost:8085/admin" class="bare">http://localhost:8085/admin</a>).</p>
 </li>
 <li>
 <p><code>Clients</code> &#8594; <code>apiman-gateway-api</code> &#8594; <code>Installation</code>.</p>
