@@ -836,29 +836,7 @@ apiman-manager.metrics.es.client.port=${apiman.es.port}</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_servlet"><a class="anchor" href="#_servlet"></a>Servlet</h3>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Available implementations:</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Implementation</th>
-<th class="tableblock halign-left valign-top">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.es.ESMetrics</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Batching ES metrics</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h3>
+<h3 id="_optional_parameters_2"><a class="anchor" href="#_optional_parameters_2"></a>Optional Parameters</h3>
 <div class="paragraph">
 <p>Refer also to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
 </div>
@@ -923,6 +901,39 @@ apiman-manager.metrics.es.client.port=${apiman.es.port}</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String[]</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Case-insensitive list of HTTP <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank" rel="noopener">query parameters</a> to capture</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>write-to</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String[]</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Case-insensitive list of destinations to write Elasticsearch logs.</p>
+</div>
+<div class="paragraph">
+<p>Rather than solely pushing metrics directly to the Elasticsearch server, Apiman can also write the metrics to a log file as JSON (e.g. for scraping).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: <code>REMOTE</code></p>
+</li>
+<li>
+<p><strong>Allowed Values</strong>: <code>REMOTE</code>, <code>LOG</code> (both permissible at once)</p>
+</li>
+<li>
+<p><strong>File Location</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>WildFly: <code>standalone/log/metrics.log</code></p>
+</li>
+<li>
+<p>Tomcat: <code>logs/apiman/metrics.log</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -1005,7 +1016,7 @@ apiman-gateway.components.ISharedStateComponent.client.type=es
 </div>
 </div>
 <div class="sect3">
-<h4 id="_required_parameters_3"><a class="anchor" href="#_required_parameters_3"></a>Required Parameters</h4>
+<h4 id="_required_parameters_2"><a class="anchor" href="#_required_parameters_2"></a>Required Parameters</h4>
 <div class="paragraph">
 <p>Refer to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
 </div>
@@ -1071,7 +1082,7 @@ apiman-gateway.components.IRateLimiterComponent.client.type=es
 </div>
 </div>
 <div class="sect3">
-<h4 id="_required_parameters_4"><a class="anchor" href="#_required_parameters_4"></a>Required Parameters</h4>
+<h4 id="_required_parameters_3"><a class="anchor" href="#_required_parameters_3"></a>Required Parameters</h4>
 <div class="paragraph">
 <p>Refer to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
 </div>
@@ -1137,7 +1148,7 @@ apiman-gateway.components.ICacheStoreComponent.client.type=es
 </div>
 </div>
 <div class="sect3">
-<h4 id="_required_parameters_5"><a class="anchor" href="#_required_parameters_5"></a>Required Parameters</h4>
+<h4 id="_required_parameters_4"><a class="anchor" href="#_required_parameters_4"></a>Required Parameters</h4>
 <div class="paragraph">
 <p>Refer to <a href="#_global_required_parameters">Global Required Parameters</a>.</p>
 </div>
