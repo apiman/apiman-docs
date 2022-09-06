@@ -371,7 +371,7 @@ If your setup isn&#8217;t supported out of the box, you may need to configure yo
 apiman-gateway.initializers=jdbc
 apiman-gateway.initializers.jdbc=io.apiman.gateway.engine.jdbc.JdbcInitializer
 apiman-gateway.initializers.jdbc.datasource.jndi-location=${apiman.jdbc.datasource.jndi-location}
-apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
+apiman-gateway.initializers.jdbc.datasource.type=mysql8</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -392,7 +392,7 @@ apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
 <p>mysql8</p>
 </li>
 <li>
-<p>postgresql10</p>
+<p>postgresql11</p>
 </li>
 <li>
 <p>mssql15</p>
@@ -401,6 +401,18 @@ apiman-gateway.initializers.jdbc.datasource.type=mysql5</code></pre>
 <p>oracle19</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Generally these work with newer database versions without issue.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

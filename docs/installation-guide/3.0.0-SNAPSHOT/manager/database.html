@@ -420,7 +420,7 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <p><strong>Default Value</strong>: h2</p>
 </li>
 <li>
-<p><strong>Allowed Values</strong>: postgresql10, mysql8, (plus any value you have manually configured)</p>
+<p><strong>Allowed Values</strong>: postgresql11, mysql8, (plus any value you have manually configured)</p>
 </li>
 </ul>
 </div></div></td>
@@ -529,7 +529,7 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
     -Dapiman.db.url="jdbc:postgresql://localhost:5432/apiman" \
     -Dapiman.db.username=postgres \
     -Dapiman.db.password="admin123\!" \
-    -Dapiman.db.driver=postgresql10</code></pre>
+    -Dapiman.db.driver=postgresql11</code></pre>
 </div>
 </div>
 <div class="dlist">
@@ -542,7 +542,7 @@ If you are using Tomcat, you will need to configure the datasources manually.</p
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export APIMAN_DB_URL="jdbc:postgresql://localhost:5432/apiman"
 export APIMAN_DB_USERNAME="postgres"
 export APIMAN_DB_PASSWORD="admin123\!"
-export APIMAN_DB_DRIVER="postgresql10"
+export APIMAN_DB_DRIVER="postgresql11"
 
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
@@ -605,7 +605,7 @@ export APIMAN_DB_DRIVER="mysql8"
 <p><code>oracle19</code> / <code>ApimanOracle19Dialect</code></p>
 </li>
 <li>
-<p><code>postgresql10</code> / <code>ApimanPostgreSQLDialect</code></p>
+<p><code>postgresql11</code> / <code>ApimanPostgreSQLDialect</code></p>
 </li>
 </ul>
 </div>
