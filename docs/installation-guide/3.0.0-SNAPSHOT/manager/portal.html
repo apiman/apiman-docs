@@ -443,6 +443,33 @@ It is also part of the Docker Compose quickstart.</p>
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_if_your_keycloak_internal_vs_external_url_is_different"><a class="anchor" href="#_if_your_keycloak_internal_vs_external_url_is_different"></a>If your Keycloak internal vs external URL is different</h3>
+<div class="paragraph">
+<p>The Apiman Developer Portal interacts with Keycloak entirely in-browser using Javascript.
+In some setups, the Keycloak server name internally vs externally is different.
+This can cause difficulties where the Keycloak redirect URL is wrong for external users.</p>
+</div>
+<div class="paragraph">
+<p>For example, within a Docker network Keycloak may be <code><a href="http://keycloak:8080" class="bare">http://keycloak:8080</a></code>, whereas externally it may be <code><a href="http://auth.local.gd:8080" class="bare">http://auth.local.gd:8080</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>To handle this situation, you can set:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>System Property: <code>apiman.auth.public.url</code></p>
+</li>
+<li>
+<p>Env var: <code>APIMAN_AUTH_PUBLIC_URL</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t set this explicitly, Apiman will fall back to <code>apiman.auth.url</code>.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
