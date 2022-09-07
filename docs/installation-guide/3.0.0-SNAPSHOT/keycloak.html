@@ -390,32 +390,6 @@
 <p>Keycloak auth server URL</p>
 </div></div></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>System property: <code>apiman.auth.realm-public-key</code></p>
-</li>
-<li>
-<p>Env var: <code>APIMAN_AUTH_REALM_PUBLIC_KEY</code></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>(Vert.x Gateway only).</strong></p>
-</div>
-<div class="paragraph">
-<p>Public key for Apiman realm. Get this from Keycloak.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Default Value</strong>: example Apiman realm key</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
@@ -533,6 +507,29 @@ In older versions of Keycloak the auth server might have <code>/auth</code> at t
 <ul>
 <li>
 <p><strong>Default Value</strong>: password</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>System property: <code>apiman.auth.realm-public-key</code></p>
+</li>
+<li>
+<p>Env var: <code>APIMAN_AUTH_REALM_PUBLIC_KEY</code></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Public key for Apiman realm. Get this from your Keycloak realm.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Default Value</strong>: Apiman will retrieve this from your Keycloak server&#8217;s <code>.well-known</code> endpoint automatically.</p>
 </li>
 </ul>
 </div></div></td>
@@ -806,6 +803,8 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 </div>
 <div class="sect3">
 <h4 id="_vert_x_gateway"><a class="anchor" href="#_vert_x_gateway"></a>Vert.x Gateway</h4>
+<div class="sect4">
+<h5 id="_install_using_keycloak"><a class="anchor" href="#_install_using_keycloak"></a>Install using Keycloak</h5>
 <div class="paragraph">
 <p>For the Vert.x gateway, the simplest way to retrieve the necessary configuration is to generate it from your Keycloak server.</p>
 </div>
@@ -883,6 +882,7 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 <td>Paste your Keycloak config over this segment</td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 <div class="sect3">
