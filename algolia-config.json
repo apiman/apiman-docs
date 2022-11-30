@@ -10,8 +10,8 @@
             "installation-guide"
           ],
           "version": [
-            "2.2.3.Final",
-            "1.5.7.Final"
+            "latest",
+            "2.2.3.Final"
           ]
         }
       }
