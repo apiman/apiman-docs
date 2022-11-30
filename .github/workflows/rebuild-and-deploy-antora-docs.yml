@@ -2,7 +2,7 @@ name: rebuild and deploy Antora documentation website
 
 on:
   push:
-    branches: [ antora ]
+    branches: [ main ]
     paths-ignore:
       - '.github/workflows/**'
   workflow_dispatch:
@@ -15,8 +15,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
@@ -47,9 +45,14 @@ jobs:
           UPDATE_NB_HITS: "true"
           
       - name: Commit Antora build to repository
-        uses: EndBug/add-and-commit@v7.2.1
+        uses: EndBug/add-and-commit@v9.1.1
         with:
           author_name: apiman-ci
           default_author: user_info
           message: 'chore: regenerate documentation with Antora'
           add: ./docs --force
+          push: false
+
+      # We will push the commit to /antora branch and NOT store on main (keeps it cleaner).
+      - name: Push to `serve` branch
+        run: git push origin HEAD:antora -f
