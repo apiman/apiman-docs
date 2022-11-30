@@ -1,33 +1,42 @@
 site:
   title: Apiman Documentation
   url: https://www.apiman.io/apiman-docs
-  start_page: welcome::index.adoc
+  start_page: guides::index.adoc
+  robots: allow
   keys:
-    google_analytics: "UA-56678850-3"
+    google_analytics: "UA-56678850-3-do-not-use-locally"
 
 content:
   sources:
-    - url: ./
-      branches:
-        - 1.x
-        - 2.x
-        - HEAD
-    - url: ../apiman-docs-user-guide
-      branches:
-        - 1.x
-        - 2.x
-        - antora
-    - url: ../apiman-docs-installation-guide
-      branches:
-        - 1.x
-        - 2.x
-        - antora
     - url: ../apiman
       branches:
-        - 1.x
-        - 2.x
-        - HEAD
+        - master
+        - 3.x
       start_path: docs
+
+    - url: ../apiman
+      branches:
+        - master
+        - 3.x
+      start_path: docs/migration
+
+    - url: ../apiman
+      branches:
+        - master
+        - 3.x
+      start_path: docs/installation
+
+    - url: ../apiman
+      branches:
+        - master
+        - 3.x
+      start_path: docs/user
+
+    - url: ../apiman
+      branches:
+        - master
+        - 3.x
+      start_path: docs/development
 
 ui:
   bundle:
@@ -44,11 +53,16 @@ output:
 
 asciidoc:
   attributes:
-    apiman-version-release: 3.0.0-SNAPSHOT
-    wildfly-version: 23.0.2.Final
-    wildfly-version-major: 23
-    keycloak-version: 18.0.2
-    page-pagination: true
+    experimental: ''
+    page-pagination: ''
+    hide-uri-scheme: '@'
+    idseparator: '-'
+    idprefix: ''
   extensions:
   - ./lib/openblock.js
   - ./lib/tabs-block.js
+
+urls:
+  latest_version_segment: latest
+  latest_prerelease_version_segment: dev
+  latest_version_segment_strategy: redirect:to

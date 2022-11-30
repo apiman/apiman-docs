@@ -1,37 +1,53 @@
 site:
   title: Apiman Documentation
   url: https://www.apiman.io/apiman-docs
-  start_page: welcome::index.adoc
+  start_page: guides::index.adoc
+  robots: allow
   keys:
-    google_analytics: "UA-56678850-3"
+    google_analytics: "G-TRD82LC9Y2"
 
 content:
   sources:
-    - url: ./
+    - url: https://github.com/apiman/apiman.git
       branches:
-        - 1.x
-        - 2.x
+        - master
         - 3.x
-        - antora
+      start_path: docs
+
+    - url: https://github.com/apiman/apiman.git
+      branches:
+        - master
+        - 3.x
+      start_path: docs/migration
+
+    - url: https://github.com/apiman/apiman.git
+      branches:
+        - master
+        - 3.x
+      start_path: docs/installation
+
+    - url: https://github.com/apiman/apiman.git
+      branches:
+        - master
+        - 3.x
+      start_path: docs/user
+
+    - url: https://github.com/apiman/apiman.git
+      branches:
+        - master
+        - 3.x
+      start_path: docs/development
+
+    # DEPRECATED -- just for 2x — we will sunset this ASAP.
     - url: https://github.com/apiman/apiman-docs-user-guide.git
       branches:
         - 1.x
         - 2.x
-        - 3.x
-        - antora
     - url: https://github.com/apiman/apiman-docs-installation-guide.git
       branches:
         - 1.x
         - 2.x
-        - 3.x
-        - antora
-    - url: https://github.com/apiman/apiman.git
-      branches:
-        - 1.x
-        - 2.x
-        - 3.x
-        - master
-      start_path: docs
+    # END DEPRECATED
 
 ui:
   bundle:
@@ -48,11 +64,16 @@ output:
 
 asciidoc:
   attributes:
-    apiman-version-release: 3.0.0.Final
-    wildfly-version: 23.0.2.Final
-    wildfly-version-major: 23
-    keycloak-version: 18.0.2
-    page-pagination: true
+    experimental: ''
+    page-pagination: ''
+    hide-uri-scheme: '@'
+    idseparator: '-'
+    idprefix: ''
   extensions:
   - ./lib/openblock.js
   - ./lib/tabs-block.js
+
+urls:
+  latest_version_segment: latest
+  latest_prerelease_version_segment: dev
+  latest_version_segment_strategy: redirect:to
