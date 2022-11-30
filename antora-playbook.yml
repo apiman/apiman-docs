@@ -11,21 +11,25 @@ content:
       branches:
         - 1.x
         - 2.x
+        - 3.x
         - antora
     - url: https://github.com/apiman/apiman-docs-user-guide.git
       branches:
         - 1.x
         - 2.x
+        - 3.x
         - antora
     - url: https://github.com/apiman/apiman-docs-installation-guide.git
       branches:
         - 1.x
         - 2.x
+        - 3.x
         - antora
     - url: https://github.com/apiman/apiman.git
       branches:
         - 1.x
         - 2.x
+        - 3.x
         - master
       start_path: docs
 
@@ -44,7 +48,7 @@ output:
 
 asciidoc:
   attributes:
-    apiman-version-release: 3.0.0-SNAPSHOT
+    apiman-version-release: 3.1.0-SNAPSHOT
     wildfly-version: 23.0.2.Final
     wildfly-version-major: 23
     keycloak-version: 18.0.2
