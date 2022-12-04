@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Data Model :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/latest/manager/data-model.html">
+    <link rel="prev" href="concepts.html">
+    <link rel="next" href="user-management.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Crash Course</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/how-apiman-works.html">How Apiman Works</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/apiman-policies.html">Policies, the Core of API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/managing-apiman.html">Managing Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/getting-up-and-running.html">Getting Up and Running with Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/resources.html">Apiman Resources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="data-model.html">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="managing-organisations.html">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="managing-plans.html">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="versioning.html">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/authorization-policy.html">Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/basic-auth-policy.html">Basic Authentication Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/caching-resources-policy.html">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/cors-policy.html">CORS Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/header-allow-deny.html">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/http-security-policy.html">HTTP Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ignored-resources-policy.html">Ignored Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ip-block-and-allow-list.html">IP Block and Allow policies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jsonp-policy.html">JSONP Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jwt-policy.html">JWT Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/keycloak-oauth-policy.html">Keycloak OAuth Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/log-policy.html">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/quota-policy.html">Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/rate-limiting-policy.html">Rate Limiting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/simple-header-policy.html">Simple Header Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/soap-authorization-policy.html">SOAP Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/time-restricted-access-policy.html">Time Restricted Access Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transfer-quota-policy.html">Transfer Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transformation-policy.html">Transformation Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-rewriting-policy.html">URL Rewriting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-whitelist-policy.html">URL Whitelist Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../development-guide/latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../development-guide/dev/intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../development-guide/latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../installation-guide/latest/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../installation-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../installation-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">User Guide</a></li>
+    <li>Apiman Manager</li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="data-model.html">Data Model</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3</button>
+  <div class="version-menu">
+    <a class="version" href="../../dev/manager/data-model.html">3.1.0-SNAPSHOT</a>
+    <a class="version is-current" href="data-model.html">3</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/3.x/docs/user/modules/ROOT/pages/manager/data-model.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Data Model</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is perhaps most important to understand the various entities used by the API Manager, as well as their relationships with each other.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="organizations"><a class="anchor" href="#organizations"></a>Organizations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The top level container concept within the API management project is called the organization.
+All other entities are managed within the scope of an organization.</p>
+</div>
+<div class="paragraph">
+<p>When users log into the API management system they must be affiliated with one or more organization.
+Users can have different roles within that organization allowing them to perform different actions and manage different entities.</p>
+</div>
+<div class="paragraph">
+<p>Please see the 'User Management' section below for more details on this topic.</p>
+</div>
+<div class="paragraph">
+<p>What an organization actually represents will depend upon who is using API management.
+When installed within a large enterprise, an organization may represent an internal group within IT (for example the HR group).</p>
+</div>
+<div class="paragraph">
+<p>If installed in the cloud, an organization might represent an external company or organization.</p>
+</div>
+<div class="paragraph">
+<p>In any case, an organization is required before the end user can create or consume APIs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="policies"><a class="anchor" href="#policies"></a>Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most important concept in API management is the policy.
+The policy is the unit of work executed at runtime in order to implement API governance.
+All other entities within the API Manager exist in support of configuring policies and sensibly applying them at runtime.</p>
+</div>
+<div class="paragraph">
+<p>When a request for an API is made at runtime, a policy chain is created and applied to the inbound request, prior to proxying that request to the back-end API implementation.
+This policy chain consists of policies configured in the API Manager.</p>
+</div>
+<div class="paragraph">
+<p>An individual policy consists of a type (e.g. authentication or rate limiting) as well as configuration details specific to the type and instance of that policy.
+Multiple policies can be configured per API resulting in a policy chain that is applied at runtime.</p>
+</div>
+<div class="paragraph">
+<p>It is very important to understand that policies can be configured at three different levels within API management.
+Policies can be configured on an API, on a plan, or on a client app.</p>
+</div>
+<div class="paragraph">
+<p>For more details please see the sections below.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="plans"><a class="anchor" href="#plans"></a>Plans</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A plan is a set of policies that define a level of service for an API.
+When an API is consumed it may be consumed through a plan.
+Please see the section on 'API Contracts' for more information.</p>
+</div>
+<div class="paragraph">
+<p>An organization can have multiple plans associated with it.
+Typically, each plan within an organization consists of the same set of policies, but with different configuration details.</p>
+</div>
+<div class="paragraph">
+<p>For example, an organization might have a Gold plan with a rate limiting policy that restricts consumers to 1000 requests per day.
+The same organization may then have a Silver plan which is also configured with a rate limiting policy, but which restricts consumers to 500 requests per day.</p>
+</div>
+<div class="paragraph">
+<p>Once a plan has been fully configured (all desired policies added and configured), it must be locked so that it can be used by APIs.
+This is done so that API providers can&#8217;t change the details of the plan out from underneath the client app developers who are using it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apis"><a class="anchor" href="#apis"></a>APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An API represents an external API that is being governed by the API management system.
+An API consists of a set of metadata including name and description as well as an external endpoint defining the API implementation.</p>
+</div>
+<div class="paragraph">
+<p>The external API implementation endpoint includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The type/protocol of the endpoint (e.g. REST or SOAP)</p>
+</li>
+<li>
+<p>The endpoint content type (e.g. XML or JSON)</p>
+</li>
+<li>
+<p>The endpoint location (URL) so that the API can be properly proxied to at runtime.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, policies can be configured on an API.
+Typically, the policies applied to APIs are things like authentication, or caching.</p>
+</div>
+<div class="paragraph">
+<p>Any policies configured on API will be applied at runtime regardless of the client app and API contract.
+This is why authentication is a common policy to configure at the API level.</p>
+</div>
+<div class="paragraph">
+<p>APIs may be offered through one or more plans configured in the same organization.
+When plans are used, API consumers (client apps) must consume the API through one of those plans.
+Please see the section on 'API Contracts' for more information.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, an API can simply be marked as "Public", in which case any client may access the API&#8217;s managed endpoint without providing an API Key.</p>
+</div>
+<div class="paragraph">
+<p>Only once an API is fully configured, including its policies, implementation, and plans can it be published to the Gateway for consumption by client apps.</p>
+</div>
+<div class="paragraph">
+<p>Once an API has been published, it can only be changed if it is a "Public" API.
+APIs that are offered via Plans are immutable - to change them you must create a new version.
+The reason for this is that API consumers may have created Contracts with your API, through your Plan.
+When they do this, they must agree to some terms and conditions.
+It is therefore understood that the terms to which they are agreeing will not change.
+However, for Public APIs, there is no such agreement.
+For this reason, you can make changes to Public APIs and re-publish them at any time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="client-apps"><a class="anchor" href="#client-apps"></a>Client Apps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A client app represents a consumer of an API.
+Typical API consumers are things like mobile applications and B2B applications.</p>
+</div>
+<div class="paragraph">
+<p>Regardless of the actual implementation, a client app must be added to the
+API management system so that Contracts can be created between it and the APIs it wishes to consume.</p>
+</div>
+<div class="paragraph">
+<p>A client app consists of basic metadata such as name and description.
+Policies can also be configured on a client app, but are optional.</p>
+</div>
+<div class="paragraph">
+<p>Finally, API Contracts can be created between a client app and the API(s) it wishes to consume.
+Once the API Contracts are created, the client app can be registered with the runtime gateway.
+Policies and Contracts can be added/removed at any time.
+However, after any changes are made, you must re-register the client app.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-contracts"><a class="anchor" href="#api-contracts"></a>API Contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An API contract is simply a link between a Client App and an API through a plan offered by that API.
+This is the only way that a client app can consume an API.
+If there are no client apps that have created API contracts with an API, that API cannot be accessed through the API management runtime gateway (unless of course the API is "Public").</p>
+</div>
+<div class="paragraph">
+<p>When an API Contract is created, the system generates a unique API key specific to that contract.
+All requests made to the API by a Client App through the API Gateway must include this API key.
+The API key is used to create the runtime policy chain from the policies configured on the API, plan, and client app.</p>
+</div>
+<div class="paragraph">
+<p>API Contracts can only be created between Client Apps and published APIs which are offered through at least one Plan.
+An API Contract cannot be created between a Client App and a Public API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_policy_chain"><a class="anchor" href="#_policy_chain"></a>Policy Chain</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A policy chain is an ordered sequence of policies that are applied when a request is made for an API through the API Gateway.</p>
+</div>
+<div class="paragraph">
+<p>The order that policies are applied is important and is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Client App</p>
+</li>
+<li>
+<p>Plan</p>
+</li>
+<li>
+<p>API</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Within these individual sections, the end user can specify the order of the policies.</p>
+</div>
+<div class="paragraph">
+<p>When a request for an API is received by the API Gateway the policy chain is applied to the request in the order listed above.</p>
+</div>
+<div class="paragraph">
+<p>If none of the policies fail, the API Gateway will proxy the request to the backend
+API implementation.</p>
+</div>
+<div class="paragraph">
+<p>Once a response is received from the back end API implementation, the policy chain is
+then applied in reverse order to that response.
+This allows each policy to be applied twice, once to the inbound request and then again to the outbound response.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="concepts.html">Concepts</a></span>
+  <span class="next"><a href="user-management.html">User Management</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

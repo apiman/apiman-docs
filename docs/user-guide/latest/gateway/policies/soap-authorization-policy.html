@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SOAP Authorization Policy :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/latest/gateway/policies/soap-authorization-policy.html">
+    <link rel="prev" href="simple-header-policy.html">
+    <link rel="next" href="time-restricted-access-policy.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+<link rel="stylesheet" href="../../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../../../_'</script>
+<link rel="icon" href="../../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Crash Course</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/how-apiman-works.html">How Apiman Works</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/apiman-policies.html">Policies, the Core of API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/managing-apiman.html">Managing Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/getting-up-and-running.html">Getting Up and Running with Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../crash-course/resources.html">Apiman Resources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../manager/concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/data-model.html">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/data-model.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/managing-organisations.html">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/managing-plans.html">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../manager/versioning.html">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../manager/administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../concepts.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="authorization-policy.html">Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="basic-auth-policy.html">Basic Authentication Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="caching-resources-policy.html">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="cors-policy.html">CORS Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="header-allow-deny.html">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="http-security-policy.html">HTTP Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ignored-resources-policy.html">Ignored Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ip-block-and-allow-list.html">IP Block and Allow policies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jsonp-policy.html">JSONP Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jwt-policy.html">JWT Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="keycloak-oauth-policy.html">Keycloak OAuth Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="log-policy.html">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quota-policy.html">Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="rate-limiting-policy.html">Rate Limiting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="simple-header-policy.html">Simple Header Policy</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="soap-authorization-policy.html">SOAP Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="time-restricted-access-policy.html">Time Restricted Access Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="transfer-quota-policy.html">Transfer Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="transformation-policy.html">Transformation Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="url-rewriting-policy.html">URL Rewriting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="url-whitelist-policy.html">URL Whitelist Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../development-guide/latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../../development-guide/dev/intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../../development-guide/latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../installation-guide/latest/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../../installation-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../../installation-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../../index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">User Guide</a></li>
+    <li>Apiman Gateway</li>
+    <li>Policies</li>
+    <li><a href="soap-authorization-policy.html">SOAP Authorization Policy</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3</button>
+  <div class="version-menu">
+    <a class="version" href="../../../dev/gateway/policies/soap-authorization-policy.html">3.1.0-SNAPSHOT</a>
+    <a class="version is-current" href="soap-authorization-policy.html">3</a>
+    <a class="version is-missing" href="../../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../../1.5.7.Final/index.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/3.x/docs/user/modules/ROOT/pages/gateway/policies/soap-authorization-policy.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SOAP Authorization Policy</h1>
+<div class="sect1">
+<h2 id="description"><a class="anchor" href="#description"></a>Description</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This policy is nearly identical to our Authorization Policy, with the exception that it accepts a SOAPAction in the HTTP header.
+Please note that this policy will only accept a single SOAPAction header, and will not extract the operation name from the SOAP body.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="plugin"><a class="anchor" href="#plugin"></a>Plugin</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+	"groupId": "io.apiman.plugins",
+	"artifactId": "apiman-plugins-soap-authorization-policy",
+	"version": "3.0.0.Final"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Just as with the Authorization policy, you can define any number of rules you&#8217;d like.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>rules</strong> (array) : A single rule that your policy will apply if each of the following properties match:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>action</strong> (string) : Defines the SOAPAction you&#8217;d like the policy to be applicable to.</p>
+</li>
+<li>
+<p><strong>role</strong> (string) : The role the user must have if this pattern matches the request.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>multiMatch</strong> (boolean) : Should the request pass when any or all of the authorization rules pass?  Set to true if all rules must match, false if only one rule must match.</p>
+</li>
+<li>
+<p><strong>requestUnmatched</strong> (boolean) : If the request does not match any of the authorization rules, should it pass or fail?  Set to true if you want the policy to <strong>pass</strong> when no rules are matched.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sample-configuration"><a class="anchor" href="#sample-configuration"></a>Sample Configuration</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "rules" : [
+   	{
+   		"action": "hello",
+   		"role": "admin"
+   	},
+   	{
+   		"action": "goodbye",
+   		"role": "user"
+   	}
+   ],
+   "multiMatch": true,
+   "requestUnmatched": false
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="simple-header-policy.html">Simple Header Policy</a></span>
+  <span class="next"><a href="time-restricted-access-policy.html">Time Restricted Access Policy</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../../_/css/vendor/site-extra.css">
+<script src="../../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

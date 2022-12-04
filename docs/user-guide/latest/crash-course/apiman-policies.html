@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Policies, the Core of API Management :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/latest/crash-course/apiman-policies.html">
+    <link rel="prev" href="how-apiman-works.html">
+    <link rel="next" href="providing-apis.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Crash Course</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="how-apiman-works.html">How Apiman Works</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="apiman-policies.html">Policies, the Core of API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managing-apiman.html">Managing Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="getting-up-and-running.html">Getting Up and Running with Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="resources.html">Apiman Resources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../manager/concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/data-model.html">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/data-model.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/managing-organisations.html">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/managing-plans.html">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../manager/versioning.html">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../manager/administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/authorization-policy.html">Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/basic-auth-policy.html">Basic Authentication Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/caching-resources-policy.html">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/cors-policy.html">CORS Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/header-allow-deny.html">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/http-security-policy.html">HTTP Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ignored-resources-policy.html">Ignored Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ip-block-and-allow-list.html">IP Block and Allow policies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jsonp-policy.html">JSONP Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jwt-policy.html">JWT Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/keycloak-oauth-policy.html">Keycloak OAuth Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/log-policy.html">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/quota-policy.html">Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/rate-limiting-policy.html">Rate Limiting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/simple-header-policy.html">Simple Header Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/soap-authorization-policy.html">SOAP Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/time-restricted-access-policy.html">Time Restricted Access Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transfer-quota-policy.html">Transfer Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transformation-policy.html">Transformation Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-rewriting-policy.html">URL Rewriting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-whitelist-policy.html">URL Whitelist Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../development-guide/latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../development-guide/dev/intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../development-guide/latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../installation-guide/latest/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../installation-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../installation-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">User Guide</a></li>
+    <li>Apiman Crash Course</li>
+    <li><a href="apiman-policies.html">Policies, the Core of API Management</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3</button>
+  <div class="version-menu">
+    <a class="version" href="../../dev/crash-course/apiman-policies.html">3.1.0-SNAPSHOT</a>
+    <a class="version is-current" href="apiman-policies.html">3</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/3.x/docs/user/modules/ROOT/pages/crash-course/apiman-policies.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Policies, the Core of API Management</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Policies are the most important element of API management.
+All the subsystems in Apiman, from the Management API UI to the API Gateway, exist for one ultimate goal; to ensure that API governance is achieved by the application of policies to API requests.
+In Apiman, policies are applied through a policy chain.</p>
+</div>
+<div class="paragraph">
+<p>Apiman is not only preconfigured with a rich set of policies that you can use, right out of the box, it also supports a mechanism that you can use to define your own custom policies.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>API governance is achieved by the API Gateway applying policies to API requests.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Apiman has support for many policies, including (but not limited to):</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Policy Categories</th>
+<th class="tableblock halign-left valign-top">Policies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security Policies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>BASIC Authentication</strong> - A username/password is required to access an API.</p>
+</li>
+<li>
+<p><strong>OAuth Authentication</strong> - Uses Keycloak to provide OAuth authentication.</p>
+</li>
+<li>
+<p><strong>Authorization</strong> - Access to APIs’ resources is controlled by user roles.</p>
+</li>
+<li>
+<p><strong>IP Blocklist</strong> - Clients with specific IP address will be blocked from accessing an API.</p>
+</li>
+<li>
+<p><strong>IP Allowlist</strong> - And, clients with specific IP address will not &nbsp;be blocked from accessing an API.</p>
+</li>
+<li>
+<p><strong>Ignored Resources</strong> - Paths to APIs’ resources that will not be accessible.</p>
+</li>
+<li>
+<p><strong>Time Restricted Access</strong> - Specify when an API can be accessed.</p>
+</li>
+<li>
+<p><strong>URL Whitelist</strong> - Allow only specific sub-resources to be accessed.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limiting Policies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Rate Limiting</strong> - Access to an API is limited by the number of requests in a defined time period (generally used to create a fine-grained limit).</p>
+</li>
+<li>
+<p><strong>Quota</strong> - Access to an API is limited by the number of requests in a defined time period (generally used to create a coarse-grained limit).</p>
+</li>
+<li>
+<p><strong>Transfer Quota</strong> - Similar to a Quota policy, but based on the number of bytes transferred, not the number of requests.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modification Policies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>URL Rewriting</strong> - Modify any URLs in the API response so that they direct users through the API Gateway rather than directly to the back-end API.</p>
+</li>
+<li>
+<p><strong>Transformation</strong> - Used to convert between JSON and XML.</p>
+</li>
+<li>
+<p><strong>JSONP</strong> - Can convert a standard JSON API into a JSONP endpoint.</p>
+</li>
+<li>
+<p><strong>Simple Header</strong> - Used to make custom changes to the request and/or response headers (add, remove, modify).</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other Policies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Caching</strong> - Cache results from a backend API.</p>
+</li>
+<li>
+<p><strong>Logging</strong> - Log all request/response headers for each request.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Let&#8217;s learn a bit more about policies.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whats-in-a-policy"><a class="anchor" href="#whats-in-a-policy"></a>What&#8217;s in a Policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Apiman policy consists of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Basic meta-data about the policy (name, description)</p>
+</li>
+<li>
+<p>JSON based configuration</p>
+</li>
+<li>
+<p>A Java class providing the implementation of the policy</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each policy supported by Apiman performs a specific task, such as (but not limited to):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rate Limiting/Quotas</p>
+</li>
+<li>
+<p>Security</p>
+</li>
+<li>
+<p>Caching</p>
+</li>
+<li>
+<p>Transformation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Every API managed by Apiman can be configured with zero or more policies.  In addition, an API can be offered for consumption through several Plans, where each Plan can be configured with zero or more policies.  Finally, a Client App can also be configured with a set of policies.  Whenever the API Gateway receives a request for an API (optionally on behalf of a specific Client App), it creates a chain of policies from those configured at the three levels, and then applies that chain of policies to the request.</p>
+</div>
+<div class="paragraph">
+<p>Most of the Apiman policies work alone (e.g. caching), but some of them are used in conjunction with other policies.  The next couple of sections will discuss two very common categories of policies, some policies found in those categories, and how they work together.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="security-policies-authentication-authorization"><a class="anchor" href="#security-policies-authentication-authorization"></a>Security Policies - Authentication &amp; Authorization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;ll start with the Authorization and Authentication policies. We&#8217;ll review these policies together as the use of the Authorization type depends on the BASIC authentication type. Before we take a detailed look at the policies supported by Apiman, it&#8217;s important that we understand the differences between authentication and authorization:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In authentication-based policies, access to an API is governed by the identity of the user</p>
+</li>
+<li>
+<p>In authorization-based policies, access to an API, or specific resources provided by an API is governed by the role(s) assigned to a user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In order to make use of an authorization policy, roles must be extracted during authentication. In other words, you cannot have authorization without authentication.</p>
+</div>
+<div class="paragraph">
+<p>APIs often define security requirements to ensure that clients have to authenticate. By having Apiman perform this authentication, backend APIs are freed from having to implement and perform this authentication. This also has the added benefit of centralizing the authentication for all your APIs.</p>
+</div>
+<div class="paragraph">
+<p>In creating an Authentication policy, we define an Authentication Realm (think of this as an area to be protected, within which usernames and passwords exist) and an optional HTTP header. The HTTP header is used to optionally pass the authenticated user&#8217;s principal to the back-end API through an HTTP header. This is useful if the back-end system needs to know the username of the user calling it (e.g. to perform a user-specific operation).</p>
+</div>
+<div class="paragraph">
+<p>An Apiman Authorization policy consists of a set of rules. The rules define the resources that can be accessed in terms of a regular expression and an HTTP verb (GET, PUT, etc.)</p>
+</div>
+<div class="paragraph">
+<p>Through its authorization policies, Apiman enables you to create fine-grained rules to govern access to your API&#8217;s resources. For example, based on the user roles that you define, users assigned a “sales” role can access the sales related API resources, and users assigned a “marketing” role can access the marketing related API resources. Users assigned to an “admin” role are able to access all the API&#8217;s resources.</p>
+</div>
+<div class="paragraph">
+<p>As we mentioned a moment ago, in order to make use of an authorization policy, roles must be extracted during authentication. Apiman can be configured to extract those roles from an available source; for instance, the <a href="http://jwt.io/">JSON Web Token</a> when using Keycloak, or JDBC/LDAP with the BASIC authentication policy in the API request. Remember, you cannot have authorization without authentication.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="limiting-policies-rates-and-quotas"><a class="anchor" href="#limiting-policies-rates-and-quotas"></a>Limiting Policies - Rates and Quotas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apiman provides (3) limiting policies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rate Limiting - This policy type governs the number of times requests are made to an API within a specified time period. The requests can be filtered by user, application, or API and can set the level of granularity for the time period to second, minute, hour, day, month, or year. The intended use of this policy type is 	for fine grained processing (e.g., 10 requests per second).</p>
+</li>
+<li>
+<p>Quota - This policy type performs the same basic functionality as the Rate Limiting policy type., however, the intended use of this policy type is for less fine grained processing (e.g., 10,000 requests per month).</p>
+</li>
+<li>
+<p>Transfer Quota - In contrast to the other policies, Transfer Quota tracks the number of bytes transferred (either uploaded or downloaded) rather than the total number of requests made.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of these policies, if used singly, can be effective in throttling requests. Apiman, however, adds a layer of flexibility to your use of these policies by enabling you to use them in combinations. Let&#8217;s look at a few examples.</p>
+</div>
+<div class="paragraph">
+<p>Limiting the total number of API requests within a period of time is a straightforward task and can be configured in a quota policy. This policy, however, may not have the desired effect as the quota may be reached early in the defined time period. If this happens, the requests made to the API during the remainder of the (typically long) time period will be blocked by the policy. A better way to deal with a situation like this is to implement a more flexible approach where the monthly quota policy is combined with a fine grained rate limiting policy that will act as a throttle on the traffic.</p>
+</div>
+<div class="paragraph">
+<p>To illustrate, there are about 2.5 million seconds in a month. If we want to set the API request quota for a month to 1/2 million, then we can also set a rate limit policy to a limit of 5 requests per second to ensure that API requests are throttled and the API can be accessed throughout the entire month.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a visual view of a rate limiting policy based on a time period of one week. If we define a weekly quota, there is no guarantee that users will not consume that quota before the week is over. This will result in an API&#8217;s requests being denied at the end of the week. In contrast, if we augment the weekly quota with a more fine grained policy, we can maintain the API&#8217;s ability to respond to requests throughout the week:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apiman_004.png" alt="rate limiting">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Policies can be configured to work together in combinations.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The ability to throttle API requests based on API request counts and bytes transferred provides even greater flexibility in implementing policies. APIs that transfer larger amounts of data, but rely on fewer API requests can have that data transfer throttled on a per-byte basis. For example, an API that is data intensive, will return a large amount of data in response to each API request. The API may only receive a request a few hundreds of times a day, but each request may result in several megabytes of data being transferred. Let&#8217;s say that we want to limit the amount of data transferred to 6GB per hour. For this type of API, we could set a rate limiting policy to allow for one request per minute, and then augment that policy with a transfer quota policy of 100Mb per hour.</p>
+</div>
+<div class="paragraph">
+<p>Before we move on, let&#8217;s look at how we can combine multiple policies into a plan.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s important to keep in mind that a plan can contain multiple policies. For our example, we&#8217;ll create both a “gold” plan and a “silver” plan. In a real-world situation, gold and silver level plans might look something like this:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gold plan</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A coarse grained Quota plan with a limit of 100,000 API requests per month, and a fine-grained Rate Limiting plan of 100 service requests per minute</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Silver plan</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A coarse grained Quota plan with a limit of 20,000 API requests per month, and a fine-grained Rate Limiting plan of 500 service requests per minute</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This diagram lets us visualize how the two policies will work together:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/apiman_005.png" alt="policies working together">
+</div>
+</div>
+<div class="paragraph">
+<p>In this diagram,  each filled in box represents one API request. The important thing to understand is how the policies work together to enable you to have flexible throttling of requests to your API:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The fine grained rate limit is reset at  the end of the time period defined for the rate limit policy</p>
+</li>
+<li>
+<p>And, the total number of API requests continue to be applied to the defined quota until the quota policy time limit is reached.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="other-policies"><a class="anchor" href="#other-policies"></a>Other Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many other policies offered by Apiman, each of them performing a specific task.  And more policies are added with every release!  Even more interesting, you can add your own custom policies using Apiman&#8217;s excellent plugin framework (more on that later).  You can refer to the Apiman User Guide for a full list of official policies, what each policy does, and how to configure it.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="how-apiman-works.html">How Apiman Works</a></span>
+  <span class="next"><a href="providing-apis.html">Providing APIs</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

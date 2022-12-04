@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Apiman Plugins :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/development-guide/latest/plugins.html">
+    <link rel="prev" href="intro.html">
+    <link rel="next" href="gateway.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../_'</script>
+<link rel="icon" href="../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="development-guide" data-version="3.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="intro.html">Development Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="intro.html">Development Guide</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="plugins.html">Apiman Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="gateway.html">Apiman Gateway Implementation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Development Guide</span>
+    <span class="version">3.1.0-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../installation-guide/latest/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../installation-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../installation-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../user-guide/latest/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../user-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../user-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../user-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../user-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="intro.html">Development Guide</a></li>
+    <li><a href="plugins.html">Apiman Plugins</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3.1.0-SNAPSHOT</button>
+  <div class="version-menu">
+    <a class="version is-current" href="plugins.html">3.1.0-SNAPSHOT</a>
+    <a class="version" href="../latest/plugins.html">3</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/master/docs/development/modules/ROOT/pages/plugins.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Apiman Plugins</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to extend the functionality of apiman is by implementing an apiman plugin.
+This section details how this is done and what functionality can be extended or provided.</p>
+</div>
+<div class="paragraph">
+<p>An Apiman plugin is basically a Java web archive (WAR) with a bit of extra sauce.
+This approach makes it very easy to build using Maven, and should be quite familiar to most Java developers.</p>
+</div>
+<div class="paragraph">
+<p>Because a plugin consists of some resources files, compiled Java classes, front-end resource such as HTML and Javascript, and dependencies in the form of JARs, the WAR format is a natural choice.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-plugin-specification-file"><a class="anchor" href="#the-plugin-specification-file"></a>The Plugin Specification File</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to the standard layout of a Java Web Archive, an Apiman plugin must contain  the following plugin specification file (which contains information about the plugin):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">META-INF/apiman/plugin.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This <code>plugin.json</code> file contains the basic meta-data that describes the plugin, and should be of the following format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "frameworkVersion" : 1.0, <i class="conum" data-value="1"></i><b>(1)</b>
+  "name" : "Plugin Name", <i class="conum" data-value="2"></i><b>(2)</b>
+  "description" : "A plugin description goes here.", <i class="conum" data-value="3"></i><b>(3)</b>
+  "version" : "3.1.9" <i class="conum" data-value="4"></i><b>(4)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><strong>frameworkVersion</strong>: Indicates the apiman plugin framework version this plugin is compatible with - this should simply be 1.0 for now (reserved for future use)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong>name</strong>: The name of the plugin.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><strong>description</strong>: The description of the plugin.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><strong>version</strong>: The plugin version.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If this <code>plugin.json</code> file is missing from the plugin archive, then the plugin will fail to load.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_maven_to_create_a_plugin"><a class="anchor" href="#_using_maven_to_create_a_plugin"></a>Using Maven to Create a Plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One benefit of using WAR as the format of an Apiman plugin is that plugins can easily
+be created using Maven.</p>
+</div>
+<div class="paragraph">
+<p>This section will describe how this can be done.</p>
+</div>
+<div class="paragraph">
+<p>Note that you can use the following simple plugin as a reference if you prefer:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/apiman/apiman-plugins/tree/3.1.0-SNAPSHOT/noop-policy" class="bare">github.com/apiman/apiman-plugins/tree/3.1.0-SNAPSHOT/noop-policy</a></p>
+</div>
+<div class="paragraph">
+<p>In order to create an apiman plugin using maven, simply create a new maven project and set its <code>packaging</code> type to <code><strong>war</strong></code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;packaging&gt;war&lt;/packaging&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Include any dependencies you might need:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependencies&gt;
+  &lt;!-- apiman dependencies (must be excluded from the WAR) --&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;io.apiman&lt;/groupId&gt;
+    &lt;artifactId&gt;apiman-gateway-engine-core&lt;/artifactId&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll want to make any Apiman dependencies provided so that there aren&#8217;t any classloading
+conflicts when executing your code.</p>
+</div>
+<div class="paragraph">
+<p>To make life easier, you can use the <code>apiman-parent</code> Maven Parent, which holds the managed versions of dependencies that Apiman uses, which makes it easier to align things:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Group</dt>
+<dd>
+<p>io.apiman</p>
+</dd>
+<dt class="hdlist1">Artifact</dt>
+<dd>
+<p>apiman-parent</p>
+</dd>
+<dt class="hdlist1">Version</dt>
+<dd>
+<p>3.1.0-SNAPSHOT</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;parent&gt;
+  &lt;groupId&gt;io.apiman&lt;/groupId&gt;
+  &lt;artifactId&gt;apiman-parent&lt;/artifactId&gt;
+  &lt;version&gt;3.1.0-SNAPSHOT&lt;/version&gt;
+&lt;/parent&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, we recommend that you put your <code>plugin.json</code> file in the following location in your Maven project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">src/main/apiman</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Of course, any resources in that location are not automatically included in the final WAR, so you should add the following markup to your <code>pom.xml</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+      &lt;configuration&gt;
+        &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
+        &lt;webResources&gt;
+          &lt;resource&gt;
+            &lt;directory&gt;src/main/apiman&lt;/directory&gt;
+            &lt;targetPath&gt;META-INF/apiman&lt;/targetPath&gt;
+            &lt;filtering&gt;true&lt;/filtering&gt;
+          &lt;/resource&gt;
+        &lt;/webResources&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This markup will ensure that resources in the <strong>src/main/apiman</strong> folder will be included in the correct location in the WAR.</p>
+</div>
+<div class="paragraph">
+<p>Also, note that resource filtering is enabled, which will make it easier to maintain your <strong>plugin.json</strong> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "frameworkVersion" : 1.0,
+  "name" : "My Plugin Name",
+  "description" : "My plugin description.",
+  "version" : "${project.version}"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the <code>version</code> of the plugin is set to <code><strong>${project.version}</strong></code>, which will automatically be changed to the version of your Maven project at build time.</p>
+</div>
+<div class="sect2">
+<h3 id="making-your-plugin-available-to-apiman"><a class="anchor" href="#making-your-plugin-available-to-apiman"></a>Making Your Plugin Available to apiman</h3>
+<div class="paragraph">
+<p>Plugins are identified by their Maven coordinates (<code>groupId</code>, <code>artifactId</code>, <code>version</code>,
+<code>classifier</code>, <code>type</code>).
+The classifier and type are optional.
+If the type is not specified when loading a plugin, Apiman will assume <code>war</code>.</p>
+</div>
+<div class="paragraph">
+<p>When loading a plugin for use, Apiman will first check for the plugin in the local user&#8217;s <code>.m2</code> directory.
+This is useful when running Apiman during development, but is unlikely to be available in a production environment.
+If the plugin cannot be found locally, Apiman will attempt to download it from a remote repository such as Maven Central.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can configure additional remote repositories when you set up Apiman.
+Please refer to the Apiman Installation Guide for details.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This all means that when testing your plugin locally, you can simply use Maven to install it into your local <code>.m2</code> directory and then ask Apiman to load it.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>In production, the plugin will typically need to be available from a remote Maven repository.</p>
+</li>
+<li>
+<p>There is one important exception: if you use a 'gitops' style of deployment, you can bake all the Apiman plugins you want into your Docker image&#8217;s <code>~/.m2</code> directory, which ensure they will be available to Apiman at runtime.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="contributing-a-policy"><a class="anchor" href="#contributing-a-policy"></a>Contributing a Policy</h3>
+<div class="paragraph">
+<p>Now that you know how to create an Apiman plugin, you might be wondering what you can actually do with it!</p>
+</div>
+<div class="paragraph">
+<p>The most important purpose of a plugin is to provide additional <strong>Policies</strong> that can be used when configuring Plans, APIs, and Client Apps in Apiman.</p>
+</div>
+<div class="paragraph">
+<p>Although Apiman comes with a set of useful built-in policies, it is often  necessary for users to provide their own custom policies.
+The best way to do that is to create a plugin that provides such policies.</p>
+</div>
+<div class="paragraph">
+<p>In order to provide a custom policy from a plugin, several things are needed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An implementation of <code>IPolicy</code> (Java code)</p>
+</li>
+<li>
+<p>A policy definition (JSON file)</p>
+</li>
+<li>
+<p>An optional policy configuration form that the API Manager UI will present to the user when configuring the policy (JSON Schema)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The next few sections explain each of these elements further, but note that they are all included in the Apiman plugin WAR.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="policy-implementation"><a class="anchor" href="#policy-implementation"></a>Policy Implementation</h3>
+<div class="paragraph">
+<p>A policy implementation is the Java code that is executed by the API Gateway when a managed API request is made.
+This is the bread and butter of the API Gateway; its primary purpose.</p>
+</div>
+<div class="paragraph">
+<p>For each request, the API Gateway creates a chain of policies that must be executed before proxying the request to the back-end API implementation.</p>
+</div>
+<div class="paragraph">
+<p>Each of the policies in that chain is an implementation of the <code>IPolicy</code> interface.</p>
+</div>
+<div class="sect3">
+<h4 id="standard-ipolicy"><a class="anchor" href="#standard-ipolicy"></a>Standard IPolicy</h4>
+<div class="paragraph">
+<p>All policies must implement the <code>IPolicy</code> interface, consisting of several methods.</p>
+</div>
+<div class="paragraph">
+<p>The <code>apply</code> method with <code>ApiRequest</code> is called during the request phase, and the <code>apply</code> with <code>ApiResponse</code> during the response phase:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void apply(ApiRequest request, IPolicyContext context, Object config, IPolicyChain&lt;ApiRequest&gt; chain);
+
+void apply(ApiResponse response, IPolicyContext context, Object config, IPolicyChain&lt;ApiResponse&gt; chain);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The API objects, respectively, provide abstracted representations of the head of a request and response for a given conversation.
+These can be modified in any manner the implementor sees fit.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Policy instances are singletons, so it is usually not a good idea to use fields without great care.</p>
+</div>
+<div class="paragraph">
+<p>The IPolicyContext can be used to pass information from the request phase to the response phase.</p>
+</div>
+<div class="paragraph">
+<p>Any state that must span multiple requests will need to use one of the policy components described in the <strong>Provided Components</strong> section.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Object parseConfiguration(String jsonConfiguration) throws ConfigurationParseException;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The final <code>IPolicy</code> method is used to parse JSON configuration into an arbitrary object configuration which will be passed in its parsed form to <code>doApply</code>, where the implementor may cast it their native configuration object.
+This method will be invoked for each unique configuration of the policy.</p>
+</div>
+<div class="paragraph">
+<p>For more information about policy configuration, see the <a href="#_policy_configuration_form">Policy Configuration</a> section below.</p>
+</div>
+<div class="sect4">
+<h5 id="indicating-successes"><a class="anchor" href="#indicating-successes"></a>Indicating Successes</h5>
+<div class="paragraph">
+<p>If a policy determines that the conversation can continue, <code>chain.doApply</code> should
+be signalled.</p>
+</div>
+<div class="paragraph">
+<p>Any modifications you wish to pass onto the next policy should be
+completed and included in the invocation.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="indicating-failures"><a class="anchor" href="#indicating-failures"></a>Indicating Failures</h5>
+<div class="paragraph">
+<p>If it is determined that a conversation should be interrupted for governance reasons  (i.e. according to business logic and not exceptional), then <code>chain.doFailure</code> should be signalled.</p>
+</div>
+<div class="paragraph">
+<p>A useful <code>PolicyFailure</code> should be provided, which allows gateways to
+respond in a sensible way to the requestor.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The platform&#8217;s <code>IPolicyFailureFactoryComponent</code> can be used to generate failures.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="#_provided_components">provided components</a> section for more details on this component.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="handling-exceptions"><a class="anchor" href="#handling-exceptions"></a>Handling Exceptions</h5>
+<div class="paragraph">
+<p>As a factor of the asynchronous nature of apiman, any exceptions that may occur during  the operation of a policy should be caught and explicitly handed to <code>chain.doError</code>.</p>
+</div>
+<div class="paragraph">
+<p>If exceptions are left uncaught, then it is possible that they will be lost.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="idata-policy"><a class="anchor" href="#idata-policy"></a>IData Policy</h4>
+<div class="paragraph">
+<p>Whilst standard policies are concerned only with the head of the conversation, it is also possible for policies to access and manipulate the body in transit.
+A data policy must implement the <code>IDataPolicy</code> interface.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Handling of data streams is a performance sensitive area, implementors
+should strive to be as efficient as possible and avoid any unnecessary interactions
+with the stream.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>getRequestDataHandler</code> and <code>getResponseDataHandler</code> methods are the data  counterparts of <code>apply</code>.
+Implementors must return <code>IReadWriteStream</code> streams, which Apiman uses to write data chunks into policies, and the policies write data to subsequent policies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">IReadWriteStream&lt;ApiRequest&gt; getRequestDataHandler(ApiRequest request, IPolicyContext context);
+
+IReadWriteStream&lt;ApiResponse&gt; getResponseDataHandler(ApiResponse response, IPolicyContext context);</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not return an <code>IApimanBuffer</code> with a different native type than you received.</p>
+</div>
+<div class="paragraph">
+<p>Instantiate new buffers using the <code>IBufferFactoryComponent</code> (refer to <a href="#_provided_components">provided components</a>) and prefer append patterns where possible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Implementors must explicitly hand each chunk onto apiman when they are finished  interacting with it.
+A convenient way to achieve this is via <code>AbstractStream&lt;H&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+public IReadWriteStream&lt;ApiRequest&gt; getRequestDataHandler(final ApiRequest request, final IPolicyContext context) {
+  return new AbstractStream&lt;ApiRequest&gt;() {
+    @Override
+    public void write(IApimanBuffer chunk) {
+      // Mutate chunk by appending a string.
+      chunk.append("my modification");
+      // We're finished: write the chunk back to apiman
+      // using super.write().
+      super.write(chunk);
+    }
+
+    @Override
+    public void end() {
+      // End of stream signalled, do cleanup, etc.
+      super.end();
+    }
+  };
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Do not mutate an <code>IApimanBuffer</code> once handed over.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The request or response body will not begin streaming before the corresponding <code>doApply</code> has been called, however, it is still possible to interrupt the conversation during the streaming phase by signalling <code>doFailure</code> or <code>doError</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="performance-considerations"><a class="anchor" href="#performance-considerations"></a>Performance Considerations</h4>
+<div class="paragraph">
+<p>Policies are amongst the most impactful elements of the system for performance.
+To minimise the impact of a policy implementors may wish to follow these guidelines:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maintain as little state within a policy instance as possible.</p>
+</li>
+<li>
+<p>Call <code>doApply</code>, <code>doFailure</code> or <code>doError</code> as soon as possible.</p>
+</li>
+<li>
+<p>Data policies should interact with the data stream as efficiently as possible and prefer mutating in-place (especially with small changes).</p>
+</li>
+<li>
+<p>If you are contributing a policy to Apiman:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement any long-running tasks asynchronously (e.g. database calls).</p>
+</li>
+<li>
+<p><strong>Do not</strong> block the main thread (e.g. blocking futures, wait, sleep).</p>
+</li>
+<li>
+<p>Where possible, use asynchronous techniques to interact with the outside world, such as callbacks.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dependencies"><a class="anchor" href="#dependencies"></a>Dependencies</h4>
+<div class="paragraph">
+<p>Typically, a policy implementation should minimize the number of third party libraries  it depends on, but often times this is unavoidable.</p>
+</div>
+<div class="paragraph">
+<p>Plugins are isolated from one another, so it is a simple matter of including any required dependencies inside the plugin&#8217;s WAR archive in the standard location of:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">WEB-INF/lib</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You should make sure that any Apiman dependencies you use (for example the <code>apiman-core</code> module that contains the <code>IPlugin</code> and other necessary interfaces) are marked as <code>provided</code> in your Maven project, so that they are not included in the plugin archive.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="logging"><a class="anchor" href="#logging"></a>Logging</h4>
+<div class="paragraph">
+<p>You can create a logger via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">IApimanLogger LOGGER = ApimanLoggerFactory.getLogger(YourPlugin.class)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will likely need to include <code>apiman-common-logging-core</code> in your Maven dependencies (<code>&lt;scope&gt;provided&lt;/scope&gt;</code> should be sufficient).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_provided_components"><a class="anchor" href="#_provided_components"></a>Provided Components</h4>
+<div class="paragraph">
+<p>All policy implementations have access to various resources at runtime.
+These resources are primarily accessed through the <code><strong>IPolicyContext</strong></code> object that is passed to the policy when it is executed.
+Along with the ability to set conversation-level attributes, the policy context is how you access Policy Components.</p>
+</div>
+<div class="paragraph">
+<p>A Policy Component is simply a runtime component that a policy implementation may find useful.
+To access a component, use the <code>getComponent</code> method found on the policy context, passing it the interface of the component you wish to use.</p>
+</div>
+<div class="paragraph">
+<p>The following components are available:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IPolicyFailureFactoryComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to create a policy failure that is needed to call <code>doFailure</code> on the policy chain (indicating that the policy failed).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ISharedStateComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to share state information across the conversation boundary.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IHttpClientComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows HTTP requests to be made from within a policy.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IRateLimiterComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supports standard quota/rate limiting behavior, maintaining the current number of requests.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ILdapComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides the ability to authenticate with an LDAP server and execute simple queries against it.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IJdbcComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enables querying of JDBC-capable datasources.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>All the components have asynchronous APIs in order to better support the runtime  philosophy in the API Gateway.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For more information about each component, see its Javadoc.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="policy-definition"><a class="anchor" href="#policy-definition"></a>Policy Definition</h3>
+<div class="paragraph">
+<p>The policy implementation is what allows the API Gateway to execute the policy at runtime.</p>
+</div>
+<div class="paragraph">
+<p>But how does the API Manager know about the policy so that users can add it to a Plan, API, or Client App from within the User Interface?
+The answer is that the plugin must also include a Policy Definition JSON file for each policy it is providing.</p>
+</div>
+<div class="paragraph">
+<p>A plugin definition is a JSON file that must be located within the plugin archive here:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">META-INF/apiman/policyDefs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The plugin definition file takes the following form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "id" : "policy_name", <i class="conum" data-value="1"></i><b>(1)</b>
+  "name" : "Policy Name", <i class="conum" data-value="2"></i><b>(2)</b>
+  "description" : "A useful description of what the policy does.", <i class="conum" data-value="3"></i><b>(3)</b>
+  "policyImpl" : "plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/com.example.plugins.MyFirstPolicy", <i class="conum" data-value="4"></i><b>(4)</b>
+  "icon" : "document", <i class="conum" data-value="5"></i><b>(5)</b>
+  "formType" : "JsonSchema", <i class="conum" data-value="6"></i><b>(6)</b>
+  "form" : "schemas/policy_name.schema" <i class="conum" data-value="7"></i><b>(7)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code><strong>id</strong></code>: The unique id of the policy.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code><strong>name</strong></code>: The name of the policy.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code><strong>description</strong></code>: The description of the policy.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code><strong>policyImpl</strong></code>: Identifies the java class that implements the policy.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code><strong>icon</strong></code>: The icon to use when displaying the policy in the UI (name of a Font Awesome icon).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td><code><strong>formType</strong></code>: The type of form to use in the UI when configuring an instance of the policy.  See the Policy Configuration section below for details.
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Allowed Values</strong>: <em>Default</em>, <em>JsonSchema</em>.</p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td><code><strong>form</strong></code>: (<em>optional</em>) Path to a UI form that should be used when configuring an instance of the policy. See the Policy Configuration section below for details.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The most important thing to get right in this file is probably the <code>policyImpl</code>.
+This is the information that the API Manager will use when it tries to instantiate the
+policy implementation at runtime.</p>
+</div>
+<div class="paragraph">
+<p>For policies that come from plugins, the format of the <code>policyImpl</code> is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">plugin:{pluginGroupId}:{pluginArtifactId}:{pluginVersion}:{pluginType}/{fullyQualifiedClassname}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example of what this string might look like if you cracked open a valid Apiman plugin and had a peek at one of its policy definition files is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">plugin:io.apiman.plugins:apiman-plugins-example:6.3.3.Final:war/io.apiman.plugins.example.ExamplePolicy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When building your plugin using the recommended maven configuration documented in the <a href="#_using_maven_to_create_a_plugin">Using Maven to Create a Plugin</a> section, it is extremely convenient to simply let Maven set the values for you:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/com.example.plugins.ExamplePolicy</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_policy_configuration_form"><a class="anchor" href="#_policy_configuration_form"></a>Policy Configuration Form</h3>
+<div class="paragraph">
+<p>You may be wondering how the configuration information specific to a Plan, API, or
+Client App is managed.</p>
+</div>
+<div class="paragraph">
+<p>Since the same policy implementation instance is used for all requests, unique configuration appropriate to a particular request must be passed to the policy implementation when it is executed.
+This configuration is created in the API Manager user interface when adding the policy to a Plan, API, or Client App.</p>
+</div>
+<div class="paragraph">
+<p>Policy configuration takes the form of string data that is ultimately included when  publishing an API to the API Gateway.
+That string data is parsed into a Java object via the <code>parseConfiguration</code> on the <code><strong>IPolicy</strong></code> interface and then passed to the policy during execution.</p>
+</div>
+<div class="paragraph">
+<p>The string data is created in the API Manager user interface, either by interacting with a Policy Configuration Form contributed by the plugin, or (if no form is included in the plugin) by a default configuration form (a simple text area).</p>
+</div>
+<div class="sect3">
+<h4 id="default-policy-configuration"><a class="anchor" href="#default-policy-configuration"></a>Default Policy Configuration</h4>
+<div class="paragraph">
+<p>If the policy definition indicates that the configuration form type is <strong>Default</strong>, then it is up to the UI to determine how to display configuration information.
+For the policies provided by Apiman itself, there are UI forms provided.
+If the policy is contributed from a plugin, then the UI has no way to know the format of the configuration data.</p>
+</div>
+<div class="paragraph">
+<p>In this case, a simple TextArea is presented to the user.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This example is clearly not recommended, because users will likely have no idea what to enter into the TextArea presented to them.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="json-schema-policy-configuration"><a class="anchor" href="#json-schema-policy-configuration"></a>JSON Schema Policy Configuration</h4>
+<div class="paragraph">
+<p>Alternatively, the policy definition can specify a <a href="http://json-schema.org/">JSON Schema</a> in the policy definition JSON file.
+For example, the policy definition might include the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">  "formType" : "JsonSchema",
+  "form" : "schemas/policy_name.schema"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, apiman will look for a file inside the plugin artifact in the following location:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">META-INF/apiman/policyDefs/schemas/policy_name.schema</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The file in this location must be a JSON Schema file, which describes the JSON format of the configuration data expected by the policy implementation.
+The UI will use this JSON schema to generate an appropriate UI form that can edit the JSON configuration data needed by the policy implementation.</p>
+</div>
+<div class="paragraph">
+<p>The following example illustrates a policy contributed from a plugin, its JSON Schema file, the resulting form displayed in the UI, and the configuration data format that will be passed to the policy implementation at runtime.</p>
+</div>
+<div class="listingblock">
+<div class="title">META-INF/apiman/policyDefs/my-policy.json</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "id" : "my-policy",
+  "name" : "My First Policy",
+  "description" : "A policy with custom configuration!",
+  "policyImpl" : "plugin:${project.groupId}:${project.artifactId}:${project.version}:${project.packaging}/io.apiman.plugins.config_policy.ConfigPolicy",
+  "icon" : "pie-chart",
+  "formType" : "JsonSchema",
+  "templates" : [
+    {
+      "language": null,
+      "template": "Set policy with @{property1} and @{property2}!"
+    }
+  ],
+  "form" : "schemas/config-policyDef.schema"
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The template&#8217;s <code>language</code> field will support other languages in the future, but for now is null (i.e. single-language only).</p>
+</div>
+<div class="paragraph">
+<p>The template field itself is <a href="https://github.com/mvel/mvel" target="_blank" rel="noopener">MVEL</a> (Orb tag syntax), and displays in the UI after a plugin has been selected by a user.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">META-INF/apiman/policyDefs/schemas/my-policy.schema</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "title" : "Configure My Policy",
+  "description" : "Configure all of the necessary properties used by my policy.",
+  "type" : "object",
+  "properties": {
+    "property1": {
+      "title" : "Property 1",
+      "type" : "string",
+      "minLength" : 1,
+      "maxLength" : 64
+      },
+    "property2": {
+      "title" : "Property 2",
+      "type" : "string",
+      "minLength" : 1,
+      "maxLength" : 64
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Generated UI Form</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/plugin-policy-config-1.png" alt="Generated UI Form">
+</div>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">JSON Configuration Data Format</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "property1" : "USER_DATA_1",
+  "property2" : "USER_DATA_2"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>TIP:
+You can easily consume the JSON configuration data above in your policy implementation by having your policy implementation Java class extend the <code>AbstractMappedPolicy</code> base class provided by Apiman (in the <code><em>apiman-gateway-engine-policies</em></code> module) and creating a simple Java Bean to hold the JSON configuration data.</p>
+</div>
+<div class="paragraph">
+<p>First, here is the Java bean used to (un)marshal the JSON configuration data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyConfigBean implements Serializable {
+
+  private static final long serialVersionUID = 683486516910591477L;
+
+  private String property1;
+  private String property2;
+
+  /**
+   * Constructor.
+   */
+  public MyConfigBean() {
+  }
+
+  public String getProperty1() {
+    return property1;
+  }
+
+  public void setProperty1(String property1) {
+    this.property1 = property1;
+  }
+
+  public String getProperty2() {
+    return property2;
+  }
+
+  public void setProperty2(String property2) {
+    this.property2 = property2;
+  }
+
+}</code></pre>
+</div>
+</div>
+<div id="_abstract_mapped_policy" class="paragraph">
+<p>Now have a look at how to use that class when extending the <code>AbstractMappedPolicy</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class MyPolicy extends AbstractMappedPolicy&lt;MyConfigBean&gt; {
+
+  /**
+   * Constructor.
+   */
+  public MyPolicy() {
+  }
+
+  @Override
+  public Class&lt;MyConfigBean&gt; getConfigurationClass() {
+    return MyConfigBean.class;
+  }
+
+  @Override
+  protected void doApply(ApiRequest request, IPolicyContext context, MyConfigBean config, IPolicyChain&lt;ApiRequest&gt; chain) {
+    // Do something with MyConfigBean here?  It has all the configuration data!
+    super.doApply(request, context, My, chain);
+  }
+
+  @Override
+  protected void doApply(ApiResponse response, IPolicyContext context, MyConfigBean config, IPolicyChain&lt;ApiResponse&gt; chain) {
+    // Do something with MyConfigBean here?  It has all the configuration data!
+    super.doApply(response, context, config, chain);
+  }
+
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="policy-probes"><a class="anchor" href="#policy-probes"></a>Policy Probes</h4>
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The <em>Police Probes</em> feature was  added in Apiman 3.</p>
+</div>
+<div class="paragraph">
+<p>We need your feedback <a href="https://github.com/apiman/apiman/discussions/2277" target="_blank" rel="noopener">so we can evolve and improve this feature</a>.</p>
+</div>
+<div class="paragraph">
+<p>Is it a good idea or a bad idea? What could we do better?</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A <em>policy probe</em> allows a policy to optionally expose its internal state to be queried by the Apiman Manager.
+Policy implementors decide exactly how their probe(s) work.</p>
+</div>
+<div class="paragraph">
+<p>The policy probes feature is an attempt to solve use-cases that require some important state within a policy.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is the current rate limit status for ClientA?</p>
+</li>
+<li>
+<p>When does ClientB&#8217;s quota reset?</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="implementation"><a class="anchor" href="#implementation"></a>Implementation</h5>
+<div class="paragraph">
+<p>Probes are simple to implement:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement the <code>io.apiman.gateway.engine.policy.IPolicyProbe</code> interface on your policy class.</p>
+</li>
+<li>
+<p>Define probe request. This must implement <code>IPolicyProbeRequest</code>.</p>
+</li>
+<li>
+<p>Define a probe response. This must implement <code>IPolicyProbeResponse</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As an example, we&#8217;ll use Apiman&#8217;s inbuilt <code>RateLimitingPolicy</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">RateLimitingPolicy.java</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class RateLimitingPolicy extends AbstractMappedPolicy&lt;RateLimitingConfig&gt;
+     implements IPolicyProbe&lt;RateLimitingConfig, RateLimitingProbeConfig&gt; {  <i class="conum" data-value="1"></i><b>(1)</b>
+    // Omitted bits
+
+    @Override
+    public Class&lt;RateLimitingProbeConfig&gt; getProbeRequestClass() { <i class="conum" data-value="2"></i><b>(2)</b>
+        return RateLimitingProbeConfig.class;
+    }
+
+    @Override
+    public void probe( <i class="conum" data-value="3"></i><b>(3)</b>
+        RateLimitingProbeConfig probeRequest, <i class="conum" data-value="4"></i><b>(4)</b>
+        RateLimitingConfig policyConfig, <i class="conum" data-value="5"></i><b>(5)</b>
+        ProbeContext probeContext, <i class="conum" data-value="6"></i><b>(6)</b>
+        IPolicyContext context,  <i class="conum" data-value="7"></i><b>(7)</b>
+        IAsyncResultHandler&lt;IPolicyProbeResponse&gt; resultHandler) { <i class="conum" data-value="8"></i><b>(8)</b>
+        // Probe business logic
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Implement <code>IPolicyProbe</code>
+<div class="ulist">
+<ul>
+<li>
+<p>First parameter is the existing policy config class</p>
+</li>
+<li>
+<p>Second parameter is the probe&#8217;s configuration class (must implement <code>IPolicyProbeRequest</code>)</p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Implement <code>getProbeRequestClass</code> to return probe configuration class. This is needed as Java does not have reified generics (yet).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The <code>probe</code> method to provide your probe(s). The value is returned asynchronously.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Probe request configuration instance (i.e. requested probe information).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Policy configuration</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Probe context, allowing some useful data such as <code>apiKey</code>, <code>ApiContract</code>, <code>Api</code>, etc.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>Policy context, allowing access to components, etc.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td>Result handler to return the result of your probe. Must implement <code>IPolicyProbeResponse</code>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A common pattern to implement a policy probe is to re-use the policy&#8217;s standard business logic, but ensure it is a non-mutating action.</p>
+</div>
+<div class="paragraph">
+<p>For example, in the rate limiting policy, we trigger the rate limiter function, but increment the counter by zero.
+This lets us interrogate the current rate limiting state without actually consuming any of the user&#8217;s limit/quota:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Override
+public void probe(RateLimitingProbeConfig probeRequest, RateLimitingConfig policyConfig, ProbeContext probeContext, IPolicyContext context, IAsyncResultHandler&lt;IPolicyProbeResponse&gt; resultHandler) {
+    String bucketId = bucketFactory.bucketId(probeRequest, probeContext, policyConfig);
+    IRateLimiterComponent rateLimiter = context.getComponent(IRateLimiterComponent.class); <i class="conum" data-value="1"></i><b>(1)</b>
+    // Ask for rate limit, but don't actually decrement the counter.
+    rateLimiter.accept(bucketId, bucketFactory.getPeriod(policyConfig), policyConfig.getLimit(), 0, rateLimResult -&gt; { <i class="conum" data-value="2"></i><b>(2)</b>
+        RateLimitResponse remaining = rateLimResult.getResult();
+        var probeResult = new RateLimitingProbeResponse() <i class="conum" data-value="3"></i><b>(3)</b>
+                .setStatus(remaining)
+                .setConfig(policyConfig);
+        resultHandler.handle(AsyncResultImpl.create(probeResult)); <i class="conum" data-value="4"></i><b>(4)</b>
+    });
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Get the rate limiting component.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Increment the rate limit by zero to get the current rate limit state without consuming quota/limit.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Build probe response (implements <code>IPolicyProbeResponse</code>).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Dispatch probe response asynchronously.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="querying-probe"><a class="anchor" href="#querying-probe"></a>Querying probe</h5>
+<div class="paragraph">
+<p>You can issue a probe query via the Apiman Manager&#8217;s probes API.
+Currently, this only works if a contract is involved (i.e. has an API key; it does not work for 'public APIs' presently).</p>
+</div>
+<div class="paragraph">
+<p>The probes endpoint is (yes, sorry, it&#8217;s a tad long):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">/organizations/{organizationId}/clients/{clientId}/versions/{version}/contracts/{contractId}/policies/{policyId}</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>organizationId</strong>: Apiman Organization ID.</p>
+</li>
+<li>
+<p><strong>clientId</strong>: Apiman Client ID.</p>
+</li>
+<li>
+<p><strong>version</strong>: Client version.</p>
+</li>
+<li>
+<p><strong>contractId</strong>: Contract the probe pertains to.</p>
+</li>
+<li>
+<p><strong>policyId</strong>: Policy you want to probe.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The Apiman Manager passes the probe through to the Apiman policy, after ensuing you have the correct permissions.</p>
+</div>
+<div class="paragraph">
+<p>It is the responsibility of the requester to ensure the probe payload is valid for the policy type they are probing, otherwise it will be rejected and/or return nonsense.</p>
+</div>
+<div class="paragraph">
+<p>You need to know the format of the probe a priori, which is passed as a <code>POST</code> body; usually this is JSON.
+If there is demand, we could to provide a schema mechanism to allow generation of documentation over probes, so the format of the probe is easier to understand (<a href="https://github.com/apiman/apiman/discussions/2277" target="_blank" rel="noopener">let us know</a>).</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>RateLimitingProbeConfig</code> (policy probe request payload).</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "user": "foo",
+  "apiKey": "1234562342343-2343243-23432423",
+  "callerIp": "1.2.3.4"
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title"><code>RateLimitingProbeResponse</code> (policy probe response payload).</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "RateLimitingProbeResponse": {
+    "config": {
+      "limit": 5,
+      "granularity": "Client",
+      "period": "Hour"
+    },
+    "status": {
+      "accepted": true,
+      "remaining": 1
+    },
+    "probeType": "RateLimitingProbeResponse"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="json-schema-policy-configuration-sdk"><a class="anchor" href="#json-schema-policy-configuration-sdk"></a>JSON Schema Policy Configuration SDK</h4>
+<div class="paragraph">
+<p>If you are creating a non-trivial JSON Schema (more than just a couple of simple fields)
+it can be difficult to get it right without a few iterations.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, we have created a simple "SDK" to help you create your JSON Schema quickly.</p>
+</div>
+<div class="paragraph">
+<p>The SDK can be found in the Apiman GitHub repository at the following location:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">manager/ui/war/src/main/sdk/json-schema.html</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you have the Apiman source code checked out, you can simply open that file in your browser and start using it to author a custom JSON Schema.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can use "rawgit" and just go straight to the following URL:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://rawgit.com/apiman/apiman/master/manager/ui/war/src/main/sdk/json-schema.html" class="bare">rawgit.com/apiman/apiman/master/manager/ui/war/src/main/sdk/json-schema.html</a></p>
+</div>
+<div class="paragraph">
+<p>The SDK provides a way to edit your JSON schema and then see how that schema will look in the Apiman UI, as well as the format that the policy configuration data will ultimately be in when it is sent to your policy at runtime.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Once you have the JSON Schema finalized, you could also use the online <a href="http://www.jsonschema2pojo.org/" target="_blank" rel="noopener">jsonschema2pojo</a> tool to generate a good starting point for a Java Bean that can be used to marshal/unmarshal your policy&#8217;s configuration data at runtime.</p>
+</div>
+<div class="paragraph">
+<p>See the discussion about <a href="#_abstract_mapped_policy">AbstractMappedPolicy</a> above for additional information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unit-testing-a-plugin-policy"><a class="anchor" href="#unit-testing-a-plugin-policy"></a>Unit Testing a Plugin Policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While it is quite simple to create a custom policy for apiman, you may be wondering the best way to unit test your implementation.</p>
+</div>
+<div class="paragraph">
+<p>Fortunately, we have made this simple by including an easy-to-use Policy Testing JUnit framework.</p>
+</div>
+<div class="paragraph">
+<p>Once you have followed the instructions above to create your custom policy, refer to this section to learn how to test it using JUnit.</p>
+</div>
+<div class="sect2">
+<h3 id="import-the-framework-maven-dependency"><a class="anchor" href="#import-the-framework-maven-dependency"></a>Import the Framework (Maven Dependency)</h3>
+<div class="paragraph">
+<p>The first thing you will need is to include the appropriate maven dependencies in your project&#8217;s <code>pom.xml</code> file.
+There is a single additional dependency that you will need (make sure to import it using the <code>test</code> maven scope):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+   &lt;groupId&gt;io.apiman&lt;/groupId&gt;
+   &lt;artifactId&gt;apiman-test-policies&lt;/artifactId&gt;
+   &lt;version&gt;3.1.0-SNAPSHOT&lt;/version&gt;
+   &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-and-annotate-a-junit-test-case"><a class="anchor" href="#create-and-annotate-a-junit-test-case"></a>Create and Annotate a JUnit Test Case</h3>
+<div class="paragraph">
+<p>Once you have imported the appropriate dependency, you can go ahead and create a JUnit test case.
+The only additional thing you need is to annotate your test case appropriately and make sure your test case Java class extends the framework&#8217;s <code>ApimanPolicyTest</code> base class.</p>
+</div>
+<div class="paragraph">
+<p>The following annotations can then be added to your test:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>@TestingPolicy(&lt;classname&gt;)</code>: indicates which of your policy implementations you wish to test.</p>
+</li>
+<li>
+<p><code>@Configuration("&lt;custom_policy_configuration_data&gt;")</code>: specifies the policy configuration to use for the test.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>@TestingPolicy</code> annotation is always placed at the class level, but the <code>@Configuration</code> annotation can either be global or specified at the test method level.</p>
+</div>
+<div class="paragraph">
+<p>These annotations tell the apiman Policy Testing framework <strong>what</strong> policy you want to test and the policy configuration you want to use when testing, but you still need to actually send requests to an "API".
+This is done using the <code>send(PolicyTestReqest)</code> method defined by the base class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>send()</code> method allows you to send a request (that you build) to the mock back-end API governed by your policy.
+By default, the mock back-end API is a simple "echo" API that responds to all requests with a JSON payload describing the request it received (more on how to override this default functionality later).</p>
+</div>
+<div class="paragraph">
+<p>The <code>send()</code> method requires that you create and pass to it a valid <code>PolicyTestRequest</code> object.
+This can be created using the <code>PolicyTestRequest.build()</code> method.
+You can set the request&#8217;s type, resource path, request headers, and body.</p>
+</div>
+<div class="paragraph">
+<p>If the request is successful, then a <code>PolicyTestResponse</code> object will be returned, and you can perform assertions on it.
+If there is a policy failure, then the <code>send()</code> method will throw a <code>PolicyFailureError</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here is a full example of everything working together:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@TestingPolicy(CustomPolicy.class)
+public class CustomPolicyTest extends ApimanPolicyTest {
+
+    @Test
+    @Configuration("{}")
+    public void testGet() throws Throwable {
+        // Send a test HTTP request to the API (resulting in executing the policy).
+        PolicyTestResponse response = send(PolicyTestRequest.build(PolicyTestRequestType.GET, "/some/resource")
+                .header("X-Test-Name", "testGet"));
+
+        // Now do some assertions on the result!
+        Assert.assertEquals(200, response.code());
+        EchoResponse entity = response.entity(EchoResponse.class);
+        Assert.assertEquals("GET", entity.getMethod());
+        Assert.assertEquals("/some/resource", entity.getResource());
+        Assert.assertEquals("testGet", entity.getHeaders().get("X-Test-Name"));
+        // Assert the request header that was added by the policy
+        Assert.assertEquals("Hello World", entity.getHeaders().get("X-MTP-Header"));
+        // Assert the response header was added by the policy
+        Assert.assertEquals("Goodbye World", response.header("X-MTP-Response-Header"));
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="providing-a-custom-back-end-api-mock"><a class="anchor" href="#providing-a-custom-back-end-api-mock"></a>Providing a Custom Back-End API Mock</h3>
+<div class="paragraph">
+<p>Sometimes the echo API is not sufficient when testing your custom policy.
+Perhaps the custom policy is more tightly coupled to the API it is protecting.</p>
+</div>
+<div class="paragraph">
+<p>In this case, you may want to provide your own custom back-end API mock implementation.
+This can be done by simply annotating either the class or an individual test method with <code>@BackEndApi</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you use <code>@BackEndApi</code>, then you must supply the annotation with a class that implements the <code>IPolicyTestBackEndApi</code> interface.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example of what this might look like in a test:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@TestingPolicy(CustomPolicy.class)
+public class CustomPolicyTest extends ApimanPolicyTest {
+
+    @Test
+    @Configuration("{}")
+    @BackEndApi(MyCustomBackEndApiImpl.class)
+    public void testGetWithCustomBackEndSvc() throws Throwable {
+        // Send a test HTTP request to the API (resulting in executing the policy).
+        PolicyTestResponse response = send(PolicyTestRequest.build(PolicyTestRequestType.GET, "/some/resource")
+                .header("X-Test-Name", "testGet"));
+
+        // Now do some assertions on the result!
+        MyCustomBackEndApiResponseBean entity = response.entity(MyCustomBackEndApiResponseBean.class);
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example everything works as it did before, but instead of responding with an Echo Response, the <code>send()</code> method will return with a custom response (as created and returned by the provided custom back-end API implementation).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-a-plugin-policy"><a class="anchor" href="#using-a-plugin-policy"></a>Using a Plugin Policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you have built and unit tested your plugin policy, you will most likely want to actually use the policy in Apiman.
+This can be done by adding the plugin to Apiman via the Plugin Management UI in the API Manager user interface.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The Plugin Management UI is restricted to admin users of the API Manager.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For more information about how to use the Plugin Management UI, please see the Apiman User Guide.</p>
+</div>
+<div class="sect2">
+<h3 id="iterating-a-plugin-policy"><a class="anchor" href="#iterating-a-plugin-policy"></a>Iterating a Plugin Policy</h3>
+<div class="paragraph">
+<p>When developing a custom plugin policy, it can be cumbersome to have to uninstall and reinstall the plugin every time you make a change.
+Hopefully, unit testing will help you quickly iterate your plugin policy  implementation, but there are times when testing in a live environment is necessary.</p>
+</div>
+<div class="paragraph">
+<p>At runtime, the API Gateway installs plugins from the local <code>.m2</code> directory.
+If the plugin is not found there, Apiman attempt to find and download the plugin from the configured remote Maven repositories.</p>
+</div>
+<div class="paragraph">
+<p>Typically, the API Gateway will load and cache the plugin the first time it is used.  However, if your plugin <strong>version</strong> ends with <code>-SNAPSHOT</code>, then Apiman will reload it every time it is used.</p>
+</div>
+<div class="paragraph">
+<p>As a result, you can quickly iterate changes to your plugin policy using a live apiman environment by doing the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that you are testing a <code>-SNAPSHOT</code> version of your custom plugin policy</p>
+</li>
+<li>
+<p>Configure the policy on one or more API</p>
+</li>
+<li>
+<p>Publish the API(s) to the API Gateway</p>
+</li>
+<li>
+<p>Send an HTTP request to an API that uses your custom policy</p>
+</li>
+<li>
+<p>Make a change to your Policy implementation</p>
+</li>
+<li>
+<p>Rebuild your plugin and "install" it into your .m2 directory (do not change the version)</p>
+</li>
+<li>
+<p>Repeat starting at #4</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Because the version of your plugin ends with <code>-SNAPSHOT</code>, the API Gateway will not cache it, but instead will reload it each time you do step #4.
+This allows you to quickly make changes, rebuild, and re-test with a minimum of additional steps.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>As of version <code>1.2.4.Final</code>, you must explicitly enable this auto plugin reloading feature by setting the following <code><strong>apiman.properties</strong></code> property:
+<code>apiman-gateway.policy-factory.reload-snapshots=true</code></p>
+</li>
+<li>
+<p>Do not use this "auto plugin reloading" feature in production as the lack of policy caching will be a significant performance problem.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uninstalling-a-plugin"><a class="anchor" href="#uninstalling-a-plugin"></a>Uninstalling a Plugin</h3>
+<div class="paragraph">
+<p>You can use the Plugin Management UI to uninstall a plugin.
+When you do this, any API that is already configured to <strong>use</strong> the plugin will continue to work.
+If you wish for an API to no longer use a plugin policy, you must remove the policy from the API as a separate step.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upgrading-a-plugin"><a class="anchor" href="#upgrading-a-plugin"></a>Upgrading a Plugin</h3>
+<div class="paragraph">
+<p>Often, new versions of a plugin may become available.
+When this happens you can use the Plugin Management UI to upgrade a plugin to a newer version.</p>
+</div>
+<div class="paragraph">
+<p>Please note that this will <strong>not</strong> automatically upgrade any API using the older version of the plugin.
+Instead, to upgrade an API to use the newer plugin policy, you will need to remove the old policy configuration and re-add it.
+This will cause the API to pick up the newer version.</p>
+</div>
+<div class="paragraph">
+<p>Of course, any <strong>new</strong> APIs will always use the new version.</p>
+</div>
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>At the moment there is no in-built mechanism in Apian to migrate plugin configurations from older to newer versions.</p>
+</div>
+<div class="paragraph">
+<p>If this is something that would be valuable to you, <a href="https://github.com/apiman/apiman/issues/2275" target="_blank" rel="noopener">let us know in this GitHub Issue</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributing-a-core-component"><a class="anchor" href="#contributing-a-core-component"></a>Contributing a Core Component</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to policies, the Apiman plugin framework allows developers to provide custom implementations of core Apiman components.</p>
+</div>
+<div class="paragraph">
+<p>What does this mean in practice?  Apiman is composed of a number of different core
+components, all working together to provide API Management functionality.
+Both the API Gateway and the API Manager have core components that can be customized by providing new implementations via plugins.</p>
+</div>
+<div class="paragraph">
+<p>Some examples of API Manager components include (but are not limited to):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Storage Component</p>
+</li>
+<li>
+<p>Query Component</p>
+</li>
+<li>
+<p>IDM Component</p>
+</li>
+<li>
+<p>Metrics Accessor (consumes metrics data recorded by the API Gateway at runtime)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, some examples of API Gateway components include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configuration Registry</p>
+</li>
+<li>
+<p>Rate Limiting Component</p>
+</li>
+<li>
+<p>Metrics Emitter (records metrics data for each request)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By default, the Apiman quickstart uses default values for all of these, resulting in a stable, working system with the following characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stores API Manager data in a JDBC database</p>
+</li>
+<li>
+<p>Records and queries metrics data via Elasticsearch</p>
+</li>
+<li>
+<p>Stores Gateway configuration information in Elasticsearch</p>
+</li>
+<li>
+<p>Uses Elasticsearch to share rate limiting state across gateway nodes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, if you wish to provide a custom implementation of something, you can implement the appropriate Java interface for the correct component, bundle the implementation up into a plugin, and then tell Apiman to use yours instead of the default.</p>
+</div>
+<div class="sect2">
+<h3 id="implementing-a-custom-core-component"><a class="anchor" href="#implementing-a-custom-core-component"></a>Implementing a Custom Core Component</h3>
+<div class="paragraph">
+<p>The procedure for creating a plugin to hold your custom component is exactly the same as already described in the <strong>Creating a Plugin</strong> section above.</p>
+</div>
+<div class="paragraph">
+<p>Once you have created your plugin, including a custom implementation of a core component is simply a matter of creating a Java class that implements the appropriate component interface.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s try an example.</p>
+</div>
+<div class="paragraph">
+<p>By default, Apiman stores API Gateway configuration in Elasticsearch.
+The component responsible for this is called <code>ESRegistry</code>, and it implements this interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package io.apiman.gateway.engine;
+
+public interface IRegistry {
+
+    void getContract(ApiRequest request, IAsyncResultHandler&lt;ApiContract&gt; handler);
+
+    void publishApi(Api api, IAsyncResultHandler&lt;Void&gt; handler);
+
+    void retireApi(Api api, IAsyncResultHandler&lt;Void&gt; handler);
+
+    void registerClient(Client client, IAsyncResultHandler&lt;Void&gt; handler);
+
+    void unregisterClient(Client client, IAsyncResultHandler&lt;Void&gt; handler);
+
+    void getApi(String organizationId, String apiId, String apiVersion, IAsyncResultHandler&lt;Api&gt; handler);
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s imagine you would rather store the API Gateway configuration information into MongoDB instead of Elasticsearch.
+Since we don&#8217;t support a MongoDB registry, you would need to implement your own and contribute it via a plugin.</p>
+</div>
+<div class="paragraph">
+<p>Simply create a new <a href="#_apiman_plugins">plugin</a> and include in it the following Java class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.example.apiman.plugins;
+
+public class MongoDbRegistry implements IRegistry {
+
+    public MongoDbRegistry(Map&lt;String, String&gt; config) {
+        // TODO consume any config params - these come from apiman.properties
+    }
+
+    public void getContract(ApiRequest request, IAsyncResultHandler&lt;ApiContract&gt; handler) {
+        // TODO implement MongoDB-specific logic here
+    }
+
+    public void publishApi(Api api, IAsyncResultHandler&lt;Void&gt; handler) {
+        // TODO implement MongoDB-specific logic here
+    }
+
+    public void retireApi(Api api, IAsyncResultHandler&lt;Void&gt; handler) {
+        // TODO implement MongoDB-specific logic here
+    }
+
+    public void registerClient(Client client, IAsyncResultHandler&lt;Void&gt; handler) {
+        // TODO implement MongoDB-specific logic here
+    }
+
+    public void unregisterClient(Client client, IAsyncResultHandler&lt;Void&gt; handler) {
+        // TODO implement MongoDB-specific logic here
+    }
+
+    public void getApi(String organizationId, String apiId, String apiVersion, IAsyncResultHandler&lt;Api&gt; handler) {
+        // TODO implement MongoDB-specific logic here
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>While optional, it is often useful to provide a constructor that takes a map of configuration params.</p>
+</div>
+<div class="paragraph">
+<p>These values come from the <code><strong>apiman.properties</strong></code> and is an arbitrary set of keys/values.</p>
+</div>
+<div class="paragraph">
+<p>It can be extremely helpful when, for example, configuring the mongodb connection information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enabling-your-custom-component"><a class="anchor" href="#enabling-your-custom-component"></a>Enabling Your Custom Component</h3>
+<div class="paragraph">
+<p>Now that you have a custom component built and included in a plugin, you will need to make sure that the plugin is available to your server.</p>
+</div>
+<div class="paragraph">
+<p>You can do this by deploying the plugin artifact to a Maven repository and then making that repository available to Apiman by adding its URL to the following property in <code><strong>apiman.properties</strong></code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.plugins.repositories=http://repository.jboss.org/nexus/content/groups/public/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Simply add your organization&#8217;s maven repository to that (the value can be a comma separated list of URLs).</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can make sure your plugin is installed in the <code>~/.m2</code> directory on the machine that is running your server.
+You can use <code>mvn install</code> to accomplish this, or by copying it across as part of your build process.</p>
+</div>
+<div class="paragraph">
+<p>Next, simply enable the custom component implementation by updating your <code><strong>apiman.properties</strong></code> file like this (for example):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=plugin:GROUP_ID:ARTIFACT_ID:VERSION/org.example.apiman.plugins.MongoDbRegistry
+apiman-gateway.registry.mongo.host=localhost
+apiman-gateway.registry.mongo.port=27017
+apiman-gateway.registry.mongo.username=sa
+apiman-gateway.registry.mongo.password=sa123!
+apiman-gateway.registry.mongo.database=apiman</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The most important part above is the format for the registry itself.
+It might look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=plugin:org.example.apiman-plugins:plugin-mongodb:1.0.0.Final/org.example.apiman.plugins.MongoDbRegistry</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, the set of properties prefixed with <code>apiman-gateway.registry</code> will be processed and passed to your <code><strong>MongoDbRegistry</strong></code> class&#8217;s <code><strong>Map</strong></code> constructor if one is provided.
+The map that is passed to the constructor will contain the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">mongo.host=localhost
+mongo.port=27017
+mongo.username=sa
+mongo.password=sa123!
+mongo.database=apiman</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="core-component-customization-points"><a class="anchor" href="#core-component-customization-points"></a>Core Component Customization Points</h3>
+<div class="paragraph">
+<p>This section lists all/most of the available customization points available within Apiman.
+These represent all the core Apiman components that can be replaced by custom implementations provided via plugins.</p>
+</div>
+<div class="sect3">
+<h4 id="api-manager-components"><a class="anchor" href="#api-manager-components"></a>API Manager Components</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component Interface</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.manager.api.core.INewUserBootstrapper</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows customizing users upon first login (e.g. create an org for the user).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.manager.api.core.IStorage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary storage of all API Manager data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.manager.api.core.IStorageQuery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows querying of the API Manager data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.manager.api.core.IMetricsAccessor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used by the API Manager to query Metrics data collected by the API Gateway.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.manager.api.core.IApiKeyGenerator</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to create an API Key for each created API Contract.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.common.util.crypt.IDataEncrypter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used primarily by the storage layer to encrypt potentially sensitive data prior to storing it.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.manager.api.core.IApiCatalog</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides access to external APIs which users may wish to import.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="title">Example 1. <code>io.apiman.manager.api.core.INewUserBootstrapper</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.user-bootstrapper.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooUserBootstrapperImpl
+apiman-manager.user-bootstrapper.foo1=value-1
+apiman-manager.user-bootstrapper.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. <code>io.apiman.manager.api.core.IStorage</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.storage.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooStorageImpl
+apiman-manager.storage.foo1=value-1
+apiman-manager.storage.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. <code>io.apiman.manager.api.core.IStorageQuery</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.storage-query.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooStorageQueryImpl
+apiman-manager.storage-query.foo1=value-1
+apiman-manager.storage-query.foo2=value-2</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If your custom IStorage implementation <strong>also</strong> implements IStorageQuery, then it will be used instead of
+trying to create a separate instance of IStorageQuery.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 4. <code>io.apiman.manager.api.core.IMetricsAccessor</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.metrics.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooMetricsAccessorImpl
+apiman-manager.metrics.foo1=value-1
+apiman-manager.metrics.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 5. io.apiman.manager.api.core.IApiKeyGenerator` Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.api-keys.generator.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooApiKeyGeneratorImpl
+apiman-manager.api-keys.generator.foo1=value-1
+apiman-manager.api-keys.generator.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 6. <code>io.apiman.common.util.crypt.IDataEncrypter</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooDataEncrypter
+apiman.encrypter.foo1=value-1
+apiman.encrypter.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 7. <code>io.apiman.manager.api.core.IApiCatalog</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.api-catalog.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooApiCatalogImpl
+apiman-manager.api-catalog.foo1=value-1
+apiman-manager.api-catalog.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="api-gateway-components"><a class="anchor" href="#api-gateway-components"></a>API Gateway Components</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component Interface</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.IRegistry</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stores gateway configuration data (e.g. published APIs).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.common.util.crypt.IDataEncrypter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to encrypt potentially sensitive data prior to storing in the registry.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.IConnectorFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates connectors to back-end APIs based on API meta-information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.policy.IPolicyFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loads policy implementations (from plugins or else internally).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.IPolicyFailureWriter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Writes a policy failure to the HTTP response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.IPolicyErrorWriter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Writes a policy error to the HTTP response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.IBufferFactoryComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates an ApimanBuffer (typically this is provided by the platform support).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.ICacheStoreComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows storing data into a cache store.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.IHttpClientComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates HTTP clients for use in policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.IJdbcComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Async component used to perform JDBC operations in policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.ILdapComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Async component used to perform LDAP operations in policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.IPeriodicComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates timers (for use by policies).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.IPolicyFailureFactoryComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates policy failures (for use by policies).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.IRateLimiterComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used by the rate limiting and quota policies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.apiman.gateway.engine.components.ISharedStateComponent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">General purpose component to share state across policy invocations.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="title">Example 8. <code>io.apiman.gateway.engine.IRegistry</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.registry=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooRegistryImpl
+apiman-gateway.registry.foo1=value-1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 9. <code>io.apiman.common.util.crypt.IDataEncrypter</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooDataEncrypter
+apiman.encrypter.foo1=value-1
+apiman.encrypter.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 10. <code>io.apiman.gateway.engine.IConnectorFactory</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.connector-factory=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooConnectorFactoryImpl
+apiman-gateway.connector-factory.foo1=value-1
+apiman-gateway.connector-factory.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 11. <code>io.apiman.gateway.engine.policy.IPolicyFactory</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.policy-factory=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFactoryImpl
+apiman-gateway.policy-factory.foo1=value-1
+apiman-gateway.policy-factory.foo2=value-2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: there is rarely a reason to provide a custom policy factory.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 12. <code>io.apiman.gateway.engine.IPolicyFailureWriter</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.writers.policy-failure=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFailureWriterImpl
+apiman-gateway.writers.policy-failure.foo1=value-1
+apiman-gateway.writers.policy-failure.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 13. <code>io.apiman.gateway.engine.IPolicyErrorWriter</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.writers.error=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyErrorWriterImpl
+apiman-gateway.writers.error.foo1=value-1
+apiman-gateway.writers.error.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 14. <code>io.apiman.gateway.engine.components.IBufferFactoryComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IBufferFactoryComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooBufferFactoryComponentImpl
+apiman-gateway.components.IBufferFactoryComponent.foo1=value-1
+apiman-gateway.components.IBufferFactoryComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Typically, the buffer factory is specific to the platform.</p>
+</div>
+<div class="paragraph">
+<p>For example, there is a buffer factory used when the API Gateway is running in EAP or WildFly.</p>
+</div>
+<div class="paragraph">
+<p>There is a different buffer factory used when the API Gateway is running in Vert.x.</p>
+</div>
+<div class="paragraph">
+<p>There is typically not another reason to override this.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 15. <code>io.apiman.gateway.engine.components.ICacheStoreComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ICacheStoreComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooCacheStoreComponentImpl
+apiman-gateway.components.ICacheStoreComponent.foo1=value-1
+apiman-gateway.components.ICacheStoreComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 16. <code>io.apiman.gateway.engine.components.IHttpClientComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IHttpClientComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooHttpClientComponentImpl
+apiman-gateway.components.IHttpClientComponent.foo1=value-1
+apiman-gateway.components.IHttpClientComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 17. <code>io.apiman.gateway.engine.components.IJdbcComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IJdbcComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooJdbcComponentImpl
+apiman-gateway.components.IJdbcComponent.foo1=value-1
+apiman-gateway.components.IJdbcComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 18. <code>io.apiman.gateway.engine.components.ILdapComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ILdapComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooLdapComponentImpl
+apiman-gateway.components.ILdapComponent.foo1=value-1
+apiman-gateway.components.ILdapComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 19. <code>io.apiman.gateway.engine.components.IPeriodicComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IPeriodicComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPeriodicComponentImpl
+apiman-gateway.components.IPeriodicComponent.foo1=value-1
+apiman-gateway.components.IPeriodicComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 20. <code>io.apiman.gateway.engine.components.IPolicyFailureFactoryComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.IPolicyFailureFactoryComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooPolicyFailureFactoryComponentImpl
+apiman-gateway.components.IPolicyFailureFactoryComponent.foo1=value-1
+apiman-gateway.components.IPolicyFailureFactoryComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 21. <code>io.apiman.gateway.engine.components.IRateLimiterComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">apiman-gateway.components.IRateLimiterComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooRateLimiterComponentImpl
+apiman-gateway.components.IRateLimiterComponent.foo1=value-1
+apiman-gateway.components.IRateLimiterComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 22. <code>io.apiman.gateway.engine.components.ISharedStateComponent</code> Example Configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.components.ISharedStateComponent=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.FooSharedStateComponentImpl
+apiman-gateway.components.ISharedStateComponent.foo1=value-1
+apiman-gateway.components.ISharedStateComponent.foo2=value-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="providing-a-custom-api-catalog"><a class="anchor" href="#providing-a-custom-api-catalog"></a>Providing a Custom API Catalog</h3>
+<div class="paragraph">
+<p>Apiman allows users to import one or more API (to be managed) from a globally configured API Catalog.
+This feature makes it easier to manage APIs that are "known" by providing API catalog entries which include information such as the endpoint, endpoint type, etc.
+Importing an API from the catalog brings those fields into Apiman, so that users don&#8217;t have to manually set them.</p>
+</div>
+<div class="paragraph">
+<p>When installing Apiman, a custom API Catalog can be easily configured by creating a properly formatted JSON file with all the appropriate information included.</p>
+</div>
+<div class="paragraph">
+<p>See the <strong>Installation Guide</strong> for more information about configuring a JSON based custom API Catalog.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, it is possible to completely replace the API Catalog implementation, providing your own custom version which retrieves API information from wherever you like.</p>
+</div>
+<div class="paragraph">
+<p>Like most Apiman components, a custom API Catalog implementation is simply a Java class which implements a specific interface and is enabled/configured in the <code>apiman.properties</code> file.</p>
+</div>
+<div class="paragraph">
+<p>The interface you must implement is <code><strong>io.apiman.manager.api.core.IApiCatalog</strong></code> and looked like this at the time of this writing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/**
+ * Represents some sort of catalog of live APIs.  This is used to lookup
+ * APIs to import into apiman.
+ */
+public interface IApiCatalog {
+
+    /**
+     * Called to find available APIs that match the given search keyword.  Note that
+     * the search keyword may be a partial word (for example "ech" instead of "echo").  It
+     * is up to the implementation to decide how to handle partial cases.  Typically this
+     * should return all APIs that contain the partial keyword, thus returning things
+     * like "echo" "public-echo" and "echo-location".
+     *
+     * @param keyword the search keyword
+     * @return the available APIs
+     */
+    public List&lt;AvailableApiBean&gt; search(String keyword);
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The catalog is simply one method which returns a list of <code><strong>AvailableApiBean</strong></code> objects.</p>
+</div>
+<div class="paragraph">
+<p>That class looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/**
+ * A bean modeling an API available in one of the configured API catalogs.
+ */
+@JsonInclude(Include.NON_NULL)
+public class AvailableApiBean implements Serializable {
+
+    private String id;
+    private String icon;
+    private String endpoint;
+    private EndpointType endpointType = EndpointType.rest;
+    private String name;
+    private String description;
+    private String definitionUrl;
+    private ApiDefinitionType definitionType;
+
+    /**
+     * Constructor.
+     */
+    public AvailableApiBean() {
+    }
+
+    /** SNIPPED ALL GETTERS/SETTERS **/
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create an implementation of this interface and include it in a valid Apiman plugin.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the <a href="#_apiman_plugins">Creating a Plugin</a> section of this guide for more information.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the plugin is created with your class inside, configure the catalog in <code><em>apiman.properties</em></code> like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.api-catalog.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.ApiCatalogImpl
+apiman-manager.api-catalog.property1=value-1
+apiman-manager.api-catalog.property2=value-2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your implementation class has a constructor that accepts a <code>Map&lt;String, String&gt;</code>, then Apiman will pass the set of applicable configuration properties it finds in <code>apiman.properties</code> when the class is instantiated.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="providing-a-custom-data-encrypter"><a class="anchor" href="#providing-a-custom-data-encrypter"></a>Providing a Custom Data Encrypter</h3>
+<div class="paragraph">
+<p>Whenever Apiman stores data, either in the API Manager or in the API Gateway, it uses a Data Encrypter to first encrypt potentially sensitive information.</p>
+</div>
+<div class="paragraph">
+<p>Examples are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Policy Configuration</p>
+</li>
+<li>
+<p>Endpoint Properties</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By default, the Apiman quickstart comes with a default encrypter that performs very simple synchronous encryption on this data.
+However, because it is built-in, it is not secure (it uses a hard-coded encryption key, for example).
+Depending on your security needs, you may wish to implement a custom data encrypter - one that is more secure and perhaps uses externally configured keys.</p>
+</div>
+<div class="paragraph">
+<p>In order to provide a custom data encrypter, the interface you must implement is <code><strong>io.apiman.common.util.crypt.IDataEncrypter</strong></code>.</p>
+</div>
+<div class="paragraph">
+<p>This same interface is used in both the API Manager and the API Gateway.</p>
+</div>
+<div class="paragraph">
+<p>The IDataEncrypter interface looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/**
+ * Provides a way to encrypt and decrypt data. This is useful when encrypting sensitive
+ * data prior to storing it in the database.
+ */
+public interface IDataEncrypter {
+
+    public String encrypt(String plainText);
+
+    public String decrypt(String encryptedText);
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When creating a custom implementation, all you need to do is provide a Java class which implements the above interface inside a valid apiman plugin.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the "Creating a Plugin" section of this guide for more information.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the plugin is created with your class inside, configure the data encrypter in <code><em>apiman.properties</em></code> like this (<strong>note</strong>: it only needs to be configured in a single place for both the Manager and Gateway):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman.encrypter.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.DataEncrypterImpl
+apiman.encrypter.property1=value-1
+apiman.encrypter.property2=value-2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember, if your implementation class has a constructor that accepts a <code>Map&lt;String, String&gt;</code>, then Apiman  will pass the set of applicable configuration properties it finds in <code>apiman.properties</code> when the class is instantiated.</p>
+</div>
+<div class="paragraph">
+<p>In the example above, your <code>DataEncrypterImpl</code> class will be instantiated, with a Map passed to its constructor containing the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>property1</code>=<code>value-1</code></p>
+</li>
+<li>
+<p><code>property2</code>=<code>value-2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="providing-a-custom-policy-failureerror-writer"><a class="anchor" href="#providing-a-custom-policy-failureerror-writer"></a>Providing a Custom Policy Failure/Error Writer</h3>
+<div class="paragraph">
+<p>When a policy fails (or an error occurs) in the API Gateway, the result of the failure must be sent back to the calling HTTP client.</p>
+</div>
+<div class="paragraph">
+<p>By default, Apian has a particular format (either <code>JSON</code> or <code>XML</code> depending on the Content-Type of the API being called) it uses when responding to the client.</p>
+</div>
+<div class="paragraph">
+<p>However, some installers may prefer a custom format.
+This can be accomplished by providing a custom implementation of <code><strong>io.apiman.gateway.engine.IPolicyFailureWriter</strong></code> and/or a custom implementation of <code><strong>io.apiman.gateway.engine.IPolicyErrorWriter</strong></code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface IPolicyFailureWriter {
+
+    public void write(ApiRequest request, PolicyFailure failure, IApiClientResponse response);
+
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface IPolicyErrorWriter {
+
+    public void write(ApiRequest request, Throwable error, IApiClientResponse response);
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When creating a custom implementation, all you need to do is provide a Java class which implements the above interface(s) inside a valid Apiman plugin.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the "Creating a Plugin" section of this guide for more information.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the plugin is created with your class inside, configure either the failure writer, the error writer, or both in <code><em>apiman.properties</em></code> like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.writers.policy-failure=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.PolicyFailureWriterImpl
+apiman-gateway.writers.policy-failure.property1=value-1
+apiman-gateway.writers.policy-failure.property2=value-2</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-gateway.writers.error=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.PolicyErrorWriterImpl
+apiman-gateway.writers.error.property1=value-1
+apiman-gateway.writers.error.property2=value-2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember, if your implementation class has a constructor that accepts a <code>Map&lt;String, String&gt;</code>, then Apiman will pass the set of applicable configuration properties it finds in apiman.properties when the class is instantiated.</p>
+</div>
+<div class="paragraph">
+<p>In the example above, your <code>DataEncrypterImpl</code> class will be instantiated, with a <code>Map</code> passed to its constructor containing the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>property1</code>=<code>value-1</code></p>
+</li>
+<li>
+<p><code>property2</code>=<code>value-2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="providing-a-custom-user-bootstrapper"><a class="anchor" href="#providing-a-custom-user-bootstrapper"></a>Providing a Custom User Bootstrapper</h3>
+<div class="paragraph">
+<p>Whenever a new user is added to Apiman, a record is added for her in the API Manager data store.
+No additional steps are taken by default.
+However, in some cases you may want to perform some specific bootstrapping tasks when a new user is created, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Grant specific roles to the user</p>
+</li>
+<li>
+<p>Auto-create an Organization for the user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This can be done by providing your own custom implementation of <code><strong>io.apiman.manager.api.core.INewUserBootstrapper</strong></code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/**
+ * This class is used to bootstrap new users.  This bootstrapper is used
+ * whenever a new user logs into the API Manager UI for the first time.
+ */
+public interface INewUserBootstrapper {
+
+    /**
+     * Called to bootstrap a user.
+     */
+    public void bootstrapUser(UserBean user, IStorage storage) throws StorageException;
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When invoked, the boostrap method is given the <code><strong>UserBean</strong></code> of the user being created as well as the storage object.
+The storage object can be used to create additional entities for the user, such as new organizations or new memberships in roles.</p>
+</div>
+<div class="paragraph">
+<p>When creating a custom implementation, all you need to do is provide a Java class which implements the above interface inside a valid Apiman plugin.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See the "Creating a Plugin" section of this guide for more information.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the plugin is created with your class inside, configure the user bootstrapper in <code><strong>apiman.properties</strong></code> like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">apiman-manager.user-bootstrapper.type=plugin:com.example.groupId:artifactId:1.0.Final/com.example.apiman.UserBootstrapperImpl
+apiman-manager.user-bootstrapper.property1=value-1
+apiman-manager.user-bootstrapper.property2=value-2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember, if your implementation class has a constructor that accepts a <code>Map&lt;String, String&gt;</code>, then Apiman will pass the set of applicable configuration properties it finds in <code>apiman.properties</code> when the class is instantiated.</p>
+</div>
+<div class="paragraph">
+<p>In the example above, your <code>DataEncrypterImpl</code> class will be instantiated, with a <code>Map</code> passed to its constructor containing the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>property1</code>=<code>value-1</code></p>
+</li>
+<li>
+<p><code>property2</code>=<code>value-2</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="intro.html">Development Guide</a></span>
+  <span class="next"><a href="gateway.html">Apiman Gateway Implementation Guide</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../_/css/vendor/site-extra.css">
+<script src="../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

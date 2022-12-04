@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Consuming APIs :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/latest/manager/consuming-apis.html">
+    <link rel="prev" href="providing-apis.html">
+    <link rel="next" href="versioning.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Crash Course</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/how-apiman-works.html">How Apiman Works</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/apiman-policies.html">Policies, the Core of API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/managing-apiman.html">Managing Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/getting-up-and-running.html">Getting Up and Running with Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/resources.html">Apiman Resources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="data-model.html">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="data-model.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="managing-organisations.html">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="managing-plans.html">Managing Plans</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="versioning.html">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/authorization-policy.html">Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/basic-auth-policy.html">Basic Authentication Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/caching-resources-policy.html">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/cors-policy.html">CORS Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/header-allow-deny.html">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/http-security-policy.html">HTTP Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ignored-resources-policy.html">Ignored Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ip-block-and-allow-list.html">IP Block and Allow policies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jsonp-policy.html">JSONP Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jwt-policy.html">JWT Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/keycloak-oauth-policy.html">Keycloak OAuth Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/log-policy.html">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/quota-policy.html">Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/rate-limiting-policy.html">Rate Limiting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/simple-header-policy.html">Simple Header Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/soap-authorization-policy.html">SOAP Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/time-restricted-access-policy.html">Time Restricted Access Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transfer-quota-policy.html">Transfer Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transformation-policy.html">Transformation Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-rewriting-policy.html">URL Rewriting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-whitelist-policy.html">URL Whitelist Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../development-guide/latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../development-guide/dev/intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../development-guide/latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../installation-guide/latest/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../installation-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../installation-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">User Guide</a></li>
+    <li>Apiman Manager</li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="consuming-apis.html">Consuming APIs</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3</button>
+  <div class="version-menu">
+    <a class="version" href="../../dev/manager/consuming-apis.html">3.1.0-SNAPSHOT</a>
+    <a class="version is-current" href="consuming-apis.html">3</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/3.x/docs/user/modules/ROOT/pages/manager/consuming-apis.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Consuming APIs</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After the API providers have added a number of APIs to the API management system, those APIs can be consumed by Client Apps.</p>
+</div>
+<div class="paragraph">
+<p>This section explains how to consume APIs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="consuming-public-apis"><a class="anchor" href="#consuming-public-apis"></a>Consuming Public APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have marked an API as "Public", then consuming it is a simple matter of sending a request to the appropriate API Gateway endpoint.</p>
+</div>
+<div class="paragraph">
+<p>The managed API endpoint may vary depending on the Gateway being used, but it typically of the following form:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/" class="bare">gatewayhost:port/apiman-gateway/{organizationId}/{apiId}/{version}/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Simply send requests to the managed API endpoint, and do not include an API Key.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The managed endpoint URL can be easily determined in the UI by navigating to the
+"Endpoint" tab on the API details UI page.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-a-client-app"><a class="anchor" href="#creating-a-client-app"></a>Creating a Client App</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to consume an API that is not "Public" you must first create a client app.
+Client Apps must exist within the context of an organization.</p>
+</div>
+<div class="paragraph">
+<p>If an organization does not yet exist for this purpose, simply create a new organization. See the section above on 'Managing Organizations' for more information.</p>
+</div>
+<div class="paragraph">
+<p>To create a new Client App:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the 'Create a New Client App' link on the dashboard page.</p>
+</li>
+<li>
+<p>On the resulting page provide a client app name, version, and description and then click the 'Create Client App' button.</p>
+</li>
+<li>
+<p>If the client app is successfully created, you will be taken to the client app details page.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can also create a Client App within an Organization by going to the Organization&#8217;s "Client Apps" tab and clicking the "New Client App" button.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-api-contracts"><a class="anchor" href="#creating-api-contracts"></a>Creating API Contracts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The primary action taken when configuring a client app is the creation of Contracts to APIs.
+This is how you 'consume an API'.</p>
+</div>
+<div class="paragraph">
+<p>There are a number of ways to create API contracts.
+This section will describe the most useful of these options.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From the Client App details page, you can find an API to consume by clicking on the 'Search for APIs to consume' link in the top section of the page.</p>
+</li>
+<li>
+<p>You will be taken to a page that will help you search for and find the API you wish to consume.</p>
+</li>
+<li>
+<p>Use the controls on this page to search for an API.</p>
+</li>
+<li>
+<p>Once you have found the API you are interested in, click on its name in the search results area.</p>
+</li>
+<li>
+<p>This will take you to the API details page for API consumers. The consumer-oriented API details page presents you with all the information necessary to make a decision about how to consume the API. It includes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A list of all API versions.</p>
+</li>
+<li>
+<p>A list of all available plans the API can be consumed through.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you wish, you can click on an individual plan to see the details of the policies that will be enforced should that plan be chosen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the 'Create Contract' button next to the plan you wish to use when consuming this API.</p>
+</li>
+<li>
+<p>You will be taken to the new contract page to confirm that you want to create an API  contract to this API through the selected plan.</p>
+</li>
+<li>
+<p>If you are sure this is the API contract you wish to create, click the 'Create Contract' button and then agree to the terms and conditions.</p>
+</li>
+<li>
+<p>If successful, you will be taken to the 'Contracts' tab on the client app details page.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>From the 'Contracts' tab on the client app details page you can see the list of API contracts already created for this client app.</p>
+</div>
+<div class="paragraph">
+<p>It is also possible to break API contracts from this same list by clicking an appropriate 'Break Contract' button.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-definition-information"><a class="anchor" href="#api-definition-information"></a>API Definition Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If An API provider has included An API Definition for the API they are providing, you will be  presented with an additional link on the consumer-oriented API details page labeled "API Definition".</p>
+</div>
+<div class="paragraph">
+<p>This link will take you to a page where you can browse the detailed documentation for the API.</p>
+</div>
+<div class="paragraph">
+<p>The detailed documentation should be very helpful in learning what resources and operations are supported by the API, which will aid in figuring out how precisely to consume the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing-policies"><a class="anchor" href="#managing-policies"></a>Managing Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Just like plans and APIs, client apps can have configured policies.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The 'Policies' tab will present a list of all the policies configured for this client app.</p>
+</li>
+<li>
+<p>To add another policy to the client app click the <strong>'Add Policy'</strong> button.</p>
+</li>
+<li>
+<p>On the resulting page choose the type of policy you wish to create and then configure the details for that policy.</p>
+</li>
+<li>
+<p>Once you have configured the details click the <strong>'Add Policy'</strong> button to add the policy to the client app.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of course, just like for Plans and APIs, you can manage the Client App policies from the 'Policies' tab.
+This allows you to not only add new policies but also edit, remove, and reorder them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="registering-in-the-gateway"><a class="anchor" href="#registering-in-the-gateway"></a>Registering in the Gateway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After at least one API contract has been created for the client app, it is possible to register the client app with the runtime gateway.</p>
+</div>
+<div class="paragraph">
+<p>Until the client app is registered with the runtime gateway, it is not possible to make requests to back-end APIs on behalf of that client app.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To register the client app with the gateway, simply click the <strong>'Register'</strong> button at the top of the Client App details UI page (any tab).</p>
+</li>
+<li>
+<p>If the status of the client app is "Ready", then the 'Register' button should be enabled.</p>
+</li>
+<li>
+<p>If successful, the client app status will change to "Registered", and the 'Register' button will disappear.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once the client app is registered, you can continue to make changes to it (such as modify its policies or create/break API Contracts).</p>
+</div>
+<div class="paragraph">
+<p>If you do make any changes, then the <strong>'Re-Register'</strong> button will become enabled.</p>
+</div>
+<div class="paragraph">
+<p>Whenever you make changes to your Client App, you <strong>must</strong> Re-Register it before those changes will show up in the Gateway.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="live-api-endpoints"><a class="anchor" href="#live-api-endpoints"></a>Live API Endpoints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After a client app has been registered with the runtime gateway, it is possible to send requests to the back-end APIs on behalf of that client app (through the client app&#8217;s API contracts).
+To do this you must know the URL of the managed API.
+This URL can include the API Key generated for the Client App.</p>
+</div>
+<div class="paragraph">
+<p>To view a list of all of these managed endpoints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the 'APIs' tab on the API detail page.</p>
+</li>
+<li>
+<p>Each API contract is represented in the list of managed endpoints.</p>
+</li>
+<li>
+<p>You can expand an entry in the managed API endpoints table by clicking the '&gt;' icon in the first column.</p>
+</li>
+<li>
+<p>The resulting details will help you figure out the appropriate endpoint to use for a particular managed API.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>There are two ways to pass the API Key to the Gateway when you make a request for a Managed Endpoint. You can either include the API key:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the URL as a query parameter.</p>
+</li>
+<li>
+<p>In the <strong>X-API-Key</strong> HTTP Header.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="providing-apis.html">Providing APIs</a></span>
+  <span class="next"><a href="versioning.html">Versioning</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

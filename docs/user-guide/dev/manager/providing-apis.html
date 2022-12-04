@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Providing APIs :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/user-guide/latest/manager/providing-apis.html">
+    <link rel="prev" href="managing-plans.html">
+    <link rel="next" href="consuming-apis.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="user-guide" data-version="3.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Crash Course</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/how-apiman-works.html">How Apiman Works</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/apiman-policies.html">Policies, the Core of API Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/managing-apiman.html">Managing Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/getting-up-and-running.html">Getting Up and Running with Apiman</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../crash-course/resources.html">Apiman Resources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="data-model.html">Data Model</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="data-model.html#_policy_chain">Policy Chain</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="managing-organisations.html">Managing Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="managing-plans.html">Managing Plans</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="providing-apis.html">Providing APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consuming-apis.html">Consuming APIs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="versioning.html">Versioning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="administration.html">Administration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/concepts.html">Policy Types</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Policies</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/authorization-policy.html">Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/basic-auth-policy.html">Basic Authentication Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/caching-resources-policy.html">Caching Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/cors-policy.html">CORS Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/header-allow-deny.html">Header Allow/Deny</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/http-security-policy.html">HTTP Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ignored-resources-policy.html">Ignored Resources Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/ip-block-and-allow-list.html">IP Block and Allow policies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jsonp-policy.html">JSONP Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/jwt-policy.html">JWT Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/keycloak-oauth-policy.html">Keycloak OAuth Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/log-policy.html">Log Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/quota-policy.html">Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/rate-limiting-policy.html">Rate Limiting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/simple-header-policy.html">Simple Header Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/soap-authorization-policy.html">SOAP Authorization Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/time-restricted-access-policy.html">Time Restricted Access Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transfer-quota-policy.html">Transfer Quota Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/transformation-policy.html">Transformation Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-rewriting-policy.html">URL Rewriting Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../gateway/policies/url-whitelist-policy.html">URL Whitelist Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User Guide</span>
+    <span class="version">3.1.0-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../development-guide/latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../development-guide/dev/intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../development-guide/latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../installation-guide/latest/index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../installation-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../installation-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../installation-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../latest/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">User Guide</a></li>
+    <li>Apiman Manager</li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="providing-apis.html">Providing APIs</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3.1.0-SNAPSHOT</button>
+  <div class="version-menu">
+    <a class="version is-current" href="providing-apis.html">3.1.0-SNAPSHOT</a>
+    <a class="version" href="../../latest/manager/providing-apis.html">3</a>
+    <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+    <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/master/docs/user/modules/ROOT/pages/manager/providing-apis.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Providing APIs</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A core capability of API management is for end users to create, manage, and configure APIs they wish to provide.</p>
+</div>
+<div class="paragraph">
+<p>This section explains the steps necessary for users to provide those APIs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-an-api"><a class="anchor" href="#creating-an-api"></a>Creating an API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First the user must create an API within an organization.
+If an organization does not yet exist one can easily be created.
+See the 'Managing Organizations' section for details.</p>
+</div>
+<div class="paragraph">
+<p>From the organization details page, navigate to the 'APIs' tab and click on the 'New API' button.</p>
+</div>
+<div class="paragraph">
+<p>You will be asked to provide an API name, version number, and description.</p>
+</div>
+<div class="paragraph">
+<p>If successfully created, you will be taken to the API details page.
+From here you can configure the details of the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-implementation"><a class="anchor" href="#api-implementation"></a>API Implementation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every API must be configured with an API implementation.</p>
+</div>
+<div class="paragraph">
+<p>The implementation indicates the external API that the API Gateway will proxy to if all the policies are successfully applied.</p>
+</div>
+<div class="paragraph">
+<p>Click the 'Implementation' tab to configure the API endpoint and API type details on your API.</p>
+</div>
+<div class="paragraph">
+<p>The 'Implementation' tab is primarily used to configure the details of the back-end API that Apiman will proxy to at runtime.</p>
+</div>
+<div class="paragraph">
+<p>You must configure the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Endpoint URL</strong> - The URL that Apiman will use to proxy a request made for this API.</p>
+</li>
+<li>
+<p><strong>Endpoint Type</strong> - Currently either REST or SOAP (not presently used, future information)</p>
+</li>
+<li>
+<p><strong>Endpoint Content Type</strong> - Choose between JSON and XML, information primarily used to respond with a policy failure or error in the appropriate format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, the 'Implementation' tab allows you to configure any security options that might be required when proxying requests to the back-end API.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you are using mutual TLS (mTLS) to ensure full security between the API Gateway and your back-end API, you may configure that here.</p>
+</div>
+<div class="paragraph">
+<p>We also support simple BASIC authentication between the gateway and your back end API.
+BASIC authentication is not preferred, and is especially insecure if not used with SSL/HTTPS.</p>
+</div>
+<div class="paragraph">
+<p>If the Apiman administrator has configured multiple Gateways (see the "System Administration / Gateways" section below), then the 'Implementation' tab will also include an option that will let you choose which Gateway(s) to use when publishing.</p>
+</div>
+<div class="paragraph">
+<p>You may select one or more Gateway in this case.</p>
+</div>
+<div class="paragraph">
+<p>If you choose multiple Gateways, then when you click the 'Publish' button, Apiman will publish the API to <strong>all</strong> the selected Gateways.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If a single Gateway has been configured, then you don&#8217;t have a choice, and so the UI
+will hide the Gateway selector entirely and simply pick the default Gateway for you.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Do not forget to click the <strong>Save</strong> button when you are done making changes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-definition"><a class="anchor" href="#api-definition"></a>API Definition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As a provider of an API, it is best to include as much information about the API as possible, so that consumers can not only create contracts, but also learn how to make API calls.</p>
+</div>
+<div class="paragraph">
+<p>For this purpose, you can optionally include an API Definition document by adding it to your API on the Definition tab.</p>
+</div>
+<div class="paragraph">
+<p>Currently supported are OpenAPI and Swagger (versions 2 and 3).</p>
+</div>
+<div class="paragraph">
+<p>Include an OpenAPI or Swagger document here so that consumers of your API can browse information about your API directly in the API Manager UI.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="available-plans"><a class="anchor" href="#available-plans"></a>Available Plans</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before an API can be consumed by a client app, it must make itself available through at least one of the organization&#8217;s plans, or it must be marked as <strong>Public</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Marking an API as public or making an API available through one or more plan can be done by navigating to the 'Plans' tab on the API details page.</p>
+</div>
+<div class="paragraph">
+<p>The 'Plans' tab will list all the available plans defined by the organization.
+Simply choose one or more plan from this list.</p>
+</div>
+<div class="paragraph">
+<p>If no plans are needed, you can instead mark the API as "Public", making it available to be consumed anonymously by any client.</p>
+</div>
+<div class="paragraph">
+<p>Although an API can be <strong>both</strong> Public and available through one or more plan, it is unusual to do so.</p>
+</div>
+<div class="paragraph">
+<p>You can set the <a href="#_discoverability">discoverability</a> of an attached API plan on this page, if you wish, which enables you to expose a specific API Plan outside your organization.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+After making any changes make sure to click the Save button.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_discoverability"><a class="anchor" href="#_discoverability"></a>Discoverability</h2>
+<div class="sectionbody">
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The discoverability system is new in Apiman 3.
+You can read the design principals in our <a href="https://github.com/orgs/apiman/discussions/1952" target="_blank" rel="noopener">Apiman Enhancement Proposal</a>.</p>
+</div>
+<div class="paragraph">
+<p>How can we improve this new mechanism?
+Are certain things not clear?
+Do you have suggestions?</p>
+</div>
+<div class="paragraph">
+<p>Please let us know your thoughts and feedback in this <a href="https://github.com/apiman/apiman/discussions/2280" target="_blank" rel="noopener">GitHub Discussion thread</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Apiman&#8217;s explicit permissions system provides fine-grained permissions for users who are a member of a given organisation.</p>
+</div>
+<div class="paragraph">
+<p>Discoverability is an <strong>implicit read permissions system</strong> that layers on top of the explicit permissions system that already exists in Apiman.
+It allows API Editors to <strong>expose APIs to consumers who are not members of their organisation</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Moreover, discoverability system allows the segregation of different categories of 'non-members'.
+Consequently, this is also the mechanism by which APIs can explicitly be exposed into the Apiman Developer Portal for anonymous users to browse (although, they need an account to subscribe).</p>
+</div>
+<div class="sect2">
+<h3 id="capabilities"><a class="anchor" href="#capabilities"></a>Capabilities</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>API Publishers can selectively expose an API outside an organisation to non-members.</p>
+</li>
+<li>
+<p>API Plans (i.e. Api Version + Plan Version) have a discoverability assigned to them.</p>
+</li>
+<li>
+<p>Public API Versions can also have a discoverability.</p>
+</li>
+<li>
+<p>API Publishers can choose different levels of discoverability (i.e. defines who can find a given API):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Organization Members only: only explicit members of the organization can see the API (existing explicit permissions system).</p>
+</li>
+<li>
+<p>Full platform members: only 'full' Apiman platform users with <code>apiuser</code> role can see the API. This means an active account is required.</p>
+</li>
+<li>
+<p>Expose in portal: expose the API in the developer portal for anonymous access, and for signed-in developer portal users (and all above).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Via configuration, Apiman can distinguish between different categories of non-member via their IDM roles; namely developer portal users (<code>devportaluser</code>) and 'full' Apiman platform users (<code>apiuser</code>).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This can be useful for certain segregation capabilities (e.g. not allowing developer portal users to access the main Apiman Manager UI).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>No endpoints, including search, return items a user, whether anonymous or logged-in, does not have permission to see.</p>
+</li>
+<li>
+<p>Fully backwards compatible, as existing APIs will simply have the default 'org members only' behaviour.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="worked-example"><a class="anchor" href="#worked-example"></a>Worked Example</h3>
+<div class="paragraph">
+<p>In this worked example, we assume the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create an <strong>organization</strong> called <code>DemoOrg</code>, of which your user is the admin.</p>
+</li>
+<li>
+<p>Create a <strong>plan</strong> called <code>gold</code> and lock it.</p>
+</li>
+<li>
+<p>Create an <strong>API version</strong> called <code>ExampleApi</code> with version <code>1.0</code>. We&#8217;ll refer to it as <code>ExampleApi/1.0</code> from now on.</p>
+</li>
+<li>
+<p>In a private tab, we create a new Apiman user called <code>joe-bloggs</code> with standard permissions. Do not add this account to <code>DemoOrg</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>First, we navigate to <code>ExampleApi&#8217;s</code> <strong><code>plans</code></strong> tab and attach the <strong><code>gold</code></strong> plan.</p>
+</div>
+<div class="paragraph">
+<p>We can see the Apiman offers the following <strong>discoverability</strong> levels:</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Organization members only</div>
+<div class="content">
+<div class="paragraph">
+<p>The default <strong>organization members only</strong>, means that only members of <code>DemoOrg</code> with the appropriate explicit permissions can see <code>ExampleApi/1.0</code>.</p>
+</div>
+<div class="paragraph">
+<p>Even using search or direct links, the <code>joe-bloggs</code> account will <strong>not</strong> be able to discover <code>ExampleApi/1.0</code>.
+This is because is not a member of <code>DemoOrg</code>.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. Full platform members</div>
+<div class="content">
+<div class="paragraph">
+<p>If we select <strong>full platform members</strong>, then even users outside of <code>DemoOrg</code> will be able to find <code>ExampleApi/1.0</code> and subscribe to it, as long as they have an Apiman account and the standard <code>apiuser</code> role.</p>
+</div>
+<div class="paragraph">
+<p>For example, our <code>joe-blogs</code> account can discover <code>ExampleApi/1.0</code> via searches or links, because he has a full Apiman account and the <code>apiuser</code> role.</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. Expose in portal</div>
+<div class="content">
+<div class="paragraph">
+<p>If we select <strong>expose in portal</strong>, then:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users with active accounts outside of <code>DemoOrg</code> will be able to find <code>ExampleApi/1.0</code> and subscribe to it.</p>
+</li>
+<li>
+<p>Anonymous users will be able to find <code>ExampleApi/1.0</code>, even when not logged (but can&#8217;t subscribe).</p>
+</li>
+<li>
+<p><code>ExampleApi/1.0</code> will appear in the Apiman Developer Portal.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Users whose accounts only have the <code>portaluser</code> role in Keycloak will only see APIs in their own organization, or those with the <strong>expose in portal</strong> flag.</p>
+</div>
+<div class="paragraph">
+<p>This may be useful to segregate different types of users on the platform.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-signup-approvals"><a class="anchor" href="#api-signup-approvals"></a>API Signup Approvals</h2>
+<div class="sectionbody">
+<div class="sidebarblock MaintainerMessage">
+<div class="content">
+<div class="paragraph">
+<p>The API signup approvals system is new in Apiman 3.</p>
+</div>
+<div class="paragraph">
+<p>How can we improve this new mechanism?
+Are certain things not clear?
+Do you have suggestions?</p>
+</div>
+<div class="paragraph">
+<p>Please let us know your thoughts and feedback in this <a href="https://github.com/apiman/apiman/discussions/2281" target="_blank" rel="noopener">GitHub Discussion thread</a>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>You can require that any API Consumer signing up to your API Plan (API Version + Plan Version) go through an explicit approvals process before their contract can be published onto the Apiman Gateway.</p>
+</div>
+<div class="paragraph">
+<p>Simply tick "requires approval" to activate the feature on a plan-by-plan basis, and any user signing up to your API Plan will need explicit approval from a user in your organization with the <code>planAdmin</code> permission.</p>
+</div>
+<div class="sect2">
+<h3 id="workflow"><a class="anchor" href="#workflow"></a>Workflow</h3>
+<div class="paragraph">
+<p>In order to facilitate the approval process, Apiman does the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sends a notification to everyone in the organization with the <code>planAdmin</code> permission, alerting them that someone has signed up and required approval.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have enabled email notifications, then emails will be dispatched also, containing a broad range of useful information.</p>
+</li>
+<li>
+<p>Both the in-browser and email notification contain links that allow an approver to click through into the appropriate page to approve or deny the request.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Management of approvals is done from the API&#8217;s "contracts" tab, although you will typically be sent directly to the right place by a notification.</p>
+</li>
+<li>
+<p>You can either:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Approve the request, and the user will be able to begin using the API immediately.</p>
+</li>
+<li>
+<p>Reject the request, and insert a rejection message.
+A rejection will result in the pending contract being immediately deleted.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing-policies"><a class="anchor" href="#managing-policies"></a>Managing Policies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>API policies can be added and configured by navigating to the 'Policies' tab on the API details page.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The 'Policies' tab presents a list of all the policies configured for this API.</p>
+</li>
+<li>
+<p>To add another policy to the API click the 'Add Policy' button.</p>
+</li>
+<li>
+<p>On the resulting page choose the type of policy you wish to create and then configure the details for that policy.</p>
+</li>
+<li>
+<p>Once you have configured the details click the 'Add Policy' button to add the policy to the API.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="publishing-in-the-gateway"><a class="anchor" href="#publishing-in-the-gateway"></a>Publishing in the Gateway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After all the configuration is complete for an API, it is time to publish the API to the runtime gateway.
+This can be done from any tab on the API details page by clicking  the <strong>Publish</strong> button in
+the top section of the UI.</p>
+</div>
+<div class="paragraph">
+<p>If successful, the status of the API will change to "Published" and the Publish button will disappear.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the API cannot yet be published (the 'Publish' button is disabled) then a notification will appear near the button and will read "<strong>Why Can&#8217;t I publish?</strong>"</p>
+</div>
+<div class="paragraph">
+<p>Clicking this notification will provide details about what information is still required before the API can be published to the Gateway.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the API has been published, it may or may not be editable depending on whether it is a "Public" API or not.</p>
+</div>
+<div class="paragraph">
+<p>For "Public" APIs, you will be able to continue making changes.
+After at least one change is made, you will have the option to "Re-Publish" the API to the Gateway.
+Doing so will update all information about the API in the Gateway.</p>
+</div>
+<div class="paragraph">
+<p>However, if the API is <strong>not</strong> Public, then the API will be immutable - therefore in order to make any changes you will need to create a new version of the API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api-metrics"><a class="anchor" href="#api-metrics"></a>API Metrics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once an API is published and is being consumed at runtime, metrics information about that usage is recorded in a metrics storage system.
+See the Metrics section of the API Gateway documentation for more about how and when metrics data is recorded.</p>
+</div>
+<div class="paragraph">
+<p>If an API has been used by at least once, then it will have metrics information available.</p>
+</div>
+<div class="paragraph">
+<p>This information can be viewed in the 'Metrics' tab on the API&#8217;s details page.</p>
+</div>
+<div class="paragraph">
+<p>On this page you can choose the type of metric you wish to see (e.g. Usage metrics and Response Type metrics) as well as a pre-defined time range (e.g. Last 30 Days, Last Week, etc&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>The API Metrics page is a great way to figure out how often your API is used, and in what
+ways.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="importing-apis"><a class="anchor" href="#importing-apis"></a>Importing API(s)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As an alternative to manually creating and configuring an API, Apiman also supports importing an API from a globally configured API Catalog.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The API Catalog is configured by the Apiman system administrator/installer.</p>
+</div>
+<div class="paragraph">
+<p>See the installation guide for more information about how to configure a custom API Catalog.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>An API can be imported into Apiman in one of two ways.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>First, from the Organization&#8217;s "APIs" tab you can click the down-arrow next to the "New API" button and choose the "Import API(s)" option.</p>
+</li>
+<li>
+<p>This results in a wizard that will guide you through importing one or more API from the catalog into the Organization.</p>
+</li>
+<li>
+<p>This wizard will allow you to search for, find, and select multiple APIs.</p>
+</li>
+<li>
+<p>It will then walk you through choosing your Plans or making the APIs "Public".</p>
+</li>
+<li>
+<p>Once all the wizard pages are completed, you can then import the API(s).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The Import API(s) wizard above is the only way to import multiple APIs at the same time.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Another option for importing an API from the catalog is to use the API Catalog Browser UI.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This can be found by clicking the "Browse available/importable APIs" link on the API Manager Dashboard.</p>
+</li>
+<li>
+<p>This link will open the catalog browser, allowing you to search for APIs to
+import.</p>
+</li>
+<li>
+<p>The catalog browser is a friendlier interface, but only allows you to import a
+single API at a time.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="managing-plans.html">Managing Plans</a></span>
+  <span class="next"><a href="consuming-apis.html">Consuming APIs</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

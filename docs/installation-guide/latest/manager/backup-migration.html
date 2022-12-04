@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Backup &amp; Migration :: Apiman Documentation</title>
+    <link rel="canonical" href="https://www.apiman.io/apiman-docs/installation-guide/latest/manager/backup-migration.html">
+    <link rel="prev" href="portal.html">
+    <link rel="next" href="../registries-and-components/overview.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../../_/css/vendor/docsearch.min.css">
+<link rel="stylesheet" href="../../../_/js/vendor/docsearch.min.js">
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRD82LC9Y2"></script>
+    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','G-TRD82LC9Y2')</script>
+    <script>var uiRootPath = '../../../_'</script>
+<link rel="icon" href="../../../_/img/apiman/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div id="apiman-logo"></div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.apiman.io/apiman-docs">Apiman Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://www.apiman.io/latest/index.html">Home</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.apiman.io/latest/download.html">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="installation-guide" data-version="3">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../quickstart.html">Quickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../keycloak.html">Set up Keycloak SSO</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Platforms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../servlet/wildfly.html">WildFly</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../servlet/wildfly.html#_download">Download &amp; Launch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../servlet/wildfly.html#_installing_using_docker">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../servlet/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html">Vert.x Gateway</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vertx/download.html#_download_launch">Download &amp; Launch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vertx/download.html#_configurations">Configurations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/download.html#_elasticsearch">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vertx/download.html#_headless_elasticsearch">Headless ES</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vertx/install.html">Installation Walkthrough</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vertx/config-guide.html">Config Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Manager</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="database.html">Database Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configuration.html">Apiman Customisation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="notifications.html">Notifications</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="portal.html">Developer Portal</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="backup-migration.html">Backup &amp; Migration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#_upgrading_to_a_new_apiman_version">Upgrading Apiman</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Apiman Gateway</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../registries-and-components/overview.html">Registries &amp; Components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/jdbc.html">JDBC / SQL</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/elasticsearch.html">Elasticsearch</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/influxdb.html">InfluxDB Metrics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/hazelcast.html">Hazelcast</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/prometheus.html">Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/redis.html">Redis</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../registries-and-components/headless.html">Headless</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gateway/security.html">Security</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/security.html#_gateway_api_authentication">Gateway API Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gateway/security.html#_mtls_mutual_ssl_endpoint_security">Mutual TLS (mTLS)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How to</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../how-to/jdbc.html">SQL Metrics Instead of Elasticsearch</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../production.html">Production Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="production-manager.html">WildFly Manager</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gateway/production-gateway-wildfly.html">WildFly Gateway</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gateway/production-gateway.html">Vert.x Gateway</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">3</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../guides/latest/index.html">Apiman Guides</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../guides/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../guides/latest/index.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../development-guide/latest/intro.html">Development Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../development-guide/dev/intro.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../development-guide/latest/intro.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Installation Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../migration-guide/latest/migrations.html">Migration Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../migration-guide/dev/migrations.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../migration-guide/latest/migrations.html">3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../user-guide/latest/index.html">User Guide</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../user-guide/dev/index.html">3.1.0-SNAPSHOT</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../user-guide/latest/index.html">3</a>
+        </li>
+        <li class="version">
+          <a href="../../../user-guide/2.2.3.Final/index.html">2.2.3.Final</a>
+        </li>
+        <li class="version">
+          <a href="../../../user-guide/1.5.7.Final/index.html">1.5.7.Final</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../guides/latest/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Installation Guide</a></li>
+    <li>Apiman Manager</li>
+    <li><a href="backup-migration.html">Backup &amp; Migration</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3</button>
+  <div class="version-menu">
+    <a class="version" href="../../dev/manager/backup-migration.html">3.1.0-SNAPSHOT</a>
+    <a class="version is-current" href="backup-migration.html">3</a>
+    <a class="version" href="../../2.2.3.Final/manager/backup-migration.html">2.2.3.Final</a>
+    <a class="version" href="../../1.5.7.Final/manager/backup-migration.html">1.5.7.Final</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/apiman/apiman/edit/3.x/docs/installation/modules/ROOT/pages/manager/backup-migration.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Backup &amp; Migration</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Apiman Migration Guide</div>
+<div class="paragraph">
+<p>Apiman has a full <a href="#migration-guide::">migration guide</a> that documents changes between Apiman versions that administrators should pay close attention to.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="automatic-sql-migrations-liquibase"><a class="anchor" href="#automatic-sql-migrations-liquibase"></a>Automatic SQL Migrations (Liquibase)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After Apiman 3.0.0.Final, automatic SQL migrations are available.</p>
+</div>
+<div class="paragraph">
+<p>Simply deploy the newest version of Apiman, and it <a href="https://www.liquibase.org" target="_blank" rel="noopener">Liquibase</a> attempt to apply any migrations that it has not already applied.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+There is no guarantee that the automated migrations always work smoothly; hence, users <strong>must</strong> back up before proceeding with an upgrade.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="apply-updates-automatically"><a class="anchor" href="#apply-updates-automatically"></a>Apply updates automatically</h3>
+<div class="paragraph">
+<p>Do nothing, just start Apiman against your database.</p>
+</div>
+<div class="paragraph">
+<p>Refer to: <a href="database.html" class="xref page">API Manager Database Configuration</a> to ensure you have given Apiman the connection details for your database correctly.</p>
+</div>
+<div class="paragraph">
+<p>If the user you connect Apiman to your database with has limited permissions, then you will likely need to disable liquibase and apply the patches manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="disable-liquibase"><a class="anchor" href="#disable-liquibase"></a>Disable Liquibase</h3>
+<div class="paragraph">
+<p>Set the Java system property <code>liquibase.should.run=false</code>.
+Use this if you prefer to apply the SQL migrations out-of-band.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="apply-liquibase-patches-manually"><a class="anchor" href="#apply-liquibase-patches-manually"></a>Apply Liquibase patches manually</h3>
+<div class="paragraph">
+<p>You can use the <code>liquibase</code> command-line tool to instantiate your database, and other useful functions such as rollbacks.</p>
+</div>
+<div class="paragraph">
+<p>Liquibase CLI can be found on many package managers, or can be downloaded directly from the <a href="https://docs.liquibase.com/install/home.html" target="_blank" rel="noopener">Liquibase website</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can find Apiman&#8217;s master Liquibase log, along with all patches, <a href="https://github.com/apiman/apiman/tree/3.0.0.Final/distro/ddl/src/main/resources/liquibase" target="_blank" rel="noopener">in the Apiman GitHub repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>We provide an example here, but please refer to the <a href="https://www.liquibase.org" target="_blank" rel="noopener">extensive Liquibase documentation</a> for more, as it likely supports your favourite workflow.</p>
+</div>
+<div class="listingblock">
+<div class="title">Apply Apiman&#8217;s master.xml to a MySQL database</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">liquibase --classpath="/path/to/mysql-connector-java-8.0.29.jar" \ <i class="conum" data-value="1"></i><b>(1)</b>
+--url="jdbc:mysql://localhost:3306/apiman" \ <i class="conum" data-value="2"></i><b>(2)</b>
+--username=root \ <i class="conum" data-value="3"></i><b>(3)</b>
+--password="admin123\!" \
+--changeLogFile=master.xml \ <i class="conum" data-value="4"></i><b>(4)</b>
+update <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Liquibase ships with certain drivers, but if you are unlucky, you may need to download and add one.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The standard JDBC URL to your database, which you should already have created</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A user with permission to run DDL, which may include higher risk actions such as creating and deleting tables, columns, etc. This may not always be the same as the 'day-to-day' user, depending on your permissions scheme.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Apiman&#8217;s Liquibase master.xml file, which can be found <a href="https://github.com/apiman/apiman/tree/3.0.0.Final/distro/ddl/src/main/resources/liquibase" target="_blank" rel="noopener">Apiman&#8217;s repo</a>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>update</code> command</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It is also possible to get Liquibase to generate SQL/DDL diffs for you, which can be applied via your databases' console.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="json-data-export-import"><a class="anchor" href="#json-data-export-import"></a>JSON Data Export-Import</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apiman has an export-import feature that allows admin users to export all the configuration data from the Manager into a single export file (JSON formatted).
+This exported file can then be edited (if necessary) and then imported into another instance of Apiman.</p>
+</div>
+<div class="paragraph">
+<p>Export-import attempts to address the following use-cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data backups</p>
+</li>
+<li>
+<p>Migrating between environments</p>
+</li>
+<li>
+<p>Upgrading Apiman to a new major version</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using the feature is simple:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You must log into the Apiman UI as an admin user.</p>
+</li>
+<li>
+<p>Navigate to the "Export/Import" UI page by clicking the "Export/Import Data" link on the API Manager Dashboard.</p>
+</li>
+<li>
+<p>From there you can export or import data.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backing-up-your-data"><a class="anchor" href="#backing-up-your-data"></a>Backing Up Your Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are multiple strategies for backing up your Apiman data, depending on the configuration you have chosen (e.g. whether you are using a Database or Elasticsearch to store your data).
+However, once approach to data backups that is consistent across all configurations is to use the Data Export feature of Apiman to create a JSON file containing all the Apiman configuration data.</p>
+</div>
+<div class="paragraph">
+<p>This can be done via the UI or via the following API Manager REST endpoint:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-log hljs" data-lang="log">https://HOST:PORT/apiman/system/export</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="migrating-data-between-environments"><a class="anchor" href="#migrating-data-between-environments"></a>Migrating Data Between Environments</h3>
+<div class="paragraph">
+<p>Often times you may have a Test version of Apiman deployed, as well as a Production version.
+Depending on your workflow, you may wish to configure your APIs in the Test environment and then migrate that configuration into Production (rather than having to re-create the same configuration in Production manually).
+This can be accomplished by Exporting data from Test and then importing it into Production.</p>
+</div>
+<div class="paragraph">
+<p>When doing this, note that the Export feature will export the entire set of configuration from Apiman.
+This may be precisely what you want, but many times only a subset of the data is desired.
+If this is the case, you will need to edit the resulting JSON file to only include the data you wish to migrate.
+In the future, we hope to build tools that will make this editing of the exported file easier.</p>
+</div>
+<div class="paragraph">
+<p>Once you have edited the exported file, you can simply log into your production Apiman instance and use the Export/Import UI page to import the data.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_upgrading_to_a_new_apiman_version"><a class="anchor" href="#_upgrading_to_a_new_apiman_version"></a>Upgrading to a New Apiman Version</h3>
+<div class="paragraph">
+<p>Whenever you wish to upgrade from an old to a newer version of Apiman, you will likely want to preserve all the Plan, API, and Client App configurations you have created.</p>
+</div>
+<div class="paragraph">
+<p>To do this, you can follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Export all data from OLD VERSION of Apiman</p>
+</li>
+<li>
+<p>Shut down OLD VERSION of Apiman</p>
+</li>
+<li>
+<p>Install NEW VERSION of Apiman</p>
+</li>
+<li>
+<p>Start up NEW VERSION of Apiman</p>
+</li>
+<li>
+<p>Import data into NEW VERSION of Apiman (data exported in step #1)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once these steps are complete, you should have a new version of Apiman running
+with all of your existing data.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="portal.html">Developer Portal</a></span>
+  <span class="next"><a href="../registries-and-components/overview.html">Registries &amp; Components</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Content copyright of respective contributors to the <a href="http://www.github.com/apiman/apiman">Apiman</a> project</p>
+  <p>This page was built using the <a href="https://antora.org/" target="_blank">Antora</a> documentation site generator. We are extremely grateful to the Antora team for creating this wonderful project!</p>
+</footer>
+
+<link rel="stylesheet" href="../../../_/css/vendor/site-extra.css">
+<script src="../../../_/js/vendor/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  appId: 'AAYCL8CIXA',
+  apiKey: '28b004058c83c0723c196eccfb86490d',
+  indexName: 'docsearch-apiman',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+})
+</script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
