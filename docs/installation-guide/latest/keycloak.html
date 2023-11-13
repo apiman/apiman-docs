@@ -222,7 +222,7 @@
       <a class="title" href="../../guides/latest/index.html">Apiman Guides</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../guides/dev/index.html">3.2.0-SNAPSHOT</a>
+          <a href="../../guides/dev/index.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../guides/latest/index.html">3.1</a>
@@ -233,7 +233,7 @@
       <a class="title" href="../../development-guide/latest/intro.html">Development Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../development-guide/dev/intro.html">3.2.0-SNAPSHOT</a>
+          <a href="../../development-guide/dev/intro.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../development-guide/latest/intro.html">3.1</a>
@@ -244,7 +244,7 @@
       <a class="title" href="index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../dev/index.html">3.2.0-SNAPSHOT</a>
+          <a href="../dev/index.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-current is-latest">
           <a href="index.html">3.1</a>
@@ -261,7 +261,7 @@
       <a class="title" href="../../migration-guide/latest/migrations.html">Migration Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../migration-guide/dev/migrations.html">3.2.0-SNAPSHOT</a>
+          <a href="../../migration-guide/dev/migrations.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../migration-guide/latest/migrations.html">3.1</a>
@@ -272,7 +272,7 @@
       <a class="title" href="../../user-guide/latest/index.html">User Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../user-guide/dev/index.html">3.2.0-SNAPSHOT</a>
+          <a href="../../user-guide/dev/index.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../user-guide/latest/index.html">3.1</a>
@@ -304,7 +304,7 @@
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3.1</button>
   <div class="version-menu">
-    <a class="version" href="../dev/keycloak.html">3.2.0-SNAPSHOT</a>
+    <a class="version" href="../dev/keycloak.html">3.2.1-SNAPSHOT</a>
     <a class="version is-current" href="keycloak.html">3.1</a>
     <a class="version is-missing" href="../2.2.3.Final/index.html">2.2.3.Final</a>
     <a class="version is-missing" href="../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -586,7 +586,7 @@ However, these are beyond the scope of Apiman&#8217;s documentation; instead we 
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">services:
   keycloak:
     container_name: keycloak_server_all
-    image: quay.io/keycloak/keycloak:18.0.2
+    image: quay.io/keycloak/keycloak:22.0.5
     entrypoint: ['/bin/bash', '-c']
     command:
       - |
@@ -815,6 +815,143 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 </div>
 <div class="sect3">
 <h4 id="vert-x-gateway"><a class="anchor" href="#vert-x-gateway"></a>Vert.x Gateway</h4>
+<div class="sect4">
+<h5 id="additional-options"><a class="anchor" href="#additional-options"></a>Additional options</h5>
+<div class="paragraph">
+<p>These options apply to the <code>auth.config</code> section.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json5 hljs" data-lang="json5">{
+  // &lt;Other sections&gt;
+  "auth": {
+    "type": "keycloak",
+    "config": {
+      // Options inserted here.
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Optional Params</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>ssl-required</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether SSL required for the server URL</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>allow-any-hostname</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether hostname verification should be performed (if true, all hostnames will be accepted).</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>disable-trust-manager</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Whether hostname verification should be performed (if true, all hostnames will be accepted).</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>truststore</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Path to truststore</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>truststore-password</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Truststore password</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>client-keystore</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Path to client keystore</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>client-keystore-password</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>client keystore password</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="additional-oauth2-issuers"><a class="anchor" href="#additional-oauth2-issuers"></a>Additional OAuth2 issuers</h5>
+<div class="paragraph">
+<p>A common issue is that your issuers may appear different depending upon how your network is configured.</p>
+</div>
+<div class="paragraph">
+<p>For example, proxies, Docker internal vs external networks, Kubernetes, etc.</p>
+</div>
+<div class="paragraph">
+<p>To get around this, you can set additional accepted issuers via <code>allowed-issuers</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+ // &lt;Other sections&gt;
+
+ "auth": {
+    "type": "keycloak",
+    "config": {
+      "flowType": "PASSWORD",
+      "requiredRole": "realm:apipublisher",
+      "auth-server-url": "${apiman.auth.url:-http://localhost:8085}",
+      // You can add extra issuers here; this can be very useful if
+      // your setup has internal vs external issuers, and you need to
+      // support both simultaneously.
+      "allowed-issuers": [
+        "${apiman.auth.public-endpoint:-}",
+        "${apiman.auth.private-endpoint:-}",
+        "http://example.com:8080/"
+      ]
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="manual-setup"><a class="anchor" href="#manual-setup"></a>Manual setup</h5>
 <div class="paragraph">
 <p>If you don&#8217;t want to use the default discovery mechanism, then for the Vert.x gateway, the simplest way to retrieve the necessary configuration is to generate it from your Keycloak server administrator console.</p>
 </div>
@@ -892,6 +1029,7 @@ Don&#8217;t forget the "*" wildcard at the end of the URL.
 <td>Paste your Keycloak config over this segment</td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 <div class="sect3">

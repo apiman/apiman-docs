@@ -213,14 +213,14 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">User Guide</span>
-    <span class="version">3.2.0-SNAPSHOT</span>
+    <span class="version">3.2.1-SNAPSHOT</span>
   </div>
   <ul class="components">
     <li class="component">
       <a class="title" href="../../../guides/latest/index.html">Apiman Guides</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../../guides/dev/index.html">3.2.0-SNAPSHOT</a>
+          <a href="../../../guides/dev/index.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../../guides/latest/index.html">3.1</a>
@@ -231,7 +231,7 @@
       <a class="title" href="../../../development-guide/latest/intro.html">Development Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../../development-guide/dev/intro.html">3.2.0-SNAPSHOT</a>
+          <a href="../../../development-guide/dev/intro.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../../development-guide/latest/intro.html">3.1</a>
@@ -242,7 +242,7 @@
       <a class="title" href="../../../installation-guide/latest/index.html">Installation Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../../installation-guide/dev/index.html">3.2.0-SNAPSHOT</a>
+          <a href="../../../installation-guide/dev/index.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../../installation-guide/latest/index.html">3.1</a>
@@ -259,7 +259,7 @@
       <a class="title" href="../../../migration-guide/latest/migrations.html">Migration Guide</a>
       <ul class="versions">
         <li class="version">
-          <a href="../../../migration-guide/dev/migrations.html">3.2.0-SNAPSHOT</a>
+          <a href="../../../migration-guide/dev/migrations.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../../migration-guide/latest/migrations.html">3.1</a>
@@ -270,7 +270,7 @@
       <a class="title" href="../../latest/index.html">User Guide</a>
       <ul class="versions">
         <li class="version is-current">
-          <a href="../index.html">3.2.0-SNAPSHOT</a>
+          <a href="../index.html">3.2.1-SNAPSHOT</a>
         </li>
         <li class="version is-latest">
           <a href="../../latest/index.html">3.1</a>
@@ -300,9 +300,9 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">3.2.0-SNAPSHOT</button>
+  <button class="version-menu-toggle" title="Show other versions of page">3.2.1-SNAPSHOT</button>
   <div class="version-menu">
-    <a class="version is-current" href="getting-up-and-running.html">3.2.0-SNAPSHOT</a>
+    <a class="version is-current" href="getting-up-and-running.html">3.2.1-SNAPSHOT</a>
     <a class="version" href="../../latest/crash-course/getting-up-and-running.html">3.1</a>
     <a class="version is-missing" href="../../2.2.3.Final/index.html">2.2.3.Final</a>
     <a class="version is-missing" href="../../1.5.7.Final/index.html">1.5.7.Final</a>
@@ -350,7 +350,7 @@ It is also arranged in a way that is more representative of a real-world deploym
 <p>Download the <a href="https://www.apiman.io/download.html" target="_blank" rel="noopener">Apiman Docker Compose distribution</a>.</p>
 </li>
 <li>
-<p><code>unzip apiman-docker-compose-3.2.0-SNAPSHOT.zip &amp;&amp; cd apiman-docker-compose-3.2.0-SNAPSHOT</code></p>
+<p><code>unzip apiman-docker-compose-3.2.1-SNAPSHOT.zip &amp;&amp; cd apiman-docker-compose-3.2.1-SNAPSHOT</code></p>
 </li>
 <li>
 <p><code>docker-compose -f docker-compose.setup.yml up</code></p>
@@ -569,7 +569,7 @@ We&#8217;ll see them again in a few minutes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/apiman/apiman/releases/download/3.2.0-SNAPSHOT/apiman-distro-wildfly-3.2.0-SNAPSHOT-overlay.zip">Download Apiman WildFly overlay</a></p>
+<p><a href="https://github.com/apiman/apiman/releases/download/3.2.1-SNAPSHOT/apiman-distro-wildfly-3.2.1-SNAPSHOT-overlay.zip">Download Apiman WildFly overlay</a></p>
 </li>
 <li>
 <p><code>unzip</code> the overlay directly over the WildFly directory.
@@ -585,12 +585,12 @@ This will install Apiman into the WildFly server you created in the previous ste
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-3.2.0-SNAPSHOT
-cd ~/apiman-3.2.0-SNAPSHOT
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir ~/apiman-3.2.1-SNAPSHOT
+cd ~/apiman-3.2.1-SNAPSHOT
 wget https://download.jboss.org/wildfly/23.0.2.Final/wildfly-23.0.2.Final.zip
-wget https://github.com/apiman/apiman/releases/download/3.2.0-SNAPSHOT/apiman-distro-wildfly-3.2.0-SNAPSHOT-overlay.zip
+wget https://github.com/apiman/apiman/releases/download/3.2.1-SNAPSHOT/apiman-distro-wildfly-3.2.1-SNAPSHOT-overlay.zip
 unzip wildfly-23.0.2.Final
-unzip -o apiman-distro-wildfly-3.2.0-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Final</code></pre>
+unzip -o apiman-distro-wildfly-3.2.1-SNAPSHOT-overlay.zip -d wildfly-23.0.2.Final</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -603,7 +603,7 @@ This is necessary as WildFly does not come pre-installed with any users.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.2.0-SNAPSHOT/wildfly-23.0.2.Final/bin</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.2.1-SNAPSHOT/wildfly-23.0.2.Final/bin</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -640,7 +640,7 @@ If you are interested in learning more about WildFly server administration, refe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.2.0-SNAPSHOT/wildfly-23.0.2.Final
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd apiman-3.2.1-SNAPSHOT/wildfly-23.0.2.Final
 ./bin/standalone.sh -c standalone-apiman.xml</code></pre>
 </div>
 </div>
